@@ -6,7 +6,7 @@ export const metadata = {
 
 const ListedMatches = () => {
     return (
-        
+        <h1>Section-2</h1>
     )
 }
 
