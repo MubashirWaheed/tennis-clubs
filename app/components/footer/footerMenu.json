@@ -1,0 +1,12 @@
+{
+    "footerLinks":[
+        {
+            "title": "Quick Links",
+            "links": ["Players", "Clubs", "Pro League", "About Us", "FAQ", "Contact Us"]
+        },
+        {
+            "title": "Useful Links",
+            "links": ["Terms & Conditions", "Privacy Policy", "Help Center", "News"]
+        }
+    ]
+}
