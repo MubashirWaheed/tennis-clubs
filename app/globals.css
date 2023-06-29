@@ -41,6 +41,61 @@
   line-height: 24px !important;
 }
 
+.p{
+  font-style: normal !important;
+  font-weight: 700 !important;
+}
+
+.tag{
+  border-radius: 50px  !important;
+  background: #027333  !important;
+  padding: 2px 16px  !important;
+  padding: 2px 16px  !important;
+  color: #FFF  !important;
+  font-size: 12px  !important;
+  font-style: normal  !important;
+  font-weight: 700  !important;
+  line-height: 20px  !important;
+}
+.f12{
+  font-size: 12px !important;
+}
+
+.f14{
+  font-size: 14px !important;
+}
+.f16{
+  font-size: 16px !important;
+}
+.f18{
+  font-size: 18px !important;
+}
+
+
+.fw400{
+  font-weight: 400 !important;
+}
+.fw700{
+  font-weight: 700 !important;
+}
+
+.lh18{
+  line-height: 18px !important;
+}
+.lh20{
+  line-height: 20px !important;
+}
+.lh22{
+  line-height: 22px !important;
+}
+
+.lh24{
+  line-height: 24px !important;
+}
+.lh30{
+  line-height: 30px !important;
+}
+
 .footer{
-  background: url(./assets/girlPotrait.png) cover center;
+  background: url(./assets/girlPotrait.png) cover center !important;;
 }
