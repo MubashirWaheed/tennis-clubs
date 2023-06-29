@@ -8,8 +8,8 @@ import Link from "next/link";
 
 const Footer = () => {
     return (
-        <footer className="">
-            <div className="flex w-[70%] mx-auto justify-between items-start">
+        <footer className="footer">
+            <div className="flex w-[70%] mx-auto justify-around items-start">
                 <div className="flex flex-col gap-[17px] items-start">
                     <Image src={Logo} alt="MPR Logo"/>
 
