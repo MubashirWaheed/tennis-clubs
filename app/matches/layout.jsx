@@ -5,7 +5,7 @@ import VerticalBat from "./assets/VerticalBat.svg";
 
 const MatchesLayout = ({children}) => {
     return (
-        <>
+        <main>
             <section className="relative bg-[#3B2273]">
                 <h1 className="h2 text-white pt-[64px] pb-[109px] pl-[185px]">Find Matches</h1>
                 <Image src={Ball} alt="" className="absolute bottom-0 right-0 w-[100px] h-[100px] object-contain"/>
@@ -13,7 +13,7 @@ const MatchesLayout = ({children}) => {
                 <Image src={VerticalBat} alt="" className="absolute left-0 bottom-0"/>
             </section>
             {children}
-        </>
+        </main>
     )
 }
 

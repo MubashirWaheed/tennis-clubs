@@ -14,7 +14,7 @@ const EmailField = ({ id, type, value, onChange, label }) => {
 };
 
 const styles = {
-    textField: "w-full rounded-[10px] border-1 border-[#F6F6F6] bg-[#FAFBFF] h-[67px] px-[24px] py-[13px] flex flex-col items-start gap-1",
+    textField: "w-full rounded-[10px] border-2 border-[#F6F6F6] bg-[#FAFBFF] h-[67px] px-[24px] py-[13px] flex flex-col items-start gap-1",
     label: "w-full f12 fw700 lh20 text-[#828282]",
     input: "outline-none border-none w-full f14 fw400 lh22",
 };

@@ -13,7 +13,7 @@ const RegisterForm = () => {
     });
 
     return (
-        <form>
+        <form className="w-full flex flex-col gap-[20px]">
             <div className="flex flex-col w-full gap-[20px]">
                 <EmailField
                     id="email"

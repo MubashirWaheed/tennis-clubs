@@ -4,8 +4,8 @@ import RegisterForm from "./RegisterForm"
 const Register = () => {
     return (
         <section className={styles.formContainer}>
-            <div className="px-[37px] py-[32px]">
-                <h1 className="h3 text-[#13013C] w-[412px]">Create your profile, get rated, and <span className="text-[#FFBB34]">start playing!</span></h1>
+            <div className="px-[37px] py-[32px] w-full flex flex-col gap-[30px]">
+                <h1 className="h3 text-[#13013C] w-[412px]">Create your profile, get rated, and <span className="h3 text-[#FFBB34]">start playing!</span></h1>
                 <RegisterForm />
 
                 <div className="flex flex-col gap-[106px]">
@@ -25,7 +25,7 @@ const Register = () => {
 }
 
 const styles = {
-    formContainer: "",
+    formContainer: "rounded-[10px] bg-[#FFFFFF] w-[581px]",
     formHeader: "h4 text-[#13013C]",
 }
 export default Register
