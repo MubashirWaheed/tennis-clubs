@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import showPasswordIcon from "../../../app/components/register/assets/showPassword.svg"
-import hidePasswordIcon from "../../../app/components/register/assets/hidePassword.svg"
+import showPasswordIcon from "./assets/showPassword.svg"
+import hidePasswordIcon from "./assets/hidePassword.svg"
 import React from "react";
 
 const PasswordField = ({ id, value, onChange, label }) => {

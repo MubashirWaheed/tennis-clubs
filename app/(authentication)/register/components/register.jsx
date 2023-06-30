@@ -25,7 +25,7 @@ const Register = () => {
 }
 
 const styles = {
-    formContainer: "rounded-[10px] bg-[#FFFFFF] w-[581px]",
+    formContainer: "rounded-[10px] bg-[#FFFFFF] w-[581px] z-10",
     formHeader: "h4 text-[#13013C]",
 }
 export default Register

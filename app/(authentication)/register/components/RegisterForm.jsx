@@ -34,7 +34,7 @@ const RegisterForm = () => {
             </div>
             <div className="w-full flex flex-col gap-[11px]">
                 <SignUpButton type="submit">Sign Up With Email</SignUpButton>
-                <p className="f14 fw700 lh22 text-[#828282]">By continuing, i agree to the <Link href="#" className="text-[#3B2273]">terms of service.</Link></p>
+                <p className="f14 fw700 lh22 text-[#828282]">By continuing, i agree to the <Link href="/signin" className="text-[#3B2273]">terms of service.</Link></p>
             </div>
         </form>
     );
