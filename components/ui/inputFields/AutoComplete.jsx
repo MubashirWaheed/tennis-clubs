@@ -33,7 +33,7 @@ const AutoComplete = ({ id, value, setValue, label }) => {
 const styles = {
     autoCompleteField: "w-full rounded-[10px] border-2 border-[#F6F6F6] bg-[#FAFBFF] h-[67px] px-[24px] py-[13px] flex",
     label: "w-full f12 fw700 lh20 text-[#828282]",
-    input: "outline-none border-none w-full f14 fw400 lh22",
+    input: "outline-none bg-transparent border-none w-full f14 fw400 lh22",
 };
 
 export default AutoComplete;

@@ -1,11 +1,13 @@
+
 import MatchCard from "./MatchCard";
 
 const MatchListing = ({matches}) => {
     return(
-        <div>
+        <div className="flex flex-col gap-[15px]">
             {matches?.map((match, index)=>(
-                <MatchCard key={index} {...match}/>
-            ))}
+                <MatchCard {...match} key={index}/>
+            )
+            )}
         </div>
     )
 }

@@ -50,7 +50,6 @@
   border-radius: 50px  !important;
   background: #027333  !important;
   padding: 2px 16px  !important;
-  padding: 2px 16px  !important;
   color: #FFF  !important;
   font-size: 12px  !important;
   font-style: normal  !important;
@@ -94,6 +93,9 @@
 }
 .lh30{
   line-height: 30px !important;
+}
+.lh35{
+  line-height: 35px !important;
 }
 
 .footer{

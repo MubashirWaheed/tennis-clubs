@@ -1,8 +1,8 @@
 "use client";
 
 import matchesData from "./findMatches.json";
-import MatchListing from "./components/MatchCard";
 import FilterContainer from "./components/FilterContainer";
+import MatchListing from "./components/MatchListing";
 
 // MetaData for the SEO for this page...
 export const metadata = {
@@ -15,7 +15,7 @@ const ListedMatches = () => {
   return (
     <section className="relative -top-[40px] flex flex-col gap-[50px] max-w-[1200px] mx-auto">
       <FilterContainer filters = {matchesData?.filters}/>
-      <MatchListing matches = {matchesData?.matches} />
+      <MatchListing matches={matchesData?.matches} />
     </section>
   );
 };
