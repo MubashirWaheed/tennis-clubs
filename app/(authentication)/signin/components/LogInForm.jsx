@@ -9,7 +9,7 @@ const LogInForm = () => {
 
     const [signInDetails, setSignInDetails] = React.useState({
         email: "",
-        password: "",
+        password: ""
     });
 
     return (
@@ -19,7 +19,7 @@ const LogInForm = () => {
                     id="email"
                     value={signInDetails.email}
                     onChange={(e) =>
-                    setSignInDetails({ ...signInDetails, email: e.target.value })
+                        setSignInDetails({ ...signInDetails, email: e.target.value })
                     }
                     label="Email"
                 />
