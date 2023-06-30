@@ -22,7 +22,7 @@ const OTPField = ({ value, onChange}) => {
 const styles = {
     OTPField: "w-full rounded-[10px] border-2 border-[#F6F6F6] bg-[#FAFBFF] px-[24px] py-[8px] flex items-center gap-2",
     label: "w-full f12 fw700 lh20 text-[#828282]",
-    input: "outline-none border-none w-full f14 fw400 lh22",
+    input: "outline-none bg-transparent border-none w-full f14 fw400 lh22",
 };
 
 export default OTPField;

@@ -19,7 +19,7 @@ const TextArea = ({ id, value, onChange, label }) => {
 const styles = {
     textField: "w-full rounded-[10px] border-2 border-[#F6F6F6] bg-[#FAFBFF] px-[24px] py-[8px] flex flex-col items-start gap-1",
     label: "w-full f12 fw700 lh20 text-[#828282]",
-    textArea: "outline-none border-none w-full f14 fw400 lh22",
+    textArea: "outline-none bg-transparent border-none w-full f14 fw400 lh22",
 };
 
 export default TextArea;
