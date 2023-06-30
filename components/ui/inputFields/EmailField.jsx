@@ -16,7 +16,7 @@ const EmailField = ({ value, onChange, label }) => {
 const styles = {
     emailField: "w-full rounded-[10px] border-2 border-[#F6F6F6] bg-[#FAFBFF] px-[24px] py-[8px] flex flex-col items-start gap-1",
     label: "w-full f12 fw700 lh20 text-[#828282]",
-    input: "outline-none border-none w-full f14 fw400 lh22",
+    input: "outline-none border-none bg-transparent w-full f14 fw400 lh22",
 };
 
 export default EmailField;
