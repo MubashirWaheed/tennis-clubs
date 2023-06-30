@@ -18,17 +18,15 @@ const LogInPage = () => {
                     <Image src={headerLineIcon} alt="headerLine" className="w-[119px] h-[20px]"/>
                     <p className="f16 fw400 lh24 text-white w-[500px]">access their personalized account on a website. It is a necessary step for users to view their personal information, settings, and perform various actions related to their account.</p>
                 </div>
-
                 <Image src={circlesIcon} alt={"Circles"} className="absolute -top-[35px] -left-[35px] w-[70px] h-[70px]"/>
             </section>
             <LogIn/>
-            
-                <Image src={vector4} alt="Vector1" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[350px] h-[480px]"/>
-                <Image src={vector1} alt="Vector2" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[400px] h-[540px]"/>
-                <Image src={vector2} alt="Vector3" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[450px] h-[600px]"/>
-                <Image src={vector3} alt="Vector4" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[500px] h-[660px]"/>
-                <Image src={vector5} alt="Vector5" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[550px] h-[890px]"/>
-                <Image src={vector6} alt="Vector6" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[600px] h-[900px]"/>
+            <Image src={vector4} alt="Vector1" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[350px] h-[480px]"/>
+            <Image src={vector1} alt="Vector2" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[400px] h-[540px]"/>
+            <Image src={vector2} alt="Vector3" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[450px] h-[600px]"/>
+            <Image src={vector3} alt="Vector4" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[500px] h-[660px]"/>
+            <Image src={vector5} alt="Vector5" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[550px] h-[890px]"/>
+            <Image src={vector6} alt="Vector6" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[600px] h-[900px]"/>
         </main>
     )
 }
