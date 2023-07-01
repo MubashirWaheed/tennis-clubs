@@ -29,7 +29,7 @@ const Editor = () => {
         e.preventDefault();
     };
     return(
-        <section>
+        <section  className="mb-[196px]">
             <form
                 className="w-[70%] mx-auto flex flex-col gap-[25px]"
                 onSubmit={handleSubmit}
