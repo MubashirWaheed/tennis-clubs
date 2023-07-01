@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Editor from "./components/editor";
-import headerLine from "@/app/assets/headerLine.svg";
+import headerLine from "../assets/greenHeaderLine.svg";
 
 const createNewClubEditor = () => {
     return(

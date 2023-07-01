@@ -13,16 +13,16 @@ const Header = () => {
                 
                 <nav>
                     <ul className="flex flex-row items-center">
-                        <li className="f16 fw700 lh24 text-[#13013C] font-sans cursor-pointer mr-7">
+                        <li className="f16 fw400 lh24 text-[#13013C] cursor-pointer mr-7">
                         Players
                         </li>
-                        <li className="f16 fw700 lh24 text-[#13013C] font-sans cursor-pointer mr-7">
+                        <li className="f16 fw400 lh24 text-[#13013C] cursor-pointer mr-7">
                         Clubs
                         </li>
-                        <li className="f16 fw700 lh24 text-[#13013C] font-sans cursor-pointer mr-7">
+                        <li className="f16 fw400 lh24 text-[#13013C] cursor-pointer mr-7">
                         Pro League
                         </li>
-                        <li className="f16 fw700 lh24 text-[#13013C] font-sans cursor-pointer mr-7">
+                        <li className="f16 fw400 lh24 text-[#13013C] cursor-pointer mr-7">
                         About Us
                         </li>
                     </ul>

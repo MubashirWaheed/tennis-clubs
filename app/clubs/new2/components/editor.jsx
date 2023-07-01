@@ -1,12 +1,12 @@
 "use client";
-
 import EmailField from "@/components/ui/inputFields/EmailField";
 import MobileField from "@/components/ui/inputFields/MobileField";
 import OTPField from "@/components/ui/inputFields/OTPField";
 import TextArea from "@/components/ui/inputFields/TextArea";
 import TextField from "@/components/ui/inputFields/TextField";
-import CreateButton from "@/components/ui/buttons/PrimaryButton";
+import CreateButton from "@/components/ui/buttons/PrimaryButton"
 import React from "react";
+
 const Editor = () => {
     const [formData, setFormData] = React.useState({
         clubName: "",
@@ -74,8 +74,8 @@ const Editor = () => {
                     <TextArea
                     id="about"
                     label="About"
-                    maxLength
                     value={formData.about}
+                    maxLength
                     onChange={handleChange}
                     />
 

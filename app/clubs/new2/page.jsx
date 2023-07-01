@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Editor from "./components/editor";
-import headerLine from "@/app/assets/headerLine.svg";
+import headerLine from "../assets/greenHeaderLine.svg";
 
 const createNewClubEditor = () => {
     return(
         <main>
-            <section className="py-14 w-full flex flex-col items-center">
+            <section className="py-14 w-full flex flex-col gap-[20px] items-center">
                 <h2 className="h2 text-[#13013c]">Create New Club</h2>
                 <Image
                     src={headerLine}

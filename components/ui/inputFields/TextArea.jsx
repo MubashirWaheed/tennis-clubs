@@ -1,4 +1,4 @@
-const TextArea = ({ id, value, onChange, label }) => {
+const TextArea = ({ id, value, onChange, label, maxLength}) => {
 
     return (
         <div className={styles.textField}>
@@ -7,7 +7,7 @@ const TextArea = ({ id, value, onChange, label }) => {
                 className={styles.textArea}
                 id={id}
                 onChange={onChange}
-                maxLength={500}
+                maxLength={maxLength}
                 value={value}
                 rows="8"
                 type="text"
