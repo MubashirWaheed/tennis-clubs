@@ -6,7 +6,7 @@ import UserIcon from './assets/user-icon.svg';
 
 const Header = () => {
     return (
-        <header className="bg-white">
+        <header className="bg-white z-30">
             <div className="flex items-center max-w-[1200px] mx-auto justify-between p-3">
                 {/* Logo */}
                 <div className="h-[60px] w-[60px]">

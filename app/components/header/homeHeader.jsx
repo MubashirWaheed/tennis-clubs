@@ -1,11 +1,13 @@
+"use client";
 import Image from "next/image";
 import SignInButton from "@/components/ui/buttons/PrimaryButton";
 import JoinButton from "@/components/ui/buttons/SecondaryButton";
 import Logo from "@/app/assets/Logo.svg";
-
+import { useRouter } from 'next/navigation'
 const Header = () => {
+    const router = useRouter();
     return (
-        <div className="h-[90px] w-full bg-[#fff] box">
+        <header className="h-[90px] w-full bg-white box z-30">
             <div className="flex flex-row items-center w-[80%] mx-auto justify-between py-3">
                 <div className="flex-1">
                     <Image src={Logo} alt="Logo" className="w-[85px] h-[70px]" />
@@ -29,11 +31,11 @@ const Header = () => {
                 </nav>
 
                 <div className="flex flex-row items-center justify-between gap-[15px]">
-                    <SignInButton>SignIn</SignInButton>
-                    <JoinButton>Join</JoinButton>
+                    <SignInButton onClick={() => router.push('/signin')}>SignIn</SignInButton>
+                    <JoinButton onClick={() => router.push('/register')}>Join</JoinButton>
                 </div>
             </div>
-        </div>
+        </header>
     );
 };
 

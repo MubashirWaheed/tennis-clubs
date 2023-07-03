@@ -11,7 +11,7 @@ import vector6 from "../assets/vector-6.svg"
 
 const RegisterAsAPlayer = () => {
     return(
-        <main className="relative bg-[#3B2273] px-[180px] py-[104px] flex items-center gap-[54px]">
+        <main className="relative bg-[#3B2273] px-[180px] h-[900px] flex items-center gap-[54px]">
             <section className="relative flex flex-col items-start gap-[31px]">
                 <h1 className="h2 text-white w-[541px]">Join the Tennis Revolution - The Ultimate Tennis Community Awaits!</h1>
                 <div className="flex flex-col gap-[17px] items-start">
@@ -23,12 +23,12 @@ const RegisterAsAPlayer = () => {
             </section>
             <Register />
             
-                <Image src={vector4} alt="Vector1" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[350px] h-[480px]"/>
-                <Image src={vector1} alt="Vector2" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[400px] h-[540px]"/>
-                <Image src={vector2} alt="Vector3" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[450px] h-[600px]"/>
-                <Image src={vector3} alt="Vector4" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[500px] h-[660px]"/>
-                <Image src={vector5} alt="Vector5" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[550px] h-[890px]"/>
-                <Image src={vector6} alt="Vector6" className="text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[600px] h-[900px]"/>
+                <Image src={vector4} alt="Vector1" className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[350px] h-[480px]"/>
+                <Image src={vector1} alt="Vector2" className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[400px] h-[540px]"/>
+                <Image src={vector2} alt="Vector3" className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[450px] h-[600px]"/>
+                <Image src={vector3} alt="Vector4" className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[500px] h-[660px]"/>
+                <Image src={vector5} alt="Vector5" className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[550px] h-[890px]"/>
+                <Image src={vector6} alt="Vector6" className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[600px] h-[900px]"/>
         </main>
     )
 }
