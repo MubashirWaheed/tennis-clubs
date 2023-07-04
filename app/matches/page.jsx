@@ -14,7 +14,7 @@ const ListedMatches = () => {
 
   return (
     <section className="relative -top-[40px] flex flex-col gap-[50px] max-w-[1200px] mx-auto">
-      <FilterContainer filters = {matchesData?.filters}/>
+      <FilterContainer />
       <MatchListing matches={matchesData?.matches} />
     </section>
   );
