@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Ball from "@/app/assets/Ball.svg"
 import HorizontalBat from "@/app/assets/HorizontalBat.svg";
@@ -5,7 +6,10 @@ import VerticalBat from "@/app/assets/VerticalBat.svg";
 import EditProfileButton from "@/components/ui/buttons/PrimaryButton"
 import GetRatedButton from "@/components/ui/buttons/PrimaryButton"
 import playerProfileImage from "../assets/playerProfile.png";
+import { useRouter } from 'next/navigation'
+
 const ProfileViewLayout = ({children}) => {
+    const router = useRouter();
     return(
         <main>
             <section className="relative bg-[#3B2273]">
@@ -26,7 +30,7 @@ const ProfileViewLayout = ({children}) => {
                                 Avenue Shippensburg, PA 17257
                             </p>
                             <div className="w-[60%] mt-2">
-                                <EditProfileButton>Edit Profile</EditProfileButton>
+                                <EditProfileButton onClick={()=>router.push("/profile/edit")}>Edit Profile</EditProfileButton>
                             </div>
                         </div>
                     </div>

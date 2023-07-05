@@ -15,7 +15,7 @@ import MoreFilter from "./filters/MoreFilter";
 const FilterContainer = () => {
     
     const filters = FilterConfig();
-
+    
     return (
         <article className="bg-white rounded-lg shadow-lg h-[80px] w-full px-6 py-5 flex items-center gap-2">
             <div className="flex items-center justify-between flex-1">
