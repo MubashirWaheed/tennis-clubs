@@ -16,7 +16,11 @@ const EventsNearYou = () => {
         
         <div>
           {
-            homeData.eventsNearYou.map(())
+            homeData.eventsNearYou.map((event,index) => (
+              <article key={index}>
+                
+              </article>
+            ))
           }
         </div>
 
