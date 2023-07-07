@@ -6,7 +6,7 @@ import FindAnEventBTN from "@/components/ui/buttons/PrimaryButton";
 
 const UpcomingEvents = () => {
     return (
-        <section className = 'px-[185px] py-[90px] flex items-center gap-[30px] bg-white'>
+        <section className = 'px-[185px] py-[90px] flex flex-col items-center gap-[30px] bg-white'>
             <div className='flex flex-col gap-[15px] items-center'>
                 <h1 className='h2 text-[#13013C]'>Your Upcoming Events</h1>
                 <Image src={blueHeaderLine} alt="" className='w-[119px] h-[20px]'/>

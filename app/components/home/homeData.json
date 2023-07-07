@@ -1,0 +1,65 @@
+{
+    "title": "Events Near You",
+    "eventsNearYou":[
+        {
+            "dateAndTime": "YESTERDAY | 6:30pm",
+            "matchStatus": "In Progress",
+            "hostSchool": "Galileo High School at George Washington High School",
+            "participantSchool": "Raoul Wallenberg Traditional High School - Boys • San Francisco, CA",
+            "isEventFree": true, 
+            "gender": "Men",
+            "matchType": "singles"
+        },
+        {
+            "dateAndTime": "YESTERDAY | 6:30pm",
+            "matchStatus": "In Progress",
+            "hostSchool": "Galileo High School at George Washington High School",
+            "participantSchool": "Raoul Wallenberg Traditional High School - Boys • San Francisco, CA",
+            "isEventFree": true, 
+            "gender": "Men",
+            "matchType": "singles"
+        },
+        {
+            "dateAndTime": "YESTERDAY | 6:30pm",
+            "matchStatus": "In Progress",
+            "hostSchool": "Galileo High School at George Washington High School",
+            "participantSchool": "Raoul Wallenberg Traditional High School - Boys • San Francisco, CA",
+            "isEventFree": true, 
+            "gender": "Men",
+            "matchType": "singles"
+        }
+    ],
+
+    "myClubs": [],
+
+    "playersCreated": [
+        {
+            "dateAndTime":"YESTERDAY | 6:30pm",
+            "Status":"Registration Open"
+        }
+    ],
+
+    "paidHits": [],
+
+    "paidHitters": [],
+
+    "collegesNearYou": [],
+
+    "HighSchoolsNearYou": [],
+
+    "LocalPlayers": [],
+
+    "globalPlayerRankings": {
+        "filters": [""],
+        "filteredData": [
+            {
+                "id": "01",
+                "playerName": "Eliot Spizzirri",
+                "gender": "M",
+                "place": "USA",
+                "randomData1": 14.09,
+                "randomData2": 14.09
+            }
+        ]
+    }
+}
