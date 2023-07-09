@@ -98,10 +98,12 @@ const IndividualProfileLayout = ({ children }) => {
         />
         <Image src={VerticalBat} alt="" className="absolute left-0 bottom-0" />
       </section>
+
       <section className="relative -top-[30px] flex flex-col gap-[50px] w-full max-w-[1200px] mx-auto">
         <ProfileNavigation navItems={profileViewData?.profileNavBar} />
         {children}
       </section>
+      
     </main>
   );
 };

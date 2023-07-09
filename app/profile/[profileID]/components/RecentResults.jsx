@@ -22,13 +22,13 @@ export default function RecentResults() {
               </p>
               <div className="flex items-center gap-[150px]">
                 <div className="flex flex-col ">
-                  <div className="flex items-center gap-[2px]">
+                  <div className="flex items-center gap-2">
                     <Image src={France} alt="France" />
                     <p className="f18 fw700 lh30 text-[#13013c] w-[250px]">
                       {result.team1.player1}
                     </p>
                   </div>
-                  <div className="flex items-center gap-[2px]">
+                  <div className="flex items-center gap-2">
                     <Image src={France} alt="France" />
                     <p className="f18 fw700 lh30 text-[#13013c]">
                       {result.team1.player2}
@@ -43,13 +43,13 @@ export default function RecentResults() {
               <div className="border border-[#828282]/20 mt-[16px] mb-[6px]"></div>
               <div className="flex items-center gap-[150px]">
                 <div className="flex flex-col">
-                  <div className="flex items-center gap-[2px]">
+                  <div className="flex items-center gap-2">
                     <Image src={France} alt="France" />
                     <p className="f18 fw700 lh30 text-[#13013c]">
                       {result.team1.player1}
                     </p>
                   </div>
-                  <div className="flex items-center gap-[2px]">
+                  <div className="flex items-center gap-2">
                     <Image src={France} alt="France" />
                     <p className="f18 fw700 lh30 text-[#13013c]">
                       {result.team1.player2}
