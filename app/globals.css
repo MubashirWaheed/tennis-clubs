@@ -1,104 +1,121 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* > *{
+* > * {
   margin: 0;
   padding: 0;
-  font-family:'Poppins', 'Open Sans', 'Roboto', sans-serif;
+  font-family: "Poppins", "Open Sans", "Roboto", "Abril Fatface", sans-serif;
 }
 
-.h1{
-  font-family: 'Abril Fatface', Arial, Helvetica, sans-serif;
+.h1 {
+  font-family: "Abril Fatface", Arial, Helvetica, sans-serif;
   font-size: 45px !important;
   line-height: 65px !important;
 }
-.h2{
-  font-family: 'Abril Fatface', Arial, Helvetica, sans-serif;
+.h2 {
+  font-family: "Abril Fatface", Arial, Helvetica, sans-serif;
   font-size: 40px !important;
   line-height: 50px !important;
 }
-.h3{
-  font-family: 'Abril Fatface', Arial, Helvetica, sans-serif;
+.h3 {
+  font-family: "Abril Fatface", Arial, Helvetica, sans-serif;
   font-size: 30px !important;
   line-height: 40px !important;
 }
-.h4{
-  font-family: 'Abril Fatface', Arial, Helvetica, sans-serif;
+.h4 {
+  font-family: "Abril Fatface", Arial, Helvetica, sans-serif;
   font-size: 24px !important;
   line-height: 35px !important;
 }
-.h5{
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+.h5 {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 18px !important;
   line-height: 30px !important;
 }
-.h6{
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+.h6 {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 16px !important;
   line-height: 24px !important;
 }
 
-.p{
+.p {
   font-style: normal !important;
   font-weight: 700 !important;
 }
 
-.tag{
-  border-radius: 50px  !important;
-  background: #027333  !important;
-  padding: 2px 16px  !important;
-  color: #FFF  !important;
-  font-size: 12px  !important;
-  font-style: normal  !important;
-  font-weight: 700  !important;
-  line-height: 20px  !important;
+.tag {
+  border-radius: 50px !important;
+  background: #027333 !important;
+  padding: 2px 16px !important;
+  color: #fff !important;
+  font-size: 12px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 20px !important;
 }
 
-.f12{
+.f12 {
   font-size: 12px !important;
 }
 
-.f14{
+.f14 {
   font-size: 14px !important;
 }
-.f16{
+.f16 {
   font-size: 16px !important;
 }
-.f18{
+.f18 {
   font-size: 18px !important;
 }
-
-
-.fw400{
+.f20 {
+  font-size: 20px !important;
+}
+.f28 {
+  font-size: 28px !important;
+}
+.f24 {
+  font-size: 24px !important;
+}
+.fw400 {
   font-weight: 400 !important;
 }
-.fw700{
+.fw700 {
   font-weight: 700 !important;
 }
 
-.lh18{
+.lh18 {
   line-height: 18px !important;
 }
-.lh20{
+.lh20 {
   line-height: 20px !important;
 }
-.lh22{
+.lh22 {
   line-height: 22px !important;
 }
 
-.lh24{
+.lh24 {
   line-height: 24px !important;
 }
-.lh30{
+.lh28 {
+  line-height: 28px !important;
+}
+.lh30 {
   line-height: 30px !important;
 }
-.lh35{
+.lh35 {
   line-height: 35px !important;
 }
 
-.footer{
-  background: url(./assets/girlPotrait.png) cover center !important;;
+.footer {
+  background: url(./assets/girlPotrait.png) cover center !important;
+}
+.about {
+  color: #13013c;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  font-family: Abril Fatface;
 }

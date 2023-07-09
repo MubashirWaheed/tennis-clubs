@@ -1,0 +1,26 @@
+{
+  "clubDetails": {
+    "name": "Net Generation Tennis Club",
+    "location": "3092 Church StreetBrooklyn, NY 11221",
+    "noOfEvents": 0
+  },
+  "clubNavBar": [
+    {
+      "href": "/",
+      "title": "About"
+    },
+    {
+      "href": "results",
+      "title": "Event"
+    }
+  ],
+
+  "about": {
+    "title": "About Net Generation Tennis Club",
+    "description": "Net Generation Tennis Club is a tennis club focused on developing and promoting the sport of tennis to the younger generation in the United States. The club is an initiative of the United States Tennis Association (USTA) that aims to inspire and engage children to play tennis, regardless of their age, ability, or background."
+  },
+  "organizer": {
+    "name": "Philip B. Simpson",
+    "designation": "Head organizer"
+  }
+}

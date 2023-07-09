@@ -1,24 +1,60 @@
 {
-    "profileNavBar": [{
-        "href": "#overview",
-        "title": "Overview"
-    },{
-        "href": "#results",
-        "title": "Results"
-    },{
-        "href": "#events",
-        "title": "Events"
-    },{
-        "href": "#clubs",
-        "title": "Clubs"
-    },{
-        "href": "#media",
-        "title": "Media"
-    },{
-        "href": "#stats",
-        "title": "Stats"
-    },{
-        "href": "#studentInfo",
-        "title": "Student Info"
-    }] 
+  "profileNavBar": [
+    {
+      "href": "#overview",
+      "title": "Overview"
+    },
+    {
+      "href": "#results",
+      "title": "Results"
+    },
+    {
+      "href": "#events",
+      "title": "Events"
+    },
+    {
+      "href": "#clubs",
+      "title": "Clubs"
+    },
+    {
+      "href": "#media",
+      "title": "Media"
+    },
+    {
+      "href": "#stats",
+      "title": "Stats"
+    },
+    {
+      "href": "#studentInfo",
+      "title": "Student Info"
+    }
+  ],
+
+  "upcomingEvents": [
+    {
+      "DateandTime": "Apr 20 | 10:30am",
+      "player": "Player",
+      "provider": "Provider",
+      "SchoolName": "Galileo High School at George Washington High School",
+      "SchoolLocation": "Raoul Wallenberg Traditional High School - Boys • San Francisco, CA",
+      "isEventFree": "true",
+      "Registartion": "1 Registrations  ",
+      "EdType": "• Co-ed",
+      "matchType": "• Singles"
+    }
+  ],
+
+  "recentEvents": [
+    {
+      "DayandTime": "YESTERDAY | 6:30pm",
+      "player": "Player",
+      "provider": "Provider",
+      "SchoolName": "Galileo High School at George Washington High School",
+      "SchoolLocation": "San Francisco, CA",
+      "isEventFree": "true",
+      "Registartion": "1 Registrations ",
+      "EdType": "• Co-ed",
+      "matchType": "• Singles"
+    }
+  ]
 }

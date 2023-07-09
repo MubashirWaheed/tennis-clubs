@@ -1,12 +1,13 @@
-const clubViewLayout = () => {
-    return(
-        <main>
-            <section>
-                
-            </section>
-            {children}
-        </main>
-    )
-}
+
+
+const clubViewLayout = ({ children }) => {
+  return (
+    <main>
+      
+
+      {children}
+    </main>
+  );
+};
 
 export default clubViewLayout;

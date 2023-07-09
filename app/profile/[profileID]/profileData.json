@@ -1,0 +1,199 @@
+{
+  "overview": {
+    "recentResults": [
+      {
+        "dateAndTime": "SAT APR 29 AT 11:30AM",
+        "winner": "team1",
+        "team1": {
+          "location": "france",
+          "player1": "K. Hernandez Mari...  11.21",
+          "player2": "L. Mendoza  11.21"
+        },
+        "team2": {
+          "location": "france",
+          "player1": "K. Hernandez Mari...  11.21",
+          "player2": "L. Mendoza  11.21"
+        }
+      },
+      {
+        "dateAndTime": "SAT APR 29 AT 11:30AM",
+        "winner": "team1",
+        "team1": {
+          "location": "france",
+          "player1": "K. Hernandez Mari...  11.21",
+          "player2": "L. Mendoza  11.21"
+        },
+        "team2": {
+          "location": "france",
+          "player1": "K. Hernandez Mari...  11.21",
+          "player2": "L. Mendoza  11.21"
+        }
+      }
+    ],
+    "eventsNearYou": [
+      {
+        "dateAndTime": "YESTERDAY | 6:30pm",
+        "type": "Player",
+        "hostSchool": "Galileo High School at George Washington High School",
+        "location": "UTR Pro Tennis Tour - Americas • Newport Beach, CA",
+        "prizeMoney": "$20K Prize Money",
+        "entryFee": "• $45 Entry Fees21",
+        "registration": "Registrations • UTR 12.5 - 14.5",
+        "gender": "• Men",
+        "matchType": "• Singles"
+      },
+      {
+        "dateAndTime": "YESTERDAY | 6:30pm",
+        "type": "Player",
+        "hostSchool": "Galileo High School at George Washington High School",
+        "location": "UTR Pro Tennis Tour - Americas • Newport Beach, CA",
+        "prizeMoney": "$20K Prize Money",
+        "entryFee": "• $45 Entry Fees21",
+        "registration": "Registrations • UTR 12.5 - 14.5",
+        "gender": "• Men",
+        "matchType": "• Singles"
+      }
+    ]
+  },
+
+  "results": [
+    {
+      "id": "1",
+      "date": "APR 21",
+      "matchName": "Dual Match: University of Oregon vs California",
+      "matchType": "#1 Singles",
+      "matchDateAndTime": "SAT APR 29 AT 11:30AM",
+      "playerData": [
+        {
+          "isWinner": true,
+          "playerName": "K. Hernandez Mari",
+          "playerSuffix": "11.21",
+          "MPR": "13.60",
+          "score": ["7", "6"]
+        },
+        {
+          "isWinner": false,
+          "playerName": "L. Mendoza  11.21",
+          "playerSuffix": "11.21",
+          "MPR": "13.04",
+          "score": ["5", "3"]
+        }
+      ] 
+    },
+    {
+      "id": "1",
+      "date": "APR 21",
+      "matchName": "Dual Match: University of Oregon vs California",
+      "matchType": "#1 Singles",
+      "matchDateAndTime": "SAT APR 29 AT 11:30AM",
+      "playerData": [
+        {
+          "isWinner": true,
+          "playerName": "K. Hernandez Mari",
+          "playerSuffix": "11.21",
+          "MPR": "13.60",
+          "score": ["7", "6"]
+        },
+        {
+          "isWinner": false,
+          "playerName": "L. Mendoza  11.21",
+          "playerSuffix": "11.21",
+          "MPR": "13.04",
+          "score": ["5", "3"]
+        }
+      ] 
+    },
+    {
+      "id": "1",
+      "date": "APR 21",
+      "matchName": "Dual Match: University of Oregon vs California",
+      "matchType": "#1 Singles",
+      "matchDateAndTime": "SAT APR 29 AT 11:30AM",
+      "playerData": [
+        {
+          "isWinner": true,
+          "playerName": "K. Hernandez Mari",
+          "playerSuffix": "11.21",
+          "MPR": "13.60",
+          "score": ["7", "6"]
+        },
+        {
+          "isWinner": false,
+          "playerName": "L. Mendoza  11.21",
+          "playerSuffix": "11.21",
+          "MPR": "13.04",
+          "score": ["5", "3"]
+        }
+      ] 
+    },
+    {
+      "id": "1",
+      "date": "APR 21",
+      "matchName": "Dual Match: University of Oregon vs California",
+      "matchType": "#1 Singles",
+      "matchDateAndTime": "SAT APR 29 AT 11:30AM",
+      "playerData": [
+        {
+          "isWinner": true,
+          "playerName": "K. Hernandez Mari",
+          "playerSuffix": "11.21",
+          "MPR": "13.60",
+          "score": ["7", "6"]
+        },
+        {
+          "isWinner": false,
+          "playerName": "L. Mendoza  11.21",
+          "playerSuffix": "11.21",
+          "MPR": "13.04",
+          "score": ["5", "3"]
+        }
+      ] 
+    },
+    {
+      "id": "1",
+      "date": "APR 21",
+      "matchName": "Dual Match: University of Oregon vs California",
+      "matchType": "#1 Singles",
+      "matchDateAndTime": "SAT APR 29 AT 11:30AM",
+      "playerData": [
+        {
+          "isWinner": true,
+          "playerName": "K. Hernandez Mari",
+          "playerSuffix": "11.21",
+          "MPR": "13.60",
+          "score": ["7", "6"]
+        },
+        {
+          "isWinner": false,
+          "playerName": "L. Mendoza  11.21",
+          "playerSuffix": "11.21",
+          "MPR": "13.04",
+          "score": ["5", "3"]
+        }
+      ] 
+    },
+    {
+      "id": "1",
+      "date": "APR 21",
+      "matchName": "Dual Match: University of Oregon vs California",
+      "matchType": "#1 Singles",
+      "matchDateAndTime": "SAT APR 29 AT 11:30AM",
+      "playerData": [
+        {
+          "isWinner": true,
+          "playerName": "K. Hernandez Mari",
+          "playerSuffix": "11.21",
+          "MPR": "13.60",
+          "score": ["7", "6"]
+        },
+        {
+          "isWinner": false,
+          "playerName": "L. Mendoza  11.21",
+          "playerSuffix": "11.21",
+          "MPR": "13.04",
+          "score": ["5", "3"]
+        }
+      ] 
+    }
+  ]
+}

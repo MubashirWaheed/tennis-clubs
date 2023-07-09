@@ -13,7 +13,7 @@ const ProfileViewLayout = ({children}) => {
     return(
         <main>
             <section className="relative bg-[#3B2273]">
-                <div className="flex flex-row justify-between items-center h-full px-[170px] pt-[50px] pb-[80px]">
+                <div className="flex flex-row justify-between items-center h-full px-4 lg:px-0 w-full max-w-[1170px] mx-auto pt-[50px] pb-[80px]">
                     <div className="flex items-center gap-1">
                         <Image
                         src={playerProfileImage}

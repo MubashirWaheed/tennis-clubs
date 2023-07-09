@@ -1,32 +1,79 @@
 import homeData from "../../homeData.json";
-import Image from 'next/image';
+import Image from "next/image";
 import ViewAll from "@/components/ui/buttons/PrimaryButton";
 import backdropImg from "../../assets/manPlaying.png";
+import verifiedIcon from "../../assets/verifiedIcon.svg";
 import whiteHeaderLine from "../../assets/whiteHeaderLine.svg";
+
 const EventsNearYou = () => {
   return (
     <section className="h-[700px] w-[full] relative ">
-      <Image src={backdropImg} alt="Background Image" className="absolute w-full h-full object-cover z-10" />
-      
-      <div className="h-full w-full z-20 bg-[#3B2273]/95 flex flex-col gap-[50px] items-center">
-        <div className="flex flex-col gap-2">
-          <h2 className="text-[#fff] h2 ">{homeData.title}</h2>
-          <Image src={whiteHeaderLine} alt="Background Image"  />
-        </div>
-        
-        <div>
-          {
-            homeData.eventsNearYou.map((event,index) => (
-              <article key={index}>
-                
-              </article>
-            ))
-          }
+      <Image
+        src={backdropImg}
+        alt="Background Image"
+        className="absolute w-full h-full object-cover -z-10"
+      />
+
+      <div className="bg-[#3B2273]/70 h-full w-full z-20 flex flex-col gap-[50px] items-center justify-center">
+        <div className="flex flex-col items-center ">
+          <h2 className="text-[#ffffff] h2 ">Events Near You</h2>
+          <Image
+            src={whiteHeaderLine}
+            alt="whiteHeaderLine"
+            className="w-[full]"
+          />
         </div>
 
+        <div className="flex flex-row gap-[14px]">
+          {homeData.eventsNearYou.map((event, index) => (
+            <article
+              key={index}
+              className="p-[25px] bg-[#ffffff] rounded-[10px] shadow-lg"
+            >
+              <div className="flex flex-row justify-between">
+                <p className="f14 fw700 font-sans text-[#828282]">
+                  {event.dateAndTime}
+                </p>
+                <button className="tag">{event.matchStatus}</button>
+              </div>
+              <div>
+                <h5 className="relative h5 text-[#13013C] w-[317px] pt-2">
+                  <span>{event.hostSchool}</span>
+                  <span className="abolute bottom-0 left-4 right-0">
+                    <Image
+                      src={verifiedIcon}
+                      alt="verification"
+                      className="h-[18px] w-[17.114px]"
+                    />
+                  </span>
+                </h5>
+                <h6 className="h6 text-[#828282] w-[294px] h-[48px]">
+                  {event.participantSchool}
+                </h6>
+              </div>
+              <div className="flex flex-col">
+                {event.isEventFree && (
+                  <p className="f14 fw400 font-sans lh24 text-[#828282]">
+                    Free Event
+                  </p>
+                )}
+                <div className="flex flex-row gap-[2px]">
+                  <p className="f14 fw400 font-sans lh24 text-[#828282]">
+                    {event.gender}
+                  </p>
+                  <p className="f14 fw400 font-sans lh24 text-[#828282]">
+                    {event.matchType}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <ViewAll>View All</ViewAll>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default EventsNearYou
+export default EventsNearYou;

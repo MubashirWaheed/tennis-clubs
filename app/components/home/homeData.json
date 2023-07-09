@@ -1,65 +1,219 @@
 {
-    "title": "Events Near You",
-    "eventsNearYou":[
-        {
-            "dateAndTime": "YESTERDAY | 6:30pm",
-            "matchStatus": "In Progress",
-            "hostSchool": "Galileo High School at George Washington High School",
-            "participantSchool": "Raoul Wallenberg Traditional High School - Boys • San Francisco, CA",
-            "isEventFree": true, 
-            "gender": "Men",
-            "matchType": "singles"
-        },
-        {
-            "dateAndTime": "YESTERDAY | 6:30pm",
-            "matchStatus": "In Progress",
-            "hostSchool": "Galileo High School at George Washington High School",
-            "participantSchool": "Raoul Wallenberg Traditional High School - Boys • San Francisco, CA",
-            "isEventFree": true, 
-            "gender": "Men",
-            "matchType": "singles"
-        },
-        {
-            "dateAndTime": "YESTERDAY | 6:30pm",
-            "matchStatus": "In Progress",
-            "hostSchool": "Galileo High School at George Washington High School",
-            "participantSchool": "Raoul Wallenberg Traditional High School - Boys • San Francisco, CA",
-            "isEventFree": true, 
-            "gender": "Men",
-            "matchType": "singles"
-        }
-    ],
-
-    "myClubs": [],
-
-    "playersCreated": [
-        {
-            "dateAndTime":"YESTERDAY | 6:30pm",
-            "Status":"Registration Open"
-        }
-    ],
-
-    "paidHits": [],
-
-    "paidHitters": [],
-
-    "collegesNearYou": [],
-
-    "HighSchoolsNearYou": [],
-
-    "LocalPlayers": [],
-
-    "globalPlayerRankings": {
-        "filters": [""],
-        "filteredData": [
-            {
-                "id": "01",
-                "playerName": "Eliot Spizzirri",
-                "gender": "M",
-                "place": "USA",
-                "randomData1": 14.09,
-                "randomData2": 14.09
-            }
-        ]
+  "eventsNearYou": [
+    {
+      "dateAndTime": "YESTERDAY | 6:30pm",
+      "matchStatus": "In Progress",
+      "hostSchool": "Galileo High School at George Washington High School",
+      "participantSchool": "Raoul Wallenberg Traditional High School - Boys • San Francisco, CA",
+      "isEventFree": true,
+      "gender": "Men",
+      "matchType": "• Singles"
+    },
+    {
+      "dateAndTime": "YESTERDAY | 6:30pm",
+      "matchStatus": "In Progress",
+      "hostSchool": "Galileo High School at George Washington High School",
+      "participantSchool": "Raoul Wallenberg Traditional High School - Boys • San Francisco, CA",
+      "isEventFree": true,
+      "gender": "Men",
+      "matchType": "• Singles"
+    },
+    {
+      "dateAndTime": "YESTERDAY | 6:30pm",
+      "matchStatus": "In Progress",
+      "hostSchool": "Galileo High School at George Washington High School",
+      "participantSchool": "Raoul Wallenberg Traditional High School - Boys • San Francisco, CA",
+      "isEventFree": true,
+      "gender": "Men",
+      "matchType": "• Singles"
     }
+  ],
+
+  "myClubs": [],
+
+  "playersCreated": [
+    {
+      "dateAndTime": "YESTERDAY | 6:30pm",
+      "Status": "Registration Open",
+      "title": "Singles Game",
+      "location": "San Francisco, CA",
+      "hostInvitation": "Samuel C (UR) invited you to play"
+    },
+    {
+      "dateAndTime": "YESTERDAY | 6:30pm",
+      "Status": "Registration Open",
+      "title": "Singles Game",
+      "location": "San Francisco, CA",
+      "hostInvitation": "Samuel C (UR) invited you to play"
+    }
+  ],
+
+  "paidHits": [],
+
+  "paidHitters": [
+    {
+      "playerName": "Senthil Chidambaram Paid Hit",
+      "matchType": "UR • Singles",
+      "location": "San Francisco, CA"
+    },
+    {
+      "playerName": "Vivian Ovrootsky Paid Hit",
+      "matchType": "UR  • Singles Current Touring Pro",
+      "location": "San Francisco, CA"
+    },
+    {
+      "playerName": "Senthil Chidambaram Paid Hit",
+      "matchType": "UR • Singles",
+      "location": "San Francisco, CA"
+    }
+  ],
+
+  "collegesNearYou": [
+    {
+      "universityName": "Stanford University - M",
+      "location": "Berkeley, CA",
+      "Power6": "Power 6",
+      "dash": "--",
+      "Division": "Division",
+      "D1": "D1",
+      "League": "League",
+      "Pac12": "Pac-12"
+    },
+    {
+      "universityName": "University of California - W",
+      "location": "Berkeley, CA",
+      "Power6": "Power 6",
+      "dash": "--",
+      "Division": "Division",
+      "D1": "D1",
+      "League": "League",
+      "Pac12": "Pac-12"
+    },
+    {
+      "universityName": "Stanford University - M",
+      "location": "Berkeley, CA",
+      "Power6": "Power 6",
+      "dash": "--",
+      "Division": "Division",
+      "D1": "D1",
+      "League": "League",
+      "Pac12": "Pac-12"
+    }
+  ],
+
+  "HighSchoolsNearYou": [
+    {
+      "schoolName": "Menlo School -Boys",
+      "location": "Berkeley, CA",
+      "Power6": "Power 6",
+      "dash": "--"
+    },
+    {
+      "schoolName": "Menlo School -Girls",
+      "location": "Berkeley, CA",
+      "Power6": "Power 6",
+      "dash": "--"
+    },
+    {
+      "schoolName": "Menlo School -Girls",
+      "location": "Berkeley, CA",
+      "Power6": "Power 6",
+      "dash": "--"
+    }
+  ],
+
+  "LocalPlayers": [
+    {
+      "number": "13.65",
+      "base": "Max Basing",
+      "University": "Stanford"
+    },
+    {
+      "number": "13.65",
+      "base": "Max Basing",
+      "University": "Stanford"
+    },
+    {
+      "number": "13.65",
+      "base": "Max Basing",
+      "University": "Stanford"
+    },
+    {
+      "number": "13.65",
+      "base": "Max Basing",
+      "University": "Stanford"
+    },
+    {
+      "number": "13.65",
+      "base": "Max Basing",
+      "University": "Stanford"
+    },
+    {
+      "number": "13.65",
+      "base": "Max Basing",
+      "University": "Stanford"
+    }
+  ],
+
+  "globalPlayerRankings": {
+    "filters": ["U14", "U16", "U18", "HIGH SCHOOL", "COLLEGE", "PRO", "M", "F"],
+    "filteredData": [
+      {
+        "id": "01",
+        "playerName": "Eliot Spizzirri",
+        "gender": "M",
+        "place": "USA",
+        "randomData1": 14.09,
+        "randomData2": 14.09
+      },
+      {
+        "id": "01",
+        "playerName": "Bobby M. Valencia",
+        "gender": "M",
+        "place": "USA",
+        "randomData1": 14.09,
+        "randomData2": 14.09
+      },
+      {
+        "id": "01",
+        "playerName": "Martha W. Christiansen",
+        "gender": "M",
+        "place": "USA",
+        "randomData1": 14.09,
+        "randomData2": 14.09
+      },
+      {
+        "id": "01",
+        "playerName": "Richard R. Morgan",
+        "gender": "M",
+        "place": "USA",
+        "randomData1": 14.09,
+        "randomData2": 14.09
+      },
+      {
+        "id": "01",
+        "playerName": "Christopher E. Maglione",
+        "gender": "M",
+        "place": "USA",
+        "randomData1": 14.09,
+        "randomData2": 14.09
+      },
+      {
+        "id": "01",
+        "playerName": "Alfred L. Carson",
+        "gender": "M",
+        "place": "USA",
+        "randomData1": 14.09,
+        "randomData2": 14.09
+      },
+      {
+        "id": "07",
+        "playerName": "Carol J. Onea",
+        "gender": "M",
+        "place": "USA",
+        "randomData1": 14.09,
+        "randomData2": 14.09
+      }
+    ]
+  }
 }
