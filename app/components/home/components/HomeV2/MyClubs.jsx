@@ -5,7 +5,7 @@ import ViewAll from "@/components/ui/buttons/PrimaryButton";
 
 const MyClubs = () => {
   return (
-    <section className="w-[full] px-[185px] py-[90px]">
+    <section className="w-[full] py-[90px]">
       <div className=" h-full w-full flex flex-col  items-center justify-center">
         <div className="flex flex-row items-center justify-between w-full">
           <h2 className="text-[#13013c] h2 "> My clubs, teams and groups</h2>

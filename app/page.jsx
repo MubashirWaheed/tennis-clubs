@@ -14,6 +14,7 @@ import Image from "next/image";
 import playerImage from "./assets/homePagePlayer.png";
 import { useRouter } from "next/navigation";
 import LoggedInHomeV2 from "./components/home/LoggedInHomeV2";
+// import LoggedInHome from "./components/home/LoggedInHome";
 
 const Home = () => {
   const router = useRouter();

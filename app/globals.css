@@ -45,11 +45,9 @@
   font-style: normal !important;
   font-weight: 700 !important;
 }
-
 .f-Abril{
   font-family: "Abril Fatface", Arial, Helvetica, sans-serif;
 }
-
 .tag {
   border-radius: 50px !important;
   background: #027333 !important;
@@ -115,6 +113,7 @@
 .lh50 {
   line-height: 50px !important;
 }
+
 .footer {
   background: url(./assets/girlPotrait.png) cover center !important;
 }

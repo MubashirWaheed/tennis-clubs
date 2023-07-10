@@ -13,7 +13,7 @@ const CollegesNearYou = () => {
   };
 
   return (
-    <section className="px-[186px] py-[90px] w-[full] bg-[#fff]">
+    <section className=" py-[90px] w-[full] bg-[#fff]">
       <div className=" h-full w-full flex flex-col items-center justify-center">
         <div className="flex flex-row items-center justify-between w-full">
           <h2 className="text-[#13013c] h2 ">Colleges Near You</h2>

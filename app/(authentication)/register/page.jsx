@@ -1,36 +1,32 @@
-import Image from "next/image";
-import Register from "./components/register";
-import circlesIcon from "../assets/circles.svg";
-import headerLineIcon from "../assets/headerLine.svg";
-import vector1 from "../assets/vector-1.svg"
-import vector2 from "../assets/vector-2.svg"
-import vector3 from "../assets/vector-3.svg"
-import vector4 from "../assets/vector-4.svg"
-import vector5 from "../assets/vector-5.svg"
-import vector6 from "../assets/vector-6.svg"
+import Link from "next/link"
+import RegisterForm from "./components/RegisterForm"
 
 const RegisterAsAPlayer = () => {
     return(
-        <main className="relative bg-[#3B2273] px-[180px] h-[900px] flex items-center gap-[54px]">
-            <section className="relative flex flex-col items-start gap-[31px]">
-                <h1 className="h2 text-white w-[541px]">Join the Tennis Revolution - The Ultimate Tennis Community Awaits!</h1>
-                <div className="flex flex-col gap-[17px] items-start">
-                    <Image src={headerLineIcon} alt="headerLine" className="w-[119px] h-[20px]"/>
-                    <p className="f16 fw400 lh24 text-white w-[504px]">The game is scored using a system of points, games, and sets. A point is awarded for each time a player wins a rally (a series of back-and-forth shots). Games are won by the first player or team to win four points, with a two-point lead. Sets are won by the first player or team to win six games.</p>
-                </div>
+        <section className={styles.formContainer}>
+            <div className="px-[37px] py-[32px] w-full flex flex-col gap-[30px]">
+                <h1 className="h3 text-[#13013C] w-[412px]">Create your profile, get rated, and <span className="h3 text-[#FFBB34]">start playing!</span></h1>
+                
+                <RegisterForm />
 
-                <Image src={circlesIcon} alt={"Circles"} className="absolute -top-[35px] -left-[35px] w-[70px] h-[70px]"/>
-            </section>
-            <Register />
-            
-                <Image src={vector4} alt="Vector1" className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[350px] h-[480px]"/>
-                <Image src={vector1} alt="Vector2" className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[400px] h-[540px]"/>
-                <Image src={vector2} alt="Vector3" className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[450px] h-[600px]"/>
-                <Image src={vector3} alt="Vector4" className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[500px] h-[660px]"/>
-                <Image src={vector5} alt="Vector5" className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[550px] h-[890px]"/>
-                <Image src={vector6} alt="Vector6" className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[600px] h-[900px]"/>
-        </main>
+                <div className="flex flex-col gap-[106px]">
+                    <div className="flex items-center justify-between">
+                    <p className="text-center f16 fw700 lh24 text-[#13013C]">Register With :</p>
+                        <div className="flex gap=[8px] items-center">
+                            <button className="h-[50px] w-[50px] rounded-sm shadow-md">G</button>
+                            <button className="h-[50px] w-[50px] rounded-sm shadow-md">F</button>
+                        </div>
+                    </div>
+                    <p className="text-center f18 fw400 lh30 text-[#828282]">Already have an account? 
+                    <Link href={"/signin"} className="text-[#13013C]">Sign In</Link></p>
+                </div>
+            </div>
+        </section>
     )
+}
+const styles = {
+    formContainer: "rounded-[10px] bg-[#FFFFFF] w-[581px] z-20",
+    formHeader: "h4 text-[#13013C]",
 }
 
 export default RegisterAsAPlayer;

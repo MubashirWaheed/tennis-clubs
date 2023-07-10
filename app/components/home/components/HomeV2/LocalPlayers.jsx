@@ -8,7 +8,7 @@ import Maskgroup from "../../assets/Mask group.png";
 
 const LocalPlayers = () => {
   return (
-    <section className="px-[185px] py-[90px] w-[full]  ">
+    <section className="py-[90px] w-[full]  ">
       <div className=" h-full w-full flex flex-col items-center justify-center">
         <div className="flex flex-row items-center justify-between w-full">
           <h2 className="text-[#13013c] h2 ">Local Players</h2>

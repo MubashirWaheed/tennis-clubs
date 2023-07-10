@@ -3,7 +3,7 @@ import Image from "next/image";
 import blueHeaderLine from "../../assets/blueHeaderLine.svg";
 const GlobalPlayerRankings = () => {
   return (
-    <section className="bg-[#FAFBFF] py-[95px] px-[185px] w-full flex flex-col items-center">
+    <section className="bg-[#FAFBFF] py-[95px]  w-full flex flex-col items-center">
       <div className="flex flex-col w-full">
         {/* Header */}
         <div className="flex flex-row items-center justify-between w-full">

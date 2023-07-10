@@ -4,7 +4,7 @@ import Group from "../../assets/Group.svg";
 
 const PaidHitters = () => {
   return (
-    <section className="px-[186px] py-[100px] w-[full]  bg-[#fafbff]">
+    <section className="py-[100px] w-[full]  bg-[#fafbff]">
       <div className=" h-full w-full flex flex-col items-center justify-center">
         <div className="flex flex-row items-center justify-between w-full">
           <h2 className="text-[#13013c] h2 ">Paid Hitters</h2>

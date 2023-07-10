@@ -9,7 +9,7 @@ import IPlay from "@/components/ui/buttons/PrimaryButton";
 
 const PlayersNearYou = () => {
   return (
-    <section className=" w-[full]  px-[185px] py-[90px] bg-[#fafbff]">
+    <section className=" w-[full]  py-[90px] bg-[#fafbff]">
       <div className=" h-full w-full flex flex-col  justify-center">
         <div className="flex flex-row items-center justify-between w-full">
           <h2 className="text-[#13013c] h2 ">Player Created Plays Near You</h2>
