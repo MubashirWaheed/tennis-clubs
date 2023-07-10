@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import DropDown from "./assets/dropdown.svg";
+import DropDown from "@/components/ui/inputFields/assets/dropdown.svg";
+
 import Image from "next/image";
 const AutoComplete = ({ id, value, setValue, label }) => {
   const [filteredData, setFilteredData] = React.useState([]);

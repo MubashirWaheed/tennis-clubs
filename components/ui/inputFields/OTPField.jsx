@@ -1,5 +1,5 @@
 import Image from "next/image";
-import VerifiedIcon from "./assets/OTPVerified.svg";
+import VerifiedIcon from "@/components/ui/inputFields/assets/OTPVerified.svg";
 
 const OTPField = ({ value, onChange}) => {
     return (

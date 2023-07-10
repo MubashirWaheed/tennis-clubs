@@ -1,12 +1,12 @@
 import Image from "next/image";
-import circlesIcon from "../assets/circles.svg";
-import headerLineIcon from "../assets/headerLine.svg";
-import vector1 from "../assets/vector-1.svg"
-import vector2 from "../assets/vector-2.svg"
-import vector3 from "../assets/vector-3.svg"
-import vector4 from "../assets/vector-4.svg"
-import vector5 from "../assets/vector-5.svg"
-import vector6 from "../assets/vector-6.svg"
+import circlesIcon from "@/app/(authentication)/assets/circles.svg";
+import headerLineIcon from "@/app/(authentication)/assets/headerLine.svg";
+import vector1 from "@/app/(authentication)/assets/vector-1.svg"
+import vector2 from "@/app/(authentication)/assets/vector-2.svg"
+import vector3 from "@/app/(authentication)/assets/vector-3.svg"
+import vector4 from "@/app/(authentication)/assets/vector-4.svg"
+import vector5 from "@/app/(authentication)/assets/vector-5.svg"
+import vector6 from "@/app/(authentication)/assets/vector-6.svg"
 
 const RegisterLayout = ({ children}) => {
     return (

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import rightArrowIcon from "../assets/rightArrow.svg";
+import rightArrowIcon from "@/components/ui/assets/rightArrow.svg";
 
 const PrimaryButton = ({ children, type, onClick, size }) => {
   return (

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import SelectedIcon from "./assets/RadioOptionSelected.svg";
-import NotSelectedIcon from "./assets/RadioOptionNotSelected.svg";
+import SelectedIcon from "@/components/ui/inputFields/assets/RadioOptionSelected.svg";
+import NotSelectedIcon from "@/components/ui/inputFields/assets/RadioOptionNotSelected.svg";
 
 const RadioOption = ({ children, value, selectedOption, onSelect }) => {
   const isSelected = value === selectedOption;

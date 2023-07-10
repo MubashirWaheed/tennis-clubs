@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import LocationIcon from "./assets/locationIcon.svg";
+import LocationIcon from "@/components/ui/inputFields/assets/locationIcon.svg";
 
 const LocationField = ({ id, value, onChange, label }) => {
 

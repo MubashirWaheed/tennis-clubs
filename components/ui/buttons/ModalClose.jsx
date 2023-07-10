@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import close from "../assets/close.svg";
+import close from "@/components/ui/assets/close.svg";
 
 const ModalClose = () => {
   return (

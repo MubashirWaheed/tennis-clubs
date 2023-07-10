@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-// import College1 from "../../assets/College1.png";
-// import College2 from "../../assets/College2.png";
-// import College3 from "../../assets/College3.png";
+import College1 from "@/app/components/home/assets/College1.png";
+import College2 from "@/app/components/home/assets/College2.png";
+import College3 from "@/app/components/home/assets/College3.png";
 import homeData from "../../homeData.json";
 
 const CollegesNearYou = () => {
@@ -38,7 +38,7 @@ const CollegesNearYou = () => {
                   </p>
                 </div>
                 <div className="w-[70px] px-[7px] py-[10px]">
-                 
+                  <Image src={collegeLogos[index]} alt="" className="rounded-full" />
                 </div>
               </div>
 
