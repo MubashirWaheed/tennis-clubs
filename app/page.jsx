@@ -4,8 +4,8 @@ import JoinClubBTN from "../components/ui/buttons/PrimaryButton";
 import Image from "next/image";
 
 import { useRouter } from "next/navigation";
-// import LoggedInHomeV2 from "./components/home/LoggedInHomeV2";
-import LoggedInHome from "./components/home/LoggedInHome";
+import LoggedInHomeV2 from "./components/home/LoggedInHomeV2";
+// import LoggedInHome from "./components/home/LoggedInHome";
 
 const Home = () => {
   const router = useRouter();
@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <>
       {isLoggedIn ? (
-        <LoggedInHome />
+        <LoggedInHomeV2 />
       ) : (
         <main className="relative bg-[#3B2273] px-[180px] h-[900px] flex items-center gap-[35px]">
           <section className="relative flex flex-col items-start gap-[31px]">
