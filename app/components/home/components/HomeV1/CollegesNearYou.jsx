@@ -1,17 +1,15 @@
 import React from "react";
-import blueHeaderLine from "../../assets/blueHeaderLine.svg";
 import Image from "next/image";
-import College1 from "../../assets/College1.png";
-import College2 from "../../assets/College2.png";
-import College3 from "../../assets/College3.png";
+
 import ViewAll from "@/components/ui/buttons/PrimaryButton";
 import homeData from "../../homeData.json";
 
 const CollegesNearYou = () => {
+  
   const collegeLogos = {
-    0: College1,
-    1: College2,
-    2: College3,
+    0: "/college1.png",
+    1: "/college2.png",
+    2: "/college3.png",
   };
 
   return (
@@ -20,9 +18,11 @@ const CollegesNearYou = () => {
         <div className="flex flex-col items-center gap-[15px]">
           <h2 className="text-[#13013C] h2 ">Colleges Near You</h2>
           <Image
-            src={blueHeaderLine}
+          width={119}
+          height={20}
+            src="/blueHeaderLine.svg"
             alt="blueHeaderLine"
-            className="w-[full]"
+            className="w-[119px] h-[20px]"
           />
         </div>
 
@@ -42,9 +42,11 @@ const CollegesNearYou = () => {
                   </p>
                 </div>
                 <Image
+                width={70}
+                height={70}
                   src={collegeLogos[index]}
                   alt="College1"
-                  className="w-[70px] rounded-full"
+                  className="w-[70px] h-[70px] rounded-full"
                 />
               </div>
 

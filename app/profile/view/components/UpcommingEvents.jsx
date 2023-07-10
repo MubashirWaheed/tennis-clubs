@@ -1,9 +1,6 @@
 import Image from "next/image";
-import FindEventButton from "@/components/ui/buttons/PrimaryButton";
-import VerifiedIcon from "../../assets/verify.svg";
 import ProfileView from "../profileView.json";
 import PlayEvent from "@/components/ui/buttons/PrimaryButton";
-import cardimg from "../../assets/potraitimg.png";
 
 const Events = () => {
   return (
@@ -34,9 +31,11 @@ const Events = () => {
                   </h5>
 
                   <Image
-                    src={VerifiedIcon}
+                  width={17}
+                  height={18}
+                    src="/verifiedIcon.svg"
                     alt="verification"
-                    className="h-[18px] w-[17.114px] relative top-[14px] right-[70px]"
+                    className="h-[18px] w-[17px] relative top-[14px] right-[70px]"
                   />
                 </div>
                 <h6 className="h6 text-[#828282] w-[294px] h-[48px]">
@@ -66,7 +65,9 @@ const Events = () => {
 
           <div className="relative p-[20px]  w-[416px] h-[277px] border border-[#000] border-dashed rounded-[10px]">
             <Image
-              src={cardimg}
+            width={416}
+            height={277}
+              src="/potraitimg.png"
               alt="cardimg"
               className="object-cover w-full h-full absolute top-0 left-0 right-0 bottom-0 -z-10 rounded-[10px]"
             />

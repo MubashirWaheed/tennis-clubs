@@ -1,7 +1,5 @@
 import homeData from "../../homeData.json";
 import Image from "next/image";
-import ViewAll from "@/components/ui/buttons/PrimaryButton";
-import verifiedIcon from "../../assets/verifiedIcon.svg";
 
 const EventsNearYou = () => {
   return (
@@ -29,7 +27,9 @@ const EventsNearYou = () => {
                   <span>{event.hostSchool}</span>
                   <span className="abolute bottom-0 left-4 right-0">
                     <Image
-                      src={verifiedIcon}
+                      width={18}
+                      height={18}
+                      src="/verifiedIcon.svg"
                       alt="verification"
                       className="h-[18px] w-[17.114px]"
                     />

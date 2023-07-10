@@ -1,9 +1,5 @@
 import homeData from "../../homeData.json";
 import Image from "next/image";
-import blueHeaderLine from "../../assets/blueHeaderLine.svg";
-import Ellipse from "../../assets/Ellipse.svg";
-import User from "../../assets/User.svg";
-
 import IPass from "@/components/ui/buttons/SecondaryButton";
 import IPlay from "@/components/ui/buttons/PrimaryButton";
 
@@ -41,9 +37,17 @@ const PlayersNearYou = () => {
 
               <div className="flex  items-center gap-[14px]">
                 <div className="w-[35px] flex  items-center">
-                  <Image src={Ellipse} alt="Ellipse" className="w-[full]" />
                   <Image
-                    src={User}
+                    width={35}
+                    height={35}
+                    src="/Ellipse.svg"
+                    alt="Ellipse"
+                    className="w-[full]"
+                  />
+                  <Image
+                    width={21}
+                    height={21}
+                    src="/User.svg"
                     alt="User"
                     className="w-[full] relative right-7"
                   />
@@ -53,8 +57,8 @@ const PlayersNearYou = () => {
                 </p>
               </div>
               <div className="flex justify-end gap-[10px] mt-[27px]">
-                <IPass>I'll Pass</IPass>
-                <IPlay>I'll Play</IPlay>
+                <IPass>I ll Pass</IPass>
+                <IPlay>I ll Play</IPlay>
               </div>
             </article>
           ))}

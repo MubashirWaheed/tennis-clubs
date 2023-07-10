@@ -1,19 +1,20 @@
 import footerMenu from "./footerMenu.json";
-import phoneIcon from "./assets/call.svg";
-import smsIcon from "./assets/sms.svg";
-import GirlPotrait from "./assets/girlPotrait.png";
-import GroupIcon from "./assets/Groupicons.svg";
-import underlineIcon from "./assets/underline.svg";
+
 import Image from "next/image";
-import Logo from "../../assets/Logo.svg";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="footer pl-[185px] py-[74px] pr-[350px] border-4 border-t-[#3B2273] relative">
-      <div className="flex justify-between items-start ">
+    <footer className="border-t-4 h-[503px] border-[#3B2273] relative flex flex-col justify-between">
+      <div className="relative -left-[80px] flex items-start justify-between w-full max-w-[1170px] mx-auto">
         <div className="flex flex-col gap-[17px] items-start">
-          <Image src={Logo} alt="MPR Logo" />
+          <Image
+            width={114}
+            height={96}
+            src="/Logo.svg"
+            alt="MPR Logo"
+            className="w-[114.09px] h-[96px]"
+          />
 
           <p className="w-[385px] f16 fw400 lh24 text-[#828282]">
             Another important feature could be profiles of famous tennis players
@@ -22,7 +23,9 @@ const Footer = () => {
           </p>
 
           <Image
-            src={GroupIcon}
+            width={123}
+            height={44}
+            src="/Groupicons.svg"
             alt="GroupIcon"
             className="w-[123px] h-[44px]"
           />
@@ -33,7 +36,9 @@ const Footer = () => {
               <div className="flex flex-col gap-[11px]">
                 <h1 className="h4">Contact Us</h1>
                 <Image
-                  src={underlineIcon}
+                  width={85}
+                  height={3}
+                  src="/underline.svg"
                   alt="underlineIcon"
                   className="w-[85px] h-[3px]"
                 />
@@ -57,7 +62,9 @@ const Footer = () => {
           <div className="flex flex-col gap-[11px]">
             <h1 className="h4">Contact Us</h1>
             <Image
-              src={underlineIcon}
+              width={85}
+              height={3}
+              src="/underline.svg"
               alt="underlineIcon"
               className="w-[85px] h-[3px]"
             />
@@ -69,7 +76,9 @@ const Footer = () => {
                 href="tel:+8615888033338"
               >
                 <Image
-                  src={phoneIcon}
+                  width={20}
+                  height={20}
+                  src="/call.svg"
                   alt="Phone Icon"
                   className="w-[20px] h-[20px]"
                 />
@@ -83,7 +92,9 @@ const Footer = () => {
                 target="blank"
               >
                 <Image
-                  src={smsIcon}
+                  width={20}
+                  height={20}
+                  src="/sms.svg"
                   alt="SMS Icon"
                   className="w-[20px] h-[20px]"
                 />
@@ -94,13 +105,16 @@ const Footer = () => {
         </div>
       </div>
       <Image
-        src={GirlPotrait}
+        src="/girlPotrait.png"
+        width={1540}
+        height={503}
         alt="GirlPotrait"
-        className="absolute bottom-0 right-0 top-1"
+        className="absolute inset-0"
       />
-      <div className="text-center w-full relative">
-        <p className="f16 fw400 lh24 text-[#828282] absolute bottom-[-140px] left-[100px] w-full">
-          Copyright 2022 <span className="text-[#13013c]">MPR</span> All Rights
+
+      <div className=" w-full border-t-2 py-[34px] flex items-center justify-center border-[#828282]">
+        <p className="f16 fw400 lh24">
+          Copyright 2022 <span className="text-[#3B2273]">MPR</span> All Rights
           Reserved
         </p>
       </div>

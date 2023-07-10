@@ -1,5 +1,3 @@
-import verifiedIcon from "./assets/verifiedIcon (2).svg";
-import logo from "./assets/logo (2).svg";
 import Image from "next/image";
 
 const ResultCard = ({ result }) => {
@@ -26,11 +24,19 @@ const ResultCard = ({ result }) => {
               {result?.matchDateAndTime}
             </p>
             <Image
-              src={verifiedIcon}
+              width={19}
+              height={20}
+              src="/verifiedIcon.svg"
               alt="Verified Icon"
               className="w-[19px] h-[20px]"
             />
-            <Image src={logo} alt="Logo" className="w-[24px] h-[20px]" />
+            <Image
+              width={24}
+                    height={20}
+              src="/Logo.svg"
+              alt="Logo"
+              className="w-[24px] h-[20px]"
+            />
           </div>
           <div></div>
         </div>

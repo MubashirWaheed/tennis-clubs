@@ -1,6 +1,5 @@
 import homeData from "../../homeData.json";
 import Image from "next/image";
-import Group from "../../assets/Group.svg";
 
 const PaidHitters = () => {
   return (
@@ -33,7 +32,7 @@ const PaidHitters = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-[1px]">
-                <Image src={Group} alt="Group" className="w-[50px]" />
+                <Image src="/Group.svg" width={50} height={ 50} alt="Group" className="w-[50px]" />
               </div>
             </article>
           ))}

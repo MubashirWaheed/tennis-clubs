@@ -2,7 +2,6 @@ import AutoComplete from "@/components/ui/inputFields/AutoComplete";
 import TextArea from "@/components/ui/inputFields/TextArea";
 import TextField from "@/components/ui/inputFields/TextField";
 import Image from "next/image";
-import Checkbox from "../assets/Checkbox.svg";
 
 const PlayerInfoEditor = () => {
   return (
@@ -45,7 +44,7 @@ const PlayerInfoEditor = () => {
         </div>
 
         <div className="flex items-center gap-[6px] mt-[24px]">
-          <Image src={Checkbox} alt="Checkbox" className="w-[20px] h-[20px]" />
+          <Image width={20 } height={ 20} src="/Checkbox.svg" alt="Checkbox" className="w-[20px] h-[20px]" />
           <p className="text-[#828282] f14 fw400 lh22">
             Ranked on the WTA tour (current or historical)
           </p>

@@ -1,15 +1,15 @@
 import homeData from "../../homeData.json";
 import Image from "next/image";
 import ViewAll from "@/components/ui/buttons/PrimaryButton";
-import backdropImg from "../../assets/manPlaying.png";
-import verifiedIcon from "../../assets/verifiedIcon.svg";
-import whiteHeaderLine from "../../assets/whiteHeaderLine.svg";
+
 
 const EventsNearYou = () => {
   return (
     <section className="h-[700px] w-[full] relative ">
       <Image
-        src={backdropImg}
+      width={1540}
+      height={700}
+        src="/manPlaying.png"
         alt="Background Image"
         className="absolute w-full h-full object-cover -z-10"
       />
@@ -18,9 +18,11 @@ const EventsNearYou = () => {
         <div className="flex flex-col items-center ">
           <h2 className="text-[#ffffff] h2 ">Events Near You</h2>
           <Image
-            src={whiteHeaderLine}
+          width={119}
+          height={20}
+            src="/whiteHeaderLine.svg"
             alt="whiteHeaderLine"
-            className="w-[full]"
+            className="w-[119px] h-[20px]"
           />
         </div>
 
@@ -41,9 +43,11 @@ const EventsNearYou = () => {
                   <span>{event.hostSchool}</span>
                   <span className="abolute bottom-0 left-4 right-0">
                     <Image
-                      src={verifiedIcon}
+                    width={17}
+                    height={18}
+                      src="/verifiedIcon.svg"
                       alt="verification"
-                      className="h-[18px] w-[17.114px]"
+                      className="h-[18px] w-[17px]"
                     />
                   </span>
                 </h5>

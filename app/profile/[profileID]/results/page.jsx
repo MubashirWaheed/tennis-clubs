@@ -2,7 +2,6 @@ import AutoComplete from "@/components/ui/inputFields/AutoComplete";
 import profileData from "../profileData.json";
 import ResultCard from "./ResultCard";
 import Image from "next/image";
-import Age from "./assets/age.svg";
 const Results = () => {
   return (
     <section>
@@ -20,7 +19,13 @@ const Results = () => {
           <div className="bg-[#fff] rounded-[15px] shadow-lg px-[27px] py-[31px] relative w-[380px] h-[110px]">
             <p className="f20 fw400 lh30 text-[#3B2273]">About</p>
             <p className="f16 fw700 lh28 text-[#828282]">Age : 20</p>
-            <Image src={Age} alt="Age" className="absolute bottom-0 right-0" />
+            <Image
+            width={74}
+            height={74}
+              src="/age.svg"
+              alt="Age"
+              className="absolute bottom-0 right-0 w-[74px] h-[74px]"
+            />
           </div>
         </div>
       </div>

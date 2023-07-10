@@ -1,7 +1,4 @@
 import React from "react";
-import blueHeaderLine from "../../assets/blueHeaderLine.svg";
-import Image from "next/image";
-import ViewAll from "@/components/ui/buttons/PrimaryButton";
 
 const MyClubs = () => {
   return (

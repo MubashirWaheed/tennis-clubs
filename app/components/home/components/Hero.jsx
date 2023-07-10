@@ -1,7 +1,4 @@
 import Image from "next/image";
-import Ball from "../../../assets/Ball.svg";
-import HorizontalBat from "../../../assets/HorizontalBat.svg";
-import VerticalBat from "../../../assets/VerticalBat.svg";
 import FindPlay from "@/components/ui/buttons/PrimaryButton";
 
 const Hero = () => {
@@ -44,12 +41,26 @@ const Hero = () => {
       </div>
 
       <Image
-        src={Ball}
-        alt=""
-        className="absolute bottom-0 right-0 w-[100px] h-[100px] object-contain"
+        src="/Ball.svg"
+        width={100}
+        height={100}
+        alt="Ball Image"
+        className="absolute bottom-0 right-0 object-contain"
       />
-      <Image src={HorizontalBat} alt="" className="absolute left-0 bottom-2" />
-      <Image src={VerticalBat} alt="" className="absolute left-0 bottom-0" />
+      <Image
+        width={132}
+        height={111}
+        src="/HorizontalBat.svg"
+        alt=""
+        className="absolute left-0 bottom-2 w-[132px] h-[111px]"
+      />
+      <Image
+      width={132}
+      height={111}
+        src="/VerticalBat.svg"
+        alt=""
+        className="absolute left-0 bottom-0 w-[132px] h-[111px]"
+      />
     </section>
   );
 };

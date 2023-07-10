@@ -1,21 +1,28 @@
 import Image from "next/image";
-import VerifiedIcon from "@/components/ui/inputFields/assets/OTPVerified.svg";
 
 const OTPField = ({ value, onChange}) => {
     return (
-        <div className={styles.OTPField}>
-            <div className="flex-1 flex flex-col items-start gap-1">
-                <label className={styles.label} htmlFor={"otp"}>OTP</label>
-                <input
-                    className={styles.input}
-                    value={value}
-                    onChange={onChange}
-                    id={"otp"}
-                    type="tel"
-                />
-            </div>
-            <Image src={VerifiedIcon} alt="OTP Verified Icon" className="w-[28px] h-[28px] cursor-pointer"/>
+      <div className={styles.OTPField}>
+        <div className="flex-1 flex flex-col items-start gap-1">
+          <label className={styles.label} htmlFor={"otp"}>
+            OTP
+          </label>
+          <input
+            className={styles.input}
+            value={value}
+            onChange={onChange}
+            id={"otp"}
+            type="tel"
+          />
         </div>
+        <Image
+          src="/OTPVerified.svg"
+          width={28}
+          height={28}
+          alt="OTP Verified Icon"
+          className="w-[28px] h-[28px] cursor-pointer"
+        />
+      </div>
     );
 };
 

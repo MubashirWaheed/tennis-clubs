@@ -1,6 +1,4 @@
 import Image from "next/image";
-import VerifiedIcon from "../../assets/verifiedIcon.svg";
-import upComingEventsCard from "../../assets/upComingEventsCard.png";
 import PlayEvent from "@/components/ui/buttons/PrimaryButton";
 import homeData from "../../homeData.json";
 
@@ -34,7 +32,9 @@ const UpcomingEvents = () => {
                   </h5>
 
                   <Image
-                    src={VerifiedIcon}
+                    width={18}
+                    height={17}
+                    src="/verifiedIcon.svg"
                     alt="verification"
                     className="h-[18px] w-[17.114px] relative top-[14px] right-[70px]"
                   />
@@ -66,7 +66,9 @@ const UpcomingEvents = () => {
 
           <div className="relative p-[20px]  w-[416px] h-[277px] border border-[#000] border-dashed rounded-[10px]">
             <Image
-              src={upComingEventsCard}
+              width={416}
+              height={277}
+              src="/upComingEventsCard.png"
               alt="upComingEventsCard"
               className="object-cover w-full h-full absolute inset-0 -z-10 rounded-[10px] pointer-events-none"
             />

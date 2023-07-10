@@ -1,4 +1,3 @@
-import verifiedIcon from "../../assets/verify.svg";
 import profileData from "../profileData.json";
 import Image from "next/image";
 
@@ -24,9 +23,11 @@ export default function EventsNearYou() {
                     <span>{event.hostSchool}</span>
 
                     <Image
-                    src={verifiedIcon}
+                    width={17}
+                    height={18}
+                    src="/verifiedIcon.svg"
                     alt="verification"
-                    className="h-[18px] w-[17.114px] relative top-[16px] right-[70px]"
+                    className="h-[18px] w-[17px] relative top-[16px] right-[70px]"
                     />
                 </h5>
                 <h6 className="h6 text-[#828282] w-[294px] h-[48px]">

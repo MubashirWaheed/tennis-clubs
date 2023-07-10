@@ -1,15 +1,15 @@
 import homeData from "../../homeData.json";
 import Image from "next/image";
 import ViewAll from "@/components/ui/buttons/PrimaryButton";
-import backdropImg from "../../assets/tenniscourt.png";
-import Group from "../../assets/Group.svg";
-import whiteHeaderLine from "../../assets/whiteHeaderLine.svg";
+
 
 const PaidHitters = () => {
   return (
     <section className="h-[700px] w-[full] relative bg-white">
       <Image
-        src={backdropImg}
+      width={1540}
+      height={700}
+        src="/tenniscourt.png"
         alt="Background Image"
         className="absolute w-full h-full object-cover -z-10 pointer-events-none"
       />
@@ -18,9 +18,11 @@ const PaidHitters = () => {
         <div className="flex flex-col items-center gap-[14px]">
           <h2 className="text-[#ffffff] h2 ">Paid Hitters</h2>
           <Image
-            src={whiteHeaderLine}
+          width={119}
+          height={20}
+            src="/whiteHeaderLine.svg"
             alt="whiteHeaderLine"
-            className="w-[full]"
+            className="w-[119px] h-[20px]"
           />
         </div>
 
@@ -44,7 +46,7 @@ const PaidHitters = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-[1px]">
-                <Image src={Group} alt="Group" className="w-[50px]" />
+                <Image width={50 } height={50} src="/Group.svg" alt="Group" className="w-[50px]" />
               </div>
             </article>
           ))}

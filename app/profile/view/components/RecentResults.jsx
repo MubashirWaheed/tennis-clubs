@@ -1,5 +1,4 @@
 import Image from "next/image";
-import cake from "../../assets/cake.svg";
 import PostScore from "@/components/ui/buttons/PrimaryButton";
 
 const RecentResults = () => {
@@ -18,9 +17,11 @@ const RecentResults = () => {
             <p className="about">About</p>
             <p className="f16 fw700 lh24 text-[#828282] mt-[10px]">Age : 20</p>
             <Image
-              src={cake}
+            width={74}
+            height={74}
+              src="/cake.svg"
               alt="cake"
-              className="absolute bottom-0 right-0"
+              className="absolute bottom-0 right-0 h-[74px] w-[74px] "
             />
           </div>
         </div>

@@ -1,8 +1,5 @@
 import AutoComplete from "@/components/ui/inputFields/AutoComplete";
-import TextArea from "@/components/ui/inputFields/TextArea";
 import TextField from "@/components/ui/inputFields/TextField";
-import DefaultChecbox from "../assets/DefaultCheckbox.svg";
-import Checkbox from "../assets/Checkbox.svg";
 import Image from "next/image";
 
 const ProfileEditor = () => {
@@ -26,7 +23,9 @@ const ProfileEditor = () => {
         <div className="flex items-center gap-[24px] mt-[16px]">
           <div className="flex items-center gap-[5px]">
             <Image
-              src={Checkbox}
+              width={20}
+              height={20}
+              src="/Checkbox.svg"
               alt="Checkbox"
               className="w-[20px] h-[20px]"
             />
@@ -36,7 +35,9 @@ const ProfileEditor = () => {
           </div>
           <div className="flex items-center gap-[5px]">
             <Image
-              src={DefaultChecbox}
+             width={20}
+             height={20}
+              src="/DefaultCheckbox.svg"
               alt="DefaultChecbox"
               className="w-[20px] h-[20px]"
             />

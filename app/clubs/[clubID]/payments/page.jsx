@@ -14,8 +14,6 @@ const Payments = () => {
   };
   return (
     <>
-      
-
       {/* Main */}
       <section className="relative -top-[30px] w-full max-w-[1170px] mx-auto bg-[#fff] rounded-[10px] shadow-md">
         <div className="px-[52px] py-[48px]">

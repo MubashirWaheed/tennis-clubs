@@ -1,7 +1,5 @@
 "use client";
 import Image from "next/image";
-import SelectedIcon from "@/components/ui/inputFields/assets/RadioOptionSelected.svg";
-import NotSelectedIcon from "@/components/ui/inputFields/assets/RadioOptionNotSelected.svg";
 
 const RadioOption = ({ children, value, selectedOption, onSelect }) => {
   const isSelected = value === selectedOption;
@@ -12,13 +10,17 @@ const RadioOption = ({ children, value, selectedOption, onSelect }) => {
     >
       {isSelected ? (
         <Image
-          src={SelectedIcon}
+          width={23}
+          height={23}
+          src="/RadioOptionSelected.svg"
           alt="Selected"
           className="w-[23px] h-[23px]"
         />
       ) : (
         <Image
-          src={NotSelectedIcon}
+          width={23}
+          height={23}
+          src="/RadioOptionNotSelected.svg"
           alt="Not Selected"
           className="w-[23px] h-[23px]"
         />

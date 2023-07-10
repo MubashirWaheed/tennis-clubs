@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import DropDown from "@/components/ui/inputFields/assets/dropdown.svg";
 
 import Image from "next/image";
 const AutoComplete = ({ id, value, setValue, label }) => {
@@ -17,6 +16,7 @@ const AutoComplete = ({ id, value, setValue, label }) => {
             {label}
           </label>
           <input
+            
             className={styles.input}
             value={value}
             type="text"
@@ -25,7 +25,13 @@ const AutoComplete = ({ id, value, setValue, label }) => {
           />
         </div>
 
-        <Image src={DropDown} alt="Drop Down" className="w-[20px] h-[20px]" />
+        <Image
+           width={20}
+           height={20}
+          src="/dropdown.svg"
+          alt="Drop Down"
+          className="w-[20px] h-[20px]"
+        />
       </div>
       <div className="absolute inset-x-0 w-full mt-2 shadow-lg"></div>
     </div>

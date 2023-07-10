@@ -1,4 +1,3 @@
-import VerifiedIcon from "../../assets/verify.svg";
 import ProfileView from "../profileView.json";
 import Image from "next/image";
 const RecentEvents = () => {
@@ -30,7 +29,9 @@ const RecentEvents = () => {
                   </h5>
 
                   <Image
-                    src={VerifiedIcon}
+                  width={17}
+                  height={18}
+                    src="/verifiedIcon.svg"
                     alt="verification"
                     className="h-[18px] w-[17.114px] relative top-[14px] right-[70px]"
                   />

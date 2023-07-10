@@ -1,16 +1,12 @@
 import homeData from "../../homeData.json";
 import Image from "next/image";
 import ViewAll from "@/components/ui/buttons/PrimaryButton";
-import School1 from "../../assets/School1.png";
-import School2 from "../../assets/School2.png";
-import School3 from "../../assets/School3.png";
-import blueHeaderLine from "../../assets/blueHeaderLine.svg";
 
 const HighSchoolsNearYou = () => {
   const schoolLogos = {
-    0: School1,
-    1: School2,
-    2: School3,
+    0: "/School1.png",
+    1: "/School2.png",
+    2: "/School3.png",
   };
   return (
     <section className="h-[680px] w-[full]">
@@ -18,9 +14,11 @@ const HighSchoolsNearYou = () => {
         <div className="flex flex-col items-center gap-[15px]">
           <h2 className="text-[#13013C] h2 ">High Schools Near You</h2>
           <Image
-            src={blueHeaderLine}
+          width={119}
+          height={20}
+            src="/blueHeaderLine.svg"
             alt="blueHeaderLine"
-            className="w-[full]"
+            className="w-[119px] h-[20px]"
           />
         </div>
 
@@ -40,9 +38,11 @@ const HighSchoolsNearYou = () => {
                   </p>
                 </div>
                 <Image
+                width={70}
+                height={70}
                   src={schoolLogos[index]}
                   alt="College1"
-                  className="w-[70px] rounded-full"
+                  className="w-[70px] h-[70px] rounded-full"
                 />
               </div>
 

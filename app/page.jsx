@@ -1,20 +1,11 @@
 "use client";
-import circlesIcon from "./(authentication)/assets/circles.svg";
-import headerLineIcon from "./(authentication)/assets/headerLine.svg";
-import vector1 from "./(authentication)/assets/vector-1.svg";
-import vector2 from "./(authentication)/assets/vector-2.svg";
-import vector3 from "./(authentication)/assets/vector-3.svg";
-import vector4 from "./(authentication)/assets/vector-4.svg";
-import vector5 from "./(authentication)/assets/vector-5.svg";
-import vector6 from "./(authentication)/assets/vector-6.svg";
 import JoinPlayerBTN from "../components/ui/buttons/PrimaryButton";
 import JoinClubBTN from "../components/ui/buttons/PrimaryButton";
 import Image from "next/image";
 
-import playerImage from "./assets/homePagePlayer.png";
 import { useRouter } from "next/navigation";
-import LoggedInHomeV2 from "./components/home/LoggedInHomeV2";
-// import LoggedInHome from "./components/home/LoggedInHome";
+// import LoggedInHomeV2 from "./components/home/LoggedInHomeV2";
+import LoggedInHome from "./components/home/LoggedInHome";
 
 const Home = () => {
   const router = useRouter();
@@ -23,7 +14,7 @@ const Home = () => {
   return (
     <>
       {isLoggedIn ? (
-        <LoggedInHomeV2 />
+        <LoggedInHome />
       ) : (
         <main className="relative bg-[#3B2273] px-[180px] h-[900px] flex items-center gap-[35px]">
           <section className="relative flex flex-col items-start gap-[31px]">
@@ -32,7 +23,9 @@ const Home = () => {
             </h1>
             <div className="flex flex-col gap-[17px] items-start">
               <Image
-                src={headerLineIcon}
+                width={119}
+                height={20}
+                src="/headerLine.svg"
                 alt="headerLine"
                 className="w-[119px] h-[20px]"
               />
@@ -60,7 +53,9 @@ const Home = () => {
               </JoinClubBTN>
             </div>
             <Image
-              src={circlesIcon}
+              width={70}
+              height={70}
+              src="/circles.svg"
               alt={"Circles"}
               className="absolute -top-[35px] -left-[35px] w-[70px] h-[70px]"
             />
@@ -69,7 +64,9 @@ const Home = () => {
           {/* Player Image on the right side. */}
           <section className="z-20 w-[751px] h-[501px]">
             <Image
-              src={playerImage}
+              width={751}
+              height={501}
+              src="/homePagePlayer.png"
               alt="Player Image On Home page"
               className="rounded-xl z-20 w-full h-full object-cover"
             />
@@ -77,34 +74,46 @@ const Home = () => {
 
           {/* Wave Design on the right side. */}
           <Image
-            src={vector4}
+            src="/vector-4.svg"
+            width={350}
+            height={480}
             alt="Vector1"
-            className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[350px] h-[480px]"
+            className="pointer-events-none z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[350px] h-[480px]"
           />
           <Image
-            src={vector1}
+            src="/vector-1.svg"
+            width={400}
+            height={540}
             alt="Vector2"
-            className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[400px] h-[540px]"
+            className="pointer-events-none z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[400px] h-[540px]"
           />
           <Image
-            src={vector2}
+            src="/vector-2.svg"
+            width={450}
+            height={600}
             alt="Vector3"
-            className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[450px] h-[600px]"
+            className="pointer-events-none z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[450px] h-[600px]"
           />
           <Image
-            src={vector3}
+            width={500}
+            height={660}
+            src="/vector-3.svg"
             alt="Vector4"
-            className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[500px] h-[660px]"
+            className="pointer-events-none z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[500px] h-[660px]"
           />
           <Image
-            src={vector5}
+            src="/vector-5.svg"
+            width={550}
+            height={890}
             alt="Vector5"
-            className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[550px] h-[890px]"
+            className="pointer-events-none z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[550px] h-[890px]"
           />
           <Image
-            src={vector6}
+            src="/vector-6.svg"
             alt="Vector6"
-            className="z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[600px] h-[900px]"
+            width={600}
+            height={900}
+            className="pointer-events-none z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[600px] h-[900px]"
           />
         </main>
       )}

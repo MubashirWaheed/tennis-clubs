@@ -1,6 +1,3 @@
-import Image from "next/image";
-import ViewAll from "@/components/ui/buttons/PrimaryButton";
-import blueHeaderLine from "../../assets/blueHeaderLine.svg";
 
 const PaidHits = () => {
   return (

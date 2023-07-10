@@ -1,17 +1,10 @@
 import clubData from "./clubData.json";
 import Image from "next/image";
 import Link from "next/link";
-import mapblue from "./assets/mapblue.svg";
-import location from "./assets/location.png";
-import human from "./assets/human.png";
-import verifiedIcon from "./assets/verifiedIcon.svg";
 import CreateAnEvent from "@/components/ui/buttons/PrimaryButton";
-import tenniscourt from "./assets/tennis-court.png";
-import map from "./assets/map.svg";
 import PostScores from "@/components/ui/buttons/PrimaryButton";
 import CreateEvent from "@/components/ui/buttons/PrimaryButton";
-import more from "./assets/more.svg";
-import Game from "./assets/Game.svg";
+
 const clubView = () => {
   return (
     <>
@@ -22,13 +15,25 @@ const clubView = () => {
             <h2 className="h2 text-[#fff]">{clubData.clubDetails.name}</h2>
             <div className="flex gap-[10px]">
               <div className="flex items-center gap-[5px]">
-                <Image src={map} alt="map" className="w-[24px]" />
+                <Image
+                  width={24}
+                  height={24}
+                  src="/map.svg"
+                  alt="map"
+                  className="w-[24px] h-[24px]"
+                />
                 <p className="f14 fw700 lh22 text-[#fff]">
                   {clubData.clubDetails.location}
                 </p>
               </div>
               <div className="flex items-center gap-[5px]">
-                <Image src={Game} alt="Game" className="w-[24px]" />
+                <Image
+                  width={24}
+                  height={24}
+                  src="/Game.svg"
+                  alt="Game"
+                  className="w-[24px] h-[24px]"
+                />
                 <p className="f14 fw700 lh22 text-[#fff] flex gap-[5px]">
                   {clubData.clubDetails.noOfEvents}
                   <span>Events</span>
@@ -40,12 +45,20 @@ const clubView = () => {
             <PostScores>Post Scores</PostScores>
             <CreateEvent>Create An Event</CreateEvent>
             <button className="px-[20px] py-[13px] rounded-[8px] inline-flex items-center justify-center gap-[20px] bg-[#027333] border-2 border-[#027333] cursor-pointer">
-              <Image src={more} alt="more" className="w-[20px]" />
+              <Image
+                width={24}
+                height={24}
+                src="/more.svg"
+                alt="more"
+                className="w-[24px] h-[24px]"
+              />
             </button>
           </div>
         </div>
         <Image
-          src={tenniscourt}
+          width={1540}
+          height={223}
+          src="/tennis-court.png"
           alt="Header Background Image"
           className="absolute -z-10 top-0 insext-x-0 w-full h-full object-cover object-bottom"
         />
@@ -56,7 +69,7 @@ const clubView = () => {
         <nav className="px-[50px] h-[60px] w-full rounded-[10px] shadow-md bg-white flex justify-start gap-[30px] items-stretch">
           {clubData.clubNavBar.map((navItem, index) => (
             <Link
-              href={`/club/123/${navItem?.href}`}
+              href={`/clubs/123${navItem?.href}`}
               className="h-full border-b-4 border-white focus:border-[#3B2273] rounded-md px-[10px] text-[#828282] focus:text-[#3B2273] flex items-center justify-center"
               key={index}
             >
@@ -65,7 +78,10 @@ const clubView = () => {
           ))}
         </nav>
 
-        <div className="w-full flex items-start gap-[34px] rounded-[10px] mt-[47px]">
+        <div
+          id="about"
+          className="w-full flex items-start gap-[34px] rounded-[10px] mt-[47px]"
+        >
           <div className="flex flex-col gap-[6px] ">
             <h4 className="h4 text-[#13013c] ">{clubData.about.title}</h4>
             <p className="f16 fw400 lh24 text-[#828282] w-[840px] font-sans">
@@ -80,9 +96,11 @@ const clubView = () => {
             <div className="flex items-center gap mt-[40px] ">
               <div className="px-[20px]">
                 <Image
-                  src={human}
+                  width={77}
+                  height={77}
+                  src="/human.png"
                   alt="human"
-                  className="w-[77px] rounded-full"
+                  className="w-[77px] h-[77px] rounded-full"
                 />
               </div>
               <div className="flex flex-col ">
@@ -97,7 +115,7 @@ const clubView = () => {
           </div>
         </div>
 
-        <div className="flex flex-row  justify-between">
+        <div id="events" className="flex flex-row  justify-between">
           <div className="mt-3">
             <h3 className="text-[#13013c] h3">Upcoming Events</h3>
             {/* cards */}
@@ -118,7 +136,9 @@ const clubView = () => {
                   Galileo High School at George Washington High School
                   <span>
                     <Image
-                      src={verifiedIcon}
+                      width={18}
+                      height={18}
+                      src="/verifiedIcon.svg"
                       alt="verifiedIcon"
                       className="w-[18px] h-[18px] absolute bottom-1 right-[78px] "
                     />
@@ -149,7 +169,9 @@ const clubView = () => {
                   Galileo High School at George Washington High School
                   <span>
                     <Image
-                      src={verifiedIcon}
+                      width={18}
+                      height={18}
+                      src="/verifiedIcon.svg"
                       alt="verifiedIcon"
                       className="w-[18px] h-[18px] absolute bottom-1 right-[78px] "
                     />
@@ -178,7 +200,9 @@ const clubView = () => {
                 </p>
                 <div className="flex flex-row gap-2 items-center">
                   <Image
-                    src={mapblue}
+                    width={24}
+                    height={24}
+                    src="/mapblue.svg"
                     alt="mapblue"
                     className="h-[24px] w-[24px]"
                   />
@@ -189,7 +213,9 @@ const clubView = () => {
               </div>
               <div>
                 <Image
-                  src={location}
+                  width={290}
+                  height={280}
+                  src="/location.png"
                   alt="location"
                   className="pt-[15px] w-full"
                 />

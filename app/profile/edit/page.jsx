@@ -1,9 +1,5 @@
 "use client";
-import AutoComplete from "@/components/ui/inputFields/AutoComplete";
-import TextField from "@/components/ui/inputFields/TextField";
 import Image from "next/image";
-import Human from "./assets/human.png";
-import Edit from "./assets/edit.svg";
 import ProfileEditor from "./components/ProfileEditor";
 import PlayerInfoEditor from "./components/PlayerInfoEditor";
 import PreferredGearEditor from "./components/PreferredGearEditor";
@@ -16,12 +12,14 @@ const EditProfile = () => {
       <div className="absolute h-[92px] w-[92px] -top-[46px] right-[50px] p-[2px] rounded-full bg-white">
         <div className="relative h-full w-full ">
           <Image
-            src={Human}
+           width={92} 
+           height={92}
+            src="/human.png"
             alt="Player Profile Image"
             className="rounded-full h-full w-full object-cover "
           />
           <button className="absolute bottom-0 right-0 bg-[#3B2273] h-[20px] w-[20px] rounded-full flex items-center justify-center ">
-            <Image src={Edit} alt={Edit} className="w-[8px] h-[8px]" />
+            <Image  width={8} height={8} src="/edit.svg" alt={"Edit"} className="w-[8px] h-[8px]" />
           </button>
         </div>
       </div>

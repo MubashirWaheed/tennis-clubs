@@ -1,14 +1,12 @@
 import homeData from "../../homeData.json";
 import Image from "next/image";
-import School1 from "../../assets/School1.png";
-import School2 from "../../assets/School2.png";
-import School3 from "../../assets/School3.png";
+
 
 const HighSchoolsNearYou = () => {
   const schoolLogos = {
-    0: School1,
-    1: School2,
-    2: School3,
+    0: "/School1.png",
+    1: "/School2.png",
+    2: "/School3.png",
   };
   return (
     <section className=" py-[90px] w-[full] bg-[#fafbff]">
@@ -38,6 +36,8 @@ const HighSchoolsNearYou = () => {
                 <Image
                   src={schoolLogos[index]}
                   alt="College1"
+                  width={ 70}
+                  height={70 }
                   className="w-[70px] rounded-full"
                 />
               </div>

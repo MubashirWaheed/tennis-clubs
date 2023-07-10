@@ -16,7 +16,7 @@ const LogIn = () => {
                             <button className="h-[50px] w-[50px] rounded-sm shadow-md">F</button>
                         </div>
                     </div>
-                    <p className="text-center f18 fw400 lh30 text-[#828282]">Don't have an account? 
+                    <p className="text-center f18 fw400 lh30 text-[#828282]">Dont have an account? 
                     <Link href={"/register"} className="text-[#13013C]">Sign Up</Link></p>
                 </div>
             </div>

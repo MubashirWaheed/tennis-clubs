@@ -1,6 +1,5 @@
 import homeData from "../../homeData.json";
-import Image from "next/image";
-import blueHeaderLine from "../../assets/blueHeaderLine.svg";
+
 const GlobalPlayerRankings = () => {
   return (
     <section className="bg-[#FAFBFF] py-[95px]  w-full flex flex-col items-center">

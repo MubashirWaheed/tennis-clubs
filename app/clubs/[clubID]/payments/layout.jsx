@@ -1,8 +1,5 @@
 import Image from "next/image";
-import tenniscourt from "../assets/tennis-court.png";
 import clubData from "../clubData.json";
-import map from "../assets/map.svg";
-import Game from "../assets/Game.svg";
 
 const PaymentsLayout = ({ children }) => {
   return (
@@ -14,13 +11,15 @@ const PaymentsLayout = ({ children }) => {
             <h2 className="h2 text-[#fff]">{clubData.clubDetails.name}</h2>
             <div className="flex gap-[10px]">
               <div className="flex items-center gap-[5px]">
-                <Image src={map} alt="map" className="w-[24px]" />
+                <Image width={24}
+                  height={24} src="/map.svg" alt="map" className="w-[24px] h-[24px]" />
                 <p className="f14 fw700 lh22 text-[#fff]">
                   {clubData.clubDetails.location}
                 </p>
               </div>
               <div className="flex items-center gap-[5px]">
-                <Image src={Game} alt="Game" className="w-[24px]" />
+                <Image width={24}
+                  height={24}  src="/Game.svg" alt="Game" className="w-[24px] h-[24px]" />
                 <p className="f14 fw700 lh22 text-[#fff] flex gap-[5px]">
                   {clubData.clubDetails.noOfEvents}
                   <span>Events</span>
@@ -30,7 +29,9 @@ const PaymentsLayout = ({ children }) => {
           </div>
         </div>
         <Image
-          src={tenniscourt}
+        width={1540}
+        height={223}
+          src="/tennis-court.png"
           alt="Header Background Image"
           className="absolute -z-10 top-0 insext-x-0 w-full h-full object-cover object-bottom"
         />

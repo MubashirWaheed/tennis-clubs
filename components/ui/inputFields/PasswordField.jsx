@@ -1,7 +1,5 @@
 "use client";
 import Image from "next/image";
-import showPasswordIcon from "@/components/ui/inputFields/assets/showPassword.svg";
-import hidePasswordIcon from "@/components/ui/inputFields/assets/hidePassword.svg";
 import React from "react";
 
 const PasswordField = ({ id, value, onChange, label }) => {
@@ -13,27 +11,42 @@ const PasswordField = ({ id, value, onChange, label }) => {
     }
     
     return (
-        <div className={styles.passwordField}>
-            <div className="flex-1 flex flex-col items-start gap-1">
-                <label className={styles.label} htmlFor={id}>{label}</label>
-                <input
-                    className={styles.input}
-                    value={value}
-                    onChange={onChange}
-                    id={id}
-                    type={showPassword ? "text" : "password"}
-                />
-            </div>
-
-            {showPassword ?
-                <button onClick={switchPasswordVisibility}>
-                    <Image src={hidePasswordIcon} alt="Hide Password" className="w-[24px] h-[24px]"/>
-                </button> :
-                <button onClick={switchPasswordVisibility}>
-                    <Image src={showPasswordIcon} alt="Show Password" className="w-[24px] h-[24px]"/>
-                </button>
-            }
+      <div className={styles.passwordField}>
+        <div className="flex-1 flex flex-col items-start gap-1">
+          <label className={styles.label} htmlFor={id}>
+            {label}
+          </label>
+          <input
+            className={styles.input}
+            value={value}
+            onChange={onChange}
+            id={id}
+            type={showPassword ? "text" : "password"}
+          />
         </div>
+
+        {showPassword ? (
+          <button onClick={switchPasswordVisibility}>
+            <Image
+              src="/hidePassword.svg"
+              alt="Hide Password"
+              height={24}
+              width={24}
+              className="w-[24px] h-[24px]"
+            />
+          </button>
+        ) : (
+          <button onClick={switchPasswordVisibility}>
+            <Image
+              width={24}
+              height={24}
+              src="/showPassword.svg"
+              alt="Show Password"
+              className="w-[24px] h-[24px]"
+            />
+          </button>
+        )}
+      </div>
     );
 };
 

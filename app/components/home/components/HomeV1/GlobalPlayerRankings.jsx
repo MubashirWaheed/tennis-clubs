@@ -1,6 +1,6 @@
 import homeData from "../../homeData.json";
 import Image from "next/image";
-import blueHeaderLine from "../../assets/blueHeaderLine.svg";
+
 const GlobalPlayerRankings = () => {
   return (
     <section className="bg-[#FAFBFF] py-[108px] w-full flex flex-col items-center gap-[50px]">
@@ -8,7 +8,9 @@ const GlobalPlayerRankings = () => {
       <div className="flex flex-col gap-[15px] items-center">
         <h2 className="h2 text-[#13013C]">Global player rankings</h2>
         <Image
-          src={blueHeaderLine}
+        width={119}
+        height={20}
+          src="/blueHeaderLine.svg"
           alt="Header Line"
           className="w-[119px] h-[20px]"
         />

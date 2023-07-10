@@ -1,5 +1,4 @@
 import Image from "next/image";
-import rightArrowIcon from "@/components/ui/assets/rightArrow.svg";
 
 const PrimaryButton = ({ children, type, onClick, size }) => {
   return (
@@ -13,8 +12,10 @@ const PrimaryButton = ({ children, type, onClick, size }) => {
           <span className="p f14 lh24 text-white">{children}</span>
           <span className="w-[20px] h-[20px]">
             <Image
-              src={rightArrowIcon}
+              src="/rightarrow.svg"
               alt="Right Arrow Icon"
+              height={20}
+              width={20}
               className="w-[20px] h-[20px]"
             />
           </span>
@@ -28,7 +29,9 @@ const PrimaryButton = ({ children, type, onClick, size }) => {
           <span className="p f16 lh24 text-white">{children}</span>
           <span className="w-[20px] h-[20px]">
             <Image
-              src={rightArrowIcon}
+              src="/rightarrow.svg"
+              width={20}
+              height={20}
               alt="Right Arrow Icon"
               className="w-[20px] h-[20px]"
             />

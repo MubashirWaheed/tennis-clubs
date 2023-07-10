@@ -1,15 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import College1 from "@/app/components/home/assets/College1.png";
-import College2 from "@/app/components/home/assets/College2.png";
-import College3 from "@/app/components/home/assets/College3.png";
 import homeData from "../../homeData.json";
 
 const CollegesNearYou = () => {
   const collegeLogos = {
-    0: College1,
-    1: College2,
-    2: College3,
+    0: "/College1.png",
+    1: "/College2.png",
+    2: "/College3.png",
   };
 
   return (
@@ -38,7 +35,13 @@ const CollegesNearYou = () => {
                   </p>
                 </div>
                 <div className="w-[70px] px-[7px] py-[10px]">
-                  <Image src={collegeLogos[index]} alt="" className="rounded-full" />
+                  <Image
+                    width={70}
+                    height={70}
+                    src={collegeLogos[index]}
+                    alt=""
+                    className="rounded-full"
+                  />
                 </div>
               </div>
 

@@ -6,11 +6,11 @@
   },
   "clubNavBar": [
     {
-      "href": "/",
+      "href": "/#about",
       "title": "About"
     },
     {
-      "href": "results",
+      "href": "/#events",
       "title": "Event"
     }
   ],

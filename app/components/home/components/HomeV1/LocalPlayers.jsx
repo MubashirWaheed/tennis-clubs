@@ -1,16 +1,14 @@
 import homeData from "../../homeData.json";
 import Image from "next/image";
 import ViewAll from "@/components/ui/buttons/PrimaryButton";
-import backdropImg from "../../assets/tennisgirl.png";
-import verifiedIcon from "../../assets/verifiedIcon.svg";
-import whiteHeaderLine from "../../assets/whiteHeaderLine.svg";
-import Maskgroup from "../../assets/Mask group.png";
 
 const LocalPlayers = () => {
   return (
     <section className="h-[700px] w-[full] relative ">
       <Image
-        src={backdropImg}
+      width={1540}
+      height={700}
+        src="/tennisgirl.png"
         alt="Background Image"
         className="absolute w-full h-full object-cover -z-10"
       />
@@ -19,9 +17,11 @@ const LocalPlayers = () => {
         <div className="flex flex-col items-center ">
           <h2 className="text-[#ffffff] h2 ">Local Players</h2>
           <Image
-            src={whiteHeaderLine}
+          width={119}
+          height={20}
+            src="/whiteHeaderLine.svg"
             alt="whiteHeaderLine"
-            className="w-[full]"
+            className="w-[119px] h-[20px]"
           />
         </div>
 
@@ -37,9 +37,11 @@ const LocalPlayers = () => {
                     {player.number}
                   </p>
                   <Image
-                    src={verifiedIcon}
+                  width={17}
+                  height={18}
+                    src="/verifiedIcon.svg"
                     alt="verification"
-                    className="h-[18px] w-[17.114px]"
+                    className="h-[18px] w-[17px]"
                   />
                 </div>
 
@@ -53,7 +55,9 @@ const LocalPlayers = () => {
                     </p>
                   </div>
                   <Image
-                    src={Maskgroup}
+                    width={ 182}
+                    height={215}
+                    src="/maskGroup.png"
                     alt="Mask"
                     className="absolute right-0 bottom-0 z-10"
                   />
