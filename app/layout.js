@@ -4,7 +4,7 @@ import Footer from './components/footer/footer'
 import Header from './components/header/header'
 import './globals.css'
 import HomeHeader from './components/header/homeHeader';
-export const metadata = {
+const metadata = {
   title: 'Tennis Ranker . MPR',
   description: 'Tennis Score Ranking Website',
 }
