@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="border-t-4 h-[503px] border-[#3B2273] relative flex flex-col justify-between">
-      <div className="relative -left-[80px] top-[70px] flex items-start justify-between w-full max-w-[1170px] mx-auto">
+    <footer className="border-t-4 bg-[url('/girlPotrait.png')] bg-contain bg-no-repeat bg-right-top h-[503px] border-[#3B2273] relative flex flex-col justify-between">
+      <div className="relative -left-[80px] pt-[70px] flex items-start justify-around w-full max-w-[1170px] mx-auto">
         <div className="flex flex-col gap-[17px] items-start">
           <Image
             width={114}
@@ -34,7 +34,7 @@ const Footer = () => {
           {footerMenu?.footerLinks?.map((footerLink, index) => (
             <div className="flex flex-col items-start gap-[40px]" key={index}>
               <div className="flex flex-col gap-[11px]">
-                <h1 className="h4">Contact Us</h1>
+                <h4 className="h4">{footerLink?.title}</h4>
                 <Image
                   width={85}
                   height={3}
@@ -114,8 +114,11 @@ const Footer = () => {
 
       <div className=" w-full border-t-2 py-[34px] flex items-center justify-center border-[#828282]/20">
         <p className="f16 fw400 lh24">
-          Copyright 2022 <Link href="/" className="text-[#3B2273]">MPR</Link> All Rights
-          Reserved
+          Copyright 2022{" "}
+          <Link href="/" className="text-[#3B2273]">
+            MPR
+          </Link>{" "}
+          All Rights Reserved
         </p>
       </div>
     </footer>
