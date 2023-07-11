@@ -6,7 +6,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="border-t-4 h-[503px] border-[#3B2273] relative flex flex-col justify-between">
-      <div className="relative -left-[80px] flex items-start justify-between w-full max-w-[1170px] mx-auto">
+      <div className="relative -left-[80px] top-[70px] flex items-start justify-between w-full max-w-[1170px] mx-auto">
         <div className="flex flex-col gap-[17px] items-start">
           <Image
             width={114}
@@ -112,9 +112,9 @@ const Footer = () => {
         className="absolute inset-0"
       /> */}
 
-      <div className=" w-full border-t-2 py-[34px] flex items-center justify-center border-[#828282]">
+      <div className=" w-full border-t-2 py-[34px] flex items-center justify-center border-[#828282]/20">
         <p className="f16 fw400 lh24">
-          Copyright 2022 <span className="text-[#3B2273]">MPR</span> All Rights
+          Copyright 2022 <Link href="/" className="text-[#3B2273]">MPR</Link> All Rights
           Reserved
         </p>
       </div>

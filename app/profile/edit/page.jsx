@@ -12,8 +12,8 @@ const EditProfile = () => {
       <div className="absolute h-[92px] w-[92px] -top-[46px] right-[50px] p-[2px] rounded-full bg-white">
         <div className="relative h-full w-full ">
           <Image
-           width={92} 
-           height={92}
+            width={92} 
+            height={92}
             src="/human.png"
             alt="Player Profile Image"
             className="rounded-full h-full w-full object-cover "
