@@ -104,13 +104,13 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <Image
+      {/* <Image
         src="/girlPotrait.png"
         width={1540}
         height={503}
         alt="GirlPotrait"
         className="absolute inset-0"
-      />
+      /> */}
 
       <div className=" w-full border-t-2 py-[34px] flex items-center justify-center border-[#828282]">
         <p className="f16 fw400 lh24">

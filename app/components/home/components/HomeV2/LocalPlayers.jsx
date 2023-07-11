@@ -42,8 +42,8 @@ const LocalPlayers = () => {
                     </p>
                   </div>
                   <Image
-                    width={0}
-                    height={0}
+                    width={182}
+                    height={215}
                     src="/maskGroup.png"
                     alt="Mask"
                     className="w-full h-full absolute right-0 bottom-0 z-10"
