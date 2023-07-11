@@ -1,3 +1,4 @@
+"use client";
 import clubData from "./clubData.json";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,7 +6,10 @@ import CreateAnEvent from "@/components/ui/buttons/PrimaryButton";
 import PostScores from "@/components/ui/buttons/PrimaryButton";
 import CreateEvent from "@/components/ui/buttons/PrimaryButton";
 
+import MoreButton from "./MoreButton";
+
 const clubView = () => {
+
   return (
     <>
       {/* Header */}
@@ -44,15 +48,7 @@ const clubView = () => {
           <div className="flex gap-[6px]">
             <PostScores>Post Scores</PostScores>
             <CreateEvent>Create An Event</CreateEvent>
-            <button className="px-[20px] py-[13px] rounded-[8px] inline-flex items-center justify-center gap-[20px] bg-[#027333] border-2 border-[#027333] cursor-pointer">
-              <Image
-                width={24}
-                height={24}
-                src="/more.svg"
-                alt="more"
-                className="w-[24px] h-[24px]"
-              />
-            </button>
+            <MoreButton />
           </div>
         </div>
         <Image

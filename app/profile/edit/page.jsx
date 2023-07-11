@@ -6,6 +6,11 @@ import PreferredGearEditor from "./components/PreferredGearEditor";
 import Save from "@/components/ui/buttons/PrimaryButton";
 import Cancel from "@/components/ui/buttons/SecondaryButton";
 
+export const metadata = {
+  title: "Edit Profile",
+  description: "Tennis Score Ranking Website",
+};
+
 const EditProfile = () => {
   return (
     <section className="relative px-[57px] py-[25px] -top-[100px] flex flex-col gap-[50px] max-w-[1200px] mx-auto bg-white rounded-[10px]">

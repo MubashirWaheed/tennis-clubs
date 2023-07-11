@@ -1,4 +1,6 @@
+"use client";
 import ClubProfile from "@/components/ui/buttons/PrimaryButton";
+import { useRouter } from "next/navigation";
 
 const PaymentCofirmation = () => {
   const PaymentConfirmation = {
@@ -11,6 +13,8 @@ const PaymentCofirmation = () => {
       `Add a bank account for withdrawing funds you collect on MPR.`,
     ],
   };
+
+  const router = useRouter();
   
   return (
     <section className="relative -top-[30px] w-full max-w-[1170px] mx-auto bg-[#fff] rounded-[10px] shadow-md">
@@ -42,7 +46,7 @@ const PaymentCofirmation = () => {
           Anytime youd like to view your balance, review transactions, issue
           refunds or withdraw money. WePay is the place to go.
         </p>
-        <ClubProfile>Return To Club Profile</ClubProfile>
+        <ClubProfile onClick={()=>router.push("/clubs/123")}>Return To Club Profile</ClubProfile>
       </div>
     </section>
   );

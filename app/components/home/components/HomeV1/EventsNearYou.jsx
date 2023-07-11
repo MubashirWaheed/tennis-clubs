@@ -7,19 +7,19 @@ const EventsNearYou = () => {
   return (
     <section className="h-[700px] w-[full] relative ">
       <Image
-      width={1540}
-      height={700}
+        width={1540}
+        height={700}
         src="/manPlaying.png"
         alt="Background Image"
         className="absolute w-full h-full object-cover -z-10"
       />
 
-      <div className="bg-[#3B2273]/70 h-full w-full z-20 flex flex-col gap-[50px] items-center justify-center">
+      <div className="bg-[#3B2273]/80 h-full w-full z-20 flex flex-col gap-[50px] items-center justify-center">
         <div className="flex flex-col items-center ">
           <h2 className="text-[#ffffff] h2 ">Events Near You</h2>
           <Image
-          width={119}
-          height={20}
+            width={119}
+            height={20}
             src="/whiteHeaderLine.svg"
             alt="whiteHeaderLine"
             className="w-[119px] h-[20px]"
@@ -43,8 +43,8 @@ const EventsNearYou = () => {
                   <span>{event.hostSchool}</span>
                   <span className="abolute bottom-0 left-4 right-0">
                     <Image
-                    width={17}
-                    height={18}
+                      width={17}
+                      height={18}
                       src="/verifiedIcon.svg"
                       alt="verification"
                       className="h-[18px] w-[17px]"

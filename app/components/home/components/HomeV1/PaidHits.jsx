@@ -8,8 +8,8 @@ const PaidHits = () => {
       <div className="flex flex-col items-center gap-[15px]">
         <h2 className="text-[#13013C] h2 ">Paid Hits</h2>
         <Image
-        width={119}
-        height={20}
+          width={119}
+          height={20}
           src="/blueHeaderLine.svg"
           alt="blueHeaderLine"
           className="w-[119px] h-[20px]"

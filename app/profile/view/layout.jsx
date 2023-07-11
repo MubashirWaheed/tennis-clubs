@@ -3,7 +3,10 @@ import Image from "next/image";
 import EditProfileButton from "@/components/ui/buttons/PrimaryButton"
 import GetRatedButton from "@/components/ui/buttons/PrimaryButton"
 import { useRouter } from 'next/navigation'
-
+export const metadata = {
+  title: "View Profile",
+  description: "Tennis Score Ranking Website",
+};
 const ProfileViewLayout = ({children}) => {
     const router = useRouter();
     return (

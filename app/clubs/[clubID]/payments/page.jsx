@@ -1,5 +1,7 @@
+"use client";
 import CreateAccount from "@/components/ui/buttons/PrimaryButton";
 import Cancel from "@/components/ui/buttons/SecondaryButton";
+import { useRouter } from "next/navigation";
 
 const Payments = () => {
   const PaymentsData = {
@@ -12,12 +14,17 @@ const Payments = () => {
       `It only takes a minute to create your WePay account below and start accepting payments on UTR.`,
     ],
   };
+
+  const router = useRouter();
+
   return (
     <>
       {/* Main */}
       <section className="relative -top-[30px] w-full max-w-[1170px] mx-auto bg-[#fff] rounded-[10px] shadow-md">
         <div className="px-[52px] py-[48px]">
-          <h2 className="h2 text-[#13013c] mb-[19px]">{PaymentsData.heading}</h2>
+          <h2 className="h2 text-[#13013c] mb-[19px]">
+            {PaymentsData.heading}
+          </h2>
           <p className="f18 fw700 lh24 text-[#13013c]">
             {PaymentsData.subheading}
           </p>
@@ -29,7 +36,11 @@ const Payments = () => {
             ))}
           </ul>
           <div className=" flex w-full gap-[8px] mt-[15px]">
-            <CreateAccount>Create WePay Account</CreateAccount>
+            <CreateAccount
+              onClick={() => router.push("/clubs/123/payments/confirm")}
+            >
+              Create WePay Account
+            </CreateAccount>
             <Cancel>Cancel</Cancel>
           </div>
         </div>
