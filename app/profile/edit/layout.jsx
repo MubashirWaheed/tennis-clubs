@@ -1,9 +1,6 @@
 import Image from "next/image";
 
-export const metadata = {
-  title: "Edit Profile",
-  description: "Tennis Score Ranking Website",
-};
+
 
 const EditProfileLayout = ({children}) => {
     return(

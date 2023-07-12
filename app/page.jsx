@@ -7,10 +7,7 @@ import { useRouter } from "next/navigation";
 // import LoggedInHomeV2 from "./components/home/LoggedInHomeV2";
 import LoggedInHome from "./components/home/LoggedInHome";
 
-export const metadata = {
-  title: "Tennis Ranker . MPR",
-  description: "Tennis Score Ranking Website",
-};
+
 
 const Home = () => {
   const router = useRouter();

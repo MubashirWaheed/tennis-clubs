@@ -6,10 +6,6 @@ import { useRouter } from "next/navigation";
 import ProfileNavigation from "./components/profileNavigation";
 import profileViewData from "./profileView.json";
 
-export const metadata = {
-  title: "Your Profile",
-  description: "Tennis Score Ranking Website",
-};
 
 const IndividualProfileLayout = ({ children }) => {
   const router = useRouter();

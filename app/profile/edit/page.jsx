@@ -6,10 +6,7 @@ import PreferredGearEditor from "./components/PreferredGearEditor";
 import Save from "@/components/ui/buttons/PrimaryButton";
 import Cancel from "@/components/ui/buttons/SecondaryButton";
 
-export const metadata = {
-  title: "Edit Profile",
-  description: "Tennis Score Ranking Website",
-};
+
 
 const EditProfile = () => {
   return (

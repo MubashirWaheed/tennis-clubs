@@ -1,9 +1,5 @@
 import Image from "next/image";
 
-export const metadata = {
-  title: "MPR . Matches",
-  description: "Tennis Score Ranking Website",
-};
 
 const MatchesLayout = ({children}) => {
     return (
