@@ -12,7 +12,7 @@ const UpcomingEventsFilter = () => {
   ];
 
   return (
-    <div className='w-[400px]'>
+    <div className='w-[300px] lg:w-[400px]'>
       <div className='w-full flex item-center justify-between'>
         <h5 className='h5 f-Abril text-[#13013C]'>Date</h5>
         <button className='outline-none border-none f14 lh30 fw700'>Clear</button>

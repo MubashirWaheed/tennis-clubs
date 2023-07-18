@@ -15,8 +15,8 @@ const FilterContainer = () => {
     const filters = FilterConfig();
     
     return (
-      <article className="bg-white rounded-lg shadow-lg h-[80px] w-full px-6 py-5 flex items-center gap-2">
-        <div className="flex items-center justify-between flex-1">
+      <article className="bg-white rounded-lg shadow-lg lg:h-[80px] w-full px-6 py-5 flex items-center gap-2">
+        <div className="flex flex-wrap gap-[15px] lg:gap-[0px] items-center lg:justify-between flex-1">
           {filters?.map((filter, index) => (
             <div key={index} className="relative">
               <button
@@ -27,7 +27,7 @@ const FilterContainer = () => {
               </button>
               {filter.isFilterOpen && (
                 <>
-                  <div className="absolute top-[90px] -left-[20px] p-[30px] bg-white shadow-xl border-t-[3px] border-[#3B2273] rounded-[10px]">
+                  <div className="z-10 absolute lg:top-[90px] top-[58px] -left-[20px] lg:p-[30px] p-[5px] bg-white shadow-xl border-t-[3px] border-[#3B2273] rounded-[10px]">
                     {filter.filterTitle === "Sport" && <SportsFilter />}
                     {filter.filterTitle === "Location" && <LocationFilter />}
                     {filter.filterTitle === "Upcoming Events" && (
@@ -51,7 +51,7 @@ const FilterContainer = () => {
                     height={21}
                     width={18}
                     alt="Pointer Icon"
-                    className="absolute top-[73px] left-7 w-[18px] h-[21px]"
+                    className="absolute lg:top-[73px] top-[40px] z-10 left-7 w-[18px] h-[21px]"
                   />
                 </>
               )}
@@ -59,8 +59,7 @@ const FilterContainer = () => {
           ))}
         </div>
         <div className="flex gap-[5px] items-center">
-          <Image height={24}
-              width={24} src="/filter-icon.svg" alt="" />
+          <Image height={24} width={24} src="/filter-icon.svg" alt="" />
           <button className="text-[#3B2273] text-base font-semibold cursor-pointer">
             Reset Filters
           </button>

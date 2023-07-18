@@ -4,17 +4,17 @@ import Image from "next/image";
 const MatchCard = ({eventName, eventLocation, eventDate, eventMonth, eventYear, tags, noOfRegistrations, otherDetails, isEventVerified, status, dayAndTime, isMatchPlay}) => {
 
     return (
-      <article className="flex items-center rounded-[10px] bg-white shadow-md p-[30px]">
-        <div className="flex-1 flex items-center gap-[20px]">
-          <div className="flex flex-col items-center justify-center w-[100px] h-[100px] bg-[#3B2273] rounded-[10px] text-white">
-            <h3 className="text-[35px] uppercase fw700 text-center">
+      <article className="flex flex-col md:flex-row items-center rounded-[10px] bg-white shadow-md p-[10px] md:p-[20px] lg:p-[30px]">
+        <div className="w-full flex-1 flex items-center justify-start gap-[5px] md:gap-[20px]">
+          <div className="flex flex-col items-center justify-center w-[70px] h-[70px] md:w-[100px] md:h-[100px] bg-[#3B2273] rounded-[10px] text-white">
+            <h3 className="text-[20px] md:text-[35px] uppercase fw700 text-center">
               {eventDate}
             </h3>
-            <p className="uppercase f14 fw700 lh22 text-center">{eventMonth}</p>
-            <p className="uppercase f14 fw700 lh22 text-center">{eventYear}</p>
+            <p className="uppercase f12 md:f14 fw700 lh22 text-center">{eventMonth}</p>
+            <p className="uppercase f12 md:f14 fw700 lh22 text-center">{eventYear}</p>
           </div>
 
-          <div className="flex flex-col justify-between">
+          <div className="flex-1 flex flex-col justify-between">
             <ul className="flex items-center gap-2">
               {tags?.map((tag, index) => (
                 <li key={index} className="tag">
@@ -23,7 +23,7 @@ const MatchCard = ({eventName, eventLocation, eventDate, eventMonth, eventYear, 
               ))}
             </ul>
             <h4 className="h4">{eventName}</h4>
-            <div className="flex items-center gap-[1px]">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-[1px]">
               <p className="p f16 fw700 text-[#828282] lh24">
                 {eventLocation} {"."}
               </p>
@@ -31,7 +31,7 @@ const MatchCard = ({eventName, eventLocation, eventDate, eventMonth, eventYear, 
                 {noOfRegistrations} Registrations
               </p>
             </div>
-            <ul className="flex items-center gap-[1px]">
+            <ul className="flex flex-col md:flex-row items-start md:items-center gap-[1px]">
               {otherDetails?.map((detail, index) => (
                 <p className="p f16 fw700 text-[#828282] lh24" key={index}>
                   {detail}

@@ -19,6 +19,7 @@ const Hero = () => {
             <FindPlay>Find Play</FindPlay>
           </div>
         </div>
+        
         <div className="flex flex-col gap-[16px]">
           <p className="text-[#fff] f24 fw700 lh24">
             WHAT ARE YOU LOOKING FOR?

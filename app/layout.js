@@ -16,12 +16,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div> 
-          {isLoggedIn ?
+          {/* {isLoggedIn ?
           <Header /> :
           <HomeHeader />
-          }
+          } */}
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </body>
     </html>

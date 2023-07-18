@@ -7,7 +7,7 @@ import MatchListing from "./components/MatchListing";
 const ListedMatches = () => {
 
   return (
-    <section className="relative -top-[40px] flex flex-col gap-[50px] max-w-[1200px] mx-auto">
+    <section className="relative -top-[40px] flex flex-col gap-[50px] w-full max-w-[1170px] mx-auto">
       <FilterContainer />
       <MatchListing matches={matchesData?.matches} />
     </section>

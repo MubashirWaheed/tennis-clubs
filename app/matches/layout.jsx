@@ -5,10 +5,10 @@ const MatchesLayout = ({children}) => {
     return (
       <main>
         <section className="relative bg-[#3B2273]">
-          <h1 className="h2 text-white pt-[64px] pb-[109px] pl-[185px]">
+          <h1 className="h2 text-white pt-[64px] pb-[109px] w-full max-w-[1170px] px-5 lg:px-0 mx-auto">
             Find Matches
           </h1>
-          <Image
+          {/* <Image
             src="/Ball.svg"
             height={100}
             width={100}
@@ -28,7 +28,7 @@ const MatchesLayout = ({children}) => {
               width={132}
             alt=""
             className="absolute left-0 bottom-0"
-          />
+          /> */}
         </section>
         {children}
       </main>
