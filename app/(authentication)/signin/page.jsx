@@ -4,9 +4,9 @@ import LogIn from "./components/LogIn";
 
 const LogInPage = () => {
   return (
-    <main className="relative bg-[#3B2273] px-[180px] h-[900px] flex items-center gap-[54px]">
-      <section className="relative flex flex-col items-start gap-[31px]">
-        <h1 className="h2 text-white w-[541px]">
+    <main className="relative bg-[#3B2273] lg:px-[180px] md:px-[100px] py-[40px] lg:py-0 lg:h-[900px] flex flex-col lg:flex-row items-center gap-[54px]">
+      <section className="relative flex flex-col items-start gap-[31px] px-[20px] lg:p-0">
+        <h1 className="h2 text-white w-full lg:w-[541px]">
           Welcome back!
           <br /> Please log in.
         </h1>
@@ -18,7 +18,7 @@ const LogInPage = () => {
             alt="headerLine"
             className="w-[119px] h-[20px]"
           />
-          <p className="f16 fw400 lh24 text-white w-[500px]">
+          <p className="f16 fw400 lh24 text-white w-full lg:w-[504px]">
             access their personalized account on a website. It is a necessary
             step for users to view their personal information, settings, and
             perform various actions related to their account.
@@ -33,9 +33,7 @@ const LogInPage = () => {
         />
       </section>
 
-      
       <LogIn />
-
 
       <Image
         src="/vector-4.svg"
