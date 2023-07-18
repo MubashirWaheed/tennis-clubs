@@ -1,9 +1,7 @@
 
-
 const clubViewLayout = ({ children }) => {
   return (
     <main>
-    
       {children}
     </main>
   );

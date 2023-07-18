@@ -13,28 +13,28 @@ const CollegesNearYou = () => {
   };
 
   return (
-    <section className="h-[680px] w-[full]">
-      <div className="h-full w-full flex flex-col gap-[50px] items-center justify-center">
+    <section className="w-[full]">
+      <div className="py-[20px] md:py-[40px] lg:py-[90px] px-2 lg:px-0 w-full max-w-[1170px] mx-auto flex flex-col gap-[50px] items-center justify-center">
         <div className="flex flex-col items-center gap-[15px]">
           <h2 className="text-[#13013C] h2 ">Colleges Near You</h2>
           <Image
-          width={119}
-          height={20}
+            width={119}
+            height={20}
             src="/blueHeaderLine.svg"
             alt="blueHeaderLine"
             className="w-[119px] h-[20px]"
           />
         </div>
 
-        <div className="flex flex-row gap-[14px]">
+        <div className="flex flex-col lg:flex-row gap-[14px]">
           {homeData.collegesNearYou.map((college, index) => (
             <article
               key={index}
-              className="p-[25px] bg-[#fff] rounded-[10px] shadow-lg"
+              className="p-[10px] lg:p-[25px] bg-[#fff] rounded-[10px] shadow-lg"
             >
-              <div className="flex items-center gap-[61px] mb-[13px]">
+              <div className="flex items-center lg:gap-[61px] mb-[13px]">
                 <div className="flex flex-col gap-[6px]">
-                  <p className="f28 text-[#13013c] w-[200px] font-sans fw700 lh28">
+                  <p className="f28 text-[#13013c] lg:w-[200px] font-sans fw700 lh28">
                     {college.universityName}
                   </p>
                   <p className="text-[#828282] f14 fw400 font-sans">
@@ -42,8 +42,8 @@ const CollegesNearYou = () => {
                   </p>
                 </div>
                 <Image
-                width={70}
-                height={70}
+                  width={70}
+                  height={70}
                   src={collegeLogos[index]}
                   alt="College1"
                   className="w-[70px] h-[70px] rounded-full"

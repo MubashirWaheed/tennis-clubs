@@ -15,10 +15,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div> 
+        <div>
           {/* {isLoggedIn ?
-          <Header /> :
-          <HomeHeader />
+            <Header /> :
+            <HomeHeader />
           } */}
           {children}
           {/* <Footer /> */}

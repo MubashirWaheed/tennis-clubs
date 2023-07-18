@@ -29,9 +29,9 @@ const Editor = () => {
         e.preventDefault();
     };
     return(
-        <section className="mb-[196px]">
+        <section className="lg:mb-[196px]">
             <form
-                className="w-[70%] mx-auto flex flex-col gap-[25px]"
+                className="w-full md:w-[90%] lg:w-[70%] mx-auto flex flex-col gap-[25px]"
                 onSubmit={handleSubmit}
             >
                 <div className="flex flex-col w-full gap-[20px]">
@@ -49,7 +49,7 @@ const Editor = () => {
                     onChange={handleChange}
                     />
 
-                    <div className="flex flex-row gap-[20px]">
+                    <div className="flex flex-col lg:flex-row gap-[20px]">
                         <MobileField
                             id="phoneNumber"
                             label="Phone Number"

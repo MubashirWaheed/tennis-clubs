@@ -9,20 +9,20 @@ const HighSchoolsNearYou = () => {
     2: "/School3.png",
   };
   return (
-    <section className="h-[680px] w-[full]">
-      <div className="h-full w-full flex flex-col gap-[50px] items-center justify-center">
+    <section className="w-[full]">
+      <div className="py-[20px] md:py-[40px] lg:py-[90px] px-2 lg:px-0 w-full max-w-[1170px] mx-auto flex flex-col gap-[50px] items-center justify-center">
         <div className="flex flex-col items-center gap-[15px]">
           <h2 className="text-[#13013C] h2 ">High Schools Near You</h2>
           <Image
-          width={119}
-          height={20}
+            width={119}
+            height={20}
             src="/blueHeaderLine.svg"
             alt="blueHeaderLine"
             className="w-[119px] h-[20px]"
           />
         </div>
 
-        <div className="flex flex-row gap-[14px]">
+        <div className="flex flex-col lg:flex-row gap-[14px]">
           {homeData.HighSchoolsNearYou.map((school, index) => (
             <article
               key={index}
@@ -38,8 +38,8 @@ const HighSchoolsNearYou = () => {
                   </p>
                 </div>
                 <Image
-                width={70}
-                height={70}
+                  width={70}
+                  height={70}
                   src={schoolLogos[index]}
                   alt="College1"
                   className="w-[70px] h-[70px] rounded-full"

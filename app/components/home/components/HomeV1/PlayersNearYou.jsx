@@ -6,20 +6,20 @@ import IPlay from "@/components/ui/buttons/PrimaryButton";
 
 const PlayersNearYou = () => {
   return (
-    <section className="h-[680px] w-[full] bg-[#FAFBFF]">
-      <div className="h-full w-full flex flex-col gap-[50px] items-center justify-center">
+    <section className="w-[full] bg-[#FAFBFF]">
+      <div className="h-full py-[20px] md:py-[40px] lg:py-[90px] px-2 lg:px-0 w-full max-w-[1170px] mx-auto flex flex-col gap-[50px] items-center justify-center">
         <div className="flex flex-col items-center gap-[15px]">
           <h2 className="text-[#13013C] h2 ">Player Created Plays Near You</h2>
           <Image
-          width={119}
-          height={20}
+            width={119}
+            height={20}
             src="/blueHeaderLine.svg"
             alt="blueHeaderLine"
             className="w-[119px] h-[20px]"
           />
         </div>
 
-        <div className="flex flex-row gap-[14px]">
+        <div className="flex flex-col lg:flex-row gap-[14px]">
           {homeData.playersCreated.map((player, index) => (
             <article
               key={index}
@@ -44,15 +44,15 @@ const PlayersNearYou = () => {
               <div className="flex  items-center gap-[14px]">
                 <div className="w-[35px] flex  items-center">
                   <Image
-                  width={35}
-                  height={35}
+                    width={35}
+                    height={35}
                     src="/Ellipse.svg"
                     alt="Ellipse"
                     className="w-[35px] h-[35px]"
                   />
                   <Image
-                  width={21}
-                  height={21}
+                    width={21}
+                    height={21}
                     src="/User.svg"
                     alt="User"
                     className="w-[21px] h-[21px] relative right-7"

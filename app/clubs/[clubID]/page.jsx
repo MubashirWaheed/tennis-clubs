@@ -13,7 +13,7 @@ const clubView = () => {
   return (
     <>
       {/* Header */}
-      <section className="relative h-[223px]">
+      <section className="relative lg:h-[223px]">
         <div className="absolute h-full  bg-gradient-to-b from-transparent to-black/90 w-full  mx-auto flex justify-between items-center px-[185px] py-[61px]">
           <div className="flex flex-col gap-[5px]">
             <h2 className="h2 text-[#fff]">{clubData.clubDetails.name}</h2>

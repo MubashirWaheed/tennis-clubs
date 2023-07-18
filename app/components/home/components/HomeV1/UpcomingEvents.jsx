@@ -4,19 +4,19 @@ import FindAnEventBTN from "@/components/ui/buttons/PrimaryButton";
 
 const UpcomingEvents = () => {
     return (
-      <section className="px-[185px] py-[90px] flex flex-col items-center gap-[30px] bg-white">
+      <section className="px-2 lg:px-0 w-full max-w-[1170px] mx-auto py-[90px] flex flex-col items-center gap-[30px] bg-white">
         <div className="flex flex-col gap-[15px] items-center">
           <h1 className="h2 text-[#13013C]">Your Upcoming Events</h1>
           <Image
-          width={119}
-          height={20}
+            width={119}
+            height={20}
             src="/blueHeaderLine.svg"
             alt="Blue Header Line"
             className="w-[119px] h-[20px]"
           />
         </div>
 
-        <div className="flex h-[232px] gap-[20px] items-stretch">
+        <div className="flex flex-col lg:flex-row lg:h-[232px] gap-[20px] items-stretch">
           <article className="shadow-md rounded-[10px] bg-white p-[25px]">
             <div className="flex items-center gap-[60px]">
               <p className="text-[#828282] f14 fw700 lh24">Apr 20 | 10:30am</p>
@@ -33,8 +33,12 @@ const UpcomingEvents = () => {
               <h5 className="h5 text-[#13013C] w-[317px]">
                 Galileo High School at George Washington High School
                 <span>
-                  <Image width={17}
-                  height={17} src="/verifiedIcon.svg" alt="h-[18px] w-[17px]" />
+                  <Image
+                    width={17}
+                    height={17}
+                    src="/verifiedIcon.svg"
+                    alt="h-[18px] w-[17px]"
+                  />
                 </span>
               </h5>
               <h6 className="h6 text-[#828282]">
