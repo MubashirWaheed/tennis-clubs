@@ -21,8 +21,8 @@ const MoreButton = () => {
             />
         </button>
         {isMoreExpanded && (
-            <div className="top-[60px] absolute p-[20px] -left-[180px]  rounded-[10px] bg-white z-20 shadow-lg">
-            <ul className="w-[180px] flex flex-col gap-3">
+            <div className="top-[60px] absolute p-[20px] -left-[130px] lg:-left-[180px] rounded-[10px] bg-white z-20 shadow-lg">
+            <ul className="w-[130px] lg:w-[180px] flex flex-col gap-3">
                 <li>
                 <Link
                     className="f14 fw700 lh32 text-[#828282] hover:text-[#3B2273] cursor-pointer"

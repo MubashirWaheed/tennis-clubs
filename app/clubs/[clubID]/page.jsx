@@ -1,68 +1,65 @@
 "use client";
+
 import clubData from "./clubData.json";
 import Image from "next/image";
 import Link from "next/link";
 import CreateAnEvent from "@/components/ui/buttons/PrimaryButton";
+
 import PostScores from "@/components/ui/buttons/PrimaryButton";
 import CreateEvent from "@/components/ui/buttons/PrimaryButton";
-
 import MoreButton from "./MoreButton";
 
 const clubView = () => {
 
   return (
     <>
-      {/* Header */}
-      <section className="relative lg:h-[223px]">
-        <div className="absolute h-full  bg-gradient-to-b from-transparent to-black/90 w-full  mx-auto flex justify-between items-center px-[185px] py-[61px]">
-          <div className="flex flex-col gap-[5px]">
-            <h2 className="h2 text-[#fff]">{clubData.clubDetails.name}</h2>
-            <div className="flex gap-[10px]">
-              <div className="flex items-center gap-[5px]">
-                <Image
-                  width={24}
-                  height={24}
-                  src="/map.svg"
-                  alt="map"
-                  className="w-[24px] h-[24px]"
-                />
-                <p className="f14 fw700 lh22 text-[#fff]">
-                  {clubData.clubDetails.location}
+      <section className="lg:h-[230px] bg-[url('/tennis-court.png')] bg-cover bg-no-repeat">
+        <div className="h-full w-full bg-gradient-to-b from-transparent to-black/90">
+          <div className="px-4 lg:px-0 w-full max-w-[1170px] flex items-center justify-between flex-col lg:flex-row gap-2 lg:gap-0 mx-auto py-[60px]">
+            <div className="flex flex-col items-center lg:items-start gap-2 lg:gap-0">
+              <h2 className="h2 text-white text-center">
+                {clubData.clubDetails.name}
+              </h2>
+
+              <div className="flex items-center flex-col lg:flex-row gap-3 lg:gap-2">
+                <p className="flex items-center gap-1 f14 lh22 fw700 text-white">
+                  <span>
+                    <Image
+                      src="/map.svg"
+                      alt="Map Icon"
+                      width={24}
+                      height={24}
+                    />
+                  </span>
+                  <span>{clubData.clubDetails.location}</span>
                 </p>
-              </div>
-              <div className="flex items-center gap-[5px]">
-                <Image
-                  width={24}
-                  height={24}
-                  src="/Game.svg"
-                  alt="Game"
-                  className="w-[24px] h-[24px]"
-                />
-                <p className="f14 fw700 lh22 text-[#fff] flex gap-[5px]">
-                  {clubData.clubDetails.noOfEvents}
-                  <span>Events</span>
+                <p className="flex items-center gap-1 f14 lh22 fw700 text-white">
+                  <span>
+                    <Image
+                      src="/Game.svg"
+                      alt="Game Icon"
+                      width={24}
+                      height={24}
+                    />
+                  </span>
+                  <span className="flex items-center">{clubData.clubDetails.noOfEvents} Events</span>
                 </p>
               </div>
             </div>
-          </div>
-          <div className="flex gap-[6px]">
-            <PostScores>Post Scores</PostScores>
-            <CreateEvent>Create An Event</CreateEvent>
-            <MoreButton />
+
+            <div className="flex items-center gap-1 flex-col lg:flex-row lg:gap-[14px]">
+              <PostScores>Post scores</PostScores>
+              <CreateEvent>Create An Event</CreateEvent>
+              <MoreButton />
+            </div>
           </div>
         </div>
-        <Image
-          width={1540}
-          height={223}
-          src="/tennis-court.png"
-          alt="Header Background Image"
-          className="absolute -z-10 top-0 insext-x-0 w-full h-full object-cover object-bottom"
-        />
       </section>
 
       {/* Main Section */}
-      <section className="relative -top-[30px] w-full max-w-[1170px] mx-auto">
-        <nav className="px-[50px] h-[60px] w-full rounded-[10px] shadow-md bg-white flex justify-start gap-[30px] items-stretch">
+      <section className="relative -top-[30px] w-full flex flex-col gap-3 max-w-[1170px] mx-auto px-4 lg:px-0 pb-[40px]">
+        {/* Navigation */}
+        <nav className="px-[50px] h-[60px] w-full overflow-x-auto rounded-[10px] shadow-md bg-white flex justify-start gap-[30px] items-stretch">
           {clubData.clubNavBar.map((navItem, index) => (
             <Link
               href={`/clubs/123${navItem?.href}`}
@@ -76,15 +73,18 @@ const clubView = () => {
 
         <div
           id="about"
-          className="w-full flex items-start gap-[34px] rounded-[10px] mt-[47px]"
+          className="w-full flex flex-col lg:flex-row items-center lg:items-start gap-[34px] rounded-[10px] mt-[47px]"
         >
+          {/* About Description */}
           <div className="flex flex-col gap-[6px] ">
             <h4 className="h4 text-[#13013c] ">{clubData.about.title}</h4>
-            <p className="f16 fw400 lh24 text-[#828282] w-[840px] font-sans">
+            <p className="f16 fw400 lh24 text-[#828282] w-full lg:w-[840px] font-sans">
               {clubData.about.description}
             </p>
           </div>
-          <div className="px-[21px] py-[28px] bg-[#fff] shadow-md w-[290px]">
+
+          {/* Organizer Card */}
+          <div className="px-[21px] py-[28px] bg-[#fff] shadow-md w-full lg:w-[290px]">
             <p className="text-[20px] fw700 lh24 font-Abril Fatface text-[#13013c]">
               Organizer
             </p>
@@ -111,84 +111,90 @@ const clubView = () => {
           </div>
         </div>
 
-        <div id="events" className="flex flex-row  justify-between">
-          <div className="mt-3">
+        <div
+          id="events"
+          className="flex flex-col lg:flex-row items-center justify-between"
+        >
+          <div className="mt-3 flex flex-col items-center lg:items-start">
             <h3 className="text-[#13013c] h3">Upcoming Events</h3>
+
             {/* cards */}
-            <div className="flex flex-row gap-3 pt-[60px] w-full blur">
-              {/* card1 */}
-              <div className="w-[380px] h-[250px] border border-[#fff] bg-[#fff] box py-5 px-8 rounded-[10px] ">
-                <div className="flex flex-row justify-between items-center pb-3">
-                  <p className="text-[#828282] f14 fw700 lh24">
-                    YESTERDAY | 6:30pm
-                  </p>
-                  <div className="flex gap-[10px]">
-                    <button className="px-[16px] py-[2px] rounded-[20px] bg-[#027333] text-[#fff]">
-                      <p className="f14 fw700 lh24">In Progress</p>
-                    </button>
+            <div className="relative w-full">
+              <div className="pointer-events-none flex flex-col lg:flex-row gap-3 pt-[60px] w-full blur">
+                {/* card1 */}
+                <div className="w-[380px] h-[250px] border border-[#fff] bg-[#fff] box py-5 px-8 rounded-[10px] ">
+                  <div className="flex flex-row justify-between items-center pb-3">
+                    <p className="text-[#828282] f14 fw700 lh24">
+                      YESTERDAY | 6:30pm
+                    </p>
+                    <div className="flex gap-[10px]">
+                      <button className="px-[16px] py-[2px] rounded-[20px] bg-[#027333] text-[#fff]">
+                        <p className="f14 fw700 lh24">In Progress</p>
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <p className="relative f18 fw400 lh24 text-[#13013C]">
-                  Galileo High School at George Washington High School
-                  <span>
-                    <Image
-                      width={18}
-                      height={18}
-                      src="/verifiedIcon.svg"
-                      alt="verifiedIcon"
-                      className="w-[18px] h-[18px] absolute bottom-1 right-[78px] "
-                    />
-                  </span>
-                </p>
-                <p className="text-[#828282] f16 fw400 lh24 py-1">
-                  Raoul Wallenberg Traditional High School -
-                  <span>Boys • San Francisco, CA</span>
-                </p>
-                <p className="text-[#828282] f14 fw400 lh24 flex flex-col">
-                  Free Event
-                  <span>Men . Singles</span>
-                </p>
-              </div>
-              {/* card2 */}
-              <div className="w-[380px] h-[250px] border border-[#fff] bg-[#fff] box py-5 px-8 rounded-[10px] ">
-                <div className="flex flex-row justify-between items-center pb-3">
-                  <p className="text-[#828282] f14 fw700 lh24">
-                    YESTERDAY | 6:30pm
+                  <p className="relative f18 fw400 lh24 text-[#13013C]">
+                    Galileo High School at George Washington High School
+                    <span>
+                      <Image
+                        width={18}
+                        height={18}
+                        src="/verifiedIcon.svg"
+                        alt="verifiedIcon"
+                        className="w-[18px] h-[18px] absolute bottom-1 right-[78px] "
+                      />
+                    </span>
                   </p>
-                  <div className="flex gap-[10px]">
-                    <button className="px-[16px] py-[2px] rounded-[20px] bg-[#027333] text-[#fff]">
-                      <p className="f14 fw700 lh24">In Progress</p>
-                    </button>
-                  </div>
+                  <p className="text-[#828282] f16 fw400 lh24 py-1">
+                    Raoul Wallenberg Traditional High School -
+                    <span>Boys • San Francisco, CA</span>
+                  </p>
+                  <p className="text-[#828282] f14 fw400 lh24 flex flex-col">
+                    Free Event
+                    <span>Men . Singles</span>
+                  </p>
                 </div>
-                <p className="relative f18 fw400 lh24 text-[#13013C]">
-                  Galileo High School at George Washington High School
-                  <span>
-                    <Image
-                      width={18}
-                      height={18}
-                      src="/verifiedIcon.svg"
-                      alt="verifiedIcon"
-                      className="w-[18px] h-[18px] absolute bottom-1 right-[78px] "
-                    />
-                  </span>
-                </p>
-                <p className="text-[#828282] f16 fw400 lh24 py-1">
-                  Raoul Wallenberg Traditional High School -
-                  <span>Boys • San Francisco, CA</span>
-                </p>
-                <p className="text-[#828282] f14 fw400 lh24 flex flex-col">
-                  Free Event
-                  <span>Men . Singles</span>
-                </p>
+                {/* card2 */}
+                <div className="w-[380px] h-[250px] border border-[#fff] bg-[#fff] box py-5 px-8 rounded-[10px] ">
+                  <div className="flex flex-row justify-between items-center pb-3">
+                    <p className="text-[#828282] f14 fw700 lh24">
+                      YESTERDAY | 6:30pm
+                    </p>
+                    <div className="flex gap-[10px]">
+                      <button className="px-[16px] py-[2px] rounded-[20px] bg-[#027333] text-[#fff]">
+                        <p className="f14 fw700 lh24">In Progress</p>
+                      </button>
+                    </div>
+                  </div>
+                  <p className="relative f18 fw400 lh24 text-[#13013C]">
+                    Galileo High School at George Washington High School
+                    <span>
+                      <Image
+                        width={18}
+                        height={18}
+                        src="/verifiedIcon.svg"
+                        alt="verifiedIcon"
+                        className="w-[18px] h-[18px] absolute bottom-1 right-[78px] "
+                      />
+                    </span>
+                  </p>
+                  <p className="text-[#828282] f16 fw400 lh24 py-1">
+                    Raoul Wallenberg Traditional High School -
+                    <span>Boys • San Francisco, CA</span>
+                  </p>
+                  <p className="text-[#828282] f14 fw400 lh24 flex flex-col">
+                    Free Event
+                    <span>Men . Singles</span>
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="relative bottom-[140px] left-[300px]">
-              <CreateAnEvent>Create An Event</CreateAnEvent>
+              <div className="z-10 abolute inset-0 flex items-center justify-center h-full w-full">
+                <CreateAnEvent>Create An Event</CreateAnEvent>
+              </div>
             </div>
           </div>
 
-          <div className="w-[290px] h-[280px] shadow-md bg-[#fff] rounded-[10px] mt-[21px]">
+          <div className="w-full lg:w-[290px] h-[280px] shadow-md bg-[#fff] rounded-[10px] mt-[21px]">
             <div className="flex flex-col">
               <div className="px-[28px] py-[21px]">
                 <p className="text-[20px] fw700 lh24 font-Abril Fatface text-[#13013c] mb-[22px]">
