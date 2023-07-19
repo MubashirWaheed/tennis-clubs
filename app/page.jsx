@@ -2,16 +2,13 @@
 import JoinPlayerBTN from "../components/ui/buttons/PrimaryButton";
 import JoinClubBTN from "../components/ui/buttons/PrimaryButton";
 import Image from "next/image";
-
 import { useRouter } from "next/navigation";
 // import LoggedInHomeV2 from "./components/home/LoggedInHomeV2";
 import LoggedInHome from "./components/home/LoggedInHome";
 
-
-
 const Home = () => {
   const router = useRouter();
-  let isLoggedIn = true;
+  let isLoggedIn = false;
 
   return (
     <>
@@ -42,7 +39,7 @@ const Home = () => {
                   such as serving, volleying, and footwork.
                 </p>
               </div>
-              <div className="flex items-center gap-[22px] w-full justify-start">
+              <div className="flex flex-col lg:flex-row items-center gap-[22px] w-full justify-start">
                 <JoinPlayerBTN
                   type="button"
                   onClick={() => router.push("/register")}
@@ -66,7 +63,7 @@ const Home = () => {
             </section>
 
             {/* Player Image on the right side. */}
-            <section className="z-20 px-[10px] w-full lg:px-0 lg:w-[751px] h-[501px]">
+            <section className="z-20 px-[10px] w-full lg:px-0 lg:w-[751px] lg:h-[501px]">
               <Image
                 width={751}
                 height={501}

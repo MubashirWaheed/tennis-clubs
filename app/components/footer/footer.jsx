@@ -5,9 +5,9 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="border-t-4 bg-[url('/girlPotrait.png')] bg-contain bg-no-repeat bg-right-top h-[503px] border-[#3B2273] relative flex flex-col justify-between">
-      <div className="relative -left-[80px] pt-[70px] flex items-start justify-around w-full max-w-[1170px] mx-auto">
-        <div className="flex flex-col gap-[17px] items-start">
+    <footer className="border-t-4 bg-[url('/girlPotrait.png')] bg-contain bg-no-repeat bg-right-top lg:h-[503px] border-[#3B2273] relative flex flex-col justify-between">
+      <div className="lg:relative lg:-left-[80px] lg:pt-[70px] py-3 lg:py-0 flex flex-wrap items-start gap-7 lg:gap-0 justify-around w-full max-w-[1170px] mx-auto">
+        <div className="flex flex-col gap-[17px] items-center p-3 lg:p-0 lg:items-start">
           <Image
             width={114}
             height={96}
@@ -16,7 +16,7 @@ const Footer = () => {
             className="w-[114.09px] h-[96px]"
           />
 
-          <p className="w-[385px] f16 fw400 lh24 text-[#828282]">
+          <p className="lg:w-[385px] f16 fw400 lh24 text-[#828282]">
             Another important feature could be profiles of famous tennis players
             from around the world. This could include information on their
             playing style, career highlights, and current ranking.
@@ -82,7 +82,7 @@ const Footer = () => {
                   alt="Phone Icon"
                   className="w-[20px] h-[20px]"
                 />
-                <p className="w-[20px] h-[20px]">{"+8615888033338"}</p>
+                <p className="">{"+8615888033338"}</p>
               </Link>
             </li>
             <li>
@@ -98,19 +98,12 @@ const Footer = () => {
                   alt="SMS Icon"
                   className="w-[20px] h-[20px]"
                 />
-                <p className="w-[20px] h-[20px]">business@fantasysupply.com</p>
+                <p className="">business@fantasysupply.com</p>
               </Link>
             </li>
           </ul>
         </div>
       </div>
-      {/* <Image
-        src="/girlPotrait.png"
-        width={1540}
-        height={503}
-        alt="GirlPotrait"
-        className="absolute inset-0"
-      /> */}
 
       <div className=" w-full border-t-2 py-[34px] flex items-center justify-center border-[#828282]/20">
         <p className="f16 fw400 lh24">
