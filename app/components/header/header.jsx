@@ -1,22 +1,22 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
+
+    const searchHandler = (event) => {
+      event.preventDefault();
+    }
+
     return (
       <header className="bg-white z-30">
         <div className="flex items-center max-w-[1200px] mx-auto justify-between p-3">
           {/* Logo */}
-          <div className="h-[60px] w-[60px]">
-            <Image
-              src="/Logo.svg"
-              width={60}
-              height={60}
-              alt="MPR Logo"
-              className="w-full h-full"
-            />
-          </div>
+          <Link href="/" className="z-30 cursor-pointer">
+            <Image src="/Logo.svg" width={85} height={70} alt="Logo" />
+          </Link>
 
           {/* Navigation Bar */}
-          <nav>
+          <nav className="hidden md:inline-flex">
             <ul className={styles.navBar}>
               <li className={styles.navItem}>Home</li>
               <li className={styles.navItem}>Explore</li>
@@ -25,16 +25,19 @@ const Header = () => {
           </nav>
 
           {/* Search bar */}
-          <form className={styles.searchContainer}>
-            <Image
-              width={18}
-              height={18}
-              src="/search-icon.svg"
-              alt="Add Icon"
-              className={styles.searchIcon}
-            />
+          <form onSubmit={searchHandler} className={styles.searchContainer}>
+            <label htmlFor="search">
+              <Image
+                width={18}
+                height={18}
+                src="/search-icon.svg"
+                alt="Add Icon"
+                className={styles.searchIcon}
+              />
+            </label>
             <input
-              type="text"
+              id="search"
+              type="search"
               className={styles.searchInput}
               placeholder="Search"
             />

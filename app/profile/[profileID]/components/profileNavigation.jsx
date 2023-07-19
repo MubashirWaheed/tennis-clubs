@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const ProfileNavigation = ({ navItems }) => {
     return (
-        <article className="px-[50px] h-[60px] w-full rounded-[10px] shadow-md bg-white flex justify-start gap-[30px] items-stretch">
+        <article className="px-[50px] h-[60px] w-full overflow-x-auto rounded-[10px] shadow-md bg-white flex justify-start gap-[30px] items-stretch">
         {navItems.map((navItem, index) => (
             <Link
             href={`/profile/123/${navItem?.href}`}

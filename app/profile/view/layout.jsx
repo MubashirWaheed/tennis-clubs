@@ -9,8 +9,8 @@ const ProfileViewLayout = ({children}) => {
     return (
       <main>
         <section className="relative bg-[#3B2273]">
-          <div className="flex flex-row justify-between items-center h-full px-4 lg:px-0 w-full max-w-[1170px] mx-auto pt-[50px] pb-[80px]">
-            <div className="flex items-center gap-5">
+          <div className="flex flex-col lg:flex-row gap-4 lg:gap-0 justify-between items-center h-full px-4 lg:px-0 w-full max-w-[1170px] mx-auto pt-[50px] pb-[80px]">
+            <div className="flex flex-col lg:flex-row items-center gap-5">
               <Image
                 width={93}
                 height={93}
@@ -18,7 +18,7 @@ const ProfileViewLayout = ({children}) => {
                 alt="Player Profile"
                 className="w-[93px] h-[93px] rounded-full"
               />
-              <div className="flex flex-col  gap-1 pt-7">
+              <div className="flex flex-col items-center lg:items-start gap-1 pt-7">
                 <p className="h2 text-white">Philip B. Simpson</p>
                 <p className="f16 fw700 lh24 text-[#fff] opacity-70">
                   Avenue Shippensburg, PA 17257
@@ -32,7 +32,7 @@ const ProfileViewLayout = ({children}) => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-row gap-[60px]">
+            <div className="flex flex-col lg:flex-row gap-[60px]">
               <div>
                 <p className="text-[#FFBB34] f16 fw700 lh24">MPR</p>
                 <p className="text-white h2">1.00 - 3.00</p>
@@ -51,21 +51,21 @@ const ProfileViewLayout = ({children}) => {
             height={100}
             src="/Ball.svg"
             alt="Ball"
-            className="absolute bottom-0 right-0 w-[100px] h-[100px] object-contain"
+            className="pointers-events-none absolute bottom-0 right-0 w-[100px] h-[100px] object-contain"
           />
           <Image
             width={131}
             height={111}
             src="/HorizontalBat.svg"
             alt="HorizontalBat"
-            className="absolute left-0 bottom-2"
+            className="pointers-events-none absolute left-0 bottom-2"
           />
           <Image
             width={131}
             height={111}
             src="/VerticalBat.svg"
             alt="VerticalBat"
-            className="absolute left-0 bottom-0"
+            className="pointers-events-none absolute left-0 bottom-0"
           />
         </section>
         {children}

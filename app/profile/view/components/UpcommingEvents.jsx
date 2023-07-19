@@ -9,7 +9,7 @@ const Events = () => {
         <h3 className="h3 text-[#13013c]">Your Upcoming Events</h3>
         <div className="border border-[#828282]/20 mt-[20px]"></div>
 
-        <div className="flex flex-row gap-[14px] mt-[43px]">
+        <div className="flex flex-col lg:flex-row gap-[14px] mt-[43px]">
           {ProfileView.upcomingEvents.map((event, index) => (
             <article
               key={index}
@@ -31,8 +31,8 @@ const Events = () => {
                   </h5>
 
                   <Image
-                  width={17}
-                  height={18}
+                    width={17}
+                    height={18}
                     src="/verifiedIcon.svg"
                     alt="verification"
                     className="h-[18px] w-[17px] relative top-[14px] right-[70px]"
@@ -63,10 +63,10 @@ const Events = () => {
             </article>
           ))}
 
-          <div className="relative p-[20px]  w-[416px] h-[277px] border border-[#000] border-dashed rounded-[10px]">
+          <div className="relative p-[20px]  lg:w-[416px] lg:h-[277px] border border-[#000] border-dashed rounded-[10px]">
             <Image
-            width={416}
-            height={277}
+              width={416}
+              height={277}
               src="/potraitimg.png"
               alt="cardimg"
               className="object-cover w-full h-full absolute top-0 left-0 right-0 bottom-0 -z-10 rounded-[10px]"

@@ -8,12 +8,14 @@ import profileViewData from "./profileView.json";
 
 
 const IndividualProfileLayout = ({ children }) => {
+
   const router = useRouter();
+
   return (
     <main>
       <section className="relative bg-[#3B2273]">
-        <div className="flex flex-row justify-between items-center h-full px-[160px] pt-[44px] pb-[80px]">
-          <div className="flex items-center gap-5">
+        <div className="z-30 flex flex-col gap-4 lg:gap-0 lg:flex-row justify-between items-center h-full w-full max-w-[1170px] px-3 lg:px-0 mx-auto pt-[44px] pb-[80px]">
+          <div className="flex flex-col lg:flex-row items-center gap-2 md:gap-3 lg:gap-5">
             <Image
               width={93}
               height={93}
@@ -21,12 +23,12 @@ const IndividualProfileLayout = ({ children }) => {
               alt="Player Profile"
               className="w-[93px] h-[93px] rounded-full"
             />
-            <div className="flex flex-col  gap-1 pt-7">
+            <div className="flex flex-col gap-1 pt-7">
               <p className="h2 text-white">Philip B. Simpson</p>
               <p className="f16 fw700 lh24 text-[#fff] opacity-70">
                 Avenue Shippensburg, PA 17257
               </p>
-              <div className="gap-[15px] mt-2 flex items-center">
+              <div className="gap-[15px] mt-2 flex flex-col md:flex-row items-center">
                 <RequestPaidHit size="small">Request Paid Hits</RequestPaidHit>
                 <ViewPaidHits size="small">View Paid Hits</ViewPaidHits>
                 <button className="px-[10px] py-[8px] flex items-center justify-center gap-[10px] border-2 border-[#ffffff] rounded-[8px] cursor-pointer">
@@ -64,7 +66,7 @@ const IndividualProfileLayout = ({ children }) => {
                 </p>
               </div>
 
-              <div className="border border-[#828282] "></div>
+              <div className="border border-[#828282]"></div>
             </div>
 
             <div className="flex flex-col gap-[25px]">
@@ -108,24 +110,25 @@ const IndividualProfileLayout = ({ children }) => {
           height={100}
           width={100}
           alt=""
-          className="absolute bottom-0 right-0 w-[100px] h-[100px] object-contain"
+          className="pointer-events-none absolute bottom-0 right-0 w-[100px] h-[100px] object-contain"
         />
         <Image
           src="/HorizontalBat.svg"
           height={111}
           width={132}
           alt=""
-          className="absolute left-0 bottom-2"
+          className="pointer-events-none absolute left-0 bottom-2"
         />
         <Image
           src="/VerticalBat.svg"
           alt=""
           height={111}
           width={132}
-          className="absolute left-0 bottom-0"
+          className="pointer-events-none absolute left-0 bottom-0"
         />
       </section>
-      <section className="relative -top-[30px] flex flex-col gap-[50px] w-full max-w-[1200px] mx-auto">
+
+      <section className="relative -top-[30px] flex flex-col gap-[50px] w-full max-w-[1170px] mx-auto">
         <ProfileNavigation navItems={profileViewData?.profileNavBar} />
         {children}
       </section>

@@ -10,16 +10,16 @@ import HomeHeader from './components/header/homeHeader';
 
 export default function RootLayout({ children }) {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   return (
     <html lang="en">
       <body>
         <div>
-          {/* {isLoggedIn ?
+          {isLoggedIn ?
             <Header /> :
             <HomeHeader />
-          } */}
+          }
           {children}
           {/* <Footer /> */}
         </div>

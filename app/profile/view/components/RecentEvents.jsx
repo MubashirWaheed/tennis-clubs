@@ -7,7 +7,7 @@ const RecentEvents = () => {
         <h3 className="h3 text-[#13013c]">Recent Events</h3>
         <div className="border border-[#828282]/20 mt-[20px]"></div>
 
-        <div className="flex flex-row gap-[14px] mt-[43px]">
+        <div className="flex flex-col lg:flex-row gap-[14px] mt-[43px]">
           {ProfileView.recentEvents.map((event, index) => (
             <article
               key={index}
@@ -29,8 +29,8 @@ const RecentEvents = () => {
                   </h5>
 
                   <Image
-                  width={17}
-                  height={18}
+                    width={17}
+                    height={18}
                     src="/verifiedIcon.svg"
                     alt="verification"
                     className="h-[18px] w-[17.114px] relative top-[14px] right-[70px]"

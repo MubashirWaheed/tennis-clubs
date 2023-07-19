@@ -7,10 +7,15 @@ import Save from "@/components/ui/buttons/PrimaryButton";
 import Cancel from "@/components/ui/buttons/SecondaryButton";
 
 
-
 const EditProfile = () => {
+
+  const submitProfileHandler = async (event) => {
+    event.preventDefault();
+  }
+
   return (
-    <section className="relative px-[57px] py-[25px] -top-[100px] flex flex-col gap-[50px] max-w-[1200px] mx-auto bg-white rounded-[10px]">
+    <section className="relative px-[10px] py-[15px] lg:px-[57px] lg:py-[25px] -top-[100px] flex flex-col gap-[50px] max-w-[1200px] mx-auto bg-white rounded-[10px]">
+
       <div className="absolute h-[92px] w-[92px] -top-[46px] right-[50px] p-[2px] rounded-full bg-white">
         <div className="relative h-full w-full ">
           <Image
@@ -26,11 +31,12 @@ const EditProfile = () => {
         </div>
       </div>
 
-      <form className="flex flex-col gap-[30px]">
+      <form onSubmit={submitProfileHandler} className="flex flex-col gap-[30px]">
         <ProfileEditor />
         <PlayerInfoEditor />
         <PreferredGearEditor />
       </form>
+
       <div className="flex justify-end gap-[17px]">
         <Cancel>Cancel</Cancel>
         <Save>Save</Save>

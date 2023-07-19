@@ -4,7 +4,7 @@ import Media from "./Media";
 
 const Overview = () => {
   return (
-    <section className="w-full bg-[#fff]">
+    <section className="w-full max-w-[1170px] bg-[#fff]">
       <RecentResults />
       <EventsNearYou />
       <Media />

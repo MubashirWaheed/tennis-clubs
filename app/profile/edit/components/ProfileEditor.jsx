@@ -8,8 +8,8 @@ const ProfileEditor = () => {
       <h3 className="h3 text-[#13013c]">Profile</h3>
       <div className="border border-[#828282]/30 mt-[20px] "></div>
 
-      <div className="flex gap-[15px] mt-[40px]">
-        <div className="flex gap-[15px] flex-1">
+      <div className="flex flex-col lg:flex-row gap-[15px] mt-[40px]">
+        <div className="flex flex-col lg:flex-row gap-[15px] flex-1">
           <TextField label="First name" id="firstName" />
           <TextField label="Last name" id="lastName" />
         </div>
@@ -20,7 +20,7 @@ const ProfileEditor = () => {
 
       <div>
         <p className="f16 fw700 lh24 text-[#13013c]">Your ratings</p>
-        <div className="flex items-center gap-[24px] mt-[16px]">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center gap-[24px] mt-[16px]">
           <div className="flex items-center gap-[5px]">
             <Image
               width={20}
@@ -49,11 +49,11 @@ const ProfileEditor = () => {
       </div>
 
       <div className="mt-[20px] flex flex-col gap-[20px]">
-        <div className="flex gap-[16px]">
+        <div className="flex flex-col lg:flex-row gap-[16px]">
           <AutoComplete label="Select the rating you'd like to display" />
           <AutoComplete label="Residence" />
         </div>
-        <div className="flex gap-[16px]">
+        <div className="flex flex-col lg:flex-row gap-[16px]">
           <AutoComplete label="Region" />
           <AutoComplete label="Nationality" />
         </div>

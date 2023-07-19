@@ -8,15 +8,15 @@ const PreferredGearEditor = () => {
       <div className="border border-[#828282]/30 mt-[20px] "></div>
 
       <div className="flex flex-col gap-[20px] mt-[36px]">
-        <div className="flex gap-[16px]">
-          <TextField label="Racket Brand" id="racketBrand"/>
+        <div className="flex flex-col lg:flex-row gap-[16px]">
+          <TextField label="Racket Brand" id="racketBrand" />
           <AutoComplete label="Racket Type" />
         </div>
-        <div className="flex gap-[16px]">
+        <div className="flex flex-col lg:flex-row gap-[16px]">
           <AutoComplete label="Ball" />
           <AutoComplete label="Apparel Brand" />
         </div>
-        <div className="flex gap-[16px]">
+        <div className="flex flex-col lg:flex-row gap-[16px]">
           <AutoComplete label="Shoes Brand" />
           <TextField label="Shoes Type" id="shoesType" />
         </div>

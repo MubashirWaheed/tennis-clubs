@@ -1,14 +1,13 @@
 import Image from "next/image";
 import FindPlay from "@/components/ui/buttons/PrimaryButton";
-
+import { useRouter } from "next/navigation";
 const Hero = () => {
+  const router = useRouter();
   return (
     <section className="relative bg-[#3B2273]">
       <div className="px-2 lg:px-0 w-full max-w-[1170px] mx-auto flex flex-col gap-3 lg:gap-0 lg:flex-row justify-between py-[86px]">
-
         {/* Hero Code Here */}
         <div className="flex flex-col gap-3 lg:gap-0 lg:flex-row justify-between items-center">
-
           <h2 className="text-[#fff] h2">My Ratings</h2>
 
           <div className="px-14 flex flex-col items-center lg:items-start">
@@ -19,14 +18,11 @@ const Hero = () => {
             </p>
           </div>
 
-          <FindPlay>Find Play</FindPlay>
-
+          <FindPlay onClick={() => router.push("/matches")}>Find Play</FindPlay>
         </div>
-        
+
         <div className="flex flex-col items-center lg:items-end gap-[16px]">
-          <p className="text-white f24 fw700 lh24">
-            WHAT ARE YOU LOOKING FOR?
-          </p>
+          <p className="text-white f24 fw700 lh24">WHAT ARE YOU LOOKING FOR?</p>
           <nav>
             <ul className="f16 fw400 lh24 text-white ">
               <li className="text-center lg:text-right list-disc list-inside">
@@ -59,8 +55,8 @@ const Hero = () => {
         className="absolute left-0 bottom-2 w-[132px] h-[111px]"
       />
       <Image
-      width={132}
-      height={111}
+        width={132}
+        height={111}
         src="/VerticalBat.svg"
         alt=""
         className="absolute left-0 bottom-0 w-[132px] h-[111px]"
