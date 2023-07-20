@@ -3,10 +3,8 @@ import ApplyButton from "@/components/ui/buttons/PrimaryButton";
 
 const TypeFilter = () => {
   // State to track checkbox values
-  const [isTournament, setTournament] =
-    useState(false);
-  const [isCamp, setCamp] =
-    useState(false);
+  const [isTournament, setTournament] =useState(false);
+  const [isCamp, setCamp] =useState(false);
   const [isClinic, setClinic] = useState(false);
   const [isMatchPlay, setMatchPlay] =useState(false);
   const [isdualMatch, setdualMatch] = useState(false);
@@ -126,18 +124,23 @@ const TypeFilter = () => {
 
   // Handler for the Clear button
   const handleClearClick = () => {
-    setCollegeCampusJuniorsSelected(false);
-    setCollegeCircuitsSelected(false);
-    setJuniorCircuitsSelected(false);
-    setJuniorRegionalsSelected(false);
-    setPttWildcardEventSelected(false);
-    setUtrProTennisTourSelected(false);
+    setTournament(false);
+    setCamp(false);
+    setClinic(false);
+    setMatchPlay(false);
+    setdualMatch(false);
+    setnonTennisEventOther(false);
+    setutrFlexLeague(false);
+    setutrTeamTennis(false);
+    setteamMatch(false);
+    setpaidHit(false);
+    setplayerCreatedPlay(false);
   };
 
   return (
     <div className="w-[300px] lg:w-[400px] flex flex-col items-stretch gap-[20px]">
       <div className="w-full flex items-center justify-between">
-        <h5 className="h5 text-[#13013C]">Events Series</h5>
+        <h5 className="h5 text-[#13013C]">Type</h5>
         <button
           onClick={handleClearClick}
           className="f14 fw700 lh30 text-[#13013C]"

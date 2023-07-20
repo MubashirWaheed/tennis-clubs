@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const ResultCard = ({ result }) => {
   return (
-    <article className="shadow-sm min-w-[770px] py-[30px] px-[3px] flex flex-col gap-[36px] border-t border-[#828282]/30">
+    <article className="shadow-sm w-full md:w-[500px] lg:min-w-[770px] py-[30px] px-[3px] flex flex-col gap-[36px] border-t border-[#828282]/30">
       <div className="w-full flex flex-col">
         <div className="flex items-center w-full justify-between">
           <h4 className="f-Abril f24 fw400 lh50 text-[#13013C]">
@@ -32,13 +32,54 @@ const ResultCard = ({ result }) => {
             />
             <Image
               width={24}
-                    height={20}
+              height={20}
               src="/Logo.svg"
               alt="Logo"
               className="w-[24px] h-[20px]"
             />
           </div>
-          <div></div>
+          <div className="flex flex-col gap-[10px]">
+            {result.playerData.map((player, index) => (
+              <div
+                key={index}
+                className="w-full flex items-center justify-between"
+              >
+                <Image
+                  src="/France.svg"
+                  alt="France Flag Icon"
+                  width={20}
+                  height={15}
+                  className="mr-2"
+                />
+                <p className="flex items-end gap-1 flex-1">
+                  <span className="f18 fw700 lh30 text-[ #13013C]">
+                    {player.playerName}
+                  </span>
+                  <span className="f12 fw700 lh30 text-[#13013C]">
+                    {player.playerSuffix}
+                  </span>
+                </p>
+                <p className="flex-[0.5] f20 fw700 lh30 text-[#828282]">
+                  {player.MPR}
+                </p>
+                <p className="flex-[0.5] text-[#828282] f20 fw700 lh30 flex items-center gap-[18px]">
+                  {player.score.map((score, index) => (
+                    <span key={index}>{score}</span>
+                  ))}
+                  <span>
+                    {player.isWinner && (
+                      <Image
+                        src="/winnerIcon.svg"
+                        width={12}
+                        height={20}
+                        alt="Winner Icon"
+                      />
+                    )}
+                  </span>
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </article>

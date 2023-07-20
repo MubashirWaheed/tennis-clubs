@@ -23,7 +23,7 @@ const EditProfile = () => {
             height={92}
             src="/human.png"
             alt="Player Profile Image"
-            className="rounded-full h-full w-full object-cover "
+            className="rounded-full h-full w-full object-cover"
           />
           <button className="absolute bottom-0 right-0 bg-[#3B2273] h-[20px] w-[20px] rounded-full flex items-center justify-center ">
             <Image  width={8} height={8} src="/edit.svg" alt={"Edit"} className="w-[8px] h-[8px]" />

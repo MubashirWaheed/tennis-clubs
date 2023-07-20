@@ -3,7 +3,6 @@ import { useState } from "react";
 
 export default function SportsFilter() {
   
-
   const [isTennisSelected, setTennisSelected] = useState(false);
   const [isPickleballSelected, setPickleballSelected] = useState(false);
 

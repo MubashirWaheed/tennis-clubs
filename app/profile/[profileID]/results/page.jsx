@@ -5,9 +5,9 @@ import Image from "next/image";
 const Results = () => {
   return (
     <section>
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col lg:flex-row justify-between items-center">
         <div className="w-[355px] flex flex-col gap-[30px] mb-[40px]">
-          <div className="flex gap-[15px]">
+          <div className="flex flex-col md:flex-row gap-[15px]">
             <AutoComplete label="Game Type" />
             <AutoComplete label="Filter Type" />
           </div>
