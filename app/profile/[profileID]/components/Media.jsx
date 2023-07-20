@@ -2,7 +2,7 @@ export default function Media() {
     return (
         <div className="w-full mt-[80px] px-2">
             <div className="flex items-center w-full justify-between">
-                <h3 className="h3 text-[#13013c]">Media</h3>
+                <h3 className="h3 text-[rgb(19,1,60)]">Media</h3>
                 <button className="f16 fw700 lh24 text-[#027333]">See All Media</button>
             </div>
             <div className="border border-[#828282]/20 mt-[20px]"></div>
