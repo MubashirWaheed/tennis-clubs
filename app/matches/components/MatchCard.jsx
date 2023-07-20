@@ -10,8 +10,12 @@ const MatchCard = ({eventName, eventLocation, eventDate, eventMonth, eventYear, 
             <h3 className="text-[20px] md:text-[35px] uppercase fw700 text-center">
               {eventDate}
             </h3>
-            <p className="uppercase f12 md:f14 fw700 lh22 text-center">{eventMonth}</p>
-            <p className="uppercase f12 md:f14 fw700 lh22 text-center">{eventYear}</p>
+            <p className="uppercase f12 md:f14 fw700 lh22 text-center">
+              {eventMonth}
+            </p>
+            <p className="uppercase f12 md:f14 fw700 lh22 text-center">
+              {eventYear}
+            </p>
           </div>
 
           <div className="flex-1 flex flex-col justify-between">
@@ -58,7 +62,9 @@ const MatchCard = ({eventName, eventLocation, eventDate, eventMonth, eventYear, 
             )}
           </div>
           <p className="p f16 fw700 text-[#828282] lh24">{dayAndTime}</p>
-          <p className="p f16 fw700 text-[#828282] lh24">{isMatchPlay}</p>
+          {isMatchPlay &&
+            <p className="p f16 fw700 text-[#828282] lh24">Match Play</p>
+          }
         </div>
       </article>
     );

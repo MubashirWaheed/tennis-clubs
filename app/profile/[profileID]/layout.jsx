@@ -114,17 +114,17 @@ const IndividualProfileLayout = ({ children }) => {
         />
         <Image
           src="/HorizontalBat.svg"
-          height={111}
-          width={132}
+          height={100}
+          width={100}
           alt=""
-          className="pointer-events-none absolute left-0 bottom-2"
+          className="absolute left-0 bottom-2"
         />
         <Image
           src="/VerticalBat.svg"
+          height={50}
+          width={50}
           alt=""
-          height={111}
-          width={132}
-          className="pointer-events-none absolute left-0 bottom-0"
+          className="absolute left-0 bottom-0"
         />
       </section>
 

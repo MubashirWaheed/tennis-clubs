@@ -54,18 +54,18 @@ const ProfileViewLayout = ({children}) => {
             className="pointers-events-none absolute bottom-0 right-0 w-[100px] h-[100px] object-contain"
           />
           <Image
-            width={131}
-            height={111}
             src="/HorizontalBat.svg"
-            alt="HorizontalBat"
-            className="pointers-events-none absolute left-0 bottom-2"
+            height={100}
+            width={100}
+            alt=""
+            className="absolute left-0 bottom-2"
           />
           <Image
-            width={131}
-            height={111}
             src="/VerticalBat.svg"
-            alt="VerticalBat"
-            className="pointers-events-none absolute left-0 bottom-0"
+            height={50}
+            width={50}
+            alt=""
+            className="absolute left-0 bottom-0"
           />
         </section>
         {children}

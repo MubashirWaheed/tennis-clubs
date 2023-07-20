@@ -8,7 +8,7 @@ const MatchesLayout = ({children}) => {
           <h1 className="h2 text-white pt-[64px] pb-[109px] w-full max-w-[1170px] px-5 lg:px-0 mx-auto">
             Find Matches
           </h1>
-          {/* <Image
+          <Image
             src="/Ball.svg"
             height={100}
             width={100}
@@ -17,18 +17,18 @@ const MatchesLayout = ({children}) => {
           />
           <Image
             src="/HorizontalBat.svg"
-            height={111}
-            width={132}
+            height={100}
+            width={100}
             alt=""
             className="absolute left-0 bottom-2"
           />
           <Image
             src="/VerticalBat.svg"
-            height={111}
-              width={132}
+            height={50}
+            width={50}
             alt=""
             className="absolute left-0 bottom-0"
-          /> */}
+          />
         </section>
         {children}
       </main>
