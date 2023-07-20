@@ -23,14 +23,14 @@ const ProfileInfo = () => {
   };
 
   return (
-    <section className="p-[38px] bg-white rounded-[10px] z-20">
+    <section className="p-[10px] md:p-[20px] lg:p-[38px] bg-white rounded-[10px] z-20">
       <h3 className="h3 text-[#13013C]">Personal information.</h3>
 
       <form
         onSubmit={submitPersonalInfo}
         className="lg:w-[507px] flex flex-col gap-[20px] mt-[20px]"
       >
-        <div className="flex gap-[20px] items-center">
+        <div className="flex flex-col md:flex-row gap-[20px] items-center">
           <TextField
             type="text"
             label="First name"
