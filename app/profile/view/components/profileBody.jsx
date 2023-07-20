@@ -2,7 +2,7 @@ import Results from "./RecentResults";
 import Events from "./UpcommingEvents";
 import RecentEvents from "./RecentEvents";
 import Clubs from "./Clubs";
-import Media from "./Media";
+import Media from "./media";
 
 const ProfileBody = () => {
   return (
