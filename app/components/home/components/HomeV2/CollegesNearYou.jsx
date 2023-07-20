@@ -10,16 +10,18 @@ const CollegesNearYou = () => {
   };
 
   return (
-    <section className=" py-[90px] w-[full] bg-[#fff]">
+    <section className="py-[40px] lg:py-[90px] w-[full] bg-[#fff]">
       <div className=" h-full w-full flex flex-col items-center justify-center">
-        <div className="flex flex-row items-center justify-between w-full">
-          <h2 className="text-[#13013c] h2 ">Colleges Near You</h2>
+        <div className="flex flex-col gap-2 lg:flex-row lg:gap-0 items-center justify-between w-full">
+          <h2 className="text-[#13013c] h2 text-center lg:text-left">
+            Colleges Near You
+          </h2>
 
           <button className="text-[#027333] fw700 f16 lh24">View All</button>
         </div>
         <div className="border border-[#828282]/20 mt-[20px] w-full"></div>
 
-        <div className="flex flex-row gap-[14px] mt-[47px]">
+        <div className="flex flex-col lg:flex-row gap-[14px] mt-[47px]">
           {homeData.collegesNearYou.map((college, index) => (
             <article
               key={index}

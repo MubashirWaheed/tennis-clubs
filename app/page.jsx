@@ -3,19 +3,19 @@ import JoinPlayerBTN from "../components/ui/buttons/PrimaryButton";
 import JoinClubBTN from "../components/ui/buttons/PrimaryButton";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-// import LoggedInHomeV2 from "./components/home/LoggedInHomeV2";
+import LoggedInHomeV2 from "./components/home/LoggedInHomeV2";
 import LoggedInHome from "./components/home/LoggedInHome";
 
 const Home = () => {
   const router = useRouter();
-  let isLoggedIn = false;
+  let isLoggedIn = true;
 
   return (
     <>
       {isLoggedIn ? (
-        <LoggedInHome />
+        //<LoggedInHome />
+        <LoggedInHomeV2 /> //uncomment either one to see the both versions of HOME Page.
       ) : (
-        // <LoggedInHomeV2 />
         <main className="relative bg-[#3B2273] py-[100px] w-full flex items-center justify-center">
           <div className="h-full w-full max-w-[1170px] mx-auto flex flex-col gap-[30px] lg:flex-row lg:gap-0 items-center justify-between">
             <section className="relative flex flex-col items-start gap-[31px] px-[10px] md:px-0">

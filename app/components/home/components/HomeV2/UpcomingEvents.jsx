@@ -1,16 +1,18 @@
 import Image from "next/image";
-import PlayEvent from "@/components/ui/buttons/PrimaryButton";
+import FindAnEventBTN from "@/components/ui/buttons/PrimaryButton";
 import homeData from "../../homeData.json";
 
 const UpcomingEvents = () => {
   return (
-    <section className=" w-[full]  py-[90px]  ">
+    <section className="w-[full] py-[40px] lg:py-[90px]">
       <div className=" h-full w-full flex flex-col  justify-center">
-        <h2 className="text-[#13013c] h2 ">Your Upcoming Events</h2>
+        <h2 className="text-[#13013c] h2 text-center lg:text-left">
+          Your Upcoming Events
+        </h2>
 
         <div className="border border-[#828282]/20 mt-[20px] w-full"></div>
 
-        <div className="flex flex-row gap-[14px] mt-[43px]">
+        <div className="flex flex-col lg:flex-row gap-[14px] mt-[43px]">
           {homeData.upcomingEvents.map((event, index) => (
             <article
               key={index}
@@ -64,7 +66,7 @@ const UpcomingEvents = () => {
             </article>
           ))}
 
-          <div className="relative p-[20px]  w-[416px] h-[277px] border border-[#000] border-dashed rounded-[10px]">
+          <div className="z-20 relative p-[20px] w-full lg:w-[416px] h-[277px] border border-[#000] border-dashed rounded-[10px]">
             <Image
               width={416}
               height={277}
@@ -82,7 +84,7 @@ const UpcomingEvents = () => {
               </div>
 
               <div className="mt-[79px] flex justify-end">
-                <PlayEvent>Play An Event</PlayEvent>
+                <FindAnEventBTN>Play An Event</FindAnEventBTN>
               </div>
             </div>
           </div>

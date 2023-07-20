@@ -14,7 +14,7 @@ const LoggedInHomeV2 = () => {
   return (
     <main>
       <Hero />
-      <div className="w-full max-w-[1170px] mx-auto">
+      <div className="w-full max-w-[1170px] mx-auto px-2 lg:px-0">
         <UpcomingEvents />
         <EventsNearYou />
         <MyClubs />

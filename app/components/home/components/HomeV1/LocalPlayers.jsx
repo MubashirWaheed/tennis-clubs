@@ -16,7 +16,9 @@ const LocalPlayers = () => {
       <div className="bg-[#3B2273]/70 h-full w-full">
         <div className="py-[20px] md:py-[40px] lg:py-[90px] px-2 lg:px-0 w-full max-w-[1170px] mx-auto flex flex-col gap-[50px] items-center justify-center">
           <div className="flex flex-col items-center ">
-            <h2 className="text-[#ffffff] h2 ">Local Players</h2>
+            <h2 className="text-[#ffffff] h2 text-center lg:text-left">
+              Local Players
+            </h2>
             <Image
               width={119}
               height={20}

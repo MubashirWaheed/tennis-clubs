@@ -22,7 +22,7 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col items-center lg:items-end gap-[16px]">
-          <p className="text-white f24 fw700 lh24">WHAT ARE YOU LOOKING FOR?</p>
+          <p className="text-white f24 fw700 lh24 text-center lg:text-left">WHAT ARE YOU LOOKING FOR?</p>
           <nav>
             <ul className="f16 fw400 lh24 text-white ">
               <li className="text-center lg:text-right list-disc list-inside">

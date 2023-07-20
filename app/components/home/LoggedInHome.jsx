@@ -23,7 +23,7 @@ const LoggedInHome = () => {
       <CollegesNearYou />
       <HighSchoolsNearYou />
       <LocalPlayers />
-      {/* <GlobalPlayerRankings /> */}
+      <GlobalPlayerRankings />
     </main>
   );
 };

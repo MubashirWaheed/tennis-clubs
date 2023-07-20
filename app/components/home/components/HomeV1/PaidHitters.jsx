@@ -16,7 +16,9 @@ const PaidHitters = () => {
       <div className="bg-[#3B2273]/80 h-full w-full">
         <div className="py-[20px] md:py-[40px] lg:py-[90px] px-2 lg:px-0 w-full max-w-[1170px] mx-auto flex flex-col gap-[50px] items-center justify-center">
           <div className="flex flex-col items-center gap-[14px]">
-            <h2 className="text-[#ffffff] h2 ">Paid Hitters</h2>
+            <h2 className="text-[#ffffff] h2  text-center lg:text-left">
+              Paid Hitters
+            </h2>
             <Image
               width={119}
               height={20}

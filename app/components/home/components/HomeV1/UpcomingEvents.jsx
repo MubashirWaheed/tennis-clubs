@@ -1,12 +1,13 @@
 import Image from 'next/image'
-import React from 'react'
 import FindAnEventBTN from "@/components/ui/buttons/PrimaryButton";
-
+import homeData from "../../homeData.json";
 const UpcomingEvents = () => {
     return (
       <section className="px-2 lg:px-0 w-full max-w-[1170px] mx-auto py-[90px] flex flex-col items-center gap-[30px] bg-white">
         <div className="flex flex-col gap-[15px] items-center">
-          <h1 className="h2 text-[#13013C]">Your Upcoming Events</h1>
+          <h1 className="h2 text-[#13013C] text-center lg:text-left">
+            Your Upcoming Events
+          </h1>
           <Image
             width={119}
             height={20}
@@ -16,52 +17,80 @@ const UpcomingEvents = () => {
           />
         </div>
 
-        <div className="flex flex-col lg:flex-row lg:h-[232px] gap-[20px] items-stretch">
-          <article className="shadow-md rounded-[10px] bg-white p-[25px]">
-            <div className="flex items-center gap-[60px]">
-              <p className="text-[#828282] f14 fw700 lh24">Apr 20 | 10:30am</p>
-              <div className="flex gap-[10px] items-center">
-                <p className="px-[16px] f12 fw700 lh20 text-[#FFFFFF] bg-[#027333] rounded-[50px]">
-                  Player
+        <div className="flex flex-col lg:flex-row gap-[14px] mt-[43px]">
+          {homeData.upcomingEvents.map((event, index) => (
+            <article
+              key={index}
+              className="p-[25px] bg-[#ffffff] rounded-[10px] shadow-lg"
+            >
+              <div className="flex flex-row justify-between">
+                <p className="f14 fw700 font-sans text-[#828282]">
+                  {event.DateandTime}
                 </p>
-                <p className="px-[16px] f12 fw700 lh20 text-[#FFFFFF] bg-[#027333] rounded-[50px]">
-                  Provider
-                </p>
+                <div className="flex gap-[10px]">
+                  <button className="tag">{event.player}</button>
+                  <button className="tag">{event.provider}</button>
+                </div>
               </div>
-            </div>
-            <div>
-              <h5 className="h5 text-[#13013C] w-[317px]">
-                Galileo High School at George Washington High School
-                <span>
+              <div className="mt-[13px]">
+                <div className="w-[317px] pt-2 flex items-center">
+                  <h5 className="h5 text-[#13013C] fw700">
+                    {event.SchoolName}
+                  </h5>
+
                   <Image
-                    width={17}
+                    width={18}
                     height={17}
                     src="/verifiedIcon.svg"
-                    alt="h-[18px] w-[17px]"
+                    alt="verification"
+                    className="h-[18px] w-[17.114px] relative top-[14px] right-[70px]"
                   />
-                </span>
-              </h5>
-              <h6 className="h6 text-[#828282]">
-                Raoul Wallenberg Traditional High School - Boys • San Francisco,
-                CA
-              </h6>
-            </div>
-            <div className="f14 fw400  lh18 text-[#828282]">
-              <p>Free Event</p>
-              <p>1 Registrations • Co-ed • Singles</p>
-            </div>
-          </article>
+                </div>
+                <h6 className="h6 text-[#828282] w-[294px] h-[48px]">
+                  {event.SchoolLocation}
+                </h6>
+              </div>
+              <div className="flex flex-col mt-[15px]">
+                {event.isEventFree && (
+                  <p className="f14 fw400 font-sans lh24 text-[#828282]">
+                    Free Event
+                  </p>
+                )}
+                <div className="flex flex-row gap-[2px]">
+                  <p className="f14 fw400 font-sans lh24 text-[#828282]">
+                    {event.Registartion}
+                  </p>
+                  <p className="f14 fw400 font-sans lh24 text-[#828282]">
+                    {event.EdType}
+                  </p>
+                  <p className="f14 fw400 font-sans lh24 text-[#828282]">
+                    {event.matchType}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))}
 
-          {/* Find An Event Section */}
-          <div className="border-2 border-dashed border-[#13013C] p-[25px] flex flex-col gap-[79px]">
-            <div className="flex flex-col gap-[1px]">
-              <p className="f24 fw700 lh34 text-[#13013C]">Find An Event</p>
-              <p className="text-[#828282] f16 fw400 lh24">
-                Play in a level-based event near you.
-              </p>
-            </div>
-            <div className="flex items-center justify-end">
-              <FindAnEventBTN>Find An Event</FindAnEventBTN>
+          <div className="z-20 relative p-[20px] w-full lg:w-[416px] h-[277px] border border-[#000] border-dashed rounded-[10px]">
+            <Image
+              width={416}
+              height={277}
+              src="/upComingEventsCard.png"
+              alt="upComingEventsCard"
+              className="object-cover w-full h-full absolute inset-0 -z-10 rounded-[10px] pointer-events-none"
+            />
+
+            <div className="h-full w-full flex flex-col justify-between z-20">
+              <div className="flex flex-col">
+                <p className="f24 fw700 lh35 text-[#13013c]">Find An Event</p>
+                <p className="f16 fw400 lh24 text-[#828282]">
+                  Play in a level-based event near you.
+                </p>
+              </div>
+
+              <div className="mt-[79px] flex justify-end">
+                <FindAnEventBTN>Play An Event</FindAnEventBTN>
+              </div>
             </div>
           </div>
         </div>
