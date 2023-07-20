@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import "./navbar.css";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 const Header = () => {
   
-    // const router = useRouter();
+    const router = useRouter();
     const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
     const [menu_class, setMenuClass] = useState("menu hide");
     const [isMenuClicked, setIsMenuClicked] = useState(false);
@@ -38,9 +38,16 @@ const Header = () => {
           {/* Navigation Bar */}
           <nav className="hidden lg:inline-flex">
             <ul className={styles.navBar}>
-              <li className={styles.navItem}>Home</li>
-              <li className={styles.navItem}>Explore</li>
-              <li className={styles.navItem}>Messages</li>
+              <Link href="/">
+                <li className={styles.navItem}>Home</li>
+              </Link>
+              <Link href="/matches">
+                <li className={styles.navItem}>Explore</li>
+              </Link>
+              <Link href="/clubs/123">
+                <li className={styles.navItem}>Clubs</li>
+              </Link>
+              
             </ul>
           </nav>
 
@@ -74,7 +81,7 @@ const Header = () => {
                 className={styles.icon}
               />
             </div>
-            <div className={styles.iconWrapper}>
+            <div onClick={()=> router.push('/clubs/new2')} className={styles.iconWrapper}>
               <Image
                 src="/add-icon.svg"
                 alt="Add Icon"

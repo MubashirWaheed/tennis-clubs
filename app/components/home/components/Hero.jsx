@@ -22,7 +22,9 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col items-center lg:items-end gap-[16px]">
-          <p className="text-white f24 fw700 lh24 text-center lg:text-left">WHAT ARE YOU LOOKING FOR?</p>
+          <p className="text-white f24 fw700 lh24 text-center lg:text-left">
+            WHAT ARE YOU LOOKING FOR?
+          </p>
           <nav>
             <ul className="f16 fw400 lh24 text-white ">
               <li className="text-center lg:text-right list-disc list-inside">
@@ -48,18 +50,18 @@ const Hero = () => {
         className="absolute bottom-0 right-0 object-contain"
       />
       <Image
-        width={132}
-        height={111}
         src="/HorizontalBat.svg"
+        height={100}
+        width={100}
         alt=""
-        className="absolute left-0 bottom-2 w-[132px] h-[111px]"
+        className="absolute left-0 bottom-2"
       />
       <Image
-        width={132}
-        height={111}
         src="/VerticalBat.svg"
+        height={50}
+        width={50}
         alt=""
-        className="absolute left-0 bottom-0 w-[132px] h-[111px]"
+        className="absolute left-0 bottom-0"
       />
     </section>
   );
