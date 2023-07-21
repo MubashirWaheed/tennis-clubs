@@ -4,9 +4,9 @@ import homeData from "../../homeData.json";
 
 const CollegesNearYou = () => {
   const collegeLogos = {
-    0: "/College1.png",
-    1: "/College2.png",
-    2: "/College3.png",
+    0: "/college1.png",
+    1: "/college2.png",
+    2: "/college3.png",
   };
 
   return (
