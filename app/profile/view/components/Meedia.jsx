@@ -1,4 +1,4 @@
-const Media = () => {
+export default function Meedia(){
     return (
         <section id="media" className="w-[full] mt-[80px] max-w-[1174px]">
         <div className=" h-full w-full flex flex-col  items-center justify-center">
@@ -17,4 +17,4 @@ const Media = () => {
     );
 };
 
-export default Media;
+

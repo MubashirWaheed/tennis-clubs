@@ -2,7 +2,7 @@ import Results from "./RecentResults";
 import Events from "./UpcommingEvents";
 import RecentEvents from "./RecentEvents";
 import Clubs from "./Clubs";
-import Media from "./Media";
+import Meedia from "./Meedia";
 
 const ProfileBody = () => {
   return (
@@ -10,7 +10,7 @@ const ProfileBody = () => {
       <Results />
       <Events />
       <RecentEvents />
-      <Media />
+      <Meedia />
       <Clubs />
     </>
   );
