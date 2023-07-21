@@ -47,7 +47,6 @@ const Header = () => {
               <Link href="/clubs/123">
                 <li className={styles.navItem}>Clubs</li>
               </Link>
-              
             </ul>
           </nav>
 
@@ -81,7 +80,10 @@ const Header = () => {
                 className={styles.icon}
               />
             </div>
-            <div onClick={()=> router.push('/clubs/new2')} className={styles.iconWrapper}>
+            <div
+              onClick={() => router.push("/clubs/new2")}
+              className={styles.iconWrapper}
+            >
               <Image
                 src="/add-icon.svg"
                 alt="Add Icon"
@@ -113,7 +115,10 @@ const Header = () => {
                   className={styles.icon}
                 />
               </div>
-              <div className={styles.iconWrapper}>
+              <div
+                onClick={() => router.push("/clubs/new2")}
+                className={styles.iconWrapper}
+              >
                 <Image
                   src="/add-icon.svg"
                   alt="Add Icon"
@@ -130,8 +135,8 @@ const Header = () => {
               <Link href="/matches" onClick={updateMenu}>
                 <li className={styles.navItem}>Explore</li>
               </Link>
-              <Link href="#" onClick={updateMenu}>
-                <li className={styles.navItem}>Messages</li>
+              <Link href="/clubs/123" onClick={updateMenu}>
+                <li className={styles.navItem}>Clubs</li>
               </Link>
             </ul>
           </nav>
