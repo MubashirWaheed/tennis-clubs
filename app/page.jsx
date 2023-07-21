@@ -13,8 +13,8 @@ const Home = () => {
   return (
     <>
       {isLoggedIn ? (
-        //<LoggedInHome />
-        <LoggedInHomeV2 /> //uncomment either one to see the both versions of HOME Page.
+        <LoggedInHome />
+        //<LoggedInHomeV2 /> //uncomment either one to see the both versions of HOME Page.
       ) : (
         <main className="relative bg-[#3B2273] py-[100px] w-full flex items-center justify-center">
           <div className="h-full w-full max-w-[1170px] mx-auto flex flex-col gap-[30px] lg:flex-row lg:gap-0 items-center justify-between">
