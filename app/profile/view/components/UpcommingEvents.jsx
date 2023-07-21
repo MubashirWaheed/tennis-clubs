@@ -4,7 +4,7 @@ import PlayEvent from "@/components/ui/buttons/PrimaryButton";
 
 const Events = () => {
   return (
-    <section className="mt-[80px] w-full max-w-[1174px]">
+    <section id="events" className="mt-[80px] w-full max-w-[1174px]">
       <div>
         <h3 className="h3 text-[#13013c]">Your Upcoming Events</h3>
         <div className="border border-[#828282]/20 mt-[20px]"></div>

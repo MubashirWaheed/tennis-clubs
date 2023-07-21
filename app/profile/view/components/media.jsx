@@ -1,6 +1,6 @@
 const Media = () => {
     return (
-        <section className="w-[full] mt-[80px] max-w-[1174px]">
+        <section id="media" className="w-[full] mt-[80px] max-w-[1174px]">
         <div className=" h-full w-full flex flex-col  items-center justify-center">
             <div className="flex flex-row items-center justify-between w-full">
             <h3 className="text-[#13013c] h3 ">Media</h3>

@@ -5,9 +5,12 @@ import PlayerInfoEditor from "./components/PlayerInfoEditor";
 import PreferredGearEditor from "./components/PreferredGearEditor";
 import Save from "@/components/ui/buttons/PrimaryButton";
 import Cancel from "@/components/ui/buttons/SecondaryButton";
+import { useRouter } from "next/navigation";
 
 
 const EditProfile = () => {
+
+  const router = useRouter();
 
   const submitProfileHandler = async (event) => {
     event.preventDefault();
@@ -38,7 +41,7 @@ const EditProfile = () => {
       </form>
 
       <div className="flex justify-end gap-[17px]">
-        <Cancel>Cancel</Cancel>
+        <Cancel onClick={()=> router.push("/profile/view")}>Cancel</Cancel>
         <Save>Save</Save>
       </div>
     </section>

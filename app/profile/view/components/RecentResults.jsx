@@ -3,7 +3,7 @@ import PostScore from "@/components/ui/buttons/PrimaryButton";
 
 const RecentResults = () => {
   return (
-    <section className="max-w-[1170px] w-full">
+    <section id="results" className="max-w-[1170px] w-full">
       <div className="flex flex-col items-center lg:items-start">
         <h3 className="h3 text-[#13013c] mb-[19px]">Recent Results</h3>
 
