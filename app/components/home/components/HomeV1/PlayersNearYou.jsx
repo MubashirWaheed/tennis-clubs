@@ -55,7 +55,7 @@ const PlayersNearYou = () => {
                   <Image
                     width={21}
                     height={21}
-                    src="/User.svg"
+                    src="/user.svg"
                     alt="User"
                     className="w-[21px] h-[21px] relative right-7"
                   />

@@ -49,7 +49,7 @@ const PlayersNearYou = () => {
                   <Image
                     width={21}
                     height={21}
-                    src="/User.svg"
+                    src="/user.svg"
                     alt="User"
                     className="w-[full] relative right-7"
                   />
