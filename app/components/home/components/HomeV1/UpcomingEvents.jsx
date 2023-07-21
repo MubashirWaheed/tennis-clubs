@@ -3,7 +3,7 @@ import FindAnEventBTN from "@/components/ui/buttons/PrimaryButton";
 import homeData from "../../homeData.json";
 const UpcomingEvents = () => {
     return (
-      <section className="px-2 lg:px-0 w-full max-w-[1170px] mx-auto py-[90px] flex flex-col items-center gap-[30px] bg-white">
+      <section className="px-2 lg:px-0 w-full max-w-[1170px] mx-auto py-[90px] flex flex-col items-center gap-[30px] ">
         <div className="flex flex-col gap-[15px] items-center">
           <h1 className="h2 text-[#13013C] text-center lg:text-left">
             Your Upcoming Events
@@ -75,7 +75,7 @@ const UpcomingEvents = () => {
             <Image
               width={416}
               height={277}
-              src="/upComingEventsCard.png"
+              src="/potraitimg.png"
               alt="upComingEventsCard"
               className="object-cover w-full h-full absolute inset-0 -z-10 rounded-[10px] pointer-events-none"
             />

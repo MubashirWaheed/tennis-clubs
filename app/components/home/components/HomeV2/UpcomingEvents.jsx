@@ -70,7 +70,7 @@ const UpcomingEvents = () => {
             <Image
               width={416}
               height={277}
-              src="/upComingEventsCard.png"
+              src="//potraitimg.png"
               alt="upComingEventsCard"
               className="object-cover w-full h-full absolute inset-0 -z-10 rounded-[10px] pointer-events-none"
             />
