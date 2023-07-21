@@ -94,6 +94,8 @@ const Header = () => {
             </div>
           </div>
 
+          {/* Responsive Menu */}
+
           {/* Hamburger */}
           <div className="nav z-30 md:hidden">
             <div className="burger-menu" onClick={updateMenu}>
