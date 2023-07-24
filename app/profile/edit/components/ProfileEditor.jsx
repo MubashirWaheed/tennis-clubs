@@ -33,18 +33,6 @@ const ProfileEditor = () => {
               Display my MPR (tennis)
             </p>
           </div>
-          <div className="flex items-center gap-[5px]">
-            <Image
-              width={20}
-              height={20}
-              src="/DefaultCheckbox.svg"
-              alt="DefaultChecbox"
-              className="w-[20px] h-[20px]"
-            />
-            <p className="text-[#05192C] f14 fw400 lh22">
-              Display my MPRP (pickleball)
-            </p>
-          </div>
         </div>
       </div>
 

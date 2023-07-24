@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function SportsFilter() {
   
   const [isTennisSelected, setTennisSelected] = useState(false);
-  const [isPickleballSelected, setPickleballSelected] = useState(false);
+  const [isBadmintonSelected, setBadmintonSelected] = useState(false);
 
   const options = [
     {
@@ -13,9 +13,9 @@ export default function SportsFilter() {
       isChecked: isTennisSelected,
     },
     {
-      label: "Pickleball",
-      value: "pickleball",
-      isChecked: isPickleballSelected,
+      label: "Badminton",
+      value: "badminton",
+      isChecked: isBadmintonSelected,
     },
   ];
 
@@ -24,8 +24,8 @@ export default function SportsFilter() {
     const { name, checked } = event.target;
     if (name === "tennis") {
       setTennisSelected(checked);
-    } else if (name === "pickleball") {
-      setPickleballSelected(checked);
+    } else if (name === "badminton") {
+      setBadmintonSelected(checked);
     }
   };
 
@@ -37,7 +37,7 @@ export default function SportsFilter() {
   // Handler for the Clear button
   const handleClearClick = () => {
     setTennisSelected(false);
-    setPickleballSelected(false);
+    setBadmintonSelected(false);
   };
     return (
       <div className="w-[300px] lg:w-[400px] flex flex-col items-stretch gap-[20px]">
