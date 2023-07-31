@@ -20,7 +20,6 @@ const BasicInfo2 = ({ onNext }) => {
           height={0}
         />
       </div>
-      {/* add map here */}
 
       {/* end */}
       <div className="flex place-content-end mb-0 bottom-0 mt-[150px] ">
