@@ -48,7 +48,7 @@ const eventView = () => {
                 Tennis Doubles Mixed
               </h2>
               <p className="py-[3px] fw700 bg-[#027333] f12 text-center text-white px-[10px] rounded-xl">
-                You're playing
+                You&apos;re playing
               </p>
             </div>
             <p className="text-grey">
@@ -56,7 +56,7 @@ const eventView = () => {
             </p>
           </div>
           <div className="flex items-center gap-4">
-            <Button size="small">I'll Pass</Button>
+            <Button size="small">I&apos;ll Pass</Button>
             <button className="border border-[#027333] p-[7px] rounded-md">
               <Image
                 // add color to the svg

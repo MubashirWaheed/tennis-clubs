@@ -35,7 +35,7 @@ const EventDetails = () => {
           <p className="text-[#000000]">Enable PIN for Registration</p>
           <p className="text-[#828282]">
             This would add an extra layer of security to the account, as even if
-            someone were to obtain the user's password
+            someone were to obtain the user&apos;s password
           </p>
           {/* add toggle here */}
         </div>
