@@ -1,63 +1,66 @@
 .nav {
-    
-    height: 5em;
-    padding: 1em;
+  height: 5em;
+  /* padding: 1em; */
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .burger-menu {
-    height: 100%;
-    width: 4em;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    cursor: pointer;
+  height: 100%;
+  width: 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
 .burger-bar {
-    width: 4em;
-    height: 0.5em;
-    background-color: #3B2273;
-    border-radius: 0.5em;
+  width: 4em;
+  height: 0.5em;
+  background-color: #3b2273;
+  border-radius: 0.5em;
 }
 
 .menu {
-    width: 50%;
-    height: 100vh;
-    background-color: rgba(255,255,255);
-    position: absolute;
-    top: 0;
-    padding-top: 100px;
-    right:0;
+  width: 50%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255);
+  position: absolute;
+  top: 0;
+  padding-top: 100px;
+  right: 0;
 }
 
 /* ------------- sliding menu ------------------ */
 .hide {
-    display: none;
+  display: none;
 }
 
 .visible {
-    display: inherit;
+  display: inherit;
 }
 
 /* ----- animations--------- */
 /* clicked */
-.burger-bar.clicked:nth-child(1){
-    transform: rotate(45deg) translate(0.75em, 1.25em);
-    transition: ease-out 0.5s;
+.burger-bar.clicked:nth-child(1) {
+  transform: rotate(45deg) translate(0.75em, 1.25em);
+  transition: ease-out 0.5s;
 }
 
-.burger-bar.clicked:nth-child(2){
-    transform: scale(0.1);
-    transition: ease-out 0.5s;
+.burger-bar.clicked:nth-child(2) {
+  transform: scale(0.1);
+  transition: ease-out 0.5s;
 }
 
-.burger-bar.clicked:nth-child(3){
-    transform: rotate(135deg) translate(-0.5em, 1em);
-    transition: ease-out 0.5s;
+.burger-bar.clicked:nth-child(3) {
+  transform: rotate(135deg) translate(-0.5em, 1em);
+  transition: ease-out 0.5s;
 }
 
 /* unclicked */
 .burger-bar.unclicked {
-    transform: rotate(0) translate(0);
-    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+  transform: rotate(0) translate(0);
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
 }

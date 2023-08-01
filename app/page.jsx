@@ -11,7 +11,7 @@ const Home = () => {
   let isLoggedIn = false;
 
   return (
-    <>
+    <div>
       {isLoggedIn ? (
         <LoggedInHome />
       ) : (
@@ -119,7 +119,7 @@ const Home = () => {
         //   />
         // </main>
       )}
-    </>
+    </div>
   );
 };
 

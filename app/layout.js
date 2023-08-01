@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden">
       <body>
         <div>
           {isLoggedIn ? <Header /> : <HomeHeader />}
