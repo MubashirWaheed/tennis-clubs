@@ -18,7 +18,7 @@ const EventDetails = () => {
         </div>
         <div>
           <h2>Richard K. McClain</h2>
-          <p>Surat, India • 0.00 (s)</p>
+          <p>Surat, India 0.00 (s)</p>
         </div>
       </div>
       <dix>

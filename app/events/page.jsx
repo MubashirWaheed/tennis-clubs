@@ -146,7 +146,7 @@ const eventView = () => {
                   <h2 className="text-[#13013C] fw700 f16 lh24">
                     Jeannie C. Lyons
                   </h2>
-                  <p className="lh24 f14 fw700 text-grey">M • Surat, India</p>
+                  <p className="lh24 f14 fw700 text-grey">M Surat, India</p>
                 </div>
                 <div className="md:px-[40px] px-[5px]">
                   <p>UTR</p>
