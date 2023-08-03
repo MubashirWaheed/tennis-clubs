@@ -7,7 +7,7 @@ import { useState } from "react";
 import Overview from "./components/Overview";
 import Players from "./components/Players";
 
-const eventInfo = () => {
+const EventInfo = () => {
   const [tab, setTab] = useState(1);
 
   const handleNext = () => {
@@ -103,9 +103,10 @@ const eventInfo = () => {
       {/* Tabs */}
       <div className="w-full max-w-[1170px] mx-auto">
         <nav className="px-[50px] h-[60px] w-full overflow-x-auto rounded-[10px] shadow-md bg-white flex justify-start gap-[30px] items-stretch mb-[30px]">
-          {infodata.infonNavbar.map((item, i) => {
+          {infodata.infonNavbar.map((item, index) => {
             return (
               <Link
+                key={index}
                 href={item.href}
                 className="h-full border-b-4 border-white focus:border-[#3B2273] rounded-md px-[10px] text-[#828282] focus:text-[#3B2273] flex items-center justify-center"
               >
@@ -121,4 +122,4 @@ const eventInfo = () => {
   );
 };
 
-export default eventInfo;
+export default EventInfo;
