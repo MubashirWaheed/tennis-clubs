@@ -1,0 +1,24 @@
+{
+  "infonNavbar": [
+    {
+      "href": "#",
+      "title": "OverView"
+    },
+    {
+      "href": "#",
+      "title": "Players"
+    },
+    {
+      "href": "#",
+      "title": "Draws"
+    },
+    {
+      "href": "#",
+      "title": "Media"
+    },
+    {
+      "href": "#",
+      "title": "Schedule"
+    }
+  ]
+}

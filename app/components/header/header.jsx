@@ -153,7 +153,8 @@ const styles = {
   searchContainer:
     "z-30 flex items-center gap-2 w-[220px] md:w-[400px] border-b border-[#828282] px-1 py-2",
   searchIcon: "text-[#13013C] w-[18px] h-[18px]",
-  searchInput: " md:flex-1 outline-none border-none text-base text-[#13013C]",
+  searchInput:
+    "w-[200px] md:flex-1 outline-none border-none text-base text-[#13013C]",
 
   iconsGroup: "hidden lg:flex items-center gap-3",
   iconWrapper:
