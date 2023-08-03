@@ -8,7 +8,7 @@ import Overview from "./components/Overview";
 import Players from "./components/Players";
 
 const EventInfo = () => {
-  const [tab, setTab] = useState(1);
+  const [tab, setTab] = useState(2);
 
   const handleNext = () => {
     setTab(tab + 1);
@@ -115,8 +115,10 @@ const EventInfo = () => {
             );
           })}
         </nav>
-        {/* <Overview /> */}
-        <Players />
+
+        {/* switching between tabs */}
+        {tab === 1 && <Overview />}
+        {tab === 2 && <Players />}
       </div>
     </>
   );
