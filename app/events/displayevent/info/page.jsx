@@ -7,9 +7,10 @@ import { useState } from "react";
 import Overview from "./components/Tabs/Overview";
 import Players from "./components/Tabs/Players";
 import Draws from "./components/Tabs/Draws";
+import Schedule from "./components/Tabs/Schedule";
 
 const EventInfo = () => {
-  const [tab, setTab] = useState(3);
+  const [tab, setTab] = useState(4);
 
   const handleNext = () => {
     setTab(tab + 1);
@@ -121,6 +122,7 @@ const EventInfo = () => {
         {tab === 1 && <Overview />}
         {tab === 2 && <Players />}
         {tab === 3 && <Draws />}
+        {tab === 4 && <Schedule />}
       </div>
     </>
   );

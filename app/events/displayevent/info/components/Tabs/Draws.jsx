@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Standings from "../Standings";
 import Round16 from "../Round16";
+import UnpublishedDrawsView from "../UnpublishedDrawsView";
 
 const options = [
   { label: "single-elimination draw", value: "single-elimination draw" },
@@ -24,6 +25,7 @@ const buttons = [
 ];
 const Draws = () => {
   const [selectedRound, setSelectedRound] = useState("Standings");
+  const [drawAvailable, setDrawAvailable] = useState(false);
 
   const Filters = InfoConfig();
 
@@ -41,7 +43,7 @@ const Draws = () => {
     } else if (selectedRound && selectedRound == "Round of 32") {
       return <div>Round of 32</div>;
     } else if (selectedRound && selectedRound == "Round of 16") {
-      return <Round16 />;
+      return drawAvailable ? <Round16 /> : <UnpublishedDrawsView />;
     } else if (selectedRound && selectedRound == "Quarterfinals") {
       return <div>Quaterfinal</div>;
     }
@@ -51,11 +53,11 @@ const Draws = () => {
     <>
       <div>
         {/* Filters */}
-        <div className="bg-red-200 flex justify-between items-center">
+        <div className=" flex justify-between items-center">
           <div className="flex gap-4 basis-1.5/2 md:basis-1.1/2 items-center justify-center w-full ">
-            {Filters?.map((filter) => {
+            {Filters?.map((filter, i) => {
               return (
-                <div className="relative w-full">
+                <div key={i} className="relative w-full">
                   <button
                     onClick={filter.openFilter}
                     className=" f16 md:f24 px-[5px] md:px-[10px]  flex items-center justify-between w-full text-base text-[#3B2273] cursor-pointer font-semibold border border-[#3B2273]  bg-white rounded-lg  py-2"
@@ -113,9 +115,14 @@ const Draws = () => {
               </button>
             </div>
           </div>
-          <div className="flex basis-1/2 bg-yellow-200 place-content-end">
+          <div className="flex basis-1/2  place-content-end">
             <button className="bg-[#3B2273] px-[20px] flex gap-2 text-white rounded-lg items-center py-[10px]">
-              <Image src="/printer.svg" width={20} height={20} />
+              <Image
+                src="/printer.svg"
+                width={20}
+                height={20}
+                alt="print button"
+              />
               Print
             </button>
           </div>
