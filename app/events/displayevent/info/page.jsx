@@ -4,11 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import infodata from "./info.json";
 import { useState } from "react";
-import Overview from "./components/Overview";
-import Players from "./components/Players";
+import Overview from "./components/Tabs/Overview";
+import Players from "./components/Tabs/Players";
+import Draws from "./components/Tabs/Draws";
 
 const EventInfo = () => {
-  const [tab, setTab] = useState(2);
+  const [tab, setTab] = useState(3);
 
   const handleNext = () => {
     setTab(tab + 1);
@@ -119,6 +120,7 @@ const EventInfo = () => {
         {/* switching between tabs */}
         {tab === 1 && <Overview />}
         {tab === 2 && <Players />}
+        {tab === 3 && <Draws />}
       </div>
     </>
   );

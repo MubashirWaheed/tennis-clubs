@@ -1,6 +1,6 @@
-import LocationCard from "../../components/LocationCard";
-import Aside from "../../components/aside";
-import Card from "./Card";
+import LocationCard from "../../../components/LocationCard";
+import Aside from "../../../components/aside";
+import Card from "../Card";
 
 const Overview = () => {
   return (

@@ -1,12 +1,13 @@
 "use client";
 import Image from "next/image";
+import ApplyButton from "@/components/ui/buttons/PrimaryButton";
 
 const RadioOption = ({ children, value, selectedOption, onSelect }) => {
   const isSelected = value === selectedOption;
   return (
     <div
       onClick={() => onSelect(value)}
-      className="cursor-pointer w-full px-[11px] py-[16px] flex items-center justify-start gap-[8px] rounded-[5px] border border-[#F6F6F6] bg-[#FAFBFF]"
+      className="cursor-pointer w-full  md:px-[11px] md:py-[16px] flex items-center justify-start gap-[8px] rounded-[5px] border border-[#F6F6F6] bg-[#FAFBFF]"
     >
       {isSelected ? (
         <Image
