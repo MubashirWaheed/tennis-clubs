@@ -10,7 +10,7 @@ import Draws from "./components/Tabs/Draws";
 import Schedule from "./components/Tabs/Schedule";
 
 const EventInfo = () => {
-  const [tab, setTab] = useState(4);
+  const [tab, setTab] = useState(2);
 
   const handleNext = () => {
     setTab(tab + 1);

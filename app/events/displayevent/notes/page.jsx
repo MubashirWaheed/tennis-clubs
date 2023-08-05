@@ -3,10 +3,21 @@ import Button from "@/components/ui/buttons/PrimaryButton";
 import Image from "next/image";
 import Link from "next/link";
 import LocationCard from "../components/LocationCard";
+import { useState } from "react";
+import CreateDrawBtn from "@/components/ui/buttons/PrimaryButton";
+import { useRouter } from "next/navigation";
 
+import Modal from "@/components/ui/Modal/Modal";
 const eventView = () => {
+  const router = useRouter();
+  const [showModal, setShowModal] = useState(false);
+
+  const handleModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
-    <>
+    <div className="relative">
       {/* Header */}
       <header className="flex items-center justify-center bg-[#3B2273] h-full md:h-[113px]">
         <div className="w-full max-w-[1170px] mx-auto flex flex-col md:flex-row items-center">
@@ -35,11 +46,40 @@ const eventView = () => {
           </div>
 
           <div className="mb-[10px] md:mb-[0px] flex justify-center mt-[20px] md:mt-[0px] md:justify-end gap-4 w-full">
-            <Button size="small">Create Draws</Button>
+            <Button size="small" onClick={handleModal}>
+              Create Draws
+            </Button>
             <Button size="small">Edit Event</Button>
           </div>
         </div>
+        {showModal && (
+          <Modal heading="Create Draws" closeModal={handleModal}>
+            <div className="w-[375px] pb-[30px] md:w-[600px] h-auto">
+              <p className="text-grey f16">
+                Draws will be created for each division with registered players.
+                You will be able to move and place players in draws as you sl
+                fit (including creating new draws).
+                <br />
+                <br />
+                If players register after you have initialized draws through
+                this process, you can add them individually to the appropriate
+                draws that have been created.
+              </p>
+              <div className="mt-[40px]">
+                <CreateDrawBtn
+                  size="small"
+                  onClick={() => router.push("/events/createdraw")}
+                >
+                  Create Draw
+                </CreateDrawBtn>
+              </div>
+            </div>
+          </Modal>
+        )}
       </header>
+
+      {/* MODAL */}
+
       <section className="bg-[#FAFBFF] h-auto flex items-center">
         <div className="bg-[#FAFBFF] py-[50px] w-full max-w-[1170px] mx-auto flex flex-col md:flex-row justify-between">
           <div className="flex flex-col">
@@ -162,7 +202,7 @@ const eventView = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
