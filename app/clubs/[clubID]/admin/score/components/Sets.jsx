@@ -60,7 +60,7 @@ const Sets = () => {
         </div>
       </div>
       <div className="inline-block">
-        <button className="bg-red-200 px-[40px] py-[30px] rounded-lg">
+        <button className=" px-[40px] py-[30px] rounded-lg">
           <Image src="/switch-arrow.svg" width={24} height={24} />
         </button>
       </div>

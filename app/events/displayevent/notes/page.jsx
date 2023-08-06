@@ -30,7 +30,6 @@ const eventView = () => {
               <p className="text-white md:text-md text-xs">REGISTRATIONS</p>
               <p className="text-white  text-sm md:text-lg">1</p>
             </div>
-            {/* bg-red-800 */}
             <div className="md:px-[15px] border-r border-grey">
               <p className="text-white text-center md:text-md text-xs">
                 PLAYERS

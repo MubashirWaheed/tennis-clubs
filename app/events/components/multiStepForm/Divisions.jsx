@@ -26,7 +26,7 @@ const Divisions = () => {
 
   return (
     <section className="mt-[50px]">
-      <div className="bg-red-200 rounded-xl">
+      <div className=" rounded-xl">
         <div className="bg-[#E8EFF7] rounded-xl pl-[25px] py-[20px]">
           <p className="text-[#13013C] fw700">Division</p>
         </div>
