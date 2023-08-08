@@ -4,7 +4,7 @@ const Sets = () => {
     <div className="flex flex-col md:flex-row items-center gap-12">
       <div className="flex flex-col gap-4">
         <div className="flex gap-4">
-          <div className="bg-blue-300 inline-block ">
+          <div className=" inline-block ">
             <p className="text-center">SET 1</p>
             <input
               className="text-center fw700 f24 lh35 text-[#828282] w-[75px] h-[75px] rounded-lg outline-none  border-2 border-dashed border-[#828282]"
@@ -13,7 +13,7 @@ const Sets = () => {
               placeholder="6"
             />
           </div>
-          <div className="bg-blue-300 inline-block ">
+          <div className=" inline-block ">
             <p className="text-center">SET 2</p>
             <input
               className="text-center fw700 f24 lh35 text-[#828282] w-[75px] h-[75px] rounded-lg outline-none  border-2 border-dashed border-[#828282]"
@@ -22,7 +22,7 @@ const Sets = () => {
               placeholder="6"
             />
           </div>
-          <div className="bg-blue-300 inline-block ">
+          <div className=" inline-block ">
             <p className="text-center">SET 3</p>
             <input
               className="text-center fw700 f24 lh35 text-[#828282] w-[75px] h-[75px] rounded-lg outline-none  border-2 border-dashed border-[#828282]"
@@ -33,7 +33,7 @@ const Sets = () => {
           </div>
         </div>
         <div className="flex gap-4">
-          <div className="bg-blue-300 inline-block ">
+          <div className="inline-block ">
             <input
               className="text-center fw700 f24 lh35 text-[#828282] w-[75px] h-[75px] rounded-lg outline-none  border-2 border-dashed border-[#828282]"
               type="number"
@@ -41,7 +41,7 @@ const Sets = () => {
               placeholder="7"
             />
           </div>
-          <div className="bg-blue-300 inline-block ">
+          <div className=" inline-block ">
             <input
               className="text-center fw700 f24 lh35 text-[#828282] w-[75px] h-[75px] rounded-lg outline-none  border-2 border-dashed border-[#828282]"
               type="number"
@@ -49,7 +49,7 @@ const Sets = () => {
               placeholder="3"
             />
           </div>
-          <div className="bg-blue-300 inline-block ">
+          <div className=" inline-block ">
             <input
               className="text-center fw700 f24 lh35 text-[#828282] w-[75px] h-[75px] rounded-lg outline-none  border-2 border-dashed border-[#828282]"
               type="number"
