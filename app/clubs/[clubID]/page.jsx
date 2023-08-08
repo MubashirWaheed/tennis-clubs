@@ -9,7 +9,10 @@ import PostScores from "@/components/ui/buttons/PrimaryButton";
 import CreateEvent from "@/components/ui/buttons/PrimaryButton";
 import MoreButton from "./MoreButton";
 
-const clubView = () => {
+import { useRouter } from "next/navigation";
+
+const ClubView = () => {
+  const router = useRouter();
 
   return (
     <>
@@ -42,14 +45,18 @@ const clubView = () => {
                       height={24}
                     />
                   </span>
-                  <span className="flex items-center">{clubData.clubDetails.noOfEvents} Events</span>
+                  <span className="flex items-center">
+                    {clubData.clubDetails.noOfEvents} Events
+                  </span>
                 </p>
               </div>
             </div>
 
             <div className="flex items-center gap-1 flex-col lg:flex-row lg:gap-[14px]">
               <PostScores>Post scores</PostScores>
-              <CreateEvent>Create An Event</CreateEvent>
+              <CreateEvent onClick={() => router.push("/events/createevent")}>
+                Create An Event
+              </CreateEvent>
               <MoreButton />
             </div>
           </div>
@@ -230,4 +237,4 @@ const clubView = () => {
   );
 };
 
-export default clubView;
+export default ClubView;
