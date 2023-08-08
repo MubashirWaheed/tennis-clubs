@@ -8,7 +8,8 @@ import CreateDrawBtn from "@/components/ui/buttons/PrimaryButton";
 import { useRouter } from "next/navigation";
 
 import Modal from "@/components/ui/Modal/Modal";
-const eventView = () => {
+
+const EventView = () => {
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
 
@@ -205,4 +206,4 @@ const eventView = () => {
   );
 };
 
-export default eventView;
+export default EventView;

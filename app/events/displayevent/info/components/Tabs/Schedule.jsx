@@ -22,9 +22,10 @@ const Schedule = () => {
   return (
     <div className="relative">
       <div className="flex gap-4 justify-start items-center mb-[50px]">
-        {buttons.map((item) => {
+        {buttons.map((item, i) => {
           return (
             <button
+              key={i}
               onClick={() => handleButton(item)}
               className="flex fw400 f16 justify-between  text-purple border-[1px] rounded-lg border-purple pl-[30px] pr-[10px] py-[5px] "
             >
