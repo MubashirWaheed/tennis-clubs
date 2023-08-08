@@ -1,9 +1,10 @@
 "use client";
 import Image from "next/image";
 import DrawCard from "./components/DrawCard";
+import Button from "@/components/ui/buttons/PrimaryButton";
 
 import { useState } from "react";
-const CreateDraw = () => {
+const CreateDraw = ({ children }) => {
   const [showMenu, setShowMenu] = useState(true);
   const handleClick = () => {
     setShowMenu(!showMenu);
@@ -34,7 +35,7 @@ const CreateDraw = () => {
             <Button size="small">Publish</Button>
           </div>
         </div>
-        <div>{children}</div>
+        {/* <div>{children}</div> */}
       </div>
       <section className="bg-[#FAFBFF] w-full flex justify-center flex-col">
         <div className="xl:ml-[30px]">
