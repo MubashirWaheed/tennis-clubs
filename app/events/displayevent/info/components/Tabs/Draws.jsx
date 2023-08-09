@@ -65,6 +65,7 @@ const Draws = () => {
                     {filter.filterTitle}
                     <Image
                       className=" "
+                      alt="dropdown"
                       src="/dropdown.svg"
                       width={25}
                       height={25}
@@ -108,6 +109,7 @@ const Draws = () => {
                 scoring
                 <Image
                   className=" "
+                  alt="dropdown"
                   src="/dropdown.svg"
                   width={25}
                   height={25}

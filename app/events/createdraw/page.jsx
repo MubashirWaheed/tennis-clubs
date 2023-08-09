@@ -172,7 +172,7 @@ const CreateDraw = ({ children }) => {
                     <div className="flex flex-col items-start ">
                       <p className="text-darkPurple">Shantanu Dhaka</p>
                       <p className="text-grey">
-                        San Francisco, CA •{" "}
+                        San Francisco, CA •
                         <span className="text-red-600">Not Placed </span>
                       </p>
                     </div>
@@ -201,7 +201,7 @@ const CreateDraw = ({ children }) => {
                     <div className="flex flex-col items-start ">
                       <p className="text-darkPurple">Shantanu Dhaka</p>
                       <p className="text-grey">
-                        San Francisco, CA •{" "}
+                        San Francisco, CA •
                         <span className="text-red-600">Not Placed </span>
                       </p>
                     </div>
@@ -229,7 +229,7 @@ const CreateDraw = ({ children }) => {
                     <div className="flex flex-col items-start ">
                       <p className="text-darkPurple">Shantanu Dhaka</p>
                       <p className="text-grey">
-                        San Francisco, CA •{" "}
+                        San Francisco, CA •
                         <span className="text-red-600">Not Placed </span>
                       </p>
                     </div>
@@ -283,7 +283,7 @@ const CreateDraw = ({ children }) => {
             <div className="flex flex-col">
               <p className="text-grey my-[15px]">
                 Select draws to publish and display publicly on the event
-                profile page. If you unselect a draw and click "Publish", that
+                profile page. If you unselect a draw and click Publish, that
                 draw will be unpublished from the event profile page.
               </p>
               <div className="flex flex-col gap-2 my-[20px]">

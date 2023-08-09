@@ -20,6 +20,7 @@ const Players = () => {
                 className="rounded-full md:w-[50px] md:h-[50px] w-[35px] h-[35px]"
                 width={50}
                 height={50}
+                alt="player icon"
                 src="/human.png"
               />
               <div className="flex flex-col ">
@@ -30,14 +31,29 @@ const Players = () => {
 
             <p className="f16 text-grey grow basis-[16%] md:basis-[29%] flex items-center gap-2 ">
               3.xx
-              <Image src="/verifiedIcon.svg" width={20} height={20} />
+              <Image
+                src="/verifiedIcon.svg"
+                alt="verified"
+                width={20}
+                height={20}
+              />
             </p>
             <p className="f16 text-grey grow basis-[15%] flex items-center gap-2">
               3.xx
-              <Image src="/verifiedIcon.svg" width={20} height={20} />
+              <Image
+                src="/verifiedIcon.svg"
+                alt="verified"
+                width={20}
+                height={20}
+              />
             </p>
             <p className=" grow basis-[15%] flex items-center cursor-pointer">
-              <Image src="/messages.svg" width={28} height={28} />
+              <Image
+                src="/messages.svg"
+                alt="messsages"
+                width={28}
+                height={28}
+              />
             </p>
           </div>
 
@@ -48,6 +64,7 @@ const Players = () => {
                 width={50}
                 height={50}
                 src="/human.png"
+                alt="player icon"
               />
               <div className="flex flex-col ">
                 <p className="f16 md:f20">Jeannie C. Lyons</p>
@@ -57,14 +74,29 @@ const Players = () => {
 
             <p className="f16 text-grey grow basis-[16%] md:basis-[29%] flex items-center gap-2 ">
               3.xx
-              <Image src="/verifiedIcon.svg" width={20} height={20} />
+              <Image
+                src="/verifiedIcon.svg"
+                alt="verified"
+                width={20}
+                height={20}
+              />
             </p>
             <p className="f16 text-grey grow basis-[15%] flex items-center gap-2">
               3.xx
-              <Image src="/verifiedIcon.svg" width={20} height={20} />
+              <Image
+                src="/verifiedIcon.svg"
+                alt="verified"
+                width={20}
+                height={20}
+              />
             </p>
             <p className=" grow basis-[15%] flex items-center cursor-pointer">
-              <Image src="/messages.svg" width={28} height={28} />
+              <Image
+                src="/messages.svg"
+                alt="messages"
+                width={28}
+                height={28}
+              />
             </p>
           </div>
 
@@ -75,6 +107,7 @@ const Players = () => {
                 width={50}
                 height={50}
                 src="/human.png"
+                alt="player icon"
               />
               <div className="flex flex-col ">
                 <p className="f16 md:f20">Jeannie C. Lyons</p>
@@ -84,14 +117,29 @@ const Players = () => {
 
             <p className="f16 text-grey grow basis-[16%] md:basis-[29%] flex items-center gap-2 ">
               3.xx
-              <Image src="/verifiedIcon.svg" width={20} height={20} />
+              <Image
+                src="/verifiedIcon.svg"
+                alt="verified"
+                width={20}
+                height={20}
+              />
             </p>
             <p className="f16 text-grey grow basis-[15%] flex items-center gap-2">
               3.xx
-              <Image src="/verifiedIcon.svg" width={20} height={20} />
+              <Image
+                src="/verifiedIcon.svg"
+                alt="verified"
+                width={20}
+                height={20}
+              />
             </p>
             <p className=" grow basis-[15%] flex items-center cursor-pointer">
-              <Image src="/messages.svg" width={28} height={28} />
+              <Image
+                src="/messages.svg"
+                alt="messages"
+                width={28}
+                height={28}
+              />
             </p>
           </div>
         </div>

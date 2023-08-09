@@ -61,7 +61,12 @@ const Sets = () => {
       </div>
       <div className="inline-block  border-darkPurple border mt-[60px] rounded-lg">
         <button className="px-[40px] py-[20px] rounded-lg">
-          <Image src="/switch-arrow.svg" width={24} height={24} />
+          <Image
+            src="/switch-arrow.svg"
+            width={24}
+            height={24}
+            alt="switch arrow"
+          />
         </button>
       </div>
     </div>

@@ -29,6 +29,7 @@ const Standings = () => {
               src="/human.png"
               width={45}
               height={45}
+              alt="player icon"
               className="rounded-full w-[28px] h-[28px] md:w-[45px] md:h-[45px]"
             />
             <div>
@@ -39,7 +40,12 @@ const Standings = () => {
           <div className="md:basis-[16.5%] grow">
             <p className="flex items-center gap-2 text-grey">
               3.xx
-              <Image src="/verifiedIcon.svg" width={18} height={18} />
+              <Image
+                src="/verifiedIcon.svg"
+                alt="verified"
+                width={18}
+                height={18}
+              />
             </p>
           </div>
           <p className="text-grey basis-[10%] grow text-center md:text-left">
@@ -60,6 +66,7 @@ const Standings = () => {
           <div className=" md:basis-[23.7%] basis-[15%] grow flex gap-2 flex-wrap justify-center md:justify-start">
             <Image
               src="/human.png"
+              alt="player icon"
               width={45}
               height={45}
               className="rounded-full w-[28px] h-[28px] md:w-[45px] md:h-[45px]"
@@ -72,7 +79,12 @@ const Standings = () => {
           <div className="md:basis-[16.5%] grow">
             <p className="flex items-center gap-2 text-grey">
               3.xx
-              <Image src="/verifiedIcon.svg" width={18} height={18} />
+              <Image
+                src="/verifiedIcon.svg"
+                alt="verified"
+                width={18}
+                height={18}
+              />
             </p>
           </div>
           <p className="text-grey basis-[10%] grow text-center md:text-left">
