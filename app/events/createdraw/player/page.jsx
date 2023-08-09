@@ -6,7 +6,7 @@ import AddToButton from "@/components/ui/buttons/SecondaryButton";
 
 const Player = () => {
   return (
-    <div className="bg-[#FAFBFF]">
+    <div className="bg-[#FAFBFF] relative">
       <div className="xl:ml-[30px]">
         <div className=" lg:pl-[30px] xl:pr-[50px] bg-white shadow-lg my-[5px]  py-[10px] flex w-full max-w-[1300px] mx-auto">
           <form className={styles.searchContainer}>
@@ -35,7 +35,7 @@ const Player = () => {
         </div>
       </div>
       <div className="flex justify-center items-center">
-        <div className="w-full max-w-[1170px] ">
+        <div className="w-full max-w-[1170px]">
           <table className="w-full  border-spacing-y-4  border-separate">
             <tbody className="rounded-xl">
               <tr className="bg-white   w-full  border-2  border-separate">

@@ -39,14 +39,14 @@ const EventInfo = () => {
             </p>
           </div>
           <div className="flex items-center gap-4">
-            <button className="border border-[#027333] p-[7px] rounded-md flex items-center md:gap-3 pr-[20px] text-green">
+            <button className="border border-[#027333] p-[7px] rounded-md flex items-center md:gap-3 px-[15px] text-green">
               <Image
                 // add color to the svg
                 src="/share.svg"
                 color="red"
-                alt=""
-                width={30}
-                height={30}
+                alt="share"
+                width={26}
+                height={26}
               />
               Share
             </button>

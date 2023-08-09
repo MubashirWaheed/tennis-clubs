@@ -3,9 +3,15 @@ import Image from "next/image";
 import AdminForm from "./components/adminform";
 import AddAdmin from "@/components/ui/buttons/PrimaryButton";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import AddScorer from "./components/AddScorer";
 
 const Admin = () => {
   const router = useRouter();
+  const [showAddScorer, setShowAddScorer] = useState(false);
+  const handleModal = () => {
+    setShowAddScorer(!showAddScorer);
+  };
 
   return (
     <>
@@ -39,22 +45,24 @@ const Admin = () => {
             </div>
           </div>
 
-          <div className="flex items-center my-[20px] gap-2 ">
-            <button
-              className=" rounded-xl border-solid border-2 border-[#027333]"
-              onClick={(e) => {
-                router.push("admin/addscorer");
-              }}
-            >
+          {/* ADD score */}
+          <div
+            onClick={() => setShowAddScorer(!showAddScorer)}
+            className="flex items-center my-[20px] gap-2 "
+          >
+            <button className=" rounded-lg p-[8px] border-solid border-2 border-[#027333]">
               <Image
-                src="/add-icon.svg"
+                src="/add-icon-green.svg"
                 alt="add scorer"
-                width={40}
-                height={40}
+                width={20}
+                height={20}
               />
             </button>
-            <p className="text-[#13013C] fw700 f16 lh24">Add scorer</p>
+            <p className="cursor-pointer text-[#13013C] fw700 f16 lh24">
+              Add scorer
+            </p>
           </div>
+          <AddScorer showAddScorer={showAddScorer} handleModal={handleModal} />
 
           <AddAdmin
             size="small"

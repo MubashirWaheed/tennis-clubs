@@ -2,10 +2,10 @@ import Image from "next/image";
 const Sets = () => {
   return (
     <div className="flex flex-col md:flex-row items-center gap-12">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 ">
         <div className="flex gap-4">
-          <div className=" inline-block ">
-            <p className="text-center">SET 1</p>
+          <div className="  inline-block ">
+            <p className="text-center my-[10px] text-grey fw400 f20">SET 1</p>
             <input
               className="text-center fw700 f24 lh35 text-[#828282] w-[75px] h-[75px] rounded-lg outline-none  border-2 border-dashed border-[#828282]"
               type="number"
@@ -14,7 +14,7 @@ const Sets = () => {
             />
           </div>
           <div className=" inline-block ">
-            <p className="text-center">SET 2</p>
+            <p className="text-center my-[10px] text-grey fw400 f20">SET 2</p>
             <input
               className="text-center fw700 f24 lh35 text-[#828282] w-[75px] h-[75px] rounded-lg outline-none  border-2 border-dashed border-[#828282]"
               type="number"
@@ -23,7 +23,7 @@ const Sets = () => {
             />
           </div>
           <div className=" inline-block ">
-            <p className="text-center">SET 3</p>
+            <p className="text-center my-[10px] text-grey fw400 f20">SET 3</p>
             <input
               className="text-center fw700 f24 lh35 text-[#828282] w-[75px] h-[75px] rounded-lg outline-none  border-2 border-dashed border-[#828282]"
               type="number"
@@ -59,8 +59,8 @@ const Sets = () => {
           </div>
         </div>
       </div>
-      <div className="inline-block">
-        <button className=" px-[40px] py-[30px] rounded-lg">
+      <div className="inline-block  border-darkPurple border mt-[60px] rounded-lg">
+        <button className="px-[40px] py-[20px] rounded-lg">
           <Image src="/switch-arrow.svg" width={24} height={24} />
         </button>
       </div>

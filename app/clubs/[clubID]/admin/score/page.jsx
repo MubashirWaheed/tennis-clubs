@@ -56,8 +56,10 @@ const PostScore = () => {
               Learn about scoring
             </h2>
           </div>
-          <div className="flex gap-[10px] items-center w-full bg-white mt-[28px] h-[83px] shadow-sm rounded-[10px]">
-            <h2 className="text-[#13013C] fw700">Counts For Rating</h2>
+          <div className="mb-[50px] flex gap-[10px] items-center w-full bg-white mt-[28px] h-[60px] shadow-md rounded-[10px]">
+            <h2 className="text-[#13013C] fw700 pl-[20px]">
+              Counts For Rating
+            </h2>
             {/* add toggle buttton here */}
           </div>
           <SubmitButton>Submit</SubmitButton>

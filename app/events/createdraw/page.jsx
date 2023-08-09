@@ -2,10 +2,28 @@
 import Image from "next/image";
 import DrawCard from "./components/DrawCard";
 import Button from "@/components/ui/buttons/PrimaryButton";
+import InputField from "@/components/ui/inputFields/TextField";
+import AutoComplete from "@/components/ui/inputFields/AutoComplete";
+import TextArea from "@/components/ui/inputFields/TextArea";
 
 import { useState } from "react";
+import DrawMenu from "./components/DrawMenu";
+import Modal from "@/components/ui/Modal/Modal";
+
 const CreateDraw = ({ children }) => {
+  const [showDrawMenu, setShowDrawMenu] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
+  const [publishModal, setPublishModal] = useState(false);
+  const [editModal, setEditModal] = useState(false);
+  const [messageModal, setMessageModal] = useState(false);
+
+  const handlePublishModal = () => {
+    setPublishModal(!publishModal);
+  };
+
+  const handleEditModal = () => setEditModal(!editModal);
+  const handleMessageModal = () => setMessageModal(!messageModal);
+
   const handleClick = () => {
     setShowMenu(!showMenu);
   };
@@ -19,10 +37,20 @@ const CreateDraw = ({ children }) => {
               <p className="f20 text-darkPurple fw700">
                 Level Based Play Singles Main
               </p>
-              <div className="flex gap-2">
-                <p className="text-green fw700">• Edit</p>
+              <div className="flex gap-2 ml-[10px]">
+                <p
+                  onClick={handleEditModal}
+                  className="cursor-pointer text-green fw700"
+                >
+                  • Edit
+                </p>
                 <p className="text-green fw700">• Print</p>
-                <p className="text-green fw700">• Message Players</p>
+                <p
+                  onClick={handleMessageModal}
+                  className="cursor-pointer text-green fw700"
+                >
+                  • Message Players
+                </p>
               </div>
             </div>
             <p className="text-grey fw700 text-center">
@@ -32,10 +60,11 @@ const CreateDraw = ({ children }) => {
           </div>
           <div className="flex gap-4  items-center justify-center">
             <Button size="small">Save</Button>
-            <Button size="small">Publish</Button>
+            <Button onClick={() => setPublishModal(!publishModal)} size="small">
+              Publish
+            </Button>
           </div>
         </div>
-        {/* <div>{children}</div> */}
       </div>
       <section className="bg-[#FAFBFF] w-full flex justify-center flex-col">
         <div className="xl:ml-[30px]">
@@ -235,6 +264,80 @@ const CreateDraw = ({ children }) => {
               <DrawCard />
             </div>
           </div>
+        </div>
+
+        {/* Draw Menu */}
+        <div>
+          <DrawMenu
+            showDrawMenu={showDrawMenu}
+            setShowDrawMenu={setShowDrawMenu}
+          />
+        </div>
+      </section>
+
+      {/* MODLAS */}
+      <section>
+        {/* Modal for the Publish */}
+        <div className={` ${publishModal ? "block" : "hidden "}`}>
+          <Modal heading="Publish Draws" closeModal={handlePublishModal}>
+            <div className="flex flex-col">
+              <p className="text-grey my-[15px]">
+                Select draws to publish and display publicly on the event
+                profile page. If you unselect a draw and click "Publish", that
+                draw will be unpublished from the event profile page.
+              </p>
+              <div className="flex flex-col gap-2 my-[20px]">
+                <label class="text-[#05192C] fw700 inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    class="w-[25px] h-[25px] mr-[10px] cursor-pointer text-purple border-1 border-purple rounded-md focus:ring-0"
+                    //   checked
+                  />
+                  Doubles
+                </label>
+                <label class="text-[#05192C] fw700 inline-flex items-center ">
+                  <input
+                    type="checkbox"
+                    class="w-[25px] h-[25px] mr-[10px]  text-purple  cursor-pointer border-1 border-purple rounded-md focus:ring-0"
+                    //   checked
+                  />
+                  Levels Based Play Singles
+                </label>
+              </div>
+              <div>
+                <Button size="small">Publish</Button>
+              </div>
+            </div>
+          </Modal>
+        </div>
+
+        {/* Modal for the Edit players */}
+        <div className={`${editModal ? "block" : "hidden"}`}>
+          <Modal heading="Edit Draws" closeModal={handleEditModal}>
+            <div className="my-[20px] flex flex-col gap-2">
+              <InputField label="Draw Name" />
+              <AutoComplete label="Draw Size" />
+            </div>
+            <Button size="small">Update</Button>
+          </Modal>
+        </div>
+
+        {/* Modal to message players  */}
+        <div className={`${messageModal ? "block" : "hidden"}`}>
+          <Modal
+            heading="Message Players In Doubles Draw"
+            closeModal={handleMessageModal}
+          >
+            <div className="flex flex-col gap-2">
+              <p className="f14 fw700 text-darkPurple">
+                Send an email update to all players registered in this draw
+              </p>
+              <TextArea label="Message" />
+              <div className="mt-[15px]">
+                <Button size="small">Send Message</Button>
+              </div>
+            </div>
+          </Modal>
         </div>
       </section>
     </>
