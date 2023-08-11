@@ -13,6 +13,9 @@ import { useRouter } from "next/navigation";
 
 const ClubView = () => {
   const router = useRouter();
+  const handleScorePost = () => {
+    router.push(`[clubID]/admin/score`);
+  };
 
   return (
     <>
@@ -53,7 +56,7 @@ const ClubView = () => {
             </div>
 
             <div className="flex items-center gap-1 flex-col lg:flex-row lg:gap-[14px]">
-              <PostScores>Post scores</PostScores>
+              <PostScores onClick={handleScorePost}>Post scores</PostScores>
               <CreateEvent onClick={() => router.push("/events/createevent")}>
                 Create An Event
               </CreateEvent>

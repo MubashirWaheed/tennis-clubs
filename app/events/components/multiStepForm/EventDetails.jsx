@@ -4,8 +4,10 @@ import NextButton from "@/components/ui/buttons/PrimaryButton";
 
 const EventDetails = () => {
   return (
-    <section>
-      <h2 className="mt-[18px]">Event Administrator (Organizer)</h2>
+    <section className="mt-[40px]">
+      <h2 className="my-[10px] f14 fw700  mt-[18px] text-darkPurple">
+        Event Administrator (Organizer)
+      </h2>
       <div className="flex gap-[10px] items-center w-full bg-white  h-[83px] shadow-sm rounded-[10px]">
         <div className={styles.iconWrapper}>
           <Image
@@ -17,30 +19,27 @@ const EventDetails = () => {
           />
         </div>
         <div>
-          <h2>Richard K. McClain</h2>
-          <p>Surat, India 0.00 (s)</p>
+          <h2 className="fw700 f16 text-darkPurple">Richard K. McClain</h2>
+          <p className="text-grey f14">Surat, India 0.00 (s)</p>
         </div>
       </div>
-      <dix>
-        <p>Contact Details</p>
-        <EmailField
-          label="Email"
-          value="RichardKMcClain@jourrapide.com"
-          type="email"
-        />
-      </dix>
+      <div className="mt-[30px]">
+        <p className="my-[5px] text-darkPurple f14 fw700">Contact Details</p>
+        <EmailField label="Email" value="" type="email" />
+      </div>
 
       <div className="flex gap-[10px] items-center w-full bg-white  h-[83px] shadow-sm rounded-[10px]">
-        <div>
-          <p className="text-[#000000]">Enable PIN for Registration</p>
-          <p className="text-[#828282]">
+        <div className="pl-[15px]">
+          <p className="text-[#000000] fw700 f14">
+            Enable PIN for Registration
+          </p>
+          <p className="text-[#828282] f14 mt-[5px]">
             This would add an extra layer of security to the account, as even if
             someone were to obtain the user&apos;s password
           </p>
-          {/* add toggle here */}
         </div>
       </div>
-      <div className="flex place-content-end">
+      <div className="mt-[20px] flex place-content-end">
         <NextButton size="small">Next</NextButton>
       </div>
     </section>

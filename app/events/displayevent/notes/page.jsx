@@ -6,6 +6,7 @@ import LocationCard from "../components/LocationCard";
 import { useState } from "react";
 import CreateDrawBtn from "@/components/ui/buttons/PrimaryButton";
 import { useRouter } from "next/navigation";
+import notesJson from "./notes.json";
 
 import Modal from "@/components/ui/Modal/Modal";
 
@@ -115,13 +116,7 @@ const EventView = () => {
         <div className="max-w-[1170px] flex justify-center flex-wrap ">
           <main className="md:basis-3/4 grow md:pr-[10px] md:mt-[20px]">
             <h2 className="text-darkPurple fw700 f24">Events Notes</h2>
-            <p className="text-grey mt-[30px]">
-              Net Generation Tennis Club is a tennis club focused on developing
-              and promoting the sport of tennis to the younger generation in the
-              United States. The club is an initiative of the United States
-              Tennis Association (USTA) that aims to inspire and engage children
-              to play tennis, regardless of their age, ability, or background.
-            </p>
+            <p className="text-grey mt-[30px]">{notesJson[0].text}</p>
           </main>
           <aside className="md:mt-[20px] md:basis-1/4 grow ">
             <div className="rounded-lg px-[21px] py-[28px] bg-[#fff] shadow-md w-full lg:w-[290px]">

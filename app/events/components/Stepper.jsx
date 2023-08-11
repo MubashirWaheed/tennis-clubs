@@ -1,7 +1,7 @@
 const Stepper = () => {
   return (
     <>
-      <ol class="flex items-center justify-center md:ml-[30px] ">
+      <ol class="my-[45px] flex items-center justify-center md:ml-[30px] ">
         <div className="flex flex-col items-center w-full">
           <li class="flex w-full items-center text-white after:content-[''] after:w-full after:h-1 after:border-b-0 after:border-[#E8EFF7] after:border-[2px] after:inline-block">
             <span class="flex items-center justify-center w-10 h-10 bg-[#027333] rounded-full lg:h-12 lg:w-12  shrink-0">

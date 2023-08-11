@@ -24,8 +24,8 @@ const buttons = [
   "Semifinals",
 ];
 const Draws = () => {
-  const [selectedRound, setSelectedRound] = useState("Standings");
-  const [drawAvailable, setDrawAvailable] = useState(false);
+  const [selectedRound, setSelectedRound] = useState("Round of 16");
+  const [drawAvailable, setDrawAvailable] = useState(true);
 
   const Filters = InfoConfig();
 
