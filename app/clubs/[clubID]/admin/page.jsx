@@ -50,7 +50,7 @@ const Admin = () => {
             onClick={() => setShowAddScorer(!showAddScorer)}
             className="flex items-center my-[20px] gap-2 "
           >
-            <button className=" rounded-lg p-[8px] border-solid border-2 border-[#027333]">
+            <button className="rounded-lg p-[8px] border-solid border-2 border-[#027333]">
               <Image
                 src="/add-icon-green.svg"
                 alt="add scorer"
@@ -82,6 +82,6 @@ export default Admin;
 
 const styles = {
   iconWrapper:
-    "w-[100px] h-[37px] md:w-[50px] md:h-[50px] ml-[20px] flex items-center justify-center rounded-full bg-[#027333] cursor-pointer",
+    "w-auto px-[8px] py-[5px] sm:w-[100px] sm:h-[37px] md:w-[50px] md:h-[50px] ml-[20px] flex items-center justify-center rounded-full bg-[#027333] cursor-pointer",
   icon: "w-[30px] h-[30px]",
 };

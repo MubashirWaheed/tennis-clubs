@@ -22,18 +22,18 @@ const EventInfo = () => {
 
   return (
     <>
-      <section className="bg-[#FAFBFF] h-auto flex items-center">
-        <div className="bg-[#FAFBFF] py-[20px] md:py-[30px] w-full max-w-[1170px] mx-auto flex flex-col md:flex-row justify-between">
-          <div className="flex flex-col">
+      <section className="p-[10px] bg-[#FAFBFF] h-auto flex items-center ">
+        <div className=" bg-[#FAFBFF] py-[20px] md:py-[30px] w-full max-w-[1170px] mx-auto flex flex-col md:flex-row justify-between">
+          <div className=" flex flex-col">
             <div className="flex gap-4 items-center">
               <div className="flex flex-col">
                 <p className="text-green fw700">HRT ACADEMIA DE TENIS</p>
-                <h2 className="text-start text-sm md:text-4xl f-Abril text-[#13013C]  md:mt-[10px] ">
+                <h2 className="text-start text-[24px] md:text-4xl f-Abril text-[#13013C]  md:mt-[10px] ">
                   HRT Spring Legend Series 2/7 - Junior Circuit Boys/girls
                 </h2>
               </div>
             </div>
-            <p className="text-grey md:mt-[20px]">
+            <p className="text-grey text-[14px] my-[7px] sm:text-[16px] md:mt-[20px] ">
               Apr 16, 8:00 Am Pdt | Larkspur, Ca | $75–$87 Entry Fees | Outdoor
               | Hardcourt | Singles
             </p>
@@ -54,7 +54,7 @@ const EventInfo = () => {
         </div>
       </section>
 
-      <section className="md:mt-[25px] flex items-center justify-center w-full">
+      <section className="p-[10px] md:mt-[25px] flex items-center justify-center w-full">
         <div className="max-w-[1170px]  w-full flex gap-6 flex-wrap md:flex-nowrap">
           <div className="basis-2/3 grow  w-full rounded-lg">
             <Image
@@ -67,7 +67,7 @@ const EventInfo = () => {
             />
           </div>
 
-          <div className="basis-1.5/3 grow flex flex-col">
+          <div className="basis-1.5/3 grow flex flex-col gap-2">
             <h5 className="fw700 text-darkPurple f24">2 Divisions</h5>
             {/* card */}
             <div className="flex justify-between px-[20px] gap-[10px] items-center w-full bg-white mt-[0px] md:mt-[18px] h-[83px] shadow-md rounded-[10px]">
@@ -103,8 +103,8 @@ const EventInfo = () => {
       </section>
 
       {/* Tabs */}
-      <div className="w-full max-w-[1170px] mx-auto">
-        <nav className="px-[50px] h-[60px] w-full overflow-x-auto rounded-[10px] shadow-md bg-white flex justify-start gap-[30px] items-stretch mb-[30px]">
+      <div className="p-[10px] w-full max-w-[1170px] mx-auto">
+        <nav className="sm:px-[50px] h-[60px] w-full overflow-x-auto rounded-[10px] shadow-md bg-white flex justify-start gap-[30px] items-stretch mb-[30px]">
           {infodata.infonNavbar.map((item, index) => {
             return (
               <Link

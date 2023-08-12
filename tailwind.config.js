@@ -8,6 +8,9 @@ module.exports = {
 
   theme: {
     extend: {
+      screens: {
+        xsm: "398px",
+      },
       transitionProperty: {
         height: "height",
       },

@@ -199,7 +199,11 @@ const ClubView = () => {
                 </div>
               </div>
               <div className="z-10 abolute inset-0 flex items-center justify-center h-full w-full">
-                <CreateAnEvent>Create An Event</CreateAnEvent>
+                <CreateAnEvent
+                  onClick={() => router.push("/events/createevent")}
+                >
+                  Create An Event
+                </CreateAnEvent>
               </div>
             </div>
           </div>

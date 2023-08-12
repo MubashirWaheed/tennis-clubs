@@ -1,7 +1,7 @@
 import Image from "next/image";
 const Sets = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center gap-12">
+    <div className="flex flex-col md:flex-row items-center md:gap-12 gap-2">
       <div className="flex flex-col gap-4 ">
         <div className="flex gap-4">
           <div className="  inline-block ">
@@ -59,7 +59,7 @@ const Sets = () => {
           </div>
         </div>
       </div>
-      <div className="inline-block  border-darkPurple border mt-[60px] rounded-lg">
+      <div className="inline-block  border-darkPurple border mt-[10px] md:mt-[60px] rounded-lg">
         <button className="px-[40px] py-[20px] rounded-lg">
           <Image
             src="/switch-arrow.svg"

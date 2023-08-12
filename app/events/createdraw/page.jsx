@@ -6,7 +6,7 @@ import InputField from "@/components/ui/inputFields/TextField";
 import AutoComplete from "@/components/ui/inputFields/AutoComplete";
 import TextArea from "@/components/ui/inputFields/TextArea";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DrawMenu from "./components/DrawMenu";
 import Modal from "@/components/ui/Modal/Modal";
 
@@ -16,6 +16,8 @@ const CreateDraw = ({ children }) => {
   const [publishModal, setPublishModal] = useState(false);
   const [editModal, setEditModal] = useState(false);
   const [messageModal, setMessageModal] = useState(false);
+  const [playerSorting, setPlayerSorting] = useState(false);
+  const [width, setWidth] = useState();
 
   const handlePublishModal = () => {
     setPublishModal(!publishModal);
@@ -28,9 +30,23 @@ const CreateDraw = ({ children }) => {
     setShowMenu(!showMenu);
   };
 
+  useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [setWidth]);
+
   return (
     <>
-      <div className="bg-[#FAFBFF]">
+      <div className="w-full  bg-[#FAFBFF]">
         <div className="flex flex-wrap justify-center lg:justify-between items-center w-full max-w-[1170px] mx-auto">
           <div>
             <div className="py-[5px] flex flex-col md:flex-row items-center w-full max-w-[1170px] mx-auto">
@@ -102,8 +118,11 @@ const CreateDraw = ({ children }) => {
             </div>
           </div>
         </div>
-        <div className="flex max-w-[1170px] mx-auto w-full my-[30px]">
-          <div className="grow basis-1/3 ">
+        {/* Sorting */}
+        <div className={` flex max-w-[1170px] mx-auto w-full my-[30px]`}>
+          <div
+            className={` ${width > 640 ? "block" : "hidden"} grow basis-1/3`}
+          >
             <div className="w-full bg-purple flex p-[20px] items-center justify-between">
               <p className="text-white">Players(13)</p>
               <p className="text-white flex items-center gap-2">

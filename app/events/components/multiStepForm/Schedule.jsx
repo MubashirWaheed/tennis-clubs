@@ -98,7 +98,7 @@ const Schedule = () => {
           </div>
         </div>
       </form>
-      <div className="flex items-center justify-between">
+      <div className="mt-[15px] flex items-center justify-between">
         <p className="text-[#828282]">
           <span className="fw700"> Timezone: </span>
           America/New York (GMT-04:00)

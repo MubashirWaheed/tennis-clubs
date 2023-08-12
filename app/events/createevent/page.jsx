@@ -9,7 +9,7 @@ import Stepper from "../components/Stepper";
 import EventPage from "../components/multiStepForm/EventPage";
 
 const EventForm = () => {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(5);
 
   const handleNext = () => {
     setStep(step + 1);
@@ -21,7 +21,7 @@ const EventForm = () => {
   return (
     <>
       <section className="relative -top-[30px] w-full max-w-[1170px] mx-auto bg-[#fff] rounded-[10px] shadow-md">
-        <div className="md:px-[52px] md:py-[48px]">
+        <div className="p-[10px] md:px-[52px] md:py-[48px]">
           <h2 className="h2 fw400 text-[#13013C]">Create An Event</h2>
           <Stepper />
           {step === 0 && <BasicInfo onNext={handleNext} />}

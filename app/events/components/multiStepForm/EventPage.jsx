@@ -17,7 +17,7 @@ const EventPage = () => {
           />
         </div>
       </div>
-      <div className="mt-[150px] flex place-content-end gap-4">
+      <div className="my-[20px]  sm:mt-[120px] flex place-content-end gap-4">
         <DrawftButton size="small">Save As A Draft</DrawftButton>
         <PublishButton size="small">Save & Publish</PublishButton>
       </div>
