@@ -4,11 +4,14 @@ import Link from "next/link";
 import { useState } from "react";
 import "./navbar.css";
 import { useRouter } from "next/navigation";
+import ProfileMenu from "./profileMenu";
+
 const Header = () => {
   const router = useRouter();
   const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
   const [menu_class, setMenuClass] = useState("menu hide");
   const [isMenuClicked, setIsMenuClicked] = useState(false);
+  const [profileMenu, setProfileMenu] = useState(false);
 
   // toggle burger menu change
   const updateMenu = () => {
@@ -70,7 +73,10 @@ const Header = () => {
 
         {/* Icons */}
         <div className={styles.iconsGroup}>
-          <div className={styles.iconWrapper}>
+          <div
+            onClick={() => setProfileMenu(!profileMenu)}
+            className={styles.iconWrapper}
+          >
             <Image
               src="/user-icon.svg"
               alt="User Icon"
@@ -105,9 +111,15 @@ const Header = () => {
         </div>
 
         {/* Responsive Menu */}
-        <nav className={`${menu_class} flex flex-col gap-4 p-5 z-20`}>
+        <nav className={`${menu_class}  flex flex-col gap-4 p-5 z-50`}>
           <div className="flex items-center justify-end gap-3">
-            <div className={styles.iconWrapper}>
+            <div
+              onClick={() => {
+                setProfileMenu(!profileMenu);
+                updateMenu();
+              }}
+              className={styles.iconWrapper}
+            >
               <Image
                 src="/user-icon.svg"
                 alt="User Icon"
@@ -142,6 +154,15 @@ const Header = () => {
           </ul>
         </nav>
       </div>
+
+      {/* Profile Menu */}
+      <div className={`${profileMenu ? "block" : "hidden"}`}>
+        <ProfileMenu
+          closeMenu={() => {
+            setProfileMenu(!profileMenu);
+          }}
+        />
+      </div>
     </header>
   );
 };
@@ -154,7 +175,7 @@ const styles = {
     "z-30 flex items-center gap-2 w-[220px] md:w-[400px] border-b border-[#828282] px-1 py-2",
   searchIcon: "text-[#13013C] w-[18px] h-[18px]",
   searchInput:
-    "w-[200px] md:flex-1 outline-none border-none text-base text-[#13013C]",
+    "z-40 w-[200px] md:flex-1 outline-none border-none text-base text-[#13013C]",
 
   iconsGroup: "hidden lg:flex items-center gap-3",
   iconWrapper:

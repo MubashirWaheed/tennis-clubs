@@ -9,7 +9,7 @@ import Stepper from "../components/Stepper";
 import EventPage from "../components/multiStepForm/EventPage";
 
 const EventForm = () => {
-  const [step, setStep] = useState(5);
+  const [step, setStep] = useState(3);
 
   const handleNext = () => {
     setStep(step + 1);

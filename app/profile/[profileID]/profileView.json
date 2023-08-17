@@ -1,21 +1,28 @@
 {
-    "profileNavBar": [{
-        "href": "/",
-        "title": "Overview"
-    },{
-        "href": "results",
-        "title": "Results"
-    },{
-        "href": "events",
-        "title": "Events"
-    },{
-        "href": "clubs",
-        "title": "Clubs"
-    },{
-        "href": "media",
-        "title": "Media"
-    },{
-        "href": "stats",
-        "title": "Stats"
-    }] 
+  "profileNavBar": [
+    {
+      "href": "/",
+      "title": "Overview"
+    },
+    {
+      "href": "results",
+      "title": "Results"
+    },
+    {
+      "href": "events",
+      "title": "Events"
+    },
+    {
+      "href": "clubs",
+      "title": "Clubs"
+    },
+    {
+      "href": "media",
+      "title": "Media"
+    },
+    {
+      "href": "stats",
+      "title": "Stats"
+    }
+  ]
 }

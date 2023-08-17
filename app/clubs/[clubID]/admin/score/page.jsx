@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Sets from "./components/Sets";
 import SubmitButton from "@/components/ui/buttons/PrimaryButton";
+import ToggleButton from "@/components/ui/buttons/ToggleButton";
 
 const PostScore = () => {
   return (
@@ -50,16 +51,27 @@ const PostScore = () => {
               <h2 className="text-[#3B2273] fw700 lh24 f16">
                 Add doubles players
               </h2>
-              <h2 className="text-[#13013C] fw700 f16">Match Outcome</h2>
+              <div className="flex">
+                <h2 className="text-[#13013C] fw500 text-center xsm:text-left text-[14px] sm:text-[16px]">
+                  Match Outcome
+                </h2>
+                <Image
+                  src="/dropdown.svg"
+                  alt="drop down"
+                  width={24}
+                  height={24}
+                />
+              </div>
             </div>
             <h2 className="text-[#3B2273] fw700 f16 lh24 mt-[10px]">
               Learn about scoring
             </h2>
           </div>
-          <div className="mb-[50px] flex gap-[10px] items-center w-full bg-white mt-[28px] h-[60px] shadow-md rounded-[10px]">
+          <div className="mb-[50px] flex justify-between gap-[10px] items-center w-full bg-white mt-[28px] h-[60px] shadow-md rounded-[10px]">
             <h2 className="text-[#13013C] fw700 pl-[20px]">
               Counts For Rating
             </h2>
+            <ToggleButton />
           </div>
           <SubmitButton>Submit</SubmitButton>
         </div>

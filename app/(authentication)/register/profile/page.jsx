@@ -5,6 +5,40 @@ import TextField from "@/components/ui/inputFields/TextField";
 import Continue from "@/components/ui/buttons/PrimaryButton";
 import { useState } from "react";
 import Image from "next/image";
+import Modal from "@/components/ui/Modal/Modal";
+import profileJson from "./profile.json";
+import DropDown from "@/components/ui/inputFields/DropDown";
+
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+const dates = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+const year = [
+  "1997",
+  "1998",
+  "1999",
+  "2000",
+  "2001",
+  "2002",
+  "2003",
+  "2004",
+  "2005",
+  "2006",
+  "2007",
+  "2008",
+  "2009",
+];
 
 const ProfileInfo = () => {
   const [personalInfo, setPersonalInfo] = useState({
@@ -19,6 +53,8 @@ const ProfileInfo = () => {
     gender: "",
   });
 
+  const [modal, setModal] = useState(false);
+
   const [profilePicPreview, setProfilePicPreview] = useState("");
 
   const submitPersonalInfo = (e) => {
@@ -30,7 +66,7 @@ const ProfileInfo = () => {
     const profilePic = e.target.files[0];
     setProfilePicPreview(URL.createObjectURL(profilePic));
     setPersonalInfo({ ...personalInfo, profilePicture: profilePic });
-  }
+  };
 
   return (
     <section className="p-[10px] md:p-[20px] lg:p-[38px] bg-white rounded-[10px] z-20">
@@ -43,20 +79,18 @@ const ProfileInfo = () => {
         <div className="flex items-center w-full justify-center">
           <label htmlFor="profilePicture" className={styles.imageUploadLabel}>
             {profilePicPreview ? (
-                <Image
-                  width={92}
-                  height={92}
-                  alt="Profile Image"
-                  className={styles.imagePreview}
-                  src={profilePicPreview}
-                />
-                
+              <Image
+                width={92}
+                height={92}
+                alt="Profile Image"
+                className={styles.imagePreview}
+                src={profilePicPreview}
+              />
             ) : (
               <div className={styles.imagePreviewFallback}>
                 <h4 className="h5 text-[#027333]">
                   Upload <br /> Profile{" "}
                 </h4>
-                
               </div>
             )}
             <input
@@ -92,14 +126,10 @@ const ProfileInfo = () => {
 
         <div className="flex flex-col gap-[15px] ">
           <p className="text-[#13013c] f14 fw700 lh22">Birthday</p>
-          <div className="flex gap-[15px]">
-            <div>
-              <AutoComplete label="Month" />
-            </div>
-            <div className="flex gap-[15px]">
-              <AutoComplete label="Day" />
-              <AutoComplete label="Year" />
-            </div>
+          <div className="flex gap-[0px] sm:gap-[5px]">
+            <DropDown label="Month" options={months} />
+            <DropDown label="Day" options={dates} />
+            <DropDown label="Year" options={year} />
           </div>
         </div>
 
@@ -136,12 +166,32 @@ const ProfileInfo = () => {
         />
         <p className="f14 fw400 lh22 text-[#828282]">
           Are you a parent signing up for a child?{" "}
-          <span className="text-[#13013c] hover:underline hover:font-semibold cursor-pointer">
+          <span
+            onClick={() => setModal(!modal)}
+            className="text-purple fw500 hover:underline hover:font-semibold cursor-pointer"
+          >
             Click here.
           </span>
         </p>
         <Continue typ="ubmit">Continue</Continue>
       </form>
+      {/* Modal */}
+      <div className={` ${modal ? "block " : "hidden"} `}>
+        <Modal
+          className=""
+          heading="For parents signing up for a child"
+          closeModal={() => setModal(!modal)}
+        >
+          <ul className="text-grey f14 list-disc ">
+            <li className="mt-[25px]">{profileJson[0].point1}</li>
+            <li className="mt-[25px]">{profileJson[0].point2}</li>
+            <li className="mt-[25px]">
+              {profileJson[0].point3}{" "}
+              <span className="text-purple fw500">Support Team.</span>
+            </li>
+          </ul>
+        </Modal>
+      </div>
     </section>
   );
 };

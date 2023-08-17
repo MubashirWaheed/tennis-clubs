@@ -1,6 +1,7 @@
 import Image from "next/image";
 import EmailField from "@/components/ui/inputFields/EmailField";
 import NextButton from "@/components/ui/buttons/PrimaryButton";
+import ToggleButton from "@/components/ui/buttons/ToggleButton";
 
 const EventDetails = () => {
   return (
@@ -29,7 +30,7 @@ const EventDetails = () => {
           <EmailField label="Email" value="" type="email" />
         </div>
 
-        <div className="flex gap-[10px] items-center w-full bg-white  h-[83px] shadow-sm rounded-[10px]">
+        <div className="flex gap-[10px] justify-between items-center w-full bg-white  h-[83px] shadow-sm rounded-[10px]">
           <div className="pl-[15px] ">
             <p className="text-[#000000] fw700 f14">
               Enable PIN for Registration
@@ -39,6 +40,8 @@ const EventDetails = () => {
               if someone were to obtain the user&apos;s password
             </p>
           </div>
+          <ToggleButton />
+          {/* <p>test</p> */}
         </div>
       </div>
       <div className="mt-[20px] flex place-content-end">

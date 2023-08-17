@@ -2,14 +2,19 @@ import AutoComplete from "@/components/ui/inputFields/AutoComplete";
 import profileData from "../profileData.json";
 import ResultCard from "./ResultCard";
 import Image from "next/image";
+import DropDown from "@/components/ui/inputFields/DropDown";
+
+const gameOptions = ["doubles", "singles"];
+const filterOption = ["option 1", "option 2"];
+
 const Results = () => {
   return (
     <section>
       <div className="flex flex-col lg:flex-row justify-between items-center">
         <div className="w-[355px] flex flex-col gap-[30px] mb-[40px]">
           <div className="flex flex-col md:flex-row gap-[15px]">
-            <AutoComplete label="Game Type" />
-            <AutoComplete label="Filter Type" />
+            <DropDown label="Game Type" options={gameOptions} />
+            <DropDown label="Filter Type" options={filterOption} />
           </div>
           <div>
             <p className="f16 fw700 lh24 text-[#828282]">W/L 37 - 15</p>
@@ -20,8 +25,8 @@ const Results = () => {
             <p className="f20 fw400 lh30 text-[#3B2273]">About</p>
             <p className="f16 fw700 lh28 text-[#828282]">Age : 20</p>
             <Image
-            width={74}
-            height={74}
+              width={74}
+              height={74}
               src="/age.svg"
               alt="Age"
               className="absolute bottom-0 right-0 w-[74px] h-[74px]"
