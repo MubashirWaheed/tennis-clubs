@@ -1,7 +1,9 @@
 import React from "react";
 import PlayerInput from "@/components/ui/inputFields/AutoComplete";
 import ScoreInput from "@/components/ui/inputFields/TextField";
+import DropDown from "@/components/ui/inputFields/DropDown";
 
+const playerOptions = ["player 1", "player 2"];
 const DrawCard = () => {
   return (
     <div className="shadow-lg  bg-white mx-[10px] my-[20px] ">
@@ -12,8 +14,8 @@ const DrawCard = () => {
         </div>
         <div className="flex gap-4 items-center justify-center">
           <div className="flex flex-col gap-3 basis-2/3 grow">
-            <PlayerInput label="select a player" />
-            <PlayerInput label="select a player" />
+            <DropDown label="select a player" options={playerOptions} />
+            <DropDown label="select a player" options={playerOptions} />
           </div>
           <div className="basis-1/3 grow">
             <ScoreInput label="score" />
