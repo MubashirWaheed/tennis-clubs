@@ -1,5 +1,7 @@
 import InputField from "@/components/ui/inputFields/TextField";
 import NextButton from "@/components/ui/buttons/PrimaryButton";
+import DateInput from "@/components/ui/inputFields/DateInput";
+import TimeInput from "@/components/ui/inputFields/TimeInput";
 
 const Schedule = () => {
   const handleForm = () => {};
@@ -8,93 +10,43 @@ const Schedule = () => {
       <form className="flex flex-col gap-4 mt-[30px]">
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex flex-col gap-2">
-            <h2>Tournament Begin</h2>
+            <p className="text-[#13013C] f14 fw700">Tournament Begin</p>
             <div className="flex  md:flex-row gap-4">
-              <InputField
-                type="text"
-                value="02-10-2023"
-                label="Date"
-                onChange={handleForm}
-              />
-              <InputField
-                type="text"
-                value="05:20"
-                label="Time"
-                onChange={handleForm}
-              />
+              <DateInput />
+              <TimeInput />
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <h2>Tournament Ends</h2>
+            <p className="text-[#13013C] f14 fw700">Tournament Ends</p>
             <div className="flex gap-4">
-              <InputField
-                type="text"
-                value="02-10-2023"
-                label="Date"
-                onChange={handleForm}
-              />
-              <InputField
-                type="text"
-                value="05:20"
-                label="Time"
-                onChange={handleForm}
-              />
+              <DateInput />
+              <TimeInput />
             </div>
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex flex-col gap-2">
-            <h2>Tournament Begin</h2>
+            <p className="text-[#13013C] f14 fw700">Tournament Begin</p>
             <div className="flex  md:flex-row gap-4">
-              <InputField
-                type="text"
-                value="02-10-2023"
-                label="Date"
-                onChange={handleForm}
-              />
-              <InputField
-                type="text"
-                value="05:20"
-                label="Time"
-                onChange={handleForm}
-              />
+              <DateInput />
+              <TimeInput />
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <h2>Tournament Ends</h2>
+            <p className="text-[#13013C] f14 fw700">Tournament Ends</p>
             <div className="flex gap-4">
-              <InputField
-                type="text"
-                value="02-10-2023"
-                label="Date"
-                onChange={handleForm}
-              />
-              <InputField
-                type="text"
-                value="05:20"
-                label="Time"
-                onChange={handleForm}
-              />
+              <DateInput />
+              <TimeInput />
             </div>
           </div>
         </div>
 
         <div className="flex flex-col md:max-w-[530px]">
-          <h2>Draft Published</h2>
+          <p className="text-[#13013C] f14 fw700">Draft Published</p>
           <div className="flex gap-4">
-            <InputField
-              label="Date"
-              type="text"
-              onChange={handleForm}
-              value="14-02-2023"
-            />
-            <InputField
-              label="Time"
-              type="text"
-              onChange={handleForm}
-              value=""
-            />
+            <DateInput />
+            <TimeInput />
           </div>
         </div>
       </form>

@@ -40,11 +40,11 @@ const Player = () => {
             <tbody className="rounded-xl">
               <tr className="bg-white   w-full  border-2  border-separate">
                 <th scope="col" className="p-4 rounded-l-xl">
-                  <div class="flex items-center">
+                  <div className="flex items-center">
                     <input
                       id="checkbox-all-search"
                       type="checkbox"
-                      class="w-5 h-5 text-purple cursor-pointer bg-gray-100 border-gray-300 rounded  focus:ring-2 dark:bg-gray-700"
+                      className="w-5 h-5 text-purple cursor-pointer bg-gray-100 border-gray-300 rounded  focus:ring-2 dark:bg-gray-700"
                     />
                   </div>
                 </th>
@@ -115,11 +115,11 @@ const Player = () => {
 
               <tr className="bg-white my-[10px] f14  ">
                 <td scope="col" className="p-4 rounded-l-xl">
-                  <div class="flex items-center">
+                  <div className="flex items-center">
                     <input
                       id="checkbox-all-search"
                       type="checkbox"
-                      class="w-5 h-5 text-purple cursor-pointer bg-gray-100 border-gray-300 rounded  focus:ring-2 dark:bg-gray-700"
+                      className="w-5 h-5 text-purple cursor-pointer bg-gray-100 border-gray-300 rounded  focus:ring-2 dark:bg-gray-700"
                     />
                   </div>
                 </td>

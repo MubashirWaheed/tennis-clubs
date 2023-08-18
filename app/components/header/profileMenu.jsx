@@ -27,9 +27,12 @@ const ProfileMenu = ({ closeMenu }) => {
         </div>
 
         <div className="mt-[45px]">
-          {menuList.map((item) => {
+          {menuList.map((item, i) => {
             return (
-              <div className="border-b-[1px] border-opacity-10 border-[#3B2273]  py-[15px] flex justify-between">
+              <div
+                key={i}
+                className="border-b-[1px] border-opacity-10 border-[#3B2273]  py-[15px] flex justify-between"
+              >
                 <p className="text-[#05192C] f16 fw700 ">{item}</p>
                 <Image
                   src="/dropdown.svg"

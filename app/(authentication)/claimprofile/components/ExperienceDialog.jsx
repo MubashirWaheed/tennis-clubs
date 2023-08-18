@@ -73,9 +73,9 @@ const ExperienceDialog = () => {
         </p>
         {playFrequencyRadio.map(({ label }, i) => {
           return (
-            <div class="flex items-center mb-4">
+            <div className="flex items-center mb-4">
               <input
-                class="w-6 h-6 text-purple bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
+                className="w-6 h-6 text-purple bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
                 type="radio"
                 name="flexRadioDefault"
                 id={`radioDefault${i}`}
@@ -99,9 +99,9 @@ const ExperienceDialog = () => {
         <div className="mt-[20px]">
           {matchesWithSetsPlayed.map(({ label }, i) => {
             return (
-              <div class="flex items-center mb-4">
+              <div className="flex items-center mb-4">
                 <input
-                  class="w-6 h-6 text-purple bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
+                  className="w-6 h-6 text-purple bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
                   type="radio"
                   name="setRadio"
                   id={`setRadio${i}`}

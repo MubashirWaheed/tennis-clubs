@@ -137,13 +137,13 @@ const CreateDraw = ({ children }) => {
             </div>
             <div className="py-[10px] bg-white flex items-center justify-between px-[20px]">
               <div className="flex gap-2 items-center">
-                <label class="inline-flex items-center">
+                <label className="inline-flex items-center">
                   <input
                     type="checkbox"
-                    class="w-5 h-5 cursor-pointer text-purple border-1 border-purple rounded-md focus:ring-0"
+                    className="w-5 h-5 cursor-pointer text-purple border-1 border-purple rounded-md focus:ring-0"
                     //   checked
                   />
-                  <span class="ml-[7px] text-grey">All</span>
+                  <span className="ml-[7px] text-grey">All</span>
                 </label>
               </div>
               <p className="text-grey f14 fw700">Sort By MPR (High To Low)</p>
@@ -151,13 +151,13 @@ const CreateDraw = ({ children }) => {
             {/* dropdown */}
             <div className="py-[10px] bg-[#E8EFF7] flex items-center justify-between px-[20px]">
               <div className="flex gap-2 items-center">
-                <label class="inline-flex items-center">
+                <label className="inline-flex items-center">
                   <input
                     type="checkbox"
-                    class="w-5 h-5 cursor-pointer text-purple border-1 border-purple rounded-md focus:ring-0"
+                    className="w-5 h-5 cursor-pointer text-purple border-1 border-purple rounded-md focus:ring-0"
                     //   checked
                   />
-                  <span class="ml-[7px] text-grey">Not Placed(13)</span>
+                  <span className="ml-[7px] text-grey">Not Placed(13)</span>
                 </label>
               </div>
               <span
@@ -180,10 +180,10 @@ const CreateDraw = ({ children }) => {
               {/* players in the filter */}
               <div className="border-b border-1 border-purple px-[20px]">
                 <div className="flex gap-2 items-center py-[20px]">
-                  <label class="inline-flex items-center">
+                  <label className="inline-flex items-center">
                     <input
                       type="checkbox"
-                      class="w-5 h-5 cursor-pointer text-purple border-1 border-purple rounded-md focus:ring-0"
+                      className="w-5 h-5 cursor-pointer text-purple border-1 border-purple rounded-md focus:ring-0"
                       //   checked
                     />
                   </label>
@@ -209,10 +209,10 @@ const CreateDraw = ({ children }) => {
 
               <div className="border-b border-1 border-purple px-[20px]">
                 <div className="flex gap-2 items-center py-[20px]">
-                  <label class="inline-flex items-center">
+                  <label className="inline-flex items-center">
                     <input
                       type="checkbox"
-                      class="w-5 h-5 cursor-pointer text-purple border-1 border-purple rounded-md focus:ring-0"
+                      className="w-5 h-5 cursor-pointer text-purple border-1 border-purple rounded-md focus:ring-0"
                       //   checked
                     />
                   </label>
@@ -237,10 +237,10 @@ const CreateDraw = ({ children }) => {
 
               <div className="border-b border-1 border-purple px-[20px]">
                 <div className="flex gap-2 items-center py-[20px]">
-                  <label class="inline-flex items-center">
+                  <label className="inline-flex items-center">
                     <input
                       type="checkbox"
-                      class="w-5 h-5 cursor-pointer text-purple border-1 border-purple rounded-md focus:ring-0"
+                      className="w-5 h-5 cursor-pointer text-purple border-1 border-purple rounded-md focus:ring-0"
                       //   checked
                     />
                   </label>
@@ -306,18 +306,18 @@ const CreateDraw = ({ children }) => {
                 draw will be unpublished from the event profile page.
               </p>
               <div className="flex flex-col gap-2 my-[20px]">
-                <label class="text-[#05192C] fw700 inline-flex items-center">
+                <label className="text-[#05192C] fw700 inline-flex items-center">
                   <input
                     type="checkbox"
-                    class="w-[25px] h-[25px] mr-[10px] cursor-pointer text-purple border-1 border-purple rounded-md focus:ring-0"
+                    className="w-[25px] h-[25px] mr-[10px] cursor-pointer text-purple border-1 border-purple rounded-md focus:ring-0"
                     //   checked
                   />
                   Doubles
                 </label>
-                <label class="text-[#05192C] fw700 inline-flex items-center ">
+                <label className="text-[#05192C] fw700 inline-flex items-center ">
                   <input
                     type="checkbox"
-                    class="w-[25px] h-[25px] mr-[10px]  text-purple  cursor-pointer border-1 border-purple rounded-md focus:ring-0"
+                    className="w-[25px] h-[25px] mr-[10px]  text-purple  cursor-pointer border-1 border-purple rounded-md focus:ring-0"
                     //   checked
                   />
                   Levels Based Play Singles
