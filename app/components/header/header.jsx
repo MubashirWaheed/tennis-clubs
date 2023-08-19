@@ -33,7 +33,7 @@ const Header = () => {
     <header className="bg-white z-30">
       <div className="z-30 flex items-center max-w-[1200px] mx-auto justify-between p-2 md:p-3">
         {/* Logo */}
-        <Link href="/" className="z-30 cursor-pointer">
+        <Link href="/" className=" cursor-pointer">
           <Image src="/Logo.svg" width={85} height={70} alt="Logo" />
         </Link>
 
@@ -102,7 +102,7 @@ const Header = () => {
         {/* Responsive Menu */}
 
         {/* Hamburger */}
-        <div className="nav z-30 md:hidden px-[2px]">
+        <div className="nav z-50 md:hidden px-[2px]">
           <div className="w-[20px] h-[20px] burger-menu" onClick={updateMenu}>
             <div className={burger_class}></div>
             <div className={burger_class}></div>
@@ -111,7 +111,7 @@ const Header = () => {
         </div>
 
         {/* Responsive Menu */}
-        <nav className={`${menu_class}  flex flex-col gap-4 p-5 z-50`}>
+        <nav className={`${menu_class}  flex flex-col gap-4 p-5 z-40`}>
           <div className="flex items-center justify-end gap-3">
             <div
               onClick={() => {
@@ -172,10 +172,10 @@ const styles = {
   navItem: "leading-[24px] text-base text-[#3B2273] cursor-pointer",
 
   searchContainer:
-    "z-30 flex items-center gap-2 w-[220px] md:w-[400px] border-b border-[#828282] px-1 py-2",
+    " flex items-center gap-2 w-[220px] md:w-[400px] border-b border-[#828282] px-1 py-2",
   searchIcon: "text-[#13013C] w-[18px] h-[18px]",
   searchInput:
-    "z-40 w-[200px] md:flex-1 outline-none border-none text-base text-[#13013C]",
+    " w-[200px] md:flex-1 outline-none border-none text-base text-[#13013C]",
 
   iconsGroup: "hidden lg:flex items-center gap-3",
   iconWrapper:

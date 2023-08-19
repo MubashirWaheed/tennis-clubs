@@ -11,14 +11,18 @@ import ChangeRound from "@/app/components/Modals/ChangeRound";
 import PayementSuccess from "@/app/components/Modals/PayementSuccess";
 import InformationPurpose from "@/app/components/Modals/InformationPurpose";
 import GetRating from "@/app/components/Modals/GetRating";
+import UpgradeToPower from "@/app/components/paymentWorkflow/UpgradeToPower";
+import SelectDivision from "@/app/components/paymentWorkflow/SelectDivision";
+import DivisionInfo from "@/app/components/paymentWorkflow/DivisionInfo";
+import DvisionInfo2 from "@/app/components/paymentWorkflow/DvisionInfo2";
 
 const ClaimProfile = () => {
   return (
     // h-[600px]
-    <div className="min-h-[500px] relative flex items-center justify-center bg-[#57258c] w-full ">
-      <div className="z-10">
+    <div className=" min-h-[500px] relative flex items-center justify-center bg-[#57258c] w-full ">
+      <div className="hidden lg:block">
         <Image
-          className="absolute bottom-0 left-0 opacity-10"
+          className=" absolute bottom-0 left-0 opacity-20 lg:w-[150px] lg-[200px] xl:left-[-20px] xl:w-[200px] xl:h-[450px]"
           src="/objects.svg"
           width={250}
           height={250}
@@ -31,13 +35,13 @@ const ClaimProfile = () => {
           height={30}
         />
         <Image
-          className="absolute top-0 right-5"
+          className="absolute top-0 right-4"
           src="/waveElement.svg"
           width={800}
           height={400}
         />
       </div>
-      <div className="z-20">
+      <div>
         {/* <ClaimDialog /> */}
         <ExperienceDialog />
         {/* <ErrorDialog /> */}
@@ -45,6 +49,10 @@ const ClaimProfile = () => {
         {/* <PayementSuccess /> */}
         {/* <InformationPurpose /> */}
         {/* <GetRating /> */}
+        {/* <UpgradeToPower /> */}
+        {/* <SelectDivision /> */}
+        <DivisionInfo />
+        {/* <DvisionInfo2 /> */}
       </div>
     </div>
   );

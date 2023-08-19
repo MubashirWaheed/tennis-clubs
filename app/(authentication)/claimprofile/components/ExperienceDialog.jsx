@@ -46,7 +46,7 @@ const ExperienceDialog = () => {
   };
 
   return (
-    <div className="rounded-md bg-white pl-[30px] pr-[20px] sm:pr-[130px] my-[50px] py-[25px]">
+    <div className=" rounded-md bg-white pl-[30px] pr-[20px] sm:pr-[130px] my-[50px] py-[25px]">
       <p className="text-[#f0b536] uppercase fw700">GET STARTED</p>
       <h3 className="h3 mb-[35px] mt-[10px]">
         Tell us about your tennis experience
@@ -73,7 +73,7 @@ const ExperienceDialog = () => {
         </p>
         {playFrequencyRadio.map(({ label }, i) => {
           return (
-            <div className="flex items-center mb-4">
+            <div key={i} className="flex items-center mb-4">
               <input
                 className="w-6 h-6 text-purple bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
                 type="radio"
@@ -99,7 +99,7 @@ const ExperienceDialog = () => {
         <div className="mt-[20px]">
           {matchesWithSetsPlayed.map(({ label }, i) => {
             return (
-              <div className="flex items-center mb-4">
+              <div key={i} className="flex items-center mb-4">
                 <input
                   className="w-6 h-6 text-purple bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600"
                   type="radio"
@@ -132,7 +132,7 @@ const ExperienceDialog = () => {
               id="age"
               className="pl-[22px] lh18 cursor-pointer focus:ring-0 focus:outline-none  bg-none bg-[#fafbff]  outline-none  text-[#05192C] text-sm rounded-xl border-0 block w-full"
             >
-              <option className="text-[#05192C]" selected value="14">
+              <option className="text-[#05192C]" value="14">
                 14
               </option>
               <option value="15">15</option>
