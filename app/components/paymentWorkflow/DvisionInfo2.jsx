@@ -48,6 +48,7 @@ const DvisionInfo2 = () => {
               src="/playerProfile.png"
               width={40}
               height={40}
+              alt="background image"
             />
           </div>
         </div>

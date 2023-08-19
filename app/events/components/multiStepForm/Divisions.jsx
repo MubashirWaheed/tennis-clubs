@@ -89,7 +89,12 @@ const Divisions = () => {
           className="border-green border-[1px] p-[5px] rounded-md ml-[5px]"
           src="/add-icon.svg"
         >
-          <Image src="/add-icon-green.svg" width={20} height={20} />
+          <Image
+            src="/add-icon-green.svg"
+            alt="add icon"
+            width={20}
+            height={20}
+          />
         </button>
         <p className="text-darkPurple fw700">Add More Divisions</p>
       </div>

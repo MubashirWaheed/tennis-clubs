@@ -18,7 +18,7 @@ const InformationPurpose = () => {
           <br />
           Tennis is a sport played between two players (singles) or between two
           teams of two players each (doubles), using rackets to hit a ball over
-          a net and into the opponent's court. The objective of the game is to
+          a net and into the opponents court. The objective of the game is to
           hit the ball in such a way that the opponent is not able to return it
           properly, thus scoring points.
           <br />

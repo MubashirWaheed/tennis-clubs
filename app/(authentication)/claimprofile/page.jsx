@@ -33,12 +33,14 @@ const ClaimProfile = () => {
           src="/Ellipse16.svg"
           width={30}
           height={30}
+          alt="background image"
         />
         <Image
           className="absolute top-0 right-4"
           src="/waveElement.svg"
           width={800}
           height={400}
+          alt="background image"
         />
       </div>
       <div>

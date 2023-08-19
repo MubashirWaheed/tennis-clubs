@@ -34,7 +34,7 @@ const UpgradeToPower = () => {
         </div>
         <Button>Upgrade Now</Button>
         <p className="text-center text-[#828282] f14 fw500 lh20  mt-[15px]">
-          No thanks, I'd rather pay full price for this event.
+          No thanks, Id rather pay full price for this event.
         </p>
         <p className="text-center text-[#828282] f14 fw500 lh20 underline">
           Continue without upgrading

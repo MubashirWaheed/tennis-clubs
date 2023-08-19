@@ -33,8 +33,8 @@ const MoreFilter = () => {
       </div>
       <h5 className="text-[#13013C] h5 fw700">Game Type</h5>
       <div className="flex flex-col gap-2">
-        {gameType.map((item) => {
-          return <Checkbox value={item} />;
+        {gameType.map((item, i) => {
+          return <Checkbox key={i} value={item} />;
         })}
       </div>
       <h5 className="text-[#13013C] h5 fw700">Gender</h5>
