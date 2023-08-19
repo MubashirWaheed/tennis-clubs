@@ -42,8 +42,8 @@ const ClaimProfile = () => {
         />
       </div>
       <div>
-        {/* <ClaimDialog /> */}
-        <ExperienceDialog />
+        <ClaimDialog />
+        {/* <ExperienceDialog /> */}
         {/* <ErrorDialog /> */}
         {/* <RatingDialog /> */}
         {/* <PayementSuccess /> */}
@@ -51,7 +51,7 @@ const ClaimProfile = () => {
         {/* <GetRating /> */}
         {/* <UpgradeToPower /> */}
         {/* <SelectDivision /> */}
-        <DivisionInfo />
+        {/* <DivisionInfo /> */}
         {/* <DvisionInfo2 /> */}
       </div>
     </div>

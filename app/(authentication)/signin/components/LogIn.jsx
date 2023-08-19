@@ -16,21 +16,21 @@ const LogIn = () => {
             <p className="text-center f16 fw700 lh24 text-[#13013C]">
               LogIn With :
             </p>
-            <div className="flex gap-[8px] items-center">
-              <button className="h-[50px] w-[50px] rounded-sm shadow-md flex items-center justify-center">
+            <div className="flex gap-4 items-center">
+              <button className="h-[50px] w-[50px] rounded-xl shadow-md flex items-center justify-center">
                 <Image
                   src="/google.svg"
                   alt="Social Icons"
-                  width={30}
-                  height={30}
+                  width={26}
+                  height={26}
                 />
               </button>
-              <button className="h-[50px] w-[50px] rounded-sm shadow-md flex items-center justify-center">
+              <button className="h-[50px] w-[50px] rounded-xl shadow-md flex items-center justify-center">
                 <Image
                   src="/facebook.svg"
                   alt="Social Icons"
-                  width={30}
-                  height={30}
+                  width={28}
+                  height={28}
                 />
               </button>
             </div>

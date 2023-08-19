@@ -187,7 +187,9 @@ const ProfileInfo = () => {
             <li className="mt-[25px]">{profileJson[0].point2}</li>
             <li className="mt-[25px]">
               {profileJson[0].point3}{" "}
-              <span className="text-purple fw500">Support Team.</span>
+              <span className="text-purple fw500 cursor-pointer">
+                Support Team.
+              </span>
             </li>
           </ul>
         </Modal>

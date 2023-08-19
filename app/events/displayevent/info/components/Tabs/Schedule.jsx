@@ -5,8 +5,9 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import Image from "next/image";
 import dayjs from "dayjs";
+import { DatePicker, MobileDatePicker } from "@mui/x-date-pickers";
 
-const buttons = ["Date", "All Facilities", "All Draws"];
+const buttons = ["All Facilities", "All Draws"];
 
 const Schedule = () => {
   const today = dayjs();
@@ -22,6 +23,18 @@ const Schedule = () => {
   return (
     <div className="relative">
       <div className="flex gap-4 justify-start items-center mb-[50px]">
+        <div className="relative cursor-pointer">
+          <Image
+            className="absolute top-2 right-2 z-20"
+            src="/dropdown.svg"
+            width={20}
+            height={20}
+            alt="dropdown"
+          />
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <MobileDatePicker sx={styles} defaultValue={dayjs("2022-04-17")} />
+          </LocalizationProvider>
+        </div>
         {buttons.map((item, i) => {
           return (
             <button
@@ -41,18 +54,26 @@ const Schedule = () => {
           );
         })}
       </div>
-      {buttonClicked && buttonClicked === "Date" && (
-        <div className="z-10 bg-white shadow-lg absolute top-[40px] ">
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DateCalendar
-              value={date}
-              onChange={(newValue) => setDate(newValue)}
-            />
-          </LocalizationProvider>
-        </div>
-      )}
     </div>
   );
+};
+const styles = {
+  "& .MuiInputBase-root": {
+    width: "170px",
+    cursor: "pointer",
+    color: "#3B2273",
+    border: "none",
+    outline: "none",
+  },
+  "& .MuiInputBase-input": {
+    cursor: "pointer",
+    borderRadius: "10px",
+    border: "1px solid #3B2273",
+    paddingTop: "7px",
+    paddingBottom: "7px",
+    outline: "none",
+    backgroundColor: "white",
+  },
 };
 
 export default Schedule;

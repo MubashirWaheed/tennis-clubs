@@ -10,14 +10,10 @@ import Draws from "./components/Tabs/Draws";
 import Schedule from "./components/Tabs/Schedule";
 
 const EventInfo = () => {
-  const [tab, setTab] = useState(3);
+  const [tab, setTab] = useState(0);
 
-  const handleNext = () => {
-    setTab(tab + 1);
-  };
-
-  const handlePrev = () => {
-    setTab(tab - 1);
+  const handleTabClick = (value) => {
+    setTab(value);
   };
 
   return (
@@ -107,21 +103,25 @@ const EventInfo = () => {
         <nav className="sm:px-[50px] h-[60px] w-full overflow-x-auto rounded-[10px] shadow-md bg-white flex justify-start gap-[30px] items-stretch mb-[30px]">
           {infodata.infonNavbar.map((item, index) => {
             return (
-              <Link
+              <button
+                onClick={() => handleTabClick(index)}
                 key={index}
-                href={item.href}
-                className="h-full border-b-4 border-white focus:border-[#3B2273] rounded-md px-[10px] text-[#828282] focus:text-[#3B2273] flex items-center justify-center"
+                className={`h-full ${
+                  tab === index
+                    ? "border-b-4 border-[#3B2273] focus:border-[#3B2273] focus:text-[#3B2273]"
+                    : "border-b-4 border-white focus:border-[#3B2273]"
+                } rounded-md px-[10px] text-[#828282] flex items-center justify-center`}
               >
                 <p className="f16 fw700 lh24">{item.title}</p>
-              </Link>
+              </button>
             );
           })}
         </nav>
 
         {/* switching between tabs */}
-        {tab === 1 && <Overview />}
-        {tab === 2 && <Players />}
-        {tab === 3 && <Draws />}
+        {tab === 0 && <Overview />}
+        {tab === 1 && <Players />}
+        {tab === 2 && <Draws />}
         {tab === 4 && <Schedule />}
       </div>
     </>
