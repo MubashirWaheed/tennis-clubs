@@ -8,7 +8,7 @@ import LoggedInHome from "./components/home/LoggedInHome";
 
 const Home = () => {
   const router = useRouter();
-  let isLoggedIn = false;
+  let isLoggedIn = true;
 
   return (
     <div>

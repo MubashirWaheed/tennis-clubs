@@ -10,10 +10,10 @@ const PaidHitters = () => {
         height={700}
         src="/tenniscourt.png"
         alt="Background Image"
-        className="absolute w-full h-full object-cover -z-10"
+        className="bg-purple  absolute w-full h-full object-cover -z-10"
       />
 
-      <div className="bg-[#3B2273]/80 h-full w-full">
+      <div className=" h-full w-full">
         <div className="py-[20px] md:py-[40px] lg:py-[90px] px-2 lg:px-0 w-full max-w-[1170px] mx-auto flex flex-col gap-[50px] items-center justify-center">
           <div className="flex flex-col items-center gap-[14px]">
             <h2 className="text-[#ffffff] h2  text-center lg:text-left">
