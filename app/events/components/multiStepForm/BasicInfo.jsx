@@ -1,4 +1,3 @@
-import Stepper from "../Stepper";
 import NameField from "@/components/ui/inputFields/TextField";
 import LocationField from "@/components/ui/inputFields/TextField";
 import NextButton from "@/components/ui/buttons/PrimaryButton";

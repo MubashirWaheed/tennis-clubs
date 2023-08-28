@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Overlay from "@/components/ui/Overlay/Overlay";
 import Image from "next/image";
 import Button from "@/components/ui/buttons/PrimaryButton";
+import Checkbox from "@/components/ui/buttons/Checkbox";
 
-const SelectDivision = () => {
+const SelectDivision = ({ onClose, onSwitch }) => {
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const handleOptionChange = (e) => {
+    setSelectedOption(e.target.value);
+  };
+
   return (
     <Overlay>
       <div className="mt-[10px] flex  justify-between">
@@ -12,24 +19,30 @@ const SelectDivision = () => {
           <p className="text-grey fw700 f16 ">Dora W.Marshall</p>
         </div>
         <div>
-          <div className="cursor-pointer bg-[#e7e6eb] rounded-full p-[5px]">
+          <div
+            onClick={onClose}
+            className="cursor-pointer bg-[#e7e6eb] rounded-full p-[5px]"
+          >
             <Image src="/close.svg" width={20} height={20} alt="close button" />
           </div>
         </div>
       </div>
 
       {/* Card */}
-      <div className="px-[10px] py-[30px] bg-white shadow-lg rounded-lg my-[30px]">
-        {/* round checkbox */}
+      <div
+        className={`${
+          selectedOption === "option1" ? "border-purple" : ""
+        } px-[10px] py-[30px] border-[1px]  bg-white shadow-lg rounded-lg my-[30px]`}
+      >
         <div className="flex justify-between">
-          <label className="text-[#13013C]  text-[14px] fw700 inline-flex items-center">
+          <label className="cursor-pointer text-[#13013C]  text-[14px] fw700 inline-flex items-center">
             <input
-              type="checkbox"
+              type="radio"
               className={`w-[25px] h-[25px] mr-[10px] cursor-pointer text-purple border-1 border-purple rounded-full focus:ring-0`}
-              //   checked
-              name="test"
-              value="test"
-              // onChange={handleCheckBox}
+              name="option1"
+              value="option1"
+              checked={selectedOption === "option1"}
+              onChange={handleOptionChange}
             />
             Dobles Mixto - Nivel Initiation & Beginner (MPR Ponderado Hasta
             8.60)
@@ -42,16 +55,21 @@ const SelectDivision = () => {
       </div>
 
       {/* Card */}
-      <div className="px-[10px] py-[30px] border-[1px] border-purple bg-white shadow-lg rounded-lg my-[30px]">
+
+      <div
+        className={`${
+          selectedOption === "option2" ? "border-purple" : ""
+        } px-[10px] py-[30px] border-[1px]  bg-white shadow-lg rounded-lg my-[30px]`}
+      >
         <div className="flex justify-between">
-          <label className="text-[#13013C]  text-[14px] fw700 inline-flex items-center">
+          <label className="cursor-pointer text-[#13013C]  text-[14px] fw700 inline-flex items-center">
             <input
-              type="checkbox"
+              type="radio"
               className={`w-[25px] h-[25px] mr-[10px] cursor-pointer text-purple border-1 border-purple rounded-full focus:ring-0`}
-              //   checked
-              name="test"
-              value="test"
-              // onChange={handleCheckBox}
+              name="option2"
+              value="option2"
+              checked={selectedOption === "option2"}
+              onChange={handleOptionChange}
             />
             Dobles Mixto - Nivel Initiation & Beginner (MPR Ponderado Hasta
             8.60)
@@ -64,14 +82,20 @@ const SelectDivision = () => {
       </div>
 
       {/* Card with button */}
-      <div className="px-[10px] py-[30px]  bg-white shadow-lg rounded-lg my-[30px]">
+      <div
+        className={`${
+          selectedOption === "option3" ? "border-purple" : ""
+        }  px-[10px] py-[30px] border-[1px]  bg-white shadow-lg rounded-lg my-[30px]`}
+      >
         <div className="flex justify-between">
-          <label className="text-[#13013C] pr-[20px]  text-[14px] fw700 inline-flex items-center">
+          <label className="cursor-pointer text-[#13013C] pr-[20px]  text-[14px] fw700 inline-flex items-center">
             <input
-              type="checkbox"
-              className={`w-[25px] h-[25px] mr-[10px] cursor-pointer text-purple border-1 border-purple rounded-full focus:ring-0`}
-              name="test"
-              value="test"
+              type="radio"
+              className={` w-[25px] h-[25px] mr-[10px] cursor-pointer text-purple border-1 border-purple rounded-full focus:ring-0`}
+              name="option3"
+              value="option3"
+              checked={selectedOption === "option3"}
+              onChange={handleOptionChange}
             />
             Dobles Mixto - Nivel Initiation & Beginner (MPR Ponderado Hasta
             8.60)
@@ -108,7 +132,9 @@ const SelectDivision = () => {
         </div>
       </div>
       <div className="flex flex-col mt-[30px]">
-        <Button size="small">Continue</Button>
+        <Button onClick={() => onSwitch("divisioninfo")} size="small">
+          Continue
+        </Button>
       </div>
     </Overlay>
   );

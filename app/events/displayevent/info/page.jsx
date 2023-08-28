@@ -1,23 +1,86 @@
 "use client";
 import RegisterButton from "@/components/ui/buttons/PrimaryButton";
 import Image from "next/image";
-import Link from "next/link";
-import infodata from "./info.json";
-import { useState } from "react";
-import Overview from "./components/Tabs/Overview";
-import Players from "./components/Tabs/Players";
-import Draws from "./components/Tabs/Draws";
-import Schedule from "./components/Tabs/Schedule";
+import Tab from "./components/Tab";
+import UpgradeToPower from "./components/paymentWorkFlow/UpgradeToPower";
+import SelectDivision from "./components/paymentWorkFlow/SelectDivision";
+import { useEffect, useState } from "react";
+import DivisionInfo from "./components/paymentWorkFlow/DivisionInfo";
+import DivisionInfo2 from "./components/paymentWorkFlow/DvisionInfo2";
 
 const EventInfo = () => {
-  const [tab, setTab] = useState(0);
+  const [togglePaymentbar, setTogglePaymentbar] = useState(false);
+  const [panelStack, setPanelStack] = useState(["updgradeToPower"]);
 
-  const handleTabClick = (value) => {
-    setTab(value);
+  const pushPanel = (panel) => {
+    setPanelStack([...panelStack, panel]);
   };
 
+  const popPanel = () => {
+    if (panelStack.length > 1) {
+      const newStack = panelStack.slice(0, -1);
+      setPanelStack(newStack);
+    }
+  };
+
+  const currentPanel = panelStack[panelStack.length - 1];
+
+  const renderPanel = () => {
+    switch (currentPanel) {
+      case "updgradeToPower":
+        return (
+          <UpgradeToPower
+            onClose={() => setTogglePaymentbar(!togglePaymentbar)}
+            onSwitch={(panel) => pushPanel(panel)}
+          />
+        );
+      case "selectdivision":
+        return (
+          <SelectDivision
+            onClose={() => {
+              setTogglePaymentbar(!togglePaymentbar);
+              setPanelStack(["updgradeToPower"]);
+            }}
+            onSwitch={(panel) => pushPanel(panel)}
+          />
+        );
+      case "divisioninfo":
+        return (
+          <DivisionInfo
+            onClose={() => {
+              setTogglePaymentbar(!togglePaymentbar);
+              setPanelStack(["updgradeToPower"]);
+            }}
+            onSwitch={(panel) => pushPanel(panel)}
+            onBack={popPanel}
+          />
+        );
+      case "divisioninfo2":
+        return (
+          <DivisionInfo2
+            onClose={() => {
+              setTogglePaymentbar(!togglePaymentbar);
+              setPanelStack(["updgradeToPower"]);
+            }}
+            onSwitch={(panel) => pushPanel(panel)}
+            onBack={popPanel}
+          />
+        );
+      default:
+        return null;
+    }
+  };
+
+  useEffect(() => {
+    if (togglePaymentbar) {
+      document.body.classList.add("fixed", "overflow-hidden");
+    } else {
+      document.body.classList.remove("fixed", "overflow-hidden");
+    }
+  }, [togglePaymentbar]);
+
   return (
-    <>
+    <div>
       <section className="p-[10px] bg-[#FAFBFF] h-auto flex items-center ">
         <div className=" bg-[#FAFBFF] py-[20px] md:py-[30px] w-full max-w-[1170px] mx-auto flex flex-col md:flex-row justify-between">
           <div className=" flex flex-col">
@@ -89,7 +152,14 @@ const EventInfo = () => {
                 <span className="line-through text-grey">$72</span> / $60
               </p>
             </div>
-            <RegisterButton className=" mt-[100px]">Register</RegisterButton>
+
+            <RegisterButton
+              onClick={() => setTogglePaymentbar(true)}
+              className="mt-[100px]"
+            >
+              Register
+            </RegisterButton>
+
             <p className="text-grey f16 fw700 text-center my-[10px]">
               You can still <span className="text-darkPurple"> register </span>
               for this event. Registration ends on May 8, 5:30pm ACST
@@ -98,33 +168,9 @@ const EventInfo = () => {
         </div>
       </section>
 
-      {/* Tabs */}
-      <div className="p-[10px] w-full max-w-[1170px] mx-auto">
-        <nav className="sm:px-[50px] h-[60px] w-full overflow-x-auto rounded-[10px] shadow-md bg-white flex justify-start gap-[30px] items-stretch mb-[30px]">
-          {infodata.infonNavbar.map((item, index) => {
-            return (
-              <button
-                onClick={() => handleTabClick(index)}
-                key={index}
-                className={`h-full ${
-                  tab === index
-                    ? "border-b-4 border-[#3B2273] focus:border-[#3B2273] focus:text-[#3B2273]"
-                    : "border-b-4 border-white focus:border-[#3B2273]"
-                } rounded-md px-[10px] text-[#828282] flex items-center justify-center`}
-              >
-                <p className="f16 fw700 lh24">{item.title}</p>
-              </button>
-            );
-          })}
-        </nav>
-
-        {/* switching between tabs */}
-        {tab === 0 && <Overview />}
-        {tab === 1 && <Players />}
-        {tab === 2 && <Draws />}
-        {tab === 4 && <Schedule />}
-      </div>
-    </>
+      {togglePaymentbar && <div>{renderPanel()}</div>}
+      <Tab />
+    </div>
   );
 };
 

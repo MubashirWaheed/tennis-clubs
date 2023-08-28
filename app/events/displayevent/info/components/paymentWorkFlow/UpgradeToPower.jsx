@@ -3,7 +3,7 @@ import Overlay from "@/components/ui/Overlay/Overlay";
 import Image from "next/image";
 import Button from "@/components/ui/buttons/PrimaryButton";
 
-const UpgradeToPower = () => {
+const UpgradeToPower = ({ onClose, onSwitch }) => {
   return (
     <Overlay>
       <div className="flex flex-col">
@@ -15,7 +15,10 @@ const UpgradeToPower = () => {
             <p className="text-grey fw700 f16 ">Dora W.Marshall</p>
           </div>
           <div>
-            <div className="cursor-pointer bg-[#e7e6eb] rounded-full p-[5px]">
+            <div
+              onClick={onClose}
+              className="cursor-pointer bg-[#e7e6eb] rounded-full p-[5px]"
+            >
               <Image
                 src="/close.svg"
                 width={20}
@@ -32,7 +35,7 @@ const UpgradeToPower = () => {
             subscription.
           </p>
         </div>
-        <Button>Upgrade Now</Button>
+        <Button onClick={() => onSwitch("selectdivision")}>Upgrade Now</Button>
         <p className="text-center text-[#828282] f14 fw500 lh20  mt-[15px]">
           No thanks, Id rather pay full price for this event.
         </p>

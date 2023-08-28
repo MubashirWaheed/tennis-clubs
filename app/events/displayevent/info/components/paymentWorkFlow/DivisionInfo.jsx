@@ -5,7 +5,7 @@ import Image from "next/image";
 import Button from "@/components/ui/buttons/PrimaryButton";
 import InputField from "@/components/ui/inputFields/TextField";
 
-const DivisionInfo = () => {
+const DivisionInfo = ({ onClose, onBack, onSwitch }) => {
   const [showInviteCard, setShowInviteCard] = useState(false);
   const handleInviteCard = () => {
     setShowInviteCard(!showInviteCard);
@@ -14,7 +14,10 @@ const DivisionInfo = () => {
     <Overlay>
       <div className="mt-[10px] flex justify-between  ">
         <div>
-          <div className="cursor-pointer rotate-180  rounded-full p-[5px]">
+          <div
+            onClick={onBack}
+            className="cursor-pointer rotate-180  rounded-full p-[5px]"
+          >
             <Image
               src="/right_ic.svg"
               width={24}
@@ -32,7 +35,10 @@ const DivisionInfo = () => {
           <p className="text-[#828282] fw700 f14 ">Dora W.Marshall</p>
         </div>
         <div>
-          <div className="cursor-pointer bg-[#e7e6eb] rounded-full p-[5px]">
+          <div
+            onClick={onClose}
+            className="cursor-pointer bg-[#e7e6eb] rounded-full p-[5px]"
+          >
             <Image src="/close.svg" width={20} height={20} alt="close button" />
           </div>
         </div>
@@ -108,7 +114,7 @@ const DivisionInfo = () => {
       </div>
 
       <div className="flex flex-col">
-        <Button>Add Partner</Button>
+        <Button onClick={() => onSwitch("divisioninfo2")}>Add Partner</Button>
       </div>
     </Overlay>
   );

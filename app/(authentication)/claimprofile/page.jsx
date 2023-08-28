@@ -11,10 +11,6 @@ import ChangeRound from "@/app/components/Modals/ChangeRound";
 import PayementSuccess from "@/app/components/Modals/PayementSuccess";
 import InformationPurpose from "@/app/components/Modals/InformationPurpose";
 import GetRating from "@/app/components/Modals/GetRating";
-import UpgradeToPower from "@/app/components/paymentWorkflow/UpgradeToPower";
-import SelectDivision from "@/app/components/paymentWorkflow/SelectDivision";
-import DivisionInfo from "@/app/components/paymentWorkflow/DivisionInfo";
-import DvisionInfo2 from "@/app/components/paymentWorkflow/DvisionInfo2";
 
 const ClaimProfile = () => {
   return (
@@ -51,10 +47,6 @@ const ClaimProfile = () => {
         {/* <PayementSuccess /> */}
         {/* <InformationPurpose /> */}
         {/* <GetRating /> */}
-        {/* <UpgradeToPower /> */}
-        {/* <SelectDivision /> */}
-        {/* <DivisionInfo /> */}
-        {/* <DvisionInfo2 /> */}
       </div>
     </div>
   );

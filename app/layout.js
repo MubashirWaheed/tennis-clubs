@@ -7,7 +7,7 @@ import "./globals.css";
 import HomeHeader from "./components/header/homeHeader";
 
 export default function RootLayout({ children }) {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <html lang="en" className="overflow-x-hidden">

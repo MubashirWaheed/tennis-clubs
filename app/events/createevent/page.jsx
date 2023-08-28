@@ -9,7 +9,7 @@ import Stepper from "../components/Stepper";
 import EventPage from "../components/multiStepForm/EventPage";
 
 const EventForm = () => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
 
   const handleNext = () => {
     setStep(step + 1);
@@ -19,22 +19,18 @@ const EventForm = () => {
     setStep(step - 1);
   };
   return (
-    <>
-      <section className="relative -top-[30px] w-full max-w-[1170px] mx-auto bg-[#fff] rounded-[10px] shadow-md">
-        <div className="p-[10px] md:mx-[52px] md:my-[48px]">
-          <h2 className="h2 fw400 text-[#13013C]">Create An Event</h2>
-          <Stepper />
-          {step === 0 && <BasicInfo onNext={handleNext} />}
-          {step === 1 && <BasicInfo2 onNext={handleNext} onPrev={handlePrev} />}
-          {step === 2 && <Schedule onNext={handleNext} onPrev={handlePrev} />}
-          {step === 3 && (
-            <EventDetails onNext={handleNext} onPrev={handlePrev} />
-          )}
-          {step === 4 && <Divisions onNext={handleNext} onPrev={handlePrev} />}
-          {step === 5 && <EventPage />}
-        </div>
-      </section>
-    </>
+    <section className="relative -top-[30px] w-full max-w-[1170px] mx-auto bg-[#fff] rounded-[10px] shadow-md">
+      <div className="p-[10px] md:mx-[52px] md:my-[48px]">
+        <h2 className="h2 fw400 text-[#13013C]">Create An Event</h2>
+        <Stepper step={step} />
+        {step === 0 && <BasicInfo onNext={handleNext} />}
+        {step === 1 && <BasicInfo2 onNext={handleNext} onPrev={handlePrev} />}
+        {step === 2 && <Schedule onNext={handleNext} onPrev={handlePrev} />}
+        {step === 3 && <EventDetails onNext={handleNext} onPrev={handlePrev} />}
+        {step === 4 && <Divisions onNext={handleNext} onPrev={handlePrev} />}
+        {step === 5 && <EventPage />}
+      </div>
+    </section>
   );
 };
 export default EventForm;

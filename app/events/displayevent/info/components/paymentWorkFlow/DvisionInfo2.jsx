@@ -4,12 +4,15 @@ import Image from "next/image";
 import Button from "@/components/ui/buttons/PrimaryButton";
 import SecondaryButton from "@/components/ui/buttons/SecondaryButton";
 
-const DvisionInfo2 = () => {
+const DvisionInfo2 = ({ onClose, onBack }) => {
   return (
     <Overlay>
       <div className="mt-[10px] flex justify-between  ">
         <div>
-          <div className="cursor-pointer rotate-180  rounded-full p-[5px]">
+          <div
+            onClick={onBack}
+            className="cursor-pointer rotate-180  rounded-full p-[5px]"
+          >
             <Image
               src="/right_ic.svg"
               width={24}
@@ -27,7 +30,10 @@ const DvisionInfo2 = () => {
           <p className="text-[#828282] fw700 f14 ">Dora W.Marshall</p>
         </div>
         <div>
-          <div className="cursor-pointer bg-[#e7e6eb] rounded-full p-[5px]">
+          <div
+            onClick={onClose}
+            className="cursor-pointer bg-[#e7e6eb] rounded-full p-[5px]"
+          >
             <Image src="/close.svg" width={20} height={20} alt="close button" />
           </div>
         </div>
