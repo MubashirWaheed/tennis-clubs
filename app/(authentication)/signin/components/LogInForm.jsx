@@ -1,43 +1,84 @@
 "use client";
 import SignInButton from "@/components/ui/buttons/PrimaryButton";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import EmailField from "@/components/ui/inputFields/EmailField";
 import PasswordField from "@/components/ui/inputFields/PasswordField";
+import { FormProvider, useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 
 const LogInForm = () => {
+  const router = useRouter();
+  const methods = useForm();
+  const [emailError, setEmailError] = useState(null);
+  const [passwordError, setPasswordError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-    const [signInDetails, setSignInDetails] = React.useState({
-        email: "",
-        password: ""
+  const onSubmit = async (data) => {
+    setLoading(true);
+    const { email, password } = data;
+    const response = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
     });
 
-    return (
-        <form className="w-full flex flex-col gap-[20px]">
-            <div className="flex flex-col w-full gap-[20px]">
-                <EmailField
-                    id="email"
-                    value={signInDetails.email}
-                    onChange={(e) =>
-                        setSignInDetails({ ...signInDetails, email: e.target.value })
-                    }
-                    label="Email"
-                />
-                <PasswordField 
-                    id="password"
-                    value={signInDetails.password}
-                    onChange={(e) =>
-                    setSignInDetails({ ...signInDetails, password: e.target.value })
-                    }
-                    label="Password" 
-                />
-            </div>
-            <div className="w-full flex flex-col gap-[11px]">
-                <SignInButton type="submit">Sign In With Email</SignInButton>
-                <p className="f14 fw700 lh22 text-[#828282]">By continuing, i agree to the <Link href="/signin" className="text-[#3B2273]">terms of service.</Link></p>
-            </div>
-        </form>
-    );
+    if (!response.error) {
+      router.push("/");
+    } else {
+      const errorType = response.error.includes("password")
+        ? "password"
+        : "email";
+      errorType === "password"
+        ? setPasswordError(response.error)
+        : setEmailError(response.error);
+    }
+    setLoading(false);
+  };
+
+  const onEmailFieldFocus = () => {
+    setEmailError(null);
+  };
+  const onPasswordFieldFocus = () => {
+    setPasswordError(null);
+  };
+
+  return (
+    <FormProvider {...methods}>
+      <form
+        onSubmit={methods.handleSubmit(onSubmit)}
+        className="w-full flex flex-col gap-[20px]"
+      >
+        <div className="flex flex-col w-full gap-[5px]">
+          <EmailField id="email" label="Email" onFocus={onEmailFieldFocus} />
+          {emailError && (
+            <p className="text-red-500 text-[12px] ml-55px">{emailError}</p>
+          )}
+          <PasswordField
+            formType="signin"
+            id="password"
+            label="Password"
+            onFocus={onPasswordFieldFocus}
+          />
+          {passwordError && (
+            <p className="text-red-500 text-[12px] ml-55px">{passwordError}</p>
+          )}
+        </div>
+        <div className="w-full flex flex-col gap-[11px]">
+          <SignInButton disabled={loading} type="submit">
+            Sign In With Email
+          </SignInButton>
+          <p className="f14 fw700 lh22 text-[#828282]">
+            By continuing, i agree to the{" "}
+            <Link href="/signin" className="text-[#3B2273]">
+              terms of service.
+            </Link>
+          </p>
+        </div>
+      </form>
+    </FormProvider>
+  );
 };
 
 export default LogInForm;

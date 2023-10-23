@@ -33,7 +33,7 @@ const Header = () => {
     <header className="bg-white z-30">
       <div className="z-30 flex items-center max-w-[1200px] mx-auto justify-between p-2 md:p-3">
         {/* Logo */}
-        <Link href="/" className=" cursor-pointer">
+        <Link href="/" className="cursor-pointer">
           <Image src="/Logo.svg" width={85} height={70} alt="Logo" />
         </Link>
 

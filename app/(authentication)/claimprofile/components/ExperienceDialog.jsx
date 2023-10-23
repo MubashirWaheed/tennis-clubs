@@ -129,6 +129,7 @@ const ExperienceDialog = () => {
               What age did you start playing tennis? *
             </p>
             <select
+              size="4"
               id="age"
               className="pl-[22px] lh18 cursor-pointer focus:ring-0 focus:outline-none  bg-none bg-[#fafbff]  outline-none  text-[#05192C] text-sm rounded-xl border-0 block w-full"
             >
@@ -138,6 +139,7 @@ const ExperienceDialog = () => {
               <option value="15">15</option>
               <option value="16">16</option>
               <option value="17">17</option>
+              <option value="18">18</option>
             </select>
             <div className="absolute sm:top-5 top-9 right-3 sm:right-6">
               <Image

@@ -1,14 +1,19 @@
-"use client";
+// "use client";
 import JoinPlayerBTN from "../components/ui/buttons/PrimaryButton";
 import JoinClubBTN from "../components/ui/buttons/PrimaryButton";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import LoggedInHomeV2 from "./components/home/LoggedInHomeV2";
 import LoggedInHome from "./components/home/LoggedInHome";
+import { redirect } from "next/navigation";
+import { getCurrentUser } from "@/lib/services/getCurrentUser";
 
-const Home = () => {
-  const router = useRouter();
-  let isLoggedIn = true;
+const Home = async () => {
+  // check if the user is onboarded or not in or not
+
+  let isLoggedIn = false;
+  const user = await getCurrentUser();
+  console.log("user wtf : ", user);
 
   return (
     <div>
@@ -42,13 +47,19 @@ const Home = () => {
               <div className="flex flex-col lg:flex-row items-center gap-[22px] w-full justify-start">
                 <JoinPlayerBTN
                   type="button"
-                  onClick={() => router.push("/register")}
+                  // onClick={
+                  //   () => redirect("/register")
+                  //   // router.push("/register")
+                  // }
                 >
                   Join As A Player
                 </JoinPlayerBTN>
                 <JoinClubBTN
                   type="button"
-                  onClick={() => router.push("/clubs/new2")}
+                  // onClick={
+                  //   () => redirect("clubs/new2")
+                  // router.push("/clubs/new2")
+                  // }
                 >
                   Join As A Club
                 </JoinClubBTN>

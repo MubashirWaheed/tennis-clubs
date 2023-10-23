@@ -1,6 +1,8 @@
+"use client";
 import Link from "next/link";
 import LogInForm from "./LogInForm";
 import Image from "next/image";
+import { signIn } from "next-auth/react";
 
 const LogIn = () => {
   return (
@@ -17,7 +19,10 @@ const LogIn = () => {
               LogIn With :
             </p>
             <div className="flex gap-4 items-center">
-              <button className="h-[50px] w-[50px] rounded-xl shadow-md flex items-center justify-center">
+              <button
+                onClick={() => signIn("google")}
+                className="h-[50px] w-[50px] rounded-xl shadow-md flex items-center justify-center"
+              >
                 <Image
                   src="/google.svg"
                   alt="Social Icons"

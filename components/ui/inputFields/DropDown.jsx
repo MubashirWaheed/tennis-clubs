@@ -18,6 +18,7 @@ const DropDown = ({ label, options, size }) => {
             {label}
           </p>
           <select
+            // size="3"
             id="age"
             className={`${
               size == "small"

@@ -1,6 +1,8 @@
+"use client";
 import Link from "next/link";
 import RegisterForm from "./components/RegisterForm";
 import Image from "next/image";
+import { signIn } from "next-auth/react";
 
 const RegisterAsAPlayer = () => {
   return (
@@ -19,7 +21,12 @@ const RegisterAsAPlayer = () => {
               Register With :
             </p>
             <div className="flex gap-[15px] items-center">
-              <button className="h-[50px] w-[50px] rounded-md shadow-md flex items-center justify-center">
+              <button
+                onClick={() =>
+                  signIn("google", { callbackUrl: "/register/profile" })
+                }
+                className="hover:shadow-lg transition-all h-[50px] w-[50px] rounded-md shadow-md flex items-center justify-center"
+              >
                 <Image
                   src="/google.svg"
                   alt="Social Icons"
