@@ -1,7 +1,11 @@
+"use client";
 import React from "react";
 import SearchButton from "@/components/ui/buttons/PrimaryButton";
 import CreateButton from "@/components/ui/buttons/SecondaryButton";
-const ClaimDialog = () => {
+const ClaimDialog = ({ onNext }) => {
+  const onClick = () => {
+    console.log("dummy");
+  };
   return (
     <div className="z-40 my-[20px] py-[50px] px-[60px] rounded-lg bg-white w-auto max-w-[600px]">
       <h2 className="h2">Claim or create your tennis profile</h2>
@@ -21,7 +25,7 @@ const ClaimDialog = () => {
       </div>
       <div className="flex flex-col gap-[10px]">
         <SearchButton>Search For A Profile</SearchButton>
-        <CreateButton onClick={""}>Create A New Profile</CreateButton>
+        <CreateButton onClick={onNext}>Create A New Profile</CreateButton>
       </div>
     </div>
   );

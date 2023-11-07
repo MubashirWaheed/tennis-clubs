@@ -32,7 +32,6 @@ const RegisterForm = () => {
         password,
         redirect: false,
       });
-      console.log("result:", result);
       setUser(response.data);
 
       router.push("/register/profile");

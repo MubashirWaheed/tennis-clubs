@@ -1,6 +1,7 @@
+"use client";
 import Modal from "@/components/ui/Modal/Modal";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import ClaimDialog from "./components/ClaimDialog";
 import ExperienceDialog from "./components/ExperienceDialog";
 import ErrorDialog from "./components/ErrorDialog";
@@ -13,6 +14,11 @@ import InformationPurpose from "@/app/components/Modals/InformationPurpose";
 import GetRating from "@/app/components/Modals/GetRating";
 
 const ClaimProfile = () => {
+  const [currentStep, setCurrentStep] = useState(1);
+  const handleNext = () => {
+    setCurrentStep(currentStep + 1);
+  };
+
   return (
     // h-[600px]
     <div className=" min-h-[500px] relative flex items-center justify-center bg-[#57258c] w-full ">
@@ -32,18 +38,18 @@ const ClaimProfile = () => {
           alt="background image"
         />
         <Image
-          className="absolute top-0 right-4"
+          className="absolute top-0 right-4 z-0"
           src="/waveElement.svg"
           width={800}
           height={400}
           alt="background image"
         />
       </div>
-      <div>
-        <ClaimDialog />
-        {/* <ExperienceDialog /> */}
+      <div className="z-10">
+        {currentStep === 1 && <ClaimDialog onNext={handleNext} />}
+        {currentStep === 2 && <ExperienceDialog onNext={handleNext} />}
+        {currentStep === 3 && <RatingDialog />}
         {/* <ErrorDialog /> */}
-        {/* <RatingDialog /> */}
         {/* <PayementSuccess /> */}
         {/* <InformationPurpose /> */}
         {/* <GetRating /> */}

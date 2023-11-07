@@ -13,7 +13,7 @@ const Home = async () => {
 
   let isLoggedIn = false;
   const user = await getCurrentUser();
-  console.log("user wtf : ", user);
+  console.log("user: ", user);
 
   return (
     <div>

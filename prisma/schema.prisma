@@ -43,21 +43,31 @@ model Account {
   @@unique([provider, providerAccountId])
 }
 
-
 model Profile {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   userId String @unique @db.ObjectId
   firstName String
-  listName String 
+  lastName String 
   birthdate DateTime?
   phone BigInt?
   location String?
   gender Gender
+  profileURL String?
 
   user User @relation(fields: [userId], references: [id])
 }
 
 enum Gender {
-  Male
-  Female
+  male
+  female
+}
+
+model Club {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  clubName String
+  phoneNumber String 
+  clubLocation String 
+  about String 
+  email String 
+  clubWebsite String 
 }

@@ -1,5 +1,5 @@
 "use client";
-import RadioGroup from '@/components/ui/inputFields/RadioGroup'
+import RadioGroup from "@/components/ui/inputFields/RadioGroup";
 import ApplyButton from "@/components/ui/buttons/PrimaryButton";
 const UpcomingEventsFilter = () => {
   const options = [
@@ -24,12 +24,13 @@ const UpcomingEventsFilter = () => {
           Clear
         </button>
       </div>
+      {/* add the use form hook method */}
       <form className="flex flex-col items-stretch gap-[20px]">
         <RadioGroup direction="column" options={options} />
         <ApplyButton onClick={handleApplyClick}>Apply</ApplyButton>
       </form>
     </div>
   );
-}
+};
 
-export default UpcomingEventsFilter
+export default UpcomingEventsFilter;

@@ -1,13 +1,16 @@
 "use client";
 import { useState } from "react";
 import RadioOption from "./RadioOption";
+import { useFormContext } from "react-hook-form";
 
 const RadioGroup = ({ direction, options, onChange, label }) => {
   const [selectedOption, setSelectedOption] = useState("male");
+  const { register, watch, setValue } = useFormContext();
 
   const onSelect = (value) => {
     setSelectedOption(value);
     onChange && onChange(value);
+    setValue("gender", value);
   };
 
   return (
@@ -18,12 +21,11 @@ const RadioGroup = ({ direction, options, onChange, label }) => {
 
       {/*Options */}
       <div
+        {...register(`${label}`)}
         className={`w-full flex ${
           direction === "column" && "flex-col gap-[10px]"
         }
-                            ${
-                              direction === "row" && "gap-[15px] items-center"
-                            }`}
+      ${direction === "row" && "gap-[15px] items-center"}`}
       >
         {options.map((option) => (
           <RadioOption

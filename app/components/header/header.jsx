@@ -129,7 +129,7 @@ const Header = () => {
               />
             </div>
             <div
-              onClick={() => router.push("/clubs/new2")}
+              onClick={() => router.push("/clubs/new1")}
               className={styles.iconWrapper}
             >
               <Image

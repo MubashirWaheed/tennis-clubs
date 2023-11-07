@@ -1,13 +1,21 @@
+"use client";
+import { useFormContext } from "react-hook-form";
+
 const TextField = ({ type, id, value, onChange, label }) => {
+  const { register, watch } = useFormContext();
+
+  const watchedFormData = watch();
+
+  console.log("Form data while typing:", watchedFormData);
+
   return (
     <div className={styles.TextField}>
       <label className={styles.label} htmlFor={id}>
         {label}
       </label>
       <input
+        {...register(`${id}`, { required: true })}
         className={styles.input}
-        value={value}
-        onChange={onChange}
         id={id}
         type={type}
       />

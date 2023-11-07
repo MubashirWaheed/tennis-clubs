@@ -31,7 +31,7 @@ const matchesWithSetsPlayed = [
   { label: "26+" },
 ];
 
-const ExperienceDialog = () => {
+const ExperienceDialog = ({ onNext }) => {
   const [checkboxValue, setCheckboxValue] = useState([]);
 
   const handleCheckBox = (event) => {
@@ -154,7 +154,7 @@ const ExperienceDialog = () => {
       </div>
 
       <div className="flex items-center justify-center">
-        <Button>Next</Button>
+        <Button onClick={onNext}>Next</Button>
       </div>
     </div>
   );

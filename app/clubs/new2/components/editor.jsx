@@ -4,96 +4,64 @@ import MobileField from "@/components/ui/inputFields/MobileField";
 import OTPField from "@/components/ui/inputFields/OTPField";
 import TextArea from "@/components/ui/inputFields/TextArea";
 import TextField from "@/components/ui/inputFields/TextField";
-import CreateButton from "@/components/ui/buttons/PrimaryButton"
-import React from "react";
+import CreateButton from "@/components/ui/buttons/PrimaryButton";
+
+import { FormProvider, useForm } from "react-hook-form";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const Editor = () => {
-    const [formData, setFormData] = React.useState({
-        clubName: "",
-        clubLocation: "",
-        phoneNumber: "",
-        otp: "",
-        email: "",
-        about: "",
-        clubWebsite: "",
-    });
-    
-    const handleChange = (e) => {
-        setFormData({
-        ...formData,
-        [e.target.id]: e.target.value,
-        });
-    };
-    
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    };
-    return (
-        <section className="lg:mb-[196px]">
-            <form
-            className="w-full md:w-[90%] lg:w-[70%]  mx-auto flex flex-col gap-[25px]"
-            onSubmit={handleSubmit}
-            >
-            <div className="flex flex-col w-full gap-[20px]">
-                <TextField
-                id="clubName"
-                label="Club Name"
-                value={formData.clubName}
-                onChange={handleChange}
-                />
+  const { push } = useRouter();
+  const methods = useForm({
+    defaultValues: {
+      clubName: "",
+      phoneNumber: "",
+      clubLocation: "",
+      about: "",
+      email: "",
+      clubWebsite: "",
+    },
+  });
 
-                <TextField
-                id="clubLocation"
-                label="Club Location"
-                value={formData.clubLocation}
-                onChange={handleChange}
-                />
+  const handleSubmit = async (data) => {
+    // make post request to the backend api
+    const response = await axios.post("/api/club", { data });
+    push("/");
+  };
 
-                <div className="flex flex-col lg:flex-row gap-[20px]">
-                    <MobileField
-                        id="phoneNumber"
-                        label="Phone Number"
-                        value={formData.phoneNumber}
-                        onChange={handleChange}
-                    />
-                    <OTPField
-                        id="otp"
-                        label="OTP"
-                        value={formData.otp}
-                        onChange={handleChange}
-                    />
-                </div>
+  return (
+    <section className="lg:mb-[196px]">
+      <FormProvider {...methods}>
+        <form
+          onSubmit={methods.handleSubmit(handleSubmit)}
+          className="w-full md:w-[90%] lg:w-[70%]  mx-auto flex flex-col gap-[25px]"
+          //   onSubmit={handleSubmit}
+        >
+          <div className="flex flex-col w-full gap-[20px]">
+            <TextField id="clubName" label="Club Name" />
 
-                <EmailField
-                id="email"
-                label="Email"
-                value={formData.email}
-                onChange={handleChange}
-                />
+            <TextField id="clubLocation" label="Club Location" />
 
-                <TextArea
-                id="about"
-                label="About"
-                value={formData.about}
-                maxLength
-                onChange={handleChange}
-                />
-
-                <TextField
-                id="clubWebsite"
-                label="Club Website"
-                value={formData.clubWebsite}
-                onChange={handleChange}
-                />
-
-                {/* Button */}
-                <div className="flex flex-row justify-end w-full py-20">
-                <CreateButton type="submit">Create Club</CreateButton>
-                </div>
+            <div className="flex flex-col lg:flex-row gap-[20px]">
+              <MobileField id="phoneNumber" label="Phone Number" />
+              <OTPField id="otp" label="OTP" />
             </div>
-            </form>
-        </section>
-    );
-}
+
+            <EmailField id="email" label="Email" />
+
+            <TextArea id="about" label="About" maxLength />
+
+            <TextField id="clubWebsite" label="Club Website" />
+
+            {/* Button */}
+            <div className="flex flex-row justify-end w-full py-20">
+              <CreateButton type="submit">Create Club</CreateButton>
+            </div>
+          </div>
+        </form>
+      </FormProvider>
+    </section>
+  );
+};
 
 export default Editor;
