@@ -7,36 +7,38 @@ generator client {
 
 datasource db {
   provider = "mongodb"
-  url   = env("DATABASE_URL")
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id  String @id @default(auto()) @map("_id") @db.ObjectId 
-  email String @unique
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  email          String    @unique
   hashedPassword String?
-  name String?
-  createdAt DateTime @default(now())
-  emailVerified   DateTime?
-  image String?
-  onboarded Boolean @default(false)
-  account Account[]
-  role String @default("user")
-  profile Profile?
+  name           String?
+  createdAt      DateTime  @default(now())
+  emailVerified  DateTime?
+  image          String?
+  onboarded      Boolean   @default(false)
+  account        Account[]
+  role           String    @default("user")
+  profile        Profile?
+
+  clubs Clubmembership[]
 }
 
 model Account {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  userId             String   @db.ObjectId
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?  @db.String
-  access_token       String?  @db.String
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?  @db.String
-  session_state      String?
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId            String  @db.ObjectId
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.String
+  access_token      String? @db.String
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.String
+  session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -44,17 +46,21 @@ model Account {
 }
 
 model Profile {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  userId String @unique @db.ObjectId
-  firstName String
-  lastName String 
-  birthdate DateTime?
-  phone BigInt?
-  location String?
-  gender Gender
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId     String    @unique @db.ObjectId
+  firstName  String
+  lastName   String
+  birthdate  DateTime?
+  phone      BigInt?
+  location   String?
+  gender     Gender
   profileURL String?
 
   user User @relation(fields: [userId], references: [id])
+
+  matchupsAsPlayer1 Matchup[] @relation(name: "playerId1")
+
+  matchupsAsPlayer2 Matchup[] @relation(name: "playerId2")
 }
 
 enum Gender {
@@ -63,11 +69,99 @@ enum Gender {
 }
 
 model Club {
+  id             String           @id @default(auto()) @map("_id") @db.ObjectId
+  clubName       String
+  phoneNumber    String
+  clubLocation   String
+  about          String
+  email          String
+  clubWebsite    String
+  clubmembership Clubmembership[]
+  events         Event[]
+}
+
+model Clubmembership {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  isAdmin Boolean
+  userId  String  @db.ObjectId
+  clubId  String  @db.ObjectId
+
+  user User @relation(fields: [userId], references: [id])
+  club Club @relation(fields: [clubId], references: [id])
+}
+
+model Event {
   id String @id @default(auto()) @map("_id") @db.ObjectId
-  clubName String
-  phoneNumber String 
-  clubLocation String 
-  about String 
-  email String 
-  clubWebsite String 
+
+  clubId String @db.ObjectId
+  club   Club   @relation(fields: [clubId], references: [id])
+
+  eventName             String
+  eventLocation         String
+  email                 String
+  eventDescription      String
+  registrationStartDate DateTime
+  registrationBeginTime DateTime
+  registrationEndDate   DateTime
+  registrationEndTime   DateTime
+  eventStartDate        DateTime
+  eventBeginTime        DateTime
+  eventEndDate          DateTime
+  eventEndTime          DateTime
+  coaching              String
+  officals              String
+  maxPlayers            String
+  publishedDate         DateTime
+  publishedTime         DateTime
+
+  divisions        Division[]
+  Draw             Draw[]
+  RegisteredPlayes RegisteredPlayes[]
+}
+
+model RegisteredPlayes {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  eventId String @db.ObjectId
+  event   Event  @relation(fields: [eventId], references: [id])
+}
+
+model Division {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  divisionName String
+  entryFee     String
+  gender       String
+  format       String
+
+  Event   Event?  @relation(fields: [eventId], references: [id])
+  eventId String? @db.ObjectId
+}
+
+model Draw {
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  drawName String
+  format   String
+  drawType String
+  gender   String
+  scoring  String
+  officals String
+  drawSize String
+  coaching String
+  eventId  String    @db.ObjectId
+  event    Event     @relation(fields: [eventId], references: [id])
+  Matchup  Matchup[]
+}
+
+model Matchup {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  eventId    String @db.ObjectId
+  divisionId String @db.ObjectId
+
+  Draw   Draw?   @relation(fields: [drawId], references: [id])
+  drawId String? @db.ObjectId
+
+  playerId1       String  @unique @db.ObjectId
+  Player1Matchups Profile @relation(name: "playerId1", fields: [playerId1], references: [id])
+
+  playerId2       String  @unique @db.ObjectId
+  Player2Matchups Profile @relation(name: "playerId2", fields: [playerId2], references: [id])
 }

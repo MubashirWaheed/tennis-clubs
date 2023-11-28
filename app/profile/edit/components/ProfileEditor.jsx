@@ -20,7 +20,11 @@ const ProfileEditor = () => {
           <TextField label="Last name" id="lastName" />
         </div>
         <div className="flex-1">
-          <DropDown label="Home Court" options={homeCourtOptions} />
+          <DropDown
+            id="homeCourt"
+            label="Home Court"
+            options={homeCourtOptions}
+          />
         </div>
       </div>
 
@@ -37,14 +41,23 @@ const ProfileEditor = () => {
       <div className="mt-[20px] flex flex-col gap-[20px]">
         <div className="flex flex-col lg:flex-row gap-[16px]">
           <DropDown
+            id="displayRating"
             label="Select the rating you'd like to display"
             options={homeCourtOptions}
           />
-          <DropDown label="Residence" options={homeCourtOptions} />
+          <DropDown
+            id="residence"
+            label="Residence"
+            options={homeCourtOptions}
+          />
         </div>
         <div className="flex flex-col lg:flex-row gap-[16px]">
-          <DropDown label="Region" options={homeCourtOptions} />
-          <DropDown label="Nationality" options={homeCourtOptions} />
+          <DropDown id="region" label="Region" options={homeCourtOptions} />
+          <DropDown
+            id="nationality"
+            label="Nationality"
+            options={homeCourtOptions}
+          />
         </div>
       </div>
     </section>

@@ -3,41 +3,40 @@ import NextButton from "@/components/ui/buttons/PrimaryButton";
 import DateInput from "@/components/ui/inputFields/DateInput";
 import TimeInput from "@/components/ui/inputFields/TimeInput";
 
-const Schedule = () => {
-  const handleForm = () => {};
+const Schedule = ({ onNext }) => {
   return (
     <>
       <form className="flex flex-col gap-4 mt-[30px]">
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex flex-col gap-2">
             <p className="text-[#13013C] f14 fw700">Tournament Begin</p>
-            <div className="flex  md:flex-row gap-4">
-              <DateInput />
-              <TimeInput />
+            <div className="flex md:flex-row gap-4">
+              <DateInput name="eventStartDate" />
+              <TimeInput name="eventBeginTime" />
             </div>
           </div>
           <div className="flex flex-col gap-2">
             <p className="text-[#13013C] f14 fw700">Tournament Ends</p>
             <div className="flex gap-4">
-              <DateInput />
-              <TimeInput />
+              <DateInput name="eventEndDate" />
+              <TimeInput name="eventEndTime" />
             </div>
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex flex-col gap-2">
-            <p className="text-[#13013C] f14 fw700">Tournament Begin</p>
+            <p className="text-[#13013C] f14 fw700">Registration Begin</p>
             <div className="flex  md:flex-row gap-4">
-              <DateInput />
-              <TimeInput />
+              <DateInput name="registrationStartDate" />
+              <TimeInput name="registrationBeginTime" />
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <p className="text-[#13013C] f14 fw700">Tournament Ends</p>
+            <p className="text-[#13013C] f14 fw700">Registration Ends</p>
             <div className="flex gap-4">
-              <DateInput />
-              <TimeInput />
+              <DateInput name="registrationEndDate" />
+              <TimeInput name="registrationEndTime" />
             </div>
           </div>
         </div>
@@ -45,8 +44,8 @@ const Schedule = () => {
         <div className="flex flex-col md:max-w-[530px]">
           <p className="text-[#13013C] f14 fw700">Draft Published</p>
           <div className="flex gap-4">
-            <DateInput />
-            <TimeInput />
+            <DateInput name="publishedDate" />
+            <TimeInput name="publishedTime" />
           </div>
         </div>
       </form>
@@ -56,7 +55,9 @@ const Schedule = () => {
           America/New York (GMT-04:00)
           <span className="text-[#027333]">Change</span>
         </p>
-        <NextButton size="small">Next</NextButton>
+        <NextButton size="small" onClick={onNext}>
+          Next
+        </NextButton>
       </div>
     </>
   );

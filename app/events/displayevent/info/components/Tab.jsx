@@ -5,7 +5,7 @@ import Draws from "./Tabs/Draws";
 import Schedule from "./Tabs/Schedule";
 import infodata from "../info.json";
 
-const Tab = () => {
+const Tab = ({ eventData }) => {
   const [tab, setTab] = useState(0);
 
   const handleTabClick = (value) => {
@@ -33,7 +33,7 @@ const Tab = () => {
         </nav>
 
         {/* switching between tabs */}
-        {tab === 0 && <Overview />}
+        {tab === 0 && <Overview eventData={eventData} />}
         {tab === 1 && <Players />}
         {tab === 2 && <Draws />}
         {tab === 4 && <Schedule />}

@@ -1,7 +1,7 @@
 "use client";
 import { useFormContext } from "react-hook-form";
 
-const TextField = ({ type, id, value, onChange, label }) => {
+const TextField = ({ type, id, value, label }) => {
   const { register, watch } = useFormContext();
 
   const watchedFormData = watch();

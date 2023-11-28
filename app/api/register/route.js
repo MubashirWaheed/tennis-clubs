@@ -17,7 +17,6 @@ export async function POST(request) {
 
   const onboarded = false;
   const resposne = await registerUser(email, hashedPassword, onboarded);
-  console.log("RESPOSNE IN THE SERVER: ", resposne);
 
   return NextResponse.json(resposne);
 }

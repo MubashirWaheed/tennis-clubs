@@ -23,7 +23,9 @@ const BasicInfo2 = ({ onNext }) => {
 
       {/* end */}
       <div className="flex place-content-end mb-0 bottom-0 mt-[30px] md:mt-[150px] ">
-        <NextButton size="small">Next</NextButton>
+        <NextButton size="small" onClick={onNext}>
+          Next
+        </NextButton>
       </div>
     </div>
   );

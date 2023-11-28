@@ -3,21 +3,42 @@ import dayjs from "dayjs";
 import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { Controller, useFormContext } from "react-hook-form";
+import utc from "dayjs/plugin/utc";
 
-const DateInput = () => {
+const DateInput = ({ name }) => {
+  const { watch, control } = useFormContext();
+  const watchedFormData = watch();
+
+  console.log("Form data while typing:", watchedFormData);
+
+  const getDeateIgnoreTimezone = (date) =>
+    date && date.getUTCHours() !== 0
+      ? ((theDate) =>
+          new Date(
+            theDate.getTime() - theDate.getTimezoneOffset() * 60 * 1000
+          ))(new Date(date))
+      : date;
+
   return (
     <div>
       <div className="relative bg-[#fafbff] cursor-pointer  rounded-xl w-auto">
         <p className="absolute top-[10px] left-[7px]  text-grey fw700 f12 pl-[14px]">
           Date
         </p>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <MobileDatePicker
-            sx={styles}
-            // slotProps={{ textField: { variant: "standard" } }}
-            defaultValue={dayjs("2022-04-17")}
-          />
-        </LocalizationProvider>
+        <Controller
+          name={name}
+          control={control}
+          render={({ field: { onChange, value } }) => (
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <MobileDatePicker
+                defaultValue={dayjs()}
+                onChange={onChange}
+                sx={styles}
+              />
+            </LocalizationProvider>
+          )}
+        />
       </div>
     </div>
   );

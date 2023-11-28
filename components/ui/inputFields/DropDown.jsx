@@ -2,33 +2,35 @@
 import React from "react";
 import Image from "next/image";
 import { useFormContext } from "react-hook-form";
-const DropDown = ({ label, options, size }) => {
+
+const DropDown = ({ id, label, options, size }) => {
   const { register, watch, setValue } = useFormContext();
   const handleSelectChange = (event) => {
     const selectedValue = event.target.value;
-    setValue(label, selectedValue); // Update the value using setValue
+    setValue(id, selectedValue);
   };
 
   return (
     <div className="py-[10px] px-[3px] w-full ">
       <div className=" bg-[#fafbff] rounded-xl border-[1px]">
         <label
-          {...register(label)}
-          htmlFor="age"
+          {...register(id)}
+          htmlFor={`dropdown-${label}`}
           className={`${
             size == "small" ? "pb-[5px] pt-[13px] mb-2" : " pb-[0px] pt-[0px]"
-          } relative block   text-sm font-medium text-gray-900`}
+          } relative block text-sm font-medium text-gray-900`}
         >
           <p
             className={`${
-              size == "small" ? "f13 " : " rounded-lg fw700 f12 pt-[10px] "
+              size == "small" ? "f13 " : "rounded-lg fw700 f12 pt-[10px] "
             } text-[#828282] pl-[15px] sm:pl-[20px]  `}
           >
             {label}
           </p>
           <select
+            name={`dropdown-${label}`}
             onChange={handleSelectChange}
-            id="age"
+            // id={`dropdown-${label}`}
             className={`${
               size == "small"
                 ? "pl-[10px] sm:pl-[22px] pt-[0px]"

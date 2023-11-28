@@ -2,7 +2,7 @@ import DescriptionInput from "@/components/ui/inputFields/TextArea";
 import PublishButton from "@/components/ui/buttons/PrimaryButton";
 import DrawftButton from "@/components/ui/buttons/SecondaryButton";
 
-const EventPage = () => {
+const EventPage = ({ disableBtn, handleSubmit }) => {
   return (
     <>
       <div className="mt-[30px]">
@@ -11,15 +11,18 @@ const EventPage = () => {
           This message will appear publicly on the tournamnet event page.
         </p>
         <div className="mt-[30px]">
-          <DescriptionInput
-            label="Event Description"
-            value="Tom Clancy's The Division."
-          />
+          <DescriptionInput id="eventDescription" label="Event Description" />
         </div>
       </div>
       <div className="my-[20px]  sm:mt-[120px] flex place-content-end gap-4">
         <DrawftButton size="small">Save As A Draft</DrawftButton>
-        <PublishButton size="small">Save & Publish</PublishButton>
+        <PublishButton
+          disabled={disableBtn}
+          onClick={handleSubmit}
+          size="small"
+        >
+          Save & Publish
+        </PublishButton>
       </div>
     </>
   );

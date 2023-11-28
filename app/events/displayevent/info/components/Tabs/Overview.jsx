@@ -2,12 +2,13 @@ import LocationCard from "../../../components/LocationCard";
 import Aside from "../../../components/aside";
 import Card from "../Card";
 
-const Overview = () => {
+const Overview = ({ eventData }) => {
   return (
     <div className="flex flex-wrap w-full items-center md:items-start justify-center  ">
       <main className="basis-2/3 grow flex flex-col">
         <h5 className="fw700 text-darkPurple f24">Description</h5>
         <p className="text-grey f16">
+          {/* {eventData?.eventDescription} */}
           Join Us for our HRT Legend Series (And become the Ultimate HRT Legend)
           <br />
           Junior Circuit Qualifier Boys/Girls UTR 9.5 and Below

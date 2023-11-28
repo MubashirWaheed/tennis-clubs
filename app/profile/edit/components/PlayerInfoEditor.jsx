@@ -49,25 +49,29 @@ const PlayerInfoEditor = () => {
 
         <div className="flex flex-col gap-[20px] mt-[37px]">
           <div className="flex justify-center items-center flex-col lg:flex-row gap-[15px]">
-            <DropDown label="Gender" options={genderOptions} />
+            <DropDown id="gender" label="Gender" options={genderOptions} />
             <TextField label="Height (in inches)" id="height" />
           </div>
           <div>
             <p className="f16 fw700 lh24 text-[#13013c] mb-[10px]">Birthday</p>
             <div className="flex flex-col  lg:flex-row gap-[15px] ">
               <div className="flex gap-[15px] flex-1">
-                <DropDown label="Month" options={monthsOptions} />
+                <DropDown id="month" label="Month" options={monthsOptions} />
               </div>
               <div className="flex justify-center items-center flex-col lg:flex-row gap-[15px] flex-1">
-                <DropDown label="Day" options={dateOptions} />
-                <DropDown label="Year" options={monthsOptions} />
+                <DropDown id="day" label="Day" options={dateOptions} />
+                <DropDown id="year" label="Year" options={monthsOptions} />
               </div>
             </div>
           </div>
           <div className="flex justify-center items-center flex-col lg:flex-row gap-[15px]">
             <TextField label="Birth Place" id="birthPlace" />
-            <DropDown label="Dominant Hand" options={handOptions} />
-            <DropDown label="Back Hand" options={handOptions} />
+            <DropDown
+              id="dominanthand"
+              label="Dominant Hand"
+              options={handOptions}
+            />
+            <DropDown id="backhand" label="Back Hand" options={handOptions} />
           </div>
         </div>
 
@@ -78,8 +82,16 @@ const PlayerInfoEditor = () => {
             id="bio"
           />
           <div className="flex justify-center flex-col lg:flex-row gap-[15px]">
-            <DropDown label="College Tennis Team" options={dummyOptions} />
-            <DropDown label="Team Position" options={dummyOptions} />
+            <DropDown
+              id="collegeTennis"
+              label="College Tennis Team"
+              options={dummyOptions}
+            />
+            <DropDown
+              id="teamPosition"
+              label="Team Position"
+              options={dummyOptions}
+            />
           </div>
         </div>
 

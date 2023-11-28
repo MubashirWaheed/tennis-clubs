@@ -1,10 +1,11 @@
-const Stepper = ({ step }) => {
+const Stepper = ({ step, setStep }) => {
   return (
     <>
       <ol className="my-[15px] md:my-[45px] flex items-center justify-center md:ml-[30px] ">
         <div className="mt-[14px] xsm:mt-[7px] sm:mt-[-2px] flex flex-col items-center w-full">
           <li className="flex w-full items-center  after:content-[''] after:w-full after:h-1 after:border-b-0 after:border-[#E8EFF7] after:border-[2px] after:inline-block">
             <span
+              // onClick={setStep((prev) => 1)}
               className={`${
                 step == 0
                   ? "bg-[#027333] text-white"
@@ -23,6 +24,7 @@ const Stepper = ({ step }) => {
         <div className="flex flex-col items-center w-full">
           <li className="flex w-full items-center text-[#13013C] after:content-[''] after:w-full after:h-1 after:border-b-0 after:border-[#E8EFF7] after:border-[2px] after:inline-block">
             <span
+              // onClick={setStep((prev) => 2)}
               className={`${
                 step == 1 ? "bg-[#027333] text-white" : "bg-[#e8eff7]"
               }
