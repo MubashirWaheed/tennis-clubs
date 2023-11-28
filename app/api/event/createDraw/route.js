@@ -8,7 +8,7 @@ export async function GET(request) {
 
   const data = await prisma.draw.findMany({
     where: {
-      eventId: param,
+      eventId: eventId,
     },
   });
   return NextResponse.json(data);

@@ -11,12 +11,12 @@ import { getCurrentUser } from "@/lib/services/getCurrentUser";
 const Home = async () => {
   // check if the user is onboarded or not in or not
 
-  let isLoggedIn = false;
+  let isLoggedIn = true;
   const user = await getCurrentUser();
 
   return (
     <div>
-      {isLoggedIn ? (
+      {user ? (
         <LoggedInHome />
       ) : (
         // <LoggedInHomeV2 /> //uncomment either one to see the both versions of HOME Page.

@@ -6,22 +6,51 @@ import axios from "axios";
 import useSWR from "swr";
 import { fetcher } from "@/lib/utils/fetcher";
 
-const menuList = [
-  "Profile",
-  "Settings",
-  "Event Payments",
-  "Clubs,Teams & Groups",
-  "Request For Account Deletion",
-  "Sign Out",
+const menuList1 = [
+  {
+    name: "Profile",
+  },
 ];
 
 const ProfileMenu = ({ closeMenu }) => {
-  //   const { data, error, isLoading } = useSWR("/api/club", fetcher);
+  // get the user id and redirect to profile
+  // check the logged user and profile id
+  // const { data, error, isLoading } = useSWR("/api/club", fetcher);
 
-  const handleSignOut = async () => {
+  const handleProfileClick = () => {
+    // redirect user to the profile
+
+    console.log("Clicked Profile");
+  };
+
+  const handleSettingsClick = () => {
+    console.log("Clicked Settings");
+  };
+
+  const handlePaymentClick = () => {
+    console.log("payment clicked");
+  };
+
+  const handleDeletionClick = () => {
+    console.log("delection clicked");
+  };
+  const handleGroupsClick = () => {
+    console.log("groups link clicked ");
+  };
+
+  const handleSignOutClick = async () => {
     await signOut();
     window.location.href = "/signin";
   };
+
+  const menuList = [
+    { label: "Profile", onClick: handleProfileClick },
+    { label: "Settings", onClick: handleSettingsClick },
+    { label: "Event Payments", onClick: handlePaymentClick },
+    { label: "Clubs,Teams & Groups", onClick: handleGroupsClick },
+    { label: "Request For Account Deletion", onClick: handleDeletionClick },
+    { label: "Sign Out", onClick: handleSignOutClick },
+  ];
 
   return (
     <div className="bg-purple fixed z-40 bg-opacity-50 top-0 right-0 left-0 bottom-0">
@@ -45,16 +74,35 @@ const ProfileMenu = ({ closeMenu }) => {
                 key={i}
                 className="border-b-[1px] border-opacity-10 border-[#3B2273]  py-[15px] flex justify-between"
               >
-                {item === "Sign Out" ? (
-                  <p
-                    className="text-[#05192C] f16 fw700 cursor-pointer"
-                    onClick={handleSignOut}
-                  >
-                    {item}
-                  </p>
+                <p
+                  className="text-[#05192C] f16 fw700 cursor-pointer"
+                  onClick={item.onClick}
+                >
+                  {item.label}
+                </p>
+                {/* {item === "Sign Out" ? (
                 ) : (
                   <p className="text-[#05192C] f16 fw700">{item}</p>
-                )}
+                )} */}
+
+                {/* {menuList.map((item, i) => (
+                  <div
+                    key={i}
+                    className="border-b-[1px] border-opacity-10 border-[#3B2273]  py-[15px] flex justify-between"
+                    onClick={item.onClick}
+                  >
+                    <p className="text-[#05192C] f16 fw700 cursor-pointer">
+                      {item.label}
+                    </p>
+                    <Image
+                      src="/dropdown.svg"
+                      width={24}
+                      height={24}
+                      alt="menu item"
+                    />
+                  </div>
+                ))} */}
+
                 <Image
                   src="/dropdown.svg"
                   width={24}

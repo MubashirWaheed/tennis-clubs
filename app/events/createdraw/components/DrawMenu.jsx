@@ -1,22 +1,20 @@
 import { fetcher } from "@/lib/utils/fetcher";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import React from "react";
-import useSWR from "swr";
 
-const DrawMenu = ({ showDrawMenu, setShowDrawMenu, handleCreateDrawModal }) => {
+const DrawMenu = ({
+  setSelectedLinkObject,
+  drawsList,
+  showDrawMenu,
+  setShowDrawMenu,
+  handleCreateDrawModal,
+}) => {
   const searchParams = useSearchParams();
 
-  const eventId = searchParams.get("eventId");
-
-  const { data, isLoading } = useSWR(
-    `/api/event/createDraw?eventId=${eventId}`,
-    fetcher,
-    {
-      keepPreviousData: true,
-    }
-  );
-  console.log("data: ", data);
+  const handleLinkClick = (selectedLinkData) => {
+    setSelectedLinkObject(selectedLinkData);
+    // close the sidebar modal
+  };
 
   return (
     <>
@@ -59,14 +57,20 @@ const DrawMenu = ({ showDrawMenu, setShowDrawMenu, handleCreateDrawModal }) => {
 
           <div className="mt-[50px] text-grey flex flex-col fw400">
             <p
-              // display the create draw modal
               onClick={handleCreateDrawModal}
               className="hover:text-purple cursor-pointer py-[10px] border-b-[1px] border-[#e7e6eb]"
             >
               Draws
             </p>
-            {/* fetch draw list here for the event based on the id */}
-            {/* on click change the draw data being diaplayed on the page */}
+            {drawsList?.map((item, index) => (
+              <div
+                onClick={() => handleLinkClick(item)}
+                className="cursor-pointer text-[14px]"
+                key={index}
+              >
+                {item.drawName}
+              </div>
+            ))}
 
             <p className="py-[10px] border-b-[1px]  border-[#e7e6eb] fw700 text-purple">
               Level Bases Plays Singles

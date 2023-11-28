@@ -2,17 +2,22 @@ import React from "react";
 import Button from "@/components/ui/buttons/PrimaryButton";
 
 const DrawActionBar = ({
+  selectedLinkObject,
   handleEditModal,
   handleMessageModal,
   setPublishModal,
 }) => {
+  const { drawName, format, drawType, scoring, gender, drawSize } =
+    selectedLinkObject;
+  console.log("FROM ACTION BAR selectedLinkObject: ", selectedLinkObject);
   return (
     <>
       <div className="flex flex-wrap justify-center lg:justify-between items-center w-full max-w-[1170px] mx-auto">
         <div>
           <div className="py-[5px] flex flex-col md:flex-row items-center w-full max-w-[1170px] mx-auto">
             <p className="f20 text-darkPurple fw700">
-              Level Based Play Singles Main
+              {/* Level Based Play Singles Main */}
+              {drawName}
             </p>
             <div className="flex gap-2 ml-[10px]">
               <p
@@ -31,8 +36,9 @@ const DrawActionBar = ({
             </div>
           </div>
           <p className="text-grey fw700 text-center">
-            Singles, Round Robin, Two Sets w/ Match Tiebreaker, 14 Players, Al
-            UTR, All Ages.
+            {/* Singles, Round Robin, Two Sets w/ Match Tiebreaker, 14 Players, Al
+            UTR, All Ages. */}
+            {format}, {drawType}, {scoring}, {drawSize} Players
           </p>
         </div>
         <div className="flex gap-4  items-center justify-center">

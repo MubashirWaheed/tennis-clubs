@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import FindPlay from "@/components/ui/buttons/PrimaryButton";
 import { useRouter } from "next/navigation";

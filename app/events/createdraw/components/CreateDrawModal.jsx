@@ -42,10 +42,12 @@ const CreateDrawModal = ({ createDrawModal, handleCreateDrawModal }) => {
   const methods = useForm();
   const searchParams = useSearchParams();
 
-  const eventId = searchParams.get("eventId");
+  let eventId = null;
+  eventId = searchParams.get("eventId");
 
   // handle form submisison
   const onSubmit = async () => {
+    console.log("form submitted");
     const formData = methods.getValues();
 
     const result = await axios.post("/api/event/createDraw", {
