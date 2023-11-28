@@ -10,7 +10,6 @@ export async function GET(request) {
 // POST
 export async function POST(request) {
   const { data, clubId } = await request.json();
-  console.log("data: ", data);
 
   const currentUser = await getCurrentUser();
 

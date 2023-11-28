@@ -15,7 +15,6 @@ export async function GET(request) {
 }
 
 export async function POST(request) {
-  // how to destructure the data
   const { formData, eventId } = await request.json();
 
   const result = await prisma.draw.create({
