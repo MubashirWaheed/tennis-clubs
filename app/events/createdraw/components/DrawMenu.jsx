@@ -1,7 +1,23 @@
+import { fetcher } from "@/lib/utils/fetcher";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import React from "react";
+import useSWR from "swr";
 
-const DrawMenu = ({ showDrawMenu, setShowDrawMenu }) => {
+const DrawMenu = ({ showDrawMenu, setShowDrawMenu, handleCreateDrawModal }) => {
+  const searchParams = useSearchParams();
+
+  const eventId = searchParams.get("eventId");
+
+  const { data, isLoading } = useSWR(
+    `/api/event/createDraw?eventId=${eventId}`,
+    fetcher,
+    {
+      keepPreviousData: true,
+    }
+  );
+  console.log("data: ", data);
+
   return (
     <>
       <div
@@ -42,7 +58,16 @@ const DrawMenu = ({ showDrawMenu, setShowDrawMenu }) => {
           </form>
 
           <div className="mt-[50px] text-grey flex flex-col fw400">
-            <p className="py-[10px] border-b-[1px]   border-[#e7e6eb]">Draws</p>
+            <p
+              // display the create draw modal
+              onClick={handleCreateDrawModal}
+              className="hover:text-purple cursor-pointer py-[10px] border-b-[1px] border-[#e7e6eb]"
+            >
+              Draws
+            </p>
+            {/* fetch draw list here for the event based on the id */}
+            {/* on click change the draw data being diaplayed on the page */}
+
             <p className="py-[10px] border-b-[1px]  border-[#e7e6eb] fw700 text-purple">
               Level Bases Plays Singles
             </p>

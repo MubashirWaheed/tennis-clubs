@@ -46,7 +46,7 @@ const Header = () => {
             <Link href="/matches">
               <li className={styles.navItem}>Explore</li>
             </Link>
-            <Link href="/clubs/123">
+            <Link href="/clubs">
               <li className={styles.navItem}>Clubs</li>
             </Link>
           </ul>
@@ -102,7 +102,12 @@ const Header = () => {
         {/* Responsive Menu */}
 
         {/* Hamburger */}
-        <div className="nav z-50 md:hidden px-[2px]">
+
+        <div
+          className={`${
+            profileMenu ? "hidden" : "block"
+          } nav z-50 md:hidden px-[2px]`}
+        >
           <div className="w-[20px] h-[20px] burger-menu" onClick={updateMenu}>
             <div className={burger_class}></div>
             <div className={burger_class}></div>
@@ -156,13 +161,15 @@ const Header = () => {
       </div>
 
       {/* Profile Menu */}
-      <div className={`${profileMenu ? "block" : "hidden"}`}>
-        <ProfileMenu
-          closeMenu={() => {
-            setProfileMenu(!profileMenu);
-          }}
-        />
-      </div>
+      {profileMenu && (
+        <div className={`${profileMenu ? "block" : "hidden"}`}>
+          <ProfileMenu
+            closeMenu={() => {
+              setProfileMenu(!profileMenu);
+            }}
+          />
+        </div>
+      )}
     </header>
   );
 };

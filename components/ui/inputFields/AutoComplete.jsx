@@ -16,7 +16,6 @@ const AutoComplete = ({ id, value, setValue, label }) => {
             {label}
           </label>
           <input
-            
             className={styles.input}
             value={value}
             type="text"
@@ -26,8 +25,8 @@ const AutoComplete = ({ id, value, setValue, label }) => {
         </div>
 
         <Image
-           width={20}
-           height={20}
+          width={20}
+          height={20}
           src="/dropdown.svg"
           alt="Drop Down"
           className="w-[20px] h-[20px]"

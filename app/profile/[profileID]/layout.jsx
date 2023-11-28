@@ -6,9 +6,7 @@ import { useRouter } from "next/navigation";
 import ProfileNavigation from "./components/profileNavigation";
 import profileViewData from "./profileView.json";
 
-
 const IndividualProfileLayout = ({ children }) => {
-
   const router = useRouter();
 
   return (

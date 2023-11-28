@@ -86,7 +86,7 @@ const Editor = () => {
             <TextArea
               id="about"
               label="About"
-              maxLength
+              maxLength="true"
               value={formData.about}
               onChange={handleChange}
             />

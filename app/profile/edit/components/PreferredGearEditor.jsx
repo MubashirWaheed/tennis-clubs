@@ -13,17 +13,29 @@ const PreferredGearEditor = () => {
         <div className="flex items-center justify-center flex-col lg:flex-row gap-[16px]">
           <TextField label="Racket Brand" id="racketBrand" />
           {/* <AutoComplete label="Racket Type" /> */}
-          <DropDown label="Racket Type" options={dummyOptions} />
+          <DropDown
+            id="racketType"
+            label="Racket Type"
+            options={dummyOptions}
+          />
         </div>
         <div className="flex flex-col lg:flex-row gap-[16px]">
           {/* <AutoComplete label="Ball" />
           <AutoComplete label="Apparel Brand" /> */}
-          <DropDown label="Ball" options={dummyOptions} />
-          <DropDown label="Apparel Brand" options={dummyOptions} />
+          <DropDown id="ball" label="Ball" options={dummyOptions} />
+          <DropDown
+            id="apparelBrand"
+            label="Apparel Brand"
+            options={dummyOptions}
+          />
         </div>
         <div className="flex items-center justify-center flex-col lg:flex-row gap-[16px]">
           {/* <AutoComplete label="Shoes Brand" /> */}
-          <DropDown label="Shoes Brand" options={dummyOptions} />
+          <DropDown
+            id="shoesBrand"
+            label="Shoes Brand"
+            options={dummyOptions}
+          />
           <TextField label="Shoes Type" id="shoesType" />
         </div>
       </div>

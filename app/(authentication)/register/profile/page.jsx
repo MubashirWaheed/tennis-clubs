@@ -8,13 +8,7 @@ import { fetcher } from "@/lib/utils/fetcher";
 
 const ProfileInfo = () => {
   const [modal, setModal] = useState(false);
-  const { data, error, isLoading } = useSWR("/api/user", fetcher);
-  // console.log(data);
-  // now that I have the user id I can store it in the store and use it when necessary
-
-  // get the user and check if he is onboarded or not
-  // make api request to get the user
-  // where do I get the id for the user to be fetched?
+  // const { data, error, isLoading } = useSWR("/api/user", fetcher);
 
   return (
     <section className="p-[10px] md:p-[20px] lg:p-[38px] bg-white rounded-[10px] z-20">

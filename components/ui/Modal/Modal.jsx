@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Modal = ({ heading, children, closeModal }) => {
   return (
-    <div className="z-[100]  bg-purple flex justify-center items-center top-0 right-0 bottom-0 left-0  fixed bg-opacity-80">
+    <div className="z-[100] bg-purple flex justify-center items-center top-0 right-0 bottom-0 left-0  fixed bg-opacity-80">
       <div className="max-w-[800px] bg-white border-t-4 border-[#FFBB34] px-[45px] py-[35px] rounded-lg absolute ">
         <div className="flex place-content-end">
           <div

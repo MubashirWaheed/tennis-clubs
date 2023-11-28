@@ -5,7 +5,7 @@ const PrimaryButton = ({ children, type, onClick, size, disabled }) => {
     <>
       {size === "small" ? (
         <button
-          className={`px-[10px] py-[8px] rounded-[8px] inline-flex items-center justify-center gap-[10px] bg-[#027333] border-2 border-[#027333] cursor-pointer ${
+          className={`whitespace-nowrap px-[10px] py-[8px] rounded-[8px] inline-flex items-center justify-center gap-[10px] bg-[#027333] border-2 border-[#027333] cursor-pointer ${
             disabled ? "opacity-50 pointer-events-none" : "" // Apply styles if disabled
           }`}
           // className="px-[10px] py-[8px] rounded-[8px] inline-flex items-center justify-center gap-[10px] bg-[#027333] border-2 border-[#027333] cursor-pointer"

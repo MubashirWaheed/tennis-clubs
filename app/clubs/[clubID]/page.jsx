@@ -10,9 +10,17 @@ import CreateEvent from "@/components/ui/buttons/PrimaryButton";
 import MoreButton from "./MoreButton";
 
 import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
+import { usePathname } from "next/navigation";
 const ClubView = () => {
   const router = useRouter();
+
+  const searchParams = useSearchParams();
+  const currentPage = usePathname();
+  const clubId = currentPage.split("/")[2];
+  console.log("CLUB ID:", clubId);
+
   const handleScorePost = () => {
     router.push(`[clubID]/admin/score`);
   };
@@ -57,7 +65,11 @@ const ClubView = () => {
 
             <div className="flex items-center gap-1 flex-col lg:flex-row lg:gap-[14px]">
               <PostScores onClick={handleScorePost}>Post scores</PostScores>
-              <CreateEvent onClick={() => router.push("/events/createevent")}>
+              <CreateEvent
+                onClick={() =>
+                  router.push(`/events/createevent?clubId=${clubId}`)
+                }
+              >
                 Create An Event
               </CreateEvent>
               <MoreButton />
@@ -200,7 +212,10 @@ const ClubView = () => {
               </div>
               <div className="z-10 abolute inset-0 flex items-center justify-center h-full w-full">
                 <CreateAnEvent
-                  onClick={() => router.push("/events/createevent")}
+                  // get id of club from the link
+                  onClick={() => {
+                    router.push(`/events/createevent`);
+                  }}
                 >
                   Create An Event
                 </CreateAnEvent>

@@ -1,7 +1,10 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { signOut } from "next-auth/react";
+import axios from "axios";
+import useSWR from "swr";
+import { fetcher } from "@/lib/utils/fetcher";
 
 const menuList = [
   "Profile",
@@ -13,6 +16,8 @@ const menuList = [
 ];
 
 const ProfileMenu = ({ closeMenu }) => {
+  //   const { data, error, isLoading } = useSWR("/api/club", fetcher);
+
   const handleSignOut = async () => {
     await signOut();
     window.location.href = "/signin";
@@ -65,4 +70,4 @@ const ProfileMenu = ({ closeMenu }) => {
   );
 };
 
-export default ProfileMenu;
+export default React.memo(ProfileMenu);

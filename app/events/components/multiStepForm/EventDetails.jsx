@@ -3,7 +3,7 @@ import EmailField from "@/components/ui/inputFields/EmailField";
 import NextButton from "@/components/ui/buttons/PrimaryButton";
 import ToggleButton from "@/components/ui/buttons/ToggleButton";
 
-const EventDetails = () => {
+const EventDetails = ({ onNext }) => {
   return (
     <section className="mt-[40px]">
       <h2 className="my-[10px] f14 fw700  mt-[18px] text-darkPurple">
@@ -45,7 +45,9 @@ const EventDetails = () => {
         </div>
       </div>
       <div className="mt-[20px] flex place-content-end">
-        <NextButton size="small">Next</NextButton>
+        <NextButton size="small" onClick={onNext}>
+          Next
+        </NextButton>
       </div>
     </section>
   );

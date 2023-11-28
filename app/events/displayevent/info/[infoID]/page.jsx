@@ -1,14 +1,22 @@
 "use client";
 import RegisterButton from "@/components/ui/buttons/PrimaryButton";
 import Image from "next/image";
-import Tab from "./components/Tab";
-import UpgradeToPower from "./components/paymentWorkFlow/UpgradeToPower";
-import SelectDivision from "./components/paymentWorkFlow/SelectDivision";
+import Tab from "../components/Tab";
+import UpgradeToPower from "../components/paymentWorkFlow/UpgradeToPower";
+import SelectDivision from "../components/paymentWorkFlow/SelectDivision";
 import { useEffect, useState } from "react";
-import DivisionInfo from "./components/paymentWorkFlow/DivisionInfo";
-import DivisionInfo2 from "./components/paymentWorkFlow/DvisionInfo2";
+import DivisionInfo from "../components/paymentWorkFlow/DivisionInfo";
+import DivisionInfo2 from "../components/paymentWorkFlow/DvisionInfo2";
+import { useRouter, usePathname } from "next/navigation";
+import useSWR from "swr";
+import { fetcherWithId } from "@/lib/utils/fetcher";
+import axios from "axios";
 
 const EventInfo = () => {
+  const patheName = usePathname();
+  const eventId = patheName.split("/")[4];
+
+  const [eventData, setEventData] = useState(null);
   const [togglePaymentbar, setTogglePaymentbar] = useState(false);
   const [panelStack, setPanelStack] = useState(["updgradeToPower"]);
 
@@ -71,6 +79,24 @@ const EventInfo = () => {
     }
   };
 
+  // GET DATA FOR THE EVENT
+  useEffect(() => {
+    const getEventData = async () => {
+      try {
+        const response = await axios.get(`/api/event/${eventId}`);
+
+        // Assuming the data you want is in response.data
+        setEventData(response.data);
+
+        console.log("data:", response.data);
+      } catch (error) {
+        console.error("Error fetching event data:", error);
+      }
+    };
+
+    getEventData();
+  }, []);
+
   useEffect(() => {
     if (togglePaymentbar) {
       document.body.classList.add("fixed", "overflow-hidden");
@@ -86,9 +112,13 @@ const EventInfo = () => {
           <div className=" flex flex-col">
             <div className="flex gap-4 items-center">
               <div className="flex flex-col">
-                <p className="text-green fw700">HRT ACADEMIA DE TENIS</p>
+                <p className="text-green fw700">
+                  {eventData?.club.clubName}
+                  {/* HRT ACADEMIA DE TENIS */}
+                </p>
                 <h2 className="text-start text-[24px] md:text-4xl f-Abril text-[#13013C]  md:mt-[10px] ">
-                  HRT Spring Legend Series 2/7 - Junior Circuit Boys/girls
+                  {eventData?.eventName}
+                  {/* HRT Spring Legend Series 2/7 - Junior Circuit Boys/girls */}
                 </h2>
               </div>
             </div>
@@ -169,7 +199,7 @@ const EventInfo = () => {
       </section>
 
       {togglePaymentbar && <div>{renderPanel()}</div>}
-      <Tab />
+      <Tab eventData={eventData} />
     </div>
   );
 };

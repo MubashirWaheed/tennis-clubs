@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 
 const Editor = () => {
   const { push } = useRouter();
+
   const methods = useForm({
     defaultValues: {
       clubName: "",
@@ -26,7 +27,7 @@ const Editor = () => {
   const handleSubmit = async (data) => {
     // make post request to the backend api
     const response = await axios.post("/api/club", { data });
-    push("/");
+    push("/clubs");
   };
 
   return (
@@ -35,7 +36,6 @@ const Editor = () => {
         <form
           onSubmit={methods.handleSubmit(handleSubmit)}
           className="w-full md:w-[90%] lg:w-[70%]  mx-auto flex flex-col gap-[25px]"
-          //   onSubmit={handleSubmit}
         >
           <div className="flex flex-col w-full gap-[20px]">
             <TextField id="clubName" label="Club Name" />
@@ -49,7 +49,7 @@ const Editor = () => {
 
             <EmailField id="email" label="Email" />
 
-            <TextArea id="about" label="About" maxLength />
+            <TextArea id="about" label="About" maxLength="true" />
 
             <TextField id="clubWebsite" label="Club Website" />
 

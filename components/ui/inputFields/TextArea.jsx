@@ -11,10 +11,7 @@ const TextArea = ({ id, value, onChange, label, maxLength }) => {
       <textarea
         {...register(`${id}`)}
         className={styles.textArea}
-        id={id}
-        onChange={onChange}
         maxLength={maxLength}
-        value={value}
         rows="8"
         type="text"
       />

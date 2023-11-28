@@ -13,7 +13,6 @@ const Home = async () => {
 
   let isLoggedIn = false;
   const user = await getCurrentUser();
-  console.log("user: ", user);
 
   return (
     <div>
@@ -91,35 +90,35 @@ const Home = async () => {
             width={350}
             height={480}
             alt="Vector1"
-            className="hidden md:inline-block pointer-events-none z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[350px] h-[480px]"
+            className="z-0 hidden md:inline-block pointer-events-none  text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[350px] h-[480px]"
           />
           <Image
             src="/vector-1.svg"
             width={400}
             height={540}
             alt="Vector2"
-            className="hidden md:inline-block pointer-events-none z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[400px] h-[540px]"
+            className="hidden md:inline-block pointer-events-none z-0 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[400px] h-[540px]"
           />
           <Image
             src="/vector-2.svg"
             width={450}
             height={600}
             alt="Vector3"
-            className="hidden md:inline-block pointer-events-none z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[450px] h-[600px]"
+            className="hidden md:inline-block pointer-events-none z-0 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[450px] h-[600px]"
           />
           <Image
             width={500}
             height={660}
             src="/vector-3.svg"
             alt="Vector4"
-            className="hidden md:inline-block pointer-events-none z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[500px] h-[660px]"
+            className="hidden md:inline-block pointer-events-none z-0 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[500px] h-[660px]"
           />
           <Image
             src="/vector-5.svg"
             width={550}
             height={890}
             alt="Vector5"
-            className="hidden md:inline-block pointer-events-none z-10 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[550px] h-[890px]"
+            className="hidden md:inline-block pointer-events-none z-0 text-[#828282] absolute right-0 -translate-y-1/2 top-[50%] w-[550px] h-[890px]"
           />
           <Image
             src="/vector-6.svg"

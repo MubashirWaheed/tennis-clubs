@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Slider } from "@mui/material";
 import Image from "next/image";
 
-const Divisions = () => {
+const Divisions = ({ onNext }) => {
   const [value, setValue] = useState([20, 37]);
 
   const [rangeValues, setRangeValues] = useState({
@@ -33,18 +33,29 @@ const Divisions = () => {
         </div>
         <div className="mx-[30px] flex flex-col gap-4 mt-[20px] pb-[30px] ">
           <InputField
+            id="divisionName"
             label="Divisions Name"
             value="Tom Clancy's The Divison"
             type="text"
           />
           <div className="flex flex-col md:flex-row gap-4">
-            <InputField label="Format" value="Singles" type="text" />
-            <InputField label="Gender" value="Males" type="text" />
-            <InputField label="Entry Fee" value="$1211" type="text" />
+            <InputField
+              id="format"
+              label="Format"
+              value="Singles"
+              type="text"
+            />
+            <InputField id="gender" label="Gender" value="Males" type="text" />
+            <InputField
+              id="entryFee"
+              label="Entry Fee"
+              value="$1211"
+              type="text"
+            />
           </div>
         </div>
       </div>
-      {/* second one  */}
+      {/* second one */}
       <div className="rounded-xl mt-[30px] border-[1px] border-[#e6e6e6 ] mb-[20px] ">
         <div className="bg-[#E8EFF7] rounded-xl pl-[25px] py-[20px]">
           <p className="text-[#13013C] fw700">Division Options (Optional)</p>
@@ -77,9 +88,19 @@ const Divisions = () => {
             </div>
           </div>
           <div className="flex flex-col md:flex-row gap-4 ">
-            <InputField label="Max Players" value="Singles" type="text" />
-            <InputField label="Coaching" value="Males" type="text" />
-            <InputField label="Officals" value="$1211" type="text" />
+            <InputField
+              id="maxPlayers"
+              label="Max Players"
+              // value="Singles"
+              type="text"
+            />
+            <InputField id="coaching" label="Coaching" type="text" />
+            <InputField
+              id="officals"
+              label="Officals"
+              value="$1211"
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -99,7 +120,9 @@ const Divisions = () => {
         <p className="text-darkPurple fw700">Add More Divisions</p>
       </div>
       <div className="flex place-content-end">
-        <NextButton size="small">Next</NextButton>
+        <NextButton size="small" onClick={onNext}>
+          Next
+        </NextButton>
       </div>
     </section>
   );
