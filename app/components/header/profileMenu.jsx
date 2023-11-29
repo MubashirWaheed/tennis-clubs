@@ -6,20 +6,12 @@ import axios from "axios";
 import useSWR from "swr";
 import { fetcher } from "@/lib/utils/fetcher";
 
-const menuList1 = [
-  {
-    name: "Profile",
-  },
-];
-
 const ProfileMenu = ({ closeMenu }) => {
   // get the user id and redirect to profile
   // check the logged user and profile id
   // const { data, error, isLoading } = useSWR("/api/club", fetcher);
 
   const handleProfileClick = () => {
-    // redirect user to the profile
-
     console.log("Clicked Profile");
   };
 
@@ -80,28 +72,6 @@ const ProfileMenu = ({ closeMenu }) => {
                 >
                   {item.label}
                 </p>
-                {/* {item === "Sign Out" ? (
-                ) : (
-                  <p className="text-[#05192C] f16 fw700">{item}</p>
-                )} */}
-
-                {/* {menuList.map((item, i) => (
-                  <div
-                    key={i}
-                    className="border-b-[1px] border-opacity-10 border-[#3B2273]  py-[15px] flex justify-between"
-                    onClick={item.onClick}
-                  >
-                    <p className="text-[#05192C] f16 fw700 cursor-pointer">
-                      {item.label}
-                    </p>
-                    <Image
-                      src="/dropdown.svg"
-                      width={24}
-                      height={24}
-                      alt="menu item"
-                    />
-                  </div>
-                ))} */}
 
                 <Image
                   src="/dropdown.svg"

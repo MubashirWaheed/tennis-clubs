@@ -2,9 +2,27 @@ import prisma from "@/lib/prismadb";
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/services/getCurrentUser";
 
+export async function GET(request) {
+  const { searchParams } = new URL(request.url);
+  const userId = searchParams.get("userId");
+
+  console.log("userId: ", userId);
+  const data = await prisma.profile.findUnique({
+    where: {
+      userId: userId,
+    },
+  });
+  console.log("data latest: ", data);
+
+  // get request based on the id
+
+  // how to destructure the userId from the url
+
+  return NextResponse.json("response from get");
+}
+
 export async function POST(request) {
   const dataSent = await request.json();
-  console.log("DATA SENT", dataSent);
   const currentUser = await getCurrentUser();
 
   const year = parseInt(dataSent.data.Year);
