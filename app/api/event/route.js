@@ -11,8 +11,6 @@ export async function GET(request) {
 export async function POST(request) {
   const { data, clubId } = await request.json();
 
-  const currentUser = await getCurrentUser();
-
   const {
     divisionName,
     entryFee,

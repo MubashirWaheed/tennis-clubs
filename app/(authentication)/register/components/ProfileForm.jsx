@@ -22,10 +22,10 @@ const ProfileForm = () => {
       firstname: "",
       lastname: "",
       profileURL: null,
-      Month: "",
-      Day: "",
-      Year: "",
-      Gender: "male",
+      month: "",
+      day: "",
+      year: "",
+      gender: "male",
       phoneNumber: "",
       location: "",
     },
@@ -37,7 +37,6 @@ const ProfileForm = () => {
 
   const submitPersonalInfo = async (data) => {
     const response = await axios.post("/api/profile", { data });
-    // on success should redirect to claim or create profile
     push("/claimprofile");
   };
 
@@ -123,7 +122,7 @@ const ProfileForm = () => {
           </div>
 
           <RadioGroup
-            label="Gender"
+            label="gender"
             direction="row"
             options={[
               { label: "Male", value: "male" },

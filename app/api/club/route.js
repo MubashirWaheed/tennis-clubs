@@ -34,7 +34,7 @@ export async function POST(request) {
     },
   });
 
-  return NextResponse.json("done");
+  return NextResponse.json(clubMembership);
 }
 
 // get list of clubs that user is part of

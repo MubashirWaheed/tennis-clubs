@@ -6,36 +6,27 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const userId = searchParams.get("userId");
 
-  console.log("userId: ", userId);
   const data = await prisma.profile.findUnique({
     where: {
       userId: userId,
     },
   });
-  console.log("data latest: ", data);
 
-  // get request based on the id
-
-  // how to destructure the userId from the url
-
-  return NextResponse.json("response from get");
+  return NextResponse.json(data);
 }
 
 export async function POST(request) {
-  const dataSent = await request.json();
+  const { data } = await request.json();
   const currentUser = await getCurrentUser();
 
-  const year = parseInt(dataSent.data.Year);
-  const month = new Date(
-    Date.parse(dataSent.data.Month + " 1, 2000")
-  ).getMonth();
-  const day = parseInt(dataSent.data.Day);
+  const year = parseInt(data.year);
+  const month = new Date(Date.parse(data.month + " 1, 2000")).getMonth();
+  const day = parseInt(data.day);
   const birthdate = new Date(year, month, day);
-  console.log("BIRthDATE: ", birthdate);
 
-  const { firstname, lastname, profileURL, Gender, phoneNumber, location } =
-    dataSent.data;
-  console.log("FIRST NAME:", firstname);
+  const { firstname, lastname, profileURL, gender, phoneNumber, location } =
+    data;
+
   const result = await prisma.profile.create({
     data: {
       firstName: firstname,
@@ -43,10 +34,11 @@ export async function POST(request) {
       birthdate: birthdate,
       phone: phoneNumber,
       location: location,
-      gender: Gender,
+      gender: gender,
       userId: currentUser.id,
       profileURL,
     },
   });
-  return NextResponse.json({ test: "done" });
+
+  return NextResponse.json(result);
 }

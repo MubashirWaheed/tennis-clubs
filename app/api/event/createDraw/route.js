@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prismadb";
 
-// for particular event get all the draws
+// GET DRAWS FOR EVENT
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const eventId = searchParams.get("eventId");
@@ -14,6 +14,7 @@ export async function GET(request) {
   return NextResponse.json(data);
 }
 
+// CREATE DRAW
 export async function POST(request) {
   const { formData, eventId } = await request.json();
 
@@ -23,7 +24,6 @@ export async function POST(request) {
       eventId,
     },
   });
-  console.log("RESULT: ", result);
 
   return NextResponse.json("data form get handler");
 }

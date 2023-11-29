@@ -61,7 +61,7 @@ const Header = () => {
         <Logo />
         <Navbar />
         <Searchbar />
-        <Icons />
+        <Icons setProfileMenu={setProfileMenu} />
         <Hamburger
           burger_class={burger_class}
           profileMenu={profileMenu}

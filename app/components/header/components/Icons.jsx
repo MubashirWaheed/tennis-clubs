@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
 
-const Icons = () => {
+const Icons = ({ setProfileMenu }) => {
   return (
     <div className={styles.iconsGroup}>
       <div
-        onClick={() => setProfileMenu(!profileMenu)}
+        onClick={() => setProfileMenu((prev) => !prev)}
         className={styles.iconWrapper}
       >
         <Image
