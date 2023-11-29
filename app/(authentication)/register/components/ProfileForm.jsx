@@ -70,7 +70,8 @@ const ProfileForm = () => {
                   />
                 )}
               </div>
-              {profilePicPreview ? (
+
+              {/* {profilePicPreview ? (
                 <Image
                   width={92}
                   height={92}
@@ -98,7 +99,7 @@ const ProfileForm = () => {
                     );
                   }}
                 </CldUploadWidget>
-              )}
+              )} */}
             </label>
           </div>
 
@@ -110,9 +111,9 @@ const ProfileForm = () => {
           <div className="flex flex-col gap-[15px] ">
             <p className="text-[#13013c] f14 fw700 lh22">Birthday</p>
             <div className="flex gap-[0px] sm:gap-[5px]">
-              <DropDown label="Month" options={months} />
-              <DropDown label="Day" options={dates} />
-              <DropDown label="Year" options={years} />
+              <DropDown id="month" label="Month" options={months} />
+              <DropDown id="day" label="Day" options={dates} />
+              <DropDown id="year" label="Year" options={years} />
             </div>
           </div>
 

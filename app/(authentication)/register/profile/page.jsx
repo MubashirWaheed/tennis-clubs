@@ -4,7 +4,6 @@ import Modal from "@/components/ui/Modal/Modal";
 import profileJson from "./profile.json";
 import ProfileForm from "../components/ProfileForm";
 import useSWR from "swr";
-import { fetcher } from "@/lib/utils/fetcher";
 
 const ProfileInfo = () => {
   const [modal, setModal] = useState(false);
