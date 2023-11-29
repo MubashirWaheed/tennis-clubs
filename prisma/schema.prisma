@@ -51,7 +51,7 @@ model Profile {
   firstName  String
   lastName   String
   birthdate  DateTime?
-  phone      BigInt?
+  phone      String?
   location   String?
   gender     Gender
   profileURL String?

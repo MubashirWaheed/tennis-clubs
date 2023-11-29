@@ -14,8 +14,12 @@ import { FormProvider, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 
 const ProfileForm = () => {
+  const [disable, setDisable] = useState(false);
+
   const { user } = useUserStore();
   const { push } = useRouter();
+
+  const [profilePicPreview, setProfilePicPreview] = useState("");
 
   const methods = useForm({
     defaultValues: {
@@ -33,10 +37,10 @@ const ProfileForm = () => {
 
   const [profileImage, setProfileImage] = useState();
 
-  const [profilePicPreview, setProfilePicPreview] = useState("");
-
   const submitPersonalInfo = async (data) => {
+    setDisable(true);
     const response = await axios.post("/api/profile", { data });
+    setDisable(false);
     push("/claimprofile");
   };
 
@@ -139,7 +143,9 @@ const ProfileForm = () => {
             </span>
           </p>
           {/* it should send data to backend */}
-          <Continue typ="submit">Continue</Continue>
+          <Continue disabled={disable} typ="submit">
+            Continue
+          </Continue>
         </form>
       </FormProvider>
     </div>

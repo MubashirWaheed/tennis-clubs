@@ -3,6 +3,7 @@ import Checkbox from "@/components/ui/buttons/Checkbox";
 import React, { useState } from "react";
 import Button from "@/components/ui/buttons/PrimaryButton";
 import Image from "next/image";
+import DropDown from "@/components/ui/inputFields/DropDown";
 
 const experienceCheckboxes = [
   { label: "I don't currently play but would liek to start" },
@@ -120,6 +121,7 @@ const ExperienceDialog = ({ onNext }) => {
 
       {/* Age dropdown */}
       <div className="py-[10px] px-[10px]">
+        {/* <DropDown id="" labe /> */}
         <div className="bg-[#fafbff] rounded-xl">
           <label
             htmlFor="age"

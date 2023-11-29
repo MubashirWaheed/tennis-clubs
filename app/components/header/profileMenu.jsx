@@ -5,14 +5,21 @@ import { signOut } from "next-auth/react";
 import axios from "axios";
 import useSWR from "swr";
 import { fetcher } from "@/lib/utils/fetcher";
+import { useRouter } from "next/navigation";
 
-const ProfileMenu = ({ closeMenu }) => {
-  // get the user id and redirect to profile
-  // check the logged user and profile id
-  // const { data, error, isLoading } = useSWR("/api/club", fetcher);
+const ProfileMenu = ({ closeMenu, userProfile }) => {
+  console.log("This is userProfile: ", userProfile);
+  const router = useRouter();
+  // if (userProfile) {
+  const { id } = userProfile;
+  // }
 
   const handleProfileClick = () => {
+    // redirect user to the profile
+    router.push(`/profile/${id}`);
     console.log("Clicked Profile");
+    closeMenu();
+    // close menu
   };
 
   const handleSettingsClick = () => {
@@ -48,7 +55,10 @@ const ProfileMenu = ({ closeMenu }) => {
     <div className="bg-purple fixed z-40 bg-opacity-50 top-0 right-0 left-0 bottom-0">
       <div className="py-[30px] px-[20px] absolute right-0 bottom-0 bg-white h-full w-[360px] z-50 opacity-[100%]">
         <div className="mt-[10px] flex justify-between  items-center">
-          <h3 className="text-darkPurple h4">Walter A.Nunez</h3>
+          <h3 className="text-darkPurple h4">
+            {userProfile?.firstName} {userProfile?.lastName}
+            {/* Walter A.Nunez */}
+          </h3>
           <div onClick={closeMenu} className="cursor-pointer">
             <Image
               src="/close-pink.svg"
