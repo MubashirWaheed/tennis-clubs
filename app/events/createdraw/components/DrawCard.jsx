@@ -4,7 +4,8 @@ import ScoreInput from "@/components/ui/inputFields/TextField";
 import DropDown from "@/components/ui/inputFields/DropDown";
 
 const playerOptions = ["player 1", "player 2"];
-const DrawCard = ({ id }) => {
+const DrawCard = ({ id, player }) => {
+  console.log("PLAYER IN THE DRAW CARD", player);
   return (
     <div className="shadow-lg bg-white   mx-[10px] my-[20px] ">
       <div className="px-[15px] py-[10px]">
@@ -12,7 +13,22 @@ const DrawCard = ({ id }) => {
         <div className="flex gap-4 items-center justify-between flex-wrap md:flex-nowrap">
           <div className="flex flex-col gap-3 basis-2/3 grow">
             <p className="text-grey fw700 ">Match #1</p>
+            {/* {player?.map((item) => {
+              return <></>;
+            })} */}
+
             <DropDown
+              id={`${id}-dropdown1`}
+              label="select a player 1"
+              options={[player.name, "Other player 1", "Other player 2"]} // Adjust options accordingly
+            />
+            <DropDown
+              id={`${id}-dropdown2`}
+              label="select a player 2"
+              options={[player?.name, "Other player 1", "Other player 2"]} // Adjust options accordingly
+            />
+
+            {/* <DropDown
               id={`${id}-dropdown1`}
               label="select a player 1"
               options={playerOptions}
@@ -21,7 +37,7 @@ const DrawCard = ({ id }) => {
               id={`${id}-dropdown2`}
               label="select a player 2"
               options={playerOptions}
-            />
+            /> */}
           </div>
           <div className="basis-1/3 grow flex  md:h-[260px] flex-col ">
             <p className="text-grey fw700 underline">Set Date & Time</p>

@@ -5,9 +5,12 @@ import RequestPaidHit from "@/components/ui/buttons/PrimaryButton";
 import { useRouter } from "next/navigation";
 import ProfileNavigation from "./components/profileNavigation";
 import profileViewData from "./profileView.json";
+import { useProfileStore } from "@/hooks/useProfileStore";
 
 const IndividualProfileLayout = ({ children }) => {
   const router = useRouter();
+  const { profile } = useProfileStore();
+  const { firstName, lastName, location } = profile;
 
   return (
     <main>
@@ -22,9 +25,11 @@ const IndividualProfileLayout = ({ children }) => {
               className="w-[93px] h-[93px] rounded-full"
             />
             <div className="flex flex-col gap-1 pt-7">
-              <p className="h2 text-white">Philip B. Simpson</p>
+              <p className="h2 text-white">
+                {firstName} {lastName}
+              </p>
               <p className="f16 fw700 lh24 text-[#fff] opacity-70">
-                Avenue Shippensburg, PA 17257
+                {location}
               </p>
               <div className="gap-[15px] mt-2 flex flex-col md:flex-row items-center">
                 <RequestPaidHit size="small">Request Paid Hits</RequestPaidHit>

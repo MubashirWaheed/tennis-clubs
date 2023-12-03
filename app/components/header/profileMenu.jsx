@@ -2,24 +2,21 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { signOut } from "next-auth/react";
-import axios from "axios";
-import useSWR from "swr";
 import { fetcher } from "@/lib/utils/fetcher";
 import { useRouter } from "next/navigation";
+import { useProfileStore } from "@/hooks/useProfileStore";
 
-const ProfileMenu = ({ closeMenu, userProfile }) => {
-  console.log("This is userProfile: ", userProfile);
+const ProfileMenu = ({ closeMenu }) => {
+  const { profile } = useProfileStore();
+  if (!profile) return null;
+  console.log("PROFILE FROM STORE ", profile);
+
   const router = useRouter();
-  // if (userProfile) {
-  const { id } = userProfile;
-  // }
+  const { id, firstName, lastName } = profile;
 
   const handleProfileClick = () => {
-    // redirect user to the profile
     router.push(`/profile/${id}`);
-    console.log("Clicked Profile");
     closeMenu();
-    // close menu
   };
 
   const handleSettingsClick = () => {
@@ -56,7 +53,7 @@ const ProfileMenu = ({ closeMenu, userProfile }) => {
       <div className="py-[30px] px-[20px] absolute right-0 bottom-0 bg-white h-full w-[360px] z-50 opacity-[100%]">
         <div className="mt-[10px] flex justify-between  items-center">
           <h3 className="text-darkPurple h4">
-            {userProfile?.firstName} {userProfile?.lastName}
+            {firstName} {lastName}
             {/* Walter A.Nunez */}
           </h3>
           <div onClick={closeMenu} className="cursor-pointer">

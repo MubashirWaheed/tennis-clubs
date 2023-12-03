@@ -14,6 +14,7 @@ export async function GET(request, { params }) {
       events: true,
     },
   });
+  // console.log("DATA FOR TEH CLUB ", data);
 
   return NextResponse.json(data);
 }

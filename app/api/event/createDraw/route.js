@@ -24,6 +24,7 @@ export async function POST(request) {
       eventId,
     },
   });
+  console.log("RESULT: ", result);
 
-  return NextResponse.json("data form get handler");
+  return NextResponse.json("RESULT AFTER DRAW  CREATION", result);
 }

@@ -6,7 +6,7 @@ const TextField = ({ type, id, value, label }) => {
 
   const watchedFormData = watch();
 
-  console.log("Form data while typing:", watchedFormData);
+  // console.log("Form data while typing:", watchedFormData);
 
   return (
     <div className={styles.TextField}>

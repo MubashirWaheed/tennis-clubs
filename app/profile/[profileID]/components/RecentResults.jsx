@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
 import profileData from "../profileData.json";
+import { useProfileStore } from "@/hooks/useProfileStore";
 
 export default function RecentResults() {
+  const { profile } = useProfileStore();
   return (
     <div className="flex flex-col items-center lg:items-start">
       <h3 className="h3 text-[#13013c]">Recent Results</h3>
@@ -102,6 +105,7 @@ export default function RecentResults() {
           ))}
         </div>
 
+        {/* Update age */}
         <div className="bg-[#fff] rounded-[15px] shadow-lg px-[27px] py-[31px] relative w-[380px] h-[110px]">
           <p className="f20 fw400 lh30 text-[#3B2273]">About</p>
           <p className="f16 fw700 lh28 text-[#828282]">Age : 20</p>

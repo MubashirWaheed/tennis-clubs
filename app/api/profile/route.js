@@ -1,7 +1,6 @@
 import prisma from "@/lib/prismadb";
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/services/getCurrentUser";
-import dayjs from "dayjs";
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);

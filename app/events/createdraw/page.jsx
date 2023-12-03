@@ -21,8 +21,6 @@ import { fetcher } from "@/lib/utils/fetcher";
 // For this event id I have to find the registered players
 // show those registered players in the draw placement
 
-const registeredPlayers = ["John", "George", "James", "Sara"];
-
 const CreateDraw = () => {
   const searchParams = useSearchParams();
   const eventId = searchParams.get("eventId");
@@ -50,7 +48,7 @@ const CreateDraw = () => {
     setShowDrawMenu(!showDrawMenu);
   };
 
-  const [selectedLinkObject, setSelectedLinkObject] = useState();
+  const [selectedLinkObject, setSelectedLinkObject] = useState([]);
 
   const { data, isLoading } = useSWR(
     `/api/event/createDraw?eventId=${eventId}`,
@@ -65,7 +63,7 @@ const CreateDraw = () => {
 
   return (
     <>
-      {selectedLinkObject && (
+      {
         <div>
           <div className="w-full bg-[#FAFBFF]">
             <DrawActionBar
@@ -77,8 +75,8 @@ const CreateDraw = () => {
           </div>
           <section className="bg-[#FAFBFF] w-full flex justify-center flex-col">
             <DrawSearchbar />
+
             <DrawPlacement
-              registeredPlayers={registeredPlayers}
               width={width}
               handleClick={handleClick}
               showMenu={showMenu}
@@ -113,7 +111,7 @@ const CreateDraw = () => {
             />
           </section>
         </div>
-      )}
+      }
     </>
   );
 };

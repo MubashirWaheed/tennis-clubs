@@ -12,6 +12,7 @@ export async function GET(request, { params }) {
       club: true,
     },
   });
+  console.log("DATA from the event id: ", data);
 
   return NextResponse.json(data);
 }

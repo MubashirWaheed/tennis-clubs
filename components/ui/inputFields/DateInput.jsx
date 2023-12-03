@@ -10,7 +10,7 @@ const DateInput = ({ name }) => {
   const { watch, control } = useFormContext();
   const watchedFormData = watch();
 
-  console.log("Form data while typing:", watchedFormData);
+  // console.log("Form data while typing:", watchedFormData);
 
   const getDeateIgnoreTimezone = (date) =>
     date && date.getUTCHours() !== 0

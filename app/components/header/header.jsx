@@ -9,6 +9,7 @@ import Searchbar from "./components/Searchbar";
 import Icons from "./components/Icons";
 import Hamburger from "./components/Hamburger";
 import ResponsiveMenu from "./components/ResponsiveMenu";
+import { useProfileStore } from "@/hooks/useProfileStore";
 
 const Header = () => {
   const router = useRouter();
@@ -18,7 +19,7 @@ const Header = () => {
   const [isMenuClicked, setIsMenuClicked] = useState(false);
   const [profileMenu, setProfileMenu] = useState(false);
 
-  const [userProfile, setUserProfile] = useState(undefined);
+  const { fetchProfile } = useProfileStore();
 
   // toggle burger menu change
   const updateMenu = () => {
@@ -32,26 +33,13 @@ const Header = () => {
     setIsMenuClicked(!isMenuClicked);
   };
 
+  // refactor this to seperate component
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("auth-user"));
     console.log("userId from the local storage: : ", data);
-
     const { id } = data.state.user;
-
-    const fetchUserProfile = async () => {
-      try {
-        const response = await fetch(`/api/profile?userId=${id}`);
-        const data = await response.json();
-        console.log("Data returned from the server: ", data);
-        setUserProfile(data); // Set user profile in component state
-      } catch (error) {
-        console.error("Error fetching user profile:", error);
-      }
-    };
-
     if (id) {
-      console.log("helo from the other side ");
-      fetchUserProfile();
+      fetchProfile(id);
     } else {
       console.warn("User ID not found in local storage");
     }
@@ -80,7 +68,6 @@ const Header = () => {
       {profileMenu && (
         <div className={`${profileMenu ? "block" : "hidden"}`}>
           <ProfileMenu
-            userProfile={userProfile}
             closeMenu={() => {
               setProfileMenu(!profileMenu);
             }}

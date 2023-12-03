@@ -9,7 +9,7 @@ const DrawActionBar = ({
 }) => {
   const { drawName, format, drawType, scoring, gender, drawSize } =
     selectedLinkObject;
-  console.log("FROM ACTION BAR selectedLinkObject: ", selectedLinkObject);
+  // console.log("FROM ACTION BAR selectedLinkObject: ", selectedLinkObject);
   return (
     <>
       <div className="flex flex-wrap justify-center lg:justify-between items-center w-full max-w-[1170px] mx-auto">
@@ -35,7 +35,7 @@ const DrawActionBar = ({
               </p>
             </div>
           </div>
-          <p className="text-grey fw700 text-center">
+          <p className="text-grey fw700 text-left">
             {/* Singles, Round Robin, Two Sets w/ Match Tiebreaker, 14 Players, Al
             UTR, All Ages. */}
             {format}, {drawType}, {scoring}, {drawSize} Players

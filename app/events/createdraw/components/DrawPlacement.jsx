@@ -1,10 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import DrawCard from "./DrawCard";
 import Image from "next/image";
 import PlayerBank from "./PlayerBank";
 import DrawCardGrid from "./DrawCardGrid";
+import { generateRoundRobinPairs } from "@/lib/utils/generateRoundRobinPairs";
 
-const DrawPlacement = ({ registeredPlayers, width, handleClick, showMenu }) => {
+const DrawPlacement = ({ width, handleClick, showMenu }) => {
+  // get the list of players registered for the event
+  // when I click auto fill place the players in the cards
+  const [playerDraw, setPlayerDraw] = useState();
+  let result;
+
+  const registeredPlayers = [
+    {
+      name: "Foo",
+      location: "New York",
+    },
+    {
+      name: "Bar",
+      location: "New York",
+    },
+    {
+      name: "Buz",
+      location: "New York",
+    },
+    {
+      name: "John",
+      location: "New York",
+    },
+  ];
+
+  const placeInCards = () => {
+    // place in cards
+    console.log("placed in the cards");
+    result = generateRoundRobinPairs(registeredPlayers);
+    setPlayerDraw(result);
+    console.log("RESULT for draw placement:  ", result);
+  };
+
   return (
     <div>
       <div className={`flex max-w-[1170px] mx-auto w-full my-[30px]`}>
@@ -12,7 +45,10 @@ const DrawPlacement = ({ registeredPlayers, width, handleClick, showMenu }) => {
         <div className={` ${width > 640 ? "block" : "hidden"} grow basis-1/3`}>
           <div className="w-full bg-purple flex p-[20px] items-center justify-between">
             <p className="text-white">Players(13)</p>
-            <p className="cursor-pointer text-white flex items-center gap-2">
+            <p
+              onClick={placeInCards}
+              className="cursor-pointer text-white flex items-center gap-2"
+            >
               <Image
                 src="/refreshicon.svg"
                 width={20}
@@ -67,7 +103,7 @@ const DrawPlacement = ({ registeredPlayers, width, handleClick, showMenu }) => {
         </div>
 
         {/* CARD GRID */}
-        <DrawCardGrid />
+        <DrawCardGrid drawArray={playerDraw} />
       </div>
     </div>
   );
