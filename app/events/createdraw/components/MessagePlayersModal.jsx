@@ -7,7 +7,7 @@ import { FormProvider, useForm } from "react-hook-form";
 const MessagePlayersModal = ({ messageModal, handleMessageModal }) => {
   const methods = useForm();
   return (
-    <div className={`${messageModal ? "block" : "hidden"}`}>
+    <div className="block">
       <FormProvider {...methods}>
         <Modal
           heading="Message Players In Doubles Draw"

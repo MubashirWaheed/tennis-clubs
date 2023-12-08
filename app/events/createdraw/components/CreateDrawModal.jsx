@@ -9,36 +9,16 @@ import { FormProvider, useForm } from "react-hook-form";
 import axios from "axios";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useSWRConfig } from "swr";
+import {
+  approvalOptions,
+  drawTypes,
+  genderOptions,
+  formatOptions,
+  scoringOptions,
+  drawsizeOptions,
+} from "../constants.js";
 
-const approvalOptions = ["Yes", "No"];
-const drawTypes = [
-  "Single Elimination",
-  "Round Robin",
-  "Compass",
-  "First Match Backdraw",
-];
-const genderOptions = ["Male", "Female"];
-const formatOptions = ["Singles", "Doubles"];
-const scoringOptions = [
-  "Best of 3 Sets",
-  "Two Sets w/Match Tiebreaker",
-  "Single Set",
-];
-const drawsizeOptions = [
-  "4",
-  "8",
-  "16",
-  "24",
-  "32",
-  "48",
-  "64",
-  "80",
-  "96",
-  "112",
-  "128",
-];
-
-const CreateDrawModal = ({ createDrawModal, handleCreateDrawModal }) => {
+const CreateDrawModal = ({ setActiveModal }) => {
   const { mutate } = useSWRConfig();
   // lets store this
   const methods = useForm();
@@ -63,25 +43,26 @@ const CreateDrawModal = ({ createDrawModal, handleCreateDrawModal }) => {
       console.log("RESULT STATUS: ", result.status);
       // Check if the POST request was successful
       if (result.status === 200) {
-        handleCreateDrawModal();
+        setActiveModal(null);
+        // handleCreateDrawModal();
         mutate(`/api/event/createDraw?eventId=${eventId}`);
       } else {
         console.error("API request was not successful");
       }
     } catch (error) {
-      // Handle any errors that occurred during the API request
       console.error("Error during API request:", error);
     } finally {
       setDisable(false);
     }
   };
 
+  console.log("drawTypes in the : ", drawTypes);
   return (
-    <div className={`${createDrawModal ? "block" : "hidden"}`}>
+    <div className={`block`}>
       <Modal
         className="py-[20px]"
         heading="Create Draws"
-        closeModal={handleCreateDrawModal}
+        closeModal={() => setActiveModal(null)}
       >
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)}>

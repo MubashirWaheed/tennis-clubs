@@ -1,19 +1,15 @@
-import { fetcher } from "@/lib/utils/fetcher";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
 
 const DrawMenu = ({
-  setSelectedLinkObject,
+  setSelectedDraw,
   drawsList,
   showDrawMenu,
   setShowDrawMenu,
-  handleCreateDrawModal,
+  openModal,
+  MODAL_TYPES,
 }) => {
-  const searchParams = useSearchParams();
-
-  const handleLinkClick = (selectedLinkData) => {
-    setSelectedLinkObject(selectedLinkData);
-    // close the sidebar modal
+  const handleDrawSelect = (selectedDraw) => {
+    setSelectedDraw(selectedDraw);
   };
 
   return (
@@ -57,18 +53,44 @@ const DrawMenu = ({
 
           <div className="mt-[50px] text-grey flex flex-col fw400">
             <p
-              onClick={handleCreateDrawModal}
+              onClick={() => openModal(MODAL_TYPES.CREATE_DRAW)}
+              // onClick={handleCreateDrawModal}
               className="hover:text-purple cursor-pointer py-[10px] border-b-[1px] border-[#e7e6eb]"
             >
               Draws
             </p>
-            {drawsList?.map((item, index) => (
-              <div
-                onClick={() => handleLinkClick(item)}
-                className="cursor-pointer text-[14px]"
-                key={index}
-              >
-                {item.drawName}
+            {/* if the draw type is compass than create east west north south part as well  */}
+            {drawsList?.map((draw, index) => (
+              <div key={index}>
+                {draw.drawType !== "Compass" ? (
+                  <div
+                    className="cursor-pointer hover:text-purple"
+                    onClick={() => handleDrawSelect(draw)}
+                  >
+                    {draw?.drawName}
+                  </div>
+                ) : (
+                  <>
+                    <p
+                      className="hover:text-purple cursor-pointer text-[14px]"
+                      onClick={() => handleDrawSelect(draw)}
+                    >
+                      {draw?.drawName} - EAST
+                    </p>
+                    <p
+                      onClick={() => handleDrawSelect(draw)}
+                      className="hover:text-purple cursor-pointer text-[14px]"
+                    >
+                      WEST
+                    </p>
+                    <p className="hover:text-purple cursor-pointer text-[14px]">
+                      NORTH
+                    </p>
+                    <p className="hover:text-purple cursor-pointer text-[14px]">
+                      SOUTH
+                    </p>
+                  </>
+                )}
               </div>
             ))}
 

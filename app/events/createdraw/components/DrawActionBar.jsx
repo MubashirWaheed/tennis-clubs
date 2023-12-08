@@ -1,15 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "@/components/ui/buttons/PrimaryButton";
 
-const DrawActionBar = ({
-  selectedLinkObject,
-  handleEditModal,
-  handleMessageModal,
-  setPublishModal,
-}) => {
+const DrawActionBar = ({ MODAL_TYPES, openModal, selectedDraw }) => {
   const { drawName, format, drawType, scoring, gender, drawSize } =
-    selectedLinkObject;
-  // console.log("FROM ACTION BAR selectedLinkObject: ", selectedLinkObject);
+    selectedDraw;
+
   return (
     <>
       <div className="flex flex-wrap justify-center lg:justify-between items-center w-full max-w-[1170px] mx-auto">
@@ -21,14 +16,14 @@ const DrawActionBar = ({
             </p>
             <div className="flex gap-2 ml-[10px]">
               <p
-                onClick={handleEditModal}
+                onClick={() => openModal(MODAL_TYPES.EDIT)}
                 className="cursor-pointer text-green fw700"
               >
                 • Edit
               </p>
               <p className="text-green fw700">• Print</p>
               <p
-                onClick={handleMessageModal}
+                onClick={() => openModal(MODAL_TYPES.MESSAGE)}
                 className="cursor-pointer text-green fw700"
               >
                 • Message Players
@@ -43,10 +38,7 @@ const DrawActionBar = ({
         </div>
         <div className="flex gap-4  items-center justify-center">
           <Button size="small">Save</Button>
-          <Button
-            onClick={() => setPublishModal((publishModal) => !publishModal)}
-            size="small"
-          >
+          <Button onClick={() => openModal(MODAL_TYPES.PUBLISH)} size="small">
             Publish
           </Button>
         </div>

@@ -1,14 +1,22 @@
 import Modal from "@/components/ui/Modal/Modal";
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "@/components/ui/buttons/PrimaryButton";
 import { FormProvider, useForm } from "react-hook-form";
 
-const PublishModal = ({ publishModal, handlePublishModal }) => {
+const PublishModal = ({ setActiveModal }) => {
   const methods = useForm();
+
+  useEffect(() => {
+    console.log("Component rendered or updated");
+
+    return () => {
+      console.log("Component will unmount");
+    };
+  });
   return (
-    <div className={` ${publishModal ? "block" : "hidden "}`}>
+    <div className="block">
       <FormProvider {...methods}>
-        <Modal heading="Publish Draws" closeModal={handlePublishModal}>
+        <Modal heading="Publish Draws" closeModal={() => setActiveModal(null)}>
           <div className="flex flex-col">
             <p className="text-grey my-[15px]">
               Select draws to publish and display publicly on the event profile

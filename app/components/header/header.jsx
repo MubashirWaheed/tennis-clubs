@@ -36,7 +36,7 @@ const Header = () => {
   // refactor this to seperate component
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("auth-user"));
-    console.log("userId from the local storage: : ", data);
+    // console.log("userId from the local storage: : ", data);
     const { id } = data.state.user;
     if (id) {
       fetchProfile(id);

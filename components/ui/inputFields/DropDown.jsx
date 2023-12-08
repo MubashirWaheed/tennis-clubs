@@ -3,12 +3,14 @@ import React from "react";
 import Image from "next/image";
 import { useFormContext } from "react-hook-form";
 
-const DropDown = ({ id, label, options, size }) => {
+const DropDown = ({ id, label, options, size, showDefaultOption }) => {
   const { register, watch, setValue } = useFormContext();
   const handleSelectChange = (event) => {
     const selectedValue = event.target.value;
+    console.log("selectedValue: ", selectedValue);
     setValue(id, selectedValue);
   };
+  // console.log("options: ", options);
 
   return (
     <div className="py-[10px] px-[3px] w-full ">
@@ -22,7 +24,7 @@ const DropDown = ({ id, label, options, size }) => {
         >
           <p
             className={`${
-              size == "small" ? "f13 " : "rounded-lg fw700 f12 pt-[10px] "
+              size == "small" ? "f13" : "rounded-lg fw700 f12 pt-[10px] "
             } text-[#828282] pl-[15px] sm:pl-[20px]  `}
           >
             {label}
@@ -30,20 +32,27 @@ const DropDown = ({ id, label, options, size }) => {
           <select
             name={`dropdown-${label}`}
             onChange={handleSelectChange}
-            // id={`dropdown-${label}`}
             className={`${
               size == "small"
                 ? "pl-[10px] sm:pl-[22px] pt-[0px]"
                 : "pl-[20px] pb-[22px]"
-            }   lh18 cursor-pointer focus:ring-0 focus:outline-none  bg-none bg-[#fafbff] pt-[10px]  outline-none  text-[#05192C] text-sm rounded-xl border-0 block w-full`}
+            } lh18 cursor-pointer focus:ring-0 focus:outline-none  bg-none bg-[#fafbff] pt-[10px]  outline-none  text-[#05192C] text-sm rounded-xl border-0 block w-full`}
           >
-            {options.map((item, i) => {
-              return (
-                <option className="lh18" key={i} value={item}>
-                  {item}
-                </option>
-              );
-            })}
+            {Array.isArray(options)
+              ? options.map((item, index) => (
+                  <option
+                    key={index}
+                    value={typeof item === "object" ? item.name : item}
+                  >
+                    {typeof item === "object" ? item.name : item}
+                  </option>
+                ))
+              : options &&
+                Object.entries(options).map(([key, value]) => (
+                  <option key={key} value={key}>
+                    {typeof value === "object" ? value.name : value}
+                  </option>
+                ))}
           </select>
           <div className="absolute sm:top-5 top-5 right-3 sm:right-6">
             <Image
