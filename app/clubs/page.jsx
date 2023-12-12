@@ -35,7 +35,7 @@ const Clubs = () => {
             })}
           </div>
         ) : (
-          <p>You haven't joined or created any clubs</p>
+          <p>You haven&apos;t joined or created any clubs</p>
         )}
       </div>
     </div>

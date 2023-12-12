@@ -8,7 +8,10 @@ const Icons = ({ setProfileMenu }) => {
   return (
     <div className={styles.iconsGroup}>
       <div
-        onClick={() => setProfileMenu((prev) => !prev)}
+        onClick={() => {
+          console.log('icon clicked')
+          setProfileMenu((prev) => !prev);
+        }}
         className={styles.iconWrapper}
       >
         <Image

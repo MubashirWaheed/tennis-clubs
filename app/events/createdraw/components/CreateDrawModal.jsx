@@ -1,25 +1,31 @@
 "use client";
 import Modal from "@/components/ui/Modal/Modal";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@/components/ui/buttons/PrimaryButton";
 import InputField from "@/components/ui/inputFields/TextField";
 import AutoComplete from "@/components/ui/inputFields/AutoComplete";
 import DropDown from "@/components/ui/inputFields/DropDown";
 import { FormProvider, useForm } from "react-hook-form";
 import axios from "axios";
-import { usePathname, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useSWRConfig } from "swr";
+
 import {
   approvalOptions,
   drawTypes,
   genderOptions,
   formatOptions,
   scoringOptions,
-  drawsizeOptions,
-} from "../constants.js";
+  // drawsizeOptions,
+  roundRobinDrawSizeOptions,
+  compassDrawSizeOptions,
+} from "../constants/constants.js";
 
 const CreateDrawModal = ({ setActiveModal }) => {
   const { mutate } = useSWRConfig();
+  const [drawSizeOptions, setDrawSizeOptions] = useState(
+    compassDrawSizeOptions
+  );
   // lets store this
   const methods = useForm();
   const searchParams = useSearchParams();
@@ -56,7 +62,29 @@ const CreateDrawModal = ({ setActiveModal }) => {
     }
   };
 
+  console.log("VALUES inteh form ", methods.getValues());
+  console.log("methods", methods);
+
+  useEffect(() => {
+    console.log("EFFECT RAN");
+    // Update drawSizeOptions based on the selected drawType
+    const updateDrawSizeOptions = () => {
+      console.log("updateDrawSizeOptions ran ", methods.getValues());
+      const selectedDrawType = methods.getValues("drawType");
+      console.log("selectedDrawType: ", selectedDrawType);
+      // You can customize this logic based on your specific requirements
+      if (selectedDrawType === "Round Robin") {
+        setDrawSizeOptions(roundRobinDrawSizeOptions);
+      } else if (selectedDrawType === "Compass") {
+        setDrawSizeOptions(compassDrawSizeOptions);
+      }
+    };
+
+    updateDrawSizeOptions();
+  }, [methods.getValues("drawType")]);
+
   console.log("drawTypes in the : ", drawTypes);
+
   return (
     <div className={`block`}>
       <Modal
@@ -72,6 +100,7 @@ const CreateDrawModal = ({ setActiveModal }) => {
                 <DropDown id="format" label="Format" options={formatOptions} />
                 <DropDown id="gender" label="Gender" options={genderOptions} />
               </div>
+
               <div className="flex gap-4">
                 <DropDown id="drawType" label="Draw Type" options={drawTypes} />
                 <DropDown
@@ -80,11 +109,12 @@ const CreateDrawModal = ({ setActiveModal }) => {
                   options={scoringOptions}
                 />
               </div>
+
               <div className="flex gap-4">
                 <DropDown
                   id="drawSize"
                   label="DrawSize"
-                  options={drawsizeOptions}
+                  options={drawSizeOptions}
                 />
                 <DropDown
                   id="coaching"

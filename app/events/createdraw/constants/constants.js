@@ -1,10 +1,5 @@
 export const approvalOptions = ["Yes", "No"];
-export const drawTypes = [
-  "Single Elimination",
-  "Round Robin",
-  "Compass",
-  "First Match Backdraw",
-];
+export const drawTypes = ["Compass", "Round Robin"];
 export const genderOptions = ["Male", "Female"];
 export const formatOptions = ["Singles", "Doubles"];
 export const scoringOptions = [
@@ -24,6 +19,17 @@ export const drawsizeOptions = [
   "96",
   "112",
   "128",
+];
+
+export const compassDrawSizeOptions = ["8 players", "16 players"];
+export const roundRobinDrawSizeOptions = [
+  "2 players / 1 match",
+  "4 players / 2 matches",
+  "8 players / 4 matches",
+  "16 players / 8 matches",
+  "32 players / 16 matches",
+  "64 players / 32 matches",
+  "128 players / 64 matches",
 ];
 
 export const MODAL_TYPES = {

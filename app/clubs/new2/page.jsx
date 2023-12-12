@@ -4,7 +4,7 @@ import Editor from "./components/editor";
 import axios from "axios";
 import { useEffect } from "react";
 
-const createNewClubEditor = () => {
+const CreateNewClubEditor = () => {
   //  fetching the club
   const getClubData = async () => {
     const result = await axios.get("/api/club");
@@ -34,4 +34,4 @@ const createNewClubEditor = () => {
   );
 };
 
-export default createNewClubEditor;
+export default CreateNewClubEditor;

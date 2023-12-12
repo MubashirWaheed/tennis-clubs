@@ -12,7 +12,7 @@ import ResponsiveMenu from "./components/ResponsiveMenu";
 import { useProfileStore } from "@/hooks/useProfileStore";
 
 const Header = () => {
-  const router = useRouter();
+  // const router = useRouter();
   const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
 
   const [menu_class, setMenuClass] = useState("menu hide");
@@ -34,6 +34,7 @@ const Header = () => {
   };
 
   // refactor this to seperate component
+  /* eslint-enable react-hooks/exhaustive-deps */
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("auth-user"));
     // console.log("userId from the local storage: : ", data);
@@ -44,6 +45,7 @@ const Header = () => {
       console.warn("User ID not found in local storage");
     }
   }, []);
+  /* eslint-enable react-hooks/exhaustive-deps */
 
   return (
     <header className="bg-white z-30">
@@ -66,13 +68,13 @@ const Header = () => {
       </div>
 
       {profileMenu && (
-        <div className={`${profileMenu ? "block" : "hidden"}`}>
-          <ProfileMenu
-            closeMenu={() => {
-              setProfileMenu(!profileMenu);
-            }}
-          />
-        </div>
+        // <div className={`${profileMenu ? "block" : "hidden"}`}>
+        <ProfileMenu
+          closeMenu={() => {
+            setProfileMenu(!profileMenu);
+          }}
+        />
+        // </div>
       )}
     </header>
   );

@@ -4,7 +4,11 @@ import { getCurrentUser } from "@/lib/services/getCurrentUser";
 import { NextResponse } from "next/server";
 
 export async function GET(request) {
-  const { id } = await getCurrentUser();
+  const currentUser = await getCurrentUser();
+  if (!currentUser || !currentUser.id) {
+    return NextResponse.error("User ID not found", { status: 400 });
+  }
+  const { id } = currentUser;
 
   const data = await prisma.clubmembership.findMany({
     where: {

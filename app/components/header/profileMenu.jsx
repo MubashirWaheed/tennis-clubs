@@ -8,10 +8,11 @@ import { useProfileStore } from "@/hooks/useProfileStore";
 
 const ProfileMenu = ({ closeMenu }) => {
   const { profile } = useProfileStore();
+  const router = useRouter();
+
   if (!profile) return null;
   console.log("PROFILE FROM STORE ", profile);
 
-  const router = useRouter();
   const { id, firstName, lastName } = profile;
 
   const handleProfileClick = () => {
@@ -95,4 +96,4 @@ const ProfileMenu = ({ closeMenu }) => {
   );
 };
 
-export default React.memo(ProfileMenu);
+export default ProfileMenu;

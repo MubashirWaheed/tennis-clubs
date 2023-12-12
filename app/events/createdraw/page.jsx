@@ -2,9 +2,7 @@
 import { useCallback, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
-import { useWindowSize } from "@/hooks/useWindowSize";
-
-import { MODAL_TYPES } from "./constants";
+import { MODAL_TYPES } from "./constants/constants";
 
 import useDrawData from "./hooks/useDrawData";
 
@@ -13,9 +11,10 @@ import DrawPlacement from "./components/DrawPlacement";
 import DrawActionBar from "./components/DrawActionBar";
 import DrawSearchbar from "./components/DrawSearchbar";
 import DrawModalManager from "./components/DrawModalManager";
+import { useWindowWidth } from "@react-hook/window-size";
 
 const CreateDraw = () => {
-  const { width } = useWindowSize();
+  const width = useWindowWidth();
 
   const searchParams = useSearchParams();
   const eventId = searchParams.get("eventId");

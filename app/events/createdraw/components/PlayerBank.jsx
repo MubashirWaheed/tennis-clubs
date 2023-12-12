@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const PlayerBank = ({ registeredPlayers, showMenu }) => {
-  console.log("registeredPlayers in the playerBank: ", registeredPlayers);
+  // console.log("registeredPlayers in the playerBank: ", registeredPlayers);
   return (
     <div
       className={`${

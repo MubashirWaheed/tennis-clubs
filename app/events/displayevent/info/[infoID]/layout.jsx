@@ -9,7 +9,7 @@ const data = [
   { title: "REGISTRATION ENDS", value: "16 April 2023" },
 ];
 
-const eventInfoLayout = ({ children }) => {
+const EventInfoLayout = ({ children }) => {
   const patheName = usePathname();
   console.log("patheName: ", patheName.split("/")[4]);
   const eventId = patheName.split("/")[4];
@@ -62,4 +62,4 @@ const eventInfoLayout = ({ children }) => {
   );
 };
 
-export default eventInfoLayout;
+export default EventInfoLayout;

@@ -5,9 +5,11 @@ import { FormProvider, useForm } from "react-hook-form";
 // will extract all this logic at the end fro each type of draw
 const DrawCardGrid = ({ selectedDraw, playerDraw, registeredPlayers }) => {
   const methods = useForm();
-
+  console.log("registeredPlayers in draw card grid : ", registeredPlayers);
   const numberOfCards = Math.ceil(registeredPlayers.length / 2);
+  // console.log("numberOfCards: ", numberOfCards);
   const cards = Array.from({ length: numberOfCards }, (_, index) => index + 1);
+  // console.log("cards: ", cards);
 
   const groupPlayersIntoPairs = (players) => {
     const pairs = [];
@@ -17,6 +19,7 @@ const DrawCardGrid = ({ selectedDraw, playerDraw, registeredPlayers }) => {
     }
     return pairs;
   };
+
   let playerPairs;
   // Group registered players into pairs
   if (playerDraw) {
@@ -47,7 +50,7 @@ const DrawCardGrid = ({ selectedDraw, playerDraw, registeredPlayers }) => {
                       <DrawCard
                         showDefaultOption={false}
                         key={index}
-                        id={`playername${index + 2}`}
+                        // id={`playername${index + 2}`}
                         playerOptions={pair}
                       />
                     );
@@ -59,14 +62,17 @@ const DrawCardGrid = ({ selectedDraw, playerDraw, registeredPlayers }) => {
                 // if 16 players coming in the registerd players than 8 cards needs to be created
 
                 <div>
-                  {cards.map((cardNumber) => (
-                    <DrawCard
-                      showDefaultOption={true}
-                      key={`card-${cardNumber}`}
-                      id={`playername${cardNumber + 1}`}
-                      playerOptions={registeredPlayers}
-                    />
-                  ))}
+                  {cards.map((cardNumber) => {
+                    console.log("cardNumber: ", cardNumber);
+                    return (
+                      <DrawCard
+                        showDefaultOption={true}
+                        key={`card-${cardNumber}`}
+                        // id={`playername${cardNumber}`}
+                        playerOptions={registeredPlayers}
+                      />
+                    );
+                  })}
                 </div>
 
                 // <DrawCard id="playername1" playerOptions={registeredPlayers} />

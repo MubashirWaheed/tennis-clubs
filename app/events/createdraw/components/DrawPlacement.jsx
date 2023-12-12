@@ -46,8 +46,11 @@ const DrawPlacement = ({ selectedDraw, width, handleClick, showMenu }) => {
   const placeInCards = () => {
     const result = generateRoundRobinPairs(registeredPlayers);
     // setPlayerDraw(result);
+
+    // get players from the db
     const compassPlayersList = registeredPlayers;
     setPlayerDraw(compassPlayersList);
+    console.log("place in cards clicked:", playerDraw);
   };
 
   return (

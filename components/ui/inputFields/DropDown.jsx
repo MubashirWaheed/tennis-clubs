@@ -3,12 +3,16 @@ import React from "react";
 import Image from "next/image";
 import { useFormContext } from "react-hook-form";
 
-const DropDown = ({ id, label, options, size, showDefaultOption }) => {
+// id,
+const id = "helo";
+
+const DropDown = ({ label, options, size, showDefaultOption }) => {
   const { register, watch, setValue } = useFormContext();
+
   const handleSelectChange = (event) => {
     const selectedValue = event.target.value;
     console.log("selectedValue: ", selectedValue);
-    setValue(id, selectedValue);
+    // setValue(id, selectedValue);
   };
   // console.log("options: ", options);
 
@@ -38,14 +42,17 @@ const DropDown = ({ id, label, options, size, showDefaultOption }) => {
                 : "pl-[20px] pb-[22px]"
             } lh18 cursor-pointer focus:ring-0 focus:outline-none  bg-none bg-[#fafbff] pt-[10px]  outline-none  text-[#05192C] text-sm rounded-xl border-0 block w-full`}
           >
+            {showDefaultOption && <option key="default" value=""></option>}
             {Array.isArray(options)
               ? options.map((item, index) => (
-                  <option
-                    key={index}
-                    value={typeof item === "object" ? item.name : item}
-                  >
-                    {typeof item === "object" ? item.name : item}
-                  </option>
+                  <>
+                    <option
+                      key={index}
+                      value={typeof item === "object" ? item.name : item}
+                    >
+                      {typeof item === "object" ? item.name : item}
+                    </option>
+                  </>
                 ))
               : options &&
                 Object.entries(options).map(([key, value]) => (
@@ -54,6 +61,7 @@ const DropDown = ({ id, label, options, size, showDefaultOption }) => {
                   </option>
                 ))}
           </select>
+
           <div className="absolute sm:top-5 top-5 right-3 sm:right-6">
             <Image
               src="/dropdown.svg"
