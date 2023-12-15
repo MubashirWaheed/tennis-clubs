@@ -83,5 +83,8 @@ export async function POST(request) {
     },
   });
 
+  console.log("DATA IN THE BACKEND:", data);
+  console.log("EVENT CREATED: ", { ...event, ...division });
+
   return NextResponse.json({ ...event, ...division });
 }

@@ -12,13 +12,11 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" className="overflow-x-hidden">
       <body>
-        <div>
-          <AuthProvider>
-            {user ? <Header /> : <HomeHeader />}
-            {children}
-            <Footer />
-          </AuthProvider>
-        </div>
+        <AuthProvider>
+          {user ? <Header /> : <HomeHeader />}
+          {children}
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

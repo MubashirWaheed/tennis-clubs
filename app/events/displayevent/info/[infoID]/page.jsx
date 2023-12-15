@@ -84,6 +84,7 @@ const EventInfo = () => {
     const getEventData = async () => {
       try {
         const response = await axios.get(`/api/event/${eventId}`);
+        console.log("response: ", response);
 
         // Assuming the data you want is in response.data
         setEventData(response.data);

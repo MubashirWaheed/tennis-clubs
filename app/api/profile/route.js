@@ -5,14 +5,13 @@ import { getCurrentUser } from "@/lib/services/getCurrentUser";
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const userId = searchParams.get("userId");
-  console.log("userId: ", userId);
+  // console.log("userId: ", userId);
 
   const data = await prisma.profile.findUnique({
     where: {
       userId: userId,
     },
   });
-  // console.log("data from the profile GET API : ", data);
 
   return NextResponse.json(data);
 }

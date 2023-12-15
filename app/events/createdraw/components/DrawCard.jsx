@@ -5,18 +5,8 @@ import ScoreInput from "@/components/ui/inputFields/TextField";
 import DropDown from "@/components/ui/inputFields/DropDown";
 import { FormProvider, useForm } from "react-hook-form";
 
-const DrawCard = ({ playerOptions, showDefaultOption }) => {
+const DrawCard = ({ id, playerOptions, showDefaultOption }) => {
   // const [matchPlayers, setMatchPlayers] = useState();
-  const methods = useForm();
-
-  // id,
-
-  // create state for the card here
-  // linking of card with the event + division
-  // linking of card/match with the add score screen
-  const handleMatch = () => {
-    console.log("value for the card: ", methods.getValues());
-  };
 
   return (
     <div className="shadow-lg bg-white   mx-[10px] my-[20px] ">
@@ -25,36 +15,32 @@ const DrawCard = ({ playerOptions, showDefaultOption }) => {
         <div className="flex gap-4 items-center justify-between flex-wrap md:flex-nowrap">
           <div className="flex flex-col gap-3 basis-2/3 grow">
             <p className="text-grey fw700 underline">Set Date & Time</p>
-            <FormProvider {...methods}>
-              <form onSubmit={methods.handleSubmit(handleMatch)}>
-                <DropDown
-                  showDefaultOption={showDefaultOption}
-                  // id={`${id}-dropdown1`}
-                  label="select a player 1"
-                  options={playerOptions}
-                />
+            <DropDown
+              showDefaultOption={showDefaultOption}
+              id={`match-${id}-dropdown1`}
+              label="select a player 1"
+              options={playerOptions}
+            />
 
-                <DropDown
-                  showDefaultOption
-                  // id={`${id}-dropdown2`}
-                  label="select a player 2"
-                  options={playerOptions}
-                />
-              </form>
-            </FormProvider>
+            <DropDown
+              showDefaultOption={showDefaultOption}
+              id={`match-${id}-dropdown2`}
+              label="select a player 2"
+              options={playerOptions}
+            />
           </div>
 
           <div className="basis-1/3 grow flex  md:h-[260px] flex-col ">
             <p className="text-grey fw700 ">Match #1</p>
-
-            <div className=" md:mt-[50px]">
-              <ScoreInput id="card3" label="score" />
+            <div className="md:mt-[50px]">
+              {/* <div className=" w-[50px] h-[50px] bg-[#E8EFF7] shadow-md "></div> */}
+              {/* <ScoreInput id="card3" label="score" /> */}
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-[#E8EFF7] w-full py-[15px] px-[20px]">
+      <div className=" bg-[#E8EFF7] w-full py-[15px] px-[20px]">
         <p className="text-grey fw700">Set Location</p>
       </div>
     </div>
@@ -62,3 +48,5 @@ const DrawCard = ({ playerOptions, showDefaultOption }) => {
 };
 
 export default DrawCard;
+
+// bg-[#E8EFF7]

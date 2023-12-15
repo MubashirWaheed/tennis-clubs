@@ -71,13 +71,16 @@ const Header = () => {
         // <div className={`${profileMenu ? "block" : "hidden"}`}>
         <ProfileMenu
           closeMenu={() => {
-            setProfileMenu(!profileMenu);
+            setProfileMenu((prev) => !prev);
           }}
         />
-        // </div>
+        //  </div>
       )}
     </header>
   );
 };
 
 export default Header;
+
+// redirect the user if the profile not created
+// Where do I check if the has created the prodile or not

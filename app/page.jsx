@@ -9,10 +9,9 @@ import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/services/getCurrentUser";
 
 const Home = async () => {
-  // check if the user is onboarded or not in or not
-
   let isLoggedIn = true;
   const user = await getCurrentUser();
+  // check if the user created the profile or not
 
   return (
     <div>

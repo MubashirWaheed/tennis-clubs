@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useProfileStore } from "@/hooks/useProfileStore";
 
 const ProfileMenu = ({ closeMenu }) => {
+  // need to create the profile before accessing the sidebar
   const { profile } = useProfileStore();
   const router = useRouter();
 

@@ -38,3 +38,60 @@ export const MODAL_TYPES = {
   MESSAGE: "message",
   CREATE_DRAW: "createDraw",
 };
+
+export const secondRoundPlayers = [
+  {
+    name: "Foo",
+    location: "New York",
+  },
+
+  {
+    name: "doe",
+    loaction: "New York ",
+  },
+  {
+    name: "sara",
+    location: "dc",
+  },
+
+  {
+    name: "Buz",
+    location: "New York",
+  },
+];
+
+export const registeredPlayers = [
+  {
+    name: "Foo",
+    location: "New York",
+  },
+  {
+    name: "Bar",
+    location: "New York",
+  },
+
+  {
+    name: "doe",
+    loaction: "New York ",
+  },
+  {
+    name: "ben",
+    location: "dc",
+  },
+  {
+    name: "sara",
+    location: "dc",
+  },
+  {
+    name: "joe",
+    location: "dc",
+  },
+  {
+    name: "Buz",
+    location: "New York",
+  },
+  {
+    name: "John",
+    location: "New York",
+  },
+];

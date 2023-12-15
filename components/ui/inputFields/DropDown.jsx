@@ -6,15 +6,14 @@ import { useFormContext } from "react-hook-form";
 // id,
 const id = "helo";
 
-const DropDown = ({ label, options, size, showDefaultOption }) => {
+const DropDown = ({ id, label, options, size, showDefaultOption }) => {
   const { register, watch, setValue } = useFormContext();
 
   const handleSelectChange = (event) => {
     const selectedValue = event.target.value;
     console.log("selectedValue: ", selectedValue);
-    // setValue(id, selectedValue);
+    setValue(id, selectedValue);
   };
-  // console.log("options: ", options);
 
   return (
     <div className="py-[10px] px-[3px] w-full ">
@@ -45,14 +44,12 @@ const DropDown = ({ label, options, size, showDefaultOption }) => {
             {showDefaultOption && <option key="default" value=""></option>}
             {Array.isArray(options)
               ? options.map((item, index) => (
-                  <>
-                    <option
-                      key={index}
-                      value={typeof item === "object" ? item.name : item}
-                    >
-                      {typeof item === "object" ? item.name : item}
-                    </option>
-                  </>
+                  <option
+                    key={index}
+                    value={typeof item === "object" ? item.name : item}
+                  >
+                    {typeof item === "object" ? item.name : item}
+                  </option>
                 ))
               : options &&
                 Object.entries(options).map(([key, value]) => (

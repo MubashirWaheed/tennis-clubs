@@ -1,7 +1,9 @@
 import { withAuth } from "next-auth/middleware";
+import { getSession } from "next-auth/react";
 import { NextResponse } from "next/server";
 
-export function middleware(req) {
+export async function middleware(req) {
+  console.log("req: ", req.cookies.get("next-auth.session-token"));
   let token;
   if (req.cookies.get("next-auth.session-token")) {
     token = req.cookies.get("next-auth.csrf-token").value;
@@ -17,7 +19,6 @@ export function middleware(req) {
   if (!isPublicPath && !token) {
     return NextResponse.redirect(new URL("/signin", req.nextUrl));
   }
-  // get logged in user and store in the
 }
 
 export const config = {

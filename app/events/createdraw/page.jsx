@@ -1,6 +1,8 @@
 "use client";
 import { useCallback, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { FormProvider, useForm } from "react-hook-form";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 import { MODAL_TYPES } from "./constants/constants";
 
@@ -11,10 +13,12 @@ import DrawPlacement from "./components/DrawPlacement";
 import DrawActionBar from "./components/DrawActionBar";
 import DrawSearchbar from "./components/DrawSearchbar";
 import DrawModalManager from "./components/DrawModalManager";
-import { useWindowWidth } from "@react-hook/window-size";
 
 const CreateDraw = () => {
-  const width = useWindowWidth();
+  const size = useWindowSize();
+  const width = size.width;
+
+  const methods = useForm();
 
   const searchParams = useSearchParams();
   const eventId = searchParams.get("eventId");
@@ -31,11 +35,11 @@ const CreateDraw = () => {
   const [showMenu, setShowMenu] = useState(true);
 
   const handleClick = useCallback(() => {
-    setShowMenu(!showMenu);
+    setShowMenu((prev) => !prev);
   }, []);
 
   return (
-    <div>
+    <FormProvider {...methods}>
       <div className="w-full bg-[#FAFBFF]">
         <DrawActionBar
           selectedDraw={selectedDraw}
@@ -69,7 +73,7 @@ const CreateDraw = () => {
         setActiveModal={setActiveModal}
         closeModal={closeModal}
       />
-    </div>
+    </FormProvider>
   );
 };
 export default CreateDraw;
