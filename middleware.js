@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function middleware(req) {
+  console.log("request: ", req);
   console.log("req: ", req.cookies.get("next-auth.session-token"));
   let token;
   if (req.cookies.get("next-auth.session-token")) {
