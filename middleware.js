@@ -7,7 +7,9 @@ export async function middleware(req) {
     token = req.cookies.get("next-auth.csrf-token").value;
   }
 
+  console.log("NEXT URL: ", req.nextUrl);
   const path = req.nextUrl.pathname;
+
   const isPublicPath = path === "/signin" || path === "/register";
 
   if (isPublicPath && token) {
@@ -15,6 +17,9 @@ export async function middleware(req) {
   }
 
   if (!isPublicPath && !token) {
+    console.log("redirectinh to the signin page............");
+    console.log("isPublicPath: ", isPublicPath);
+    console.log("TOken: ", token);
     return NextResponse.redirect(new URL("/signin", req.nextUrl));
   }
 }
