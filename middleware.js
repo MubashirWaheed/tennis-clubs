@@ -16,11 +16,11 @@ export async function middleware(req) {
 
   const isPublicPath = path === "/signin" || path === "/register";
 
-  if (isPublicPath && token) {
+  if (isPublicPath && test) {
     return NextResponse.redirect(new URL("/", req.nextUrl));
   }
 
-  if (!isPublicPath && !token) {
+  if (!isPublicPath && !test) {
     // console.log("redirectinh to the signin page............");
     // console.log("isPublicPath: ", isPublicPath);
     // console.log("TOken: ", token);
