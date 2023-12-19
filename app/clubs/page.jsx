@@ -7,8 +7,8 @@ import useProfileLocalStorage from "@/hooks/useProfileLocalStorage";
 import { useRouter } from "next/navigation";
 
 const Clubs = () => {
-  const router = useRouter();
-  const profilePresent = useProfileLocalStorage();
+  // const router = useRouter();
+  // const profilePresent = useProfileLocalStorage();
   console.log("PROFILE read from the local storage");
 
   const { data } = useSWR("/api/clubmembership", fetcher);
