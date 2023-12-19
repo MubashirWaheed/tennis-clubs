@@ -9,7 +9,11 @@ import { getProfile } from "@/lib/services/getProfile";
 
 const Home = async () => {
   const user = await getCurrentUser();
-  const profile = await getProfile(user.id);
+  let profile = null;
+  if (user) {
+    profile = await getProfile(user.id);
+  }
+  // const profile = await getProfile(user.id);
 
   console.log("profile in the home: ", profile);
 
