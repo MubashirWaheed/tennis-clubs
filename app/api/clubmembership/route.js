@@ -7,7 +7,7 @@ export async function GET(request) {
   const currentUser = await getCurrentUser();
 
   if (!currentUser || !currentUser.id) {
-    return NextResponse.error("user not found", { status: 400 });
+    return NextResponse.json("user not found", { status: 400 });
     // return NextResponse.error("User ID not found", { status: 400 });
   }
   const { id } = currentUser;

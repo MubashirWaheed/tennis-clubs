@@ -31,7 +31,7 @@ const Clubs = () => {
     <div className="flex items-start justify-center bg-[#FAFBFF] ">
       <div className="max-w-[900px] flex flex-col items-center w-full">
         <h2 className="text-[24px] py-[20px] text-[#3B2273] ">List of Clubs</h2>
-        {data?.length > 0 ? (
+        {clubsData && data?.length > 0 ? (
           <div className="flex flex-col gap-2 items-center w-full grow">
             {clubsData?.map((item, key) => {
               return (
