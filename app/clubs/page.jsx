@@ -12,6 +12,7 @@ const Clubs = () => {
   console.log("PROFILE read from the local storage");
 
   const { data } = useSWR("/api/clubmembership", fetcher);
+  console.log("data:", data);
 
   if (!data) return <p className="text-center text-[20px]">Loading...</p>;
 

@@ -17,9 +17,10 @@ const Header = () => {
   const [isMenuClicked, setIsMenuClicked] = useState(false);
   const [profileMenu, setProfileMenu] = useState(false);
 
+  let storedProfile = null;
   if (typeof window !== "undefined") {
     const storedProfileString = localStorage?.getItem("profile");
-    const storedProfile = JSON.parse(storedProfileString);
+    storedProfile = JSON.parse(storedProfileString);
   }
 
   const { storeProfile, profileCreated } = useProfileStore();
