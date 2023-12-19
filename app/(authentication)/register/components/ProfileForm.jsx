@@ -12,14 +12,14 @@ import React, { useState } from "react";
 import { useUserStore } from "@/hooks/useUser";
 import { FormProvider, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
+import { useProfileStore } from "@/hooks/useProfileStore";
 
 const ProfileForm = () => {
   const [disable, setDisable] = useState(false);
+  const { storeProfile } = useProfileStore();
 
   const { user } = useUserStore();
   const { push } = useRouter();
-
-  const [profilePicPreview, setProfilePicPreview] = useState("");
 
   const methods = useForm({
     defaultValues: {
@@ -40,13 +40,15 @@ const ProfileForm = () => {
   const submitPersonalInfo = async (data) => {
     setDisable(true);
     const response = await axios.post("/api/profile", { data });
+    const userProfileString = JSON.stringify(response.data);
+    storeProfile(response.data);
+
+    if (typeof window !== "undefined") {
+      localStorage.setItem("profile", userProfileString);
+    }
+
     setDisable(false);
     push("/claimprofile");
-  };
-
-  const handleUpload = (result) => {
-    setProfileImage(result?.info?.secure_url);
-    methods.setValue("profileURL", result?.info?.secure_url);
   };
 
   return (
@@ -73,36 +75,6 @@ const ProfileForm = () => {
                   />
                 )}
               </div>
-
-              {/* {profilePicPreview ? (
-                <Image
-                  width={92}
-                  height={92}
-                  alt="Profile Image"
-                  src={profileImage}
-                />
-              ) : (
-                <CldUploadWidget
-                  onUpload={handleUpload}
-                  uploadPreset="blgqlrqz"
-                  options={{
-                    maxFiles: 1,
-                  }}
-                >
-                  {({ open }) => {
-                    return (
-                      <>
-                        <input
-                          id="profilePicture"
-                          accept="image/*"
-                          className={styles.hiddenImageInput}
-                          onClick={() => open?.()}
-                        />
-                      </>
-                    );
-                  }}
-                </CldUploadWidget>
-              )} */}
             </label>
           </div>
 

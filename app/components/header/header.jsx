@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import "./navbar.css";
-import { useRouter } from "next/navigation";
 import ProfileMenu from "./profileMenu";
 import Logo from "./components/Logo";
 import Navbar from "./components/Navbar";
@@ -12,16 +11,19 @@ import ResponsiveMenu from "./components/ResponsiveMenu";
 import { useProfileStore } from "@/hooks/useProfileStore";
 
 const Header = () => {
-  // const router = useRouter();
   const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
 
   const [menu_class, setMenuClass] = useState("menu hide");
   const [isMenuClicked, setIsMenuClicked] = useState(false);
   const [profileMenu, setProfileMenu] = useState(false);
 
-  const { fetchProfile } = useProfileStore();
+  if (typeof window !== "undefined") {
+    const storedProfileString = localStorage?.getItem("profile");
+    const storedProfile = JSON.parse(storedProfileString);
+  }
 
-  // toggle burger menu change
+  const { storeProfile, profileCreated } = useProfileStore();
+
   const updateMenu = () => {
     if (!isMenuClicked) {
       setBurgerClass("burger-bar clicked");
@@ -33,19 +35,21 @@ const Header = () => {
     setIsMenuClicked(!isMenuClicked);
   };
 
-  // refactor this to seperate component
-  /* eslint-enable react-hooks/exhaustive-deps */
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("auth-user"));
-    // console.log("userId from the local storage: : ", data);
-    const { id } = data.state.user;
-    if (id) {
-      fetchProfile(id);
-    } else {
-      console.warn("User ID not found in local storage");
+    if (typeof window !== "undefined") {
+      const data = JSON.parse(localStorage.getItem("auth-user"));
+      const { id } = data.state.user;
+      if (id) {
+        try {
+          storeProfile(storedProfile);
+        } catch (error) {
+          console.log(error);
+        }
+      } else {
+        console.log("User ID not found in local storage");
+      }
     }
-  }, []);
-  /* eslint-enable react-hooks/exhaustive-deps */
+  }, [profileCreated]);
 
   return (
     <header className="bg-white z-30">
@@ -68,19 +72,16 @@ const Header = () => {
       </div>
 
       {profileMenu && (
-        // <div className={`${profileMenu ? "block" : "hidden"}`}>
-        <ProfileMenu
-          closeMenu={() => {
-            setProfileMenu((prev) => !prev);
-          }}
-        />
-        //  </div>
+        <div className={`${profileMenu ? "block" : "hidden"}`}>
+          <ProfileMenu
+            closeMenu={() => {
+              setProfileMenu((prev) => !prev);
+            }}
+          />
+        </div>
       )}
     </header>
   );
 };
 
 export default Header;
-
-// redirect the user if the profile not created
-// Where do I check if the has created the prodile or not

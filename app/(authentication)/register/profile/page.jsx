@@ -3,7 +3,6 @@ import { useCallback, useEffect, useState } from "react";
 import Modal from "@/components/ui/Modal/Modal";
 import profileJson from "./profile.json";
 import ProfileForm from "../components/ProfileForm";
-import useSWR from "swr";
 
 const ProfileInfo = () => {
   const [modal, setModal] = useState(false);

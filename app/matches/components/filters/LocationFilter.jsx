@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Button from "@/components/ui/buttons/PrimaryButton";
 import { Slider } from "@mui/material";

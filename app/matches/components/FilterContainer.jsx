@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import FilterConfig from "./FilterConfig";
 import SportsFilter from "./filters/SportsFilter";

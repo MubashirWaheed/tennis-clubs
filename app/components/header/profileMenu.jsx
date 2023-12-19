@@ -7,12 +7,14 @@ import { useRouter } from "next/navigation";
 import { useProfileStore } from "@/hooks/useProfileStore";
 
 const ProfileMenu = ({ closeMenu }) => {
-  // need to create the profile before accessing the sidebar
   const { profile } = useProfileStore();
   const router = useRouter();
 
-  if (!profile) return null;
-  console.log("PROFILE FROM STORE ", profile);
+  if (!profile) {
+    console.log(profile);
+    console.log("NO profile found ");
+    return null;
+  }
 
   const { id, firstName, lastName } = profile;
 
@@ -38,6 +40,11 @@ const ProfileMenu = ({ closeMenu }) => {
 
   const handleSignOutClick = async () => {
     await signOut();
+    // clear profile in local storage
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("profile");
+      localStorage.removeItem("auth-user");
+    }
     window.location.href = "/signin";
   };
 

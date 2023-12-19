@@ -1,4 +1,3 @@
-// import prisma from "@/lib/prismadb";
 import prisma from "@/lib/prismadb";
 import { getCurrentUser } from "@/lib/services/getCurrentUser";
 import { NextResponse } from "next/server";

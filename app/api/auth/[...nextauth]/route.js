@@ -40,6 +40,7 @@ export const authOptions = {
         if (!isCorrectPassword) {
           throw new Error("Invalid cred");
         }
+
         return user;
       },
     }),

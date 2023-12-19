@@ -3,7 +3,6 @@ import prisma from "@/lib/prismadb";
 
 export async function GET(request, { params }) {
   const { clubId } = params;
-  console.log("cludId: ", clubId);
 
   // include the events so that I can display them as well
   const data = await prisma.club.findUnique({

@@ -2,14 +2,18 @@
 import { fetcher } from "@/lib/utils/fetcher";
 import useSWR from "swr";
 import Link from "next/link";
+import { useEffect, useLayoutEffect } from "react";
+import useProfileLocalStorage from "@/hooks/useProfileLocalStorage";
+import { useRouter } from "next/navigation";
 
 const Clubs = () => {
+  const router = useRouter();
+  const profilePresent = useProfileLocalStorage();
+  console.log("PROFILE read from the local storage");
+
   const { data } = useSWR("/api/clubmembership", fetcher);
 
-  // Loadimng widget here
-  if (!data) {
-    return <p className="text-center text-[20px]">Loading...</p>; // You can replace this with a loading indicator or message
-  }
+  if (!data) return <p className="text-center text-[20px]">Loading...</p>;
 
   return (
     <div className="flex items-start justify-center bg-[#FAFBFF] ">

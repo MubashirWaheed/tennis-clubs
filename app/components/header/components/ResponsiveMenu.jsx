@@ -1,3 +1,5 @@
+"use client";
+import { useProfileStore } from "@/hooks/useProfileStore";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -14,6 +16,10 @@ const ResponsiveMenu = ({
   profileMenu,
   menu_class,
 }) => {
+  const { profile } = useProfileStore();
+  const isProfileValid = profile && Object.keys(profile).length !== 0;
+  console.log("PROFILE IN MENU", profile);
+  console.log("isProfileValid: ", isProfileValid);
   return (
     <nav className={`${menu_class}  flex flex-col gap-4 p-5 z-40`}>
       <div className="flex items-center justify-end gap-3">
@@ -47,7 +53,15 @@ const ResponsiveMenu = ({
       </div>
       <ul className="w-full h-full flex flex-col gap-7 items-end">
         {menuItems.map((item, index) => (
-          <Link key={index} href={item.href} onClick={updateMenu}>
+          <Link
+            key={index}
+            href={item.href}
+            onClick={() => {
+              console.log("link clicked");
+              updateMenu();
+              // }
+            }}
+          >
             <li className={styles.navItem}>{item.label}</li>
           </Link>
         ))}

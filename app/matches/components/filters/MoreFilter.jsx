@@ -1,3 +1,4 @@
+"use client";
 import { Slider } from "@mui/material";
 import Button from "@/components/ui/buttons/PrimaryButton";
 import Checkbox from "@/components/ui/buttons/Checkbox";

@@ -1,17 +1,19 @@
-// "use client";
 import JoinPlayerBTN from "../components/ui/buttons/PrimaryButton";
 import JoinClubBTN from "../components/ui/buttons/PrimaryButton";
 import Image from "next/image";
-// import { useRouter } from "next/navigation";
 import LoggedInHomeV2 from "./components/home/LoggedInHomeV2";
 import LoggedInHome from "./components/home/LoggedInHome";
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/services/getCurrentUser";
+import { getProfile } from "@/lib/services/getProfile";
 
 const Home = async () => {
-  let isLoggedIn = true;
   const user = await getCurrentUser();
-  // check if the user created the profile or not
+  const profile = await getProfile(user.id);
+
+  console.log("profile in the home: ", profile);
+
+  if (!profile) redirect("/register/profile");
 
   return (
     <div>

@@ -24,19 +24,21 @@ const RegisterForm = () => {
       const response = await axios.post("/api/register", data);
       console.log("response:", response.data);
 
-      const email = data.email;
-      const password = data.password;
+      const { email, password } = data;
 
       const result = await signIn("credentials", {
         email,
         password,
         redirect: false,
       });
+      console.log("RESULT registration: ", result);
       setUser(response.data);
 
       router.push("/register/profile");
+      router.refresh();
     } catch (error) {
       if (error) {
+        console.log(error);
         setEmailError("email already in use");
       }
     }

@@ -1,4 +1,5 @@
-import { useState } from 'react'
+"use client";
+import { useState } from "react";
 import ApplyButton from "@/components/ui/buttons/PrimaryButton";
 
 const EventSeriesFilter = () => {
@@ -75,8 +76,7 @@ const EventSeriesFilter = () => {
 
   // Handler for the Apply button
   const handleApplyClick = (event) => {
-        event.preventDefault();
-
+    event.preventDefault();
   };
 
   // Handler for the Clear button
@@ -89,7 +89,7 @@ const EventSeriesFilter = () => {
     setUtrProTennisTourSelected(false);
   };
 
-  return(
+  return (
     <div className="w-[300px] lg:w-[400px] flex flex-col items-stretch gap-[20px]">
       <div className="w-full flex items-center justify-between">
         <h5 className="h5 text-[#13013C]">Events Series</h5>
@@ -123,6 +123,6 @@ const EventSeriesFilter = () => {
       </form>
     </div>
   );
-}
+};
 
-export default EventSeriesFilter
+export default EventSeriesFilter;
