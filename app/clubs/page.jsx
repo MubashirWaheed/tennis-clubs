@@ -11,10 +11,21 @@ const Clubs = () => {
   // const profilePresent = useProfileLocalStorage();
   console.log("PROFILE read from the local storage");
 
-  const { data } = useSWR("/api/clubmembership", fetcher);
+  const { data, error } = useSWR("/api/clubmembership", fetcher);
   console.log("data:", data);
 
-  if (!data) return <p className="text-center text-[20px]">Loading...</p>;
+  if (error) {
+    // Handle error, for example, display an error message
+    return <p>Error loading data</p>;
+  }
+
+  if (!data) {
+    // Data is still loading
+    return <p className="text-center text-[20px]">Loading...</p>;
+  }
+
+  // Ensure that data is an array before attempting to map over it
+  const clubsData = Array.isArray(data) ? data : [];
 
   return (
     <div className="flex items-start justify-center bg-[#FAFBFF] ">
@@ -22,7 +33,7 @@ const Clubs = () => {
         <h2 className="text-[24px] py-[20px] text-[#3B2273] ">List of Clubs</h2>
         {data?.length > 0 ? (
           <div className="flex flex-col gap-2 items-center w-full grow">
-            {data?.map((item, key) => {
+            {clubsData?.map((item, key) => {
               return (
                 <Link
                   href={`/clubs/${item.club.id}`}
