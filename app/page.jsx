@@ -11,11 +11,14 @@ import { authOptions } from "./api/auth/[...nextauth]/route";
 
 const Home = async () => {
   const user = await getCurrentUser();
-  let profile = null;
 
   const session = await getServerSession(authOptions);
 
   if (!session || !session.user) return redirect("/signin");
+
+  const profile = await getProfile(session.user.id);
+
+  if (!profile) return redirect("/register/profile");
 
   return (
     <div>

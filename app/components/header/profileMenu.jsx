@@ -2,7 +2,6 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
 import { signOut, useSession } from "next-auth/react";
-import { fetcher } from "@/lib/utils/fetcher";
 import { useRouter } from "next/navigation";
 import { useProfileStore } from "@/hooks/useProfileStore";
 import axios from "axios";

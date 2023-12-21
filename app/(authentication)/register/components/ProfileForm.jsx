@@ -1,7 +1,6 @@
 "use client";
 import DropDown from "@/components/ui/inputFields/DropDown";
 import { dates, months, years } from "@/lib/utils/dataData";
-import { CldUploadWidget } from "next-cloudinary";
 import axios from "axios";
 import AutoComplete from "@/components/ui/inputFields/AutoComplete";
 import RadioGroup from "@/components/ui/inputFields/RadioGroup";

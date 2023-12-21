@@ -4,15 +4,18 @@ import useSWR from "swr";
 import Link from "next/link";
 import { useEffect, useLayoutEffect } from "react";
 import useProfileLocalStorage from "@/hooks/useProfileLocalStorage";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
+import { useProfileStore } from "@/hooks/useProfileStore";
 
 const Clubs = () => {
-  // const router = useRouter();
-  // const profilePresent = useProfileLocalStorage();
-  console.log("PROFILE read from the local storage");
+  const { data: session } = useSession();
+  const { profile } = useProfileStore();
+
+  if (!session) redirect("/signin");
+  if (!profile) redirect("/register/profile");
 
   const { data, error } = useSWR("/api/clubmembership", fetcher);
-  console.log("data:", data);
 
   if (error) {
     // Handle error, for example, display an error message
