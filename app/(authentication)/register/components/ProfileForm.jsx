@@ -19,7 +19,7 @@ const ProfileForm = () => {
   const { storeProfile } = useProfileStore();
 
   const { user } = useUserStore();
-  const { push } = useRouter();
+  const router = useRouter();
 
   const methods = useForm({
     defaultValues: {
@@ -39,16 +39,11 @@ const ProfileForm = () => {
 
   const submitPersonalInfo = async (data) => {
     setDisable(true);
+    // store profile in db
     const response = await axios.post("/api/profile", { data });
-    const userProfileString = JSON.stringify(response.data);
     storeProfile(response.data);
-
-    if (typeof window !== "undefined") {
-      localStorage.setItem("profile", userProfileString);
-    }
-
     setDisable(false);
-    push("/claimprofile");
+    router.push("/claimprofile");
   };
 
   return (

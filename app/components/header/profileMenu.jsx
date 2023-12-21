@@ -1,20 +1,36 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect } from "react";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { fetcher } from "@/lib/utils/fetcher";
 import { useRouter } from "next/navigation";
 import { useProfileStore } from "@/hooks/useProfileStore";
+import axios from "axios";
 
-const ProfileMenu = ({ closeMenu, profile }) => {
-  // const { profile } = useProfileStore();
+const ProfileMenu = ({ closeMenu }) => {
+  const { profile, storeProfile } = useProfileStore();
+
+  const { data: session } = useSession();
   const router = useRouter();
 
-  if (!profile) {
-    console.log(profile);
-    console.log("NO profile found ");
-    return null;
-  }
+  const fetchData = async (userId) => {
+    try {
+      console.log("reqeust made ");
+      const response = await axios.get(`/api/profile?userId=${userId}`);
+      console.log("response: ", response);
+      storeProfile(response.data);
+    } catch (error) {
+      console.error("Error fetching profile:", error);
+    }
+  };
+
+  useEffect(() => {
+    console.log("PROFILE IN EFFECT:", profile);
+    if (Object.keys(profile).length === 0) {
+      // make api request to get the profile
+      fetchData(session?.user?.id);
+    }
+  }, []);
 
   const { id, firstName, lastName } = profile;
 

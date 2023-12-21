@@ -23,59 +23,6 @@ const Header = () => {
 
   const { data: session } = useSession();
 
-  const fetchData = async (userId, setUserProfile) => {
-    try {
-      console.log("reqeust made ");
-      const response = await axios.get(`/api/profile?userId=${userId}`);
-      console.log("response: ", response);
-      setUserProfile(response.data);
-      localStorage.setItem("profile", JSON.stringify(response.data));
-    } catch (error) {
-      console.error("Error fetching profile:", error);
-    }
-  };
-
-  useEffect(() => {
-    const storedData =
-      typeof window !== "undefined" ? localStorage.getItem("profile") : null;
-    console.log("storedData: ", storedData);
-    console.log("session.user.id: ", session.user.id);
-
-    if (storedData == null) {
-      console.log("inside if ");
-      fetchData(session.user.id, setUserProfile);
-    } else {
-      setUserProfile(JSON.parse(storedData));
-    }
-    // const fetchData = async () => {
-    //   if (typeof window !== "undefined") {
-    //     const storedData = localStorage.getItem("profile");
-
-    //     if (!storedData) {
-    //       try {
-    //         console.log("helo");
-    //         const response = await axios.get(
-    //           `/api/profile?userId=${session.user.id}`
-    //         );
-    //         console.log("profile after fetch", response.data);
-    //         setUserProfile(response.data);
-    //         console.log(
-    //           "profile fetched in case not in the local storage",
-    //           response
-    //         );
-    //         localStorage.setItem("profile", JSON.stringify(response.data));
-    //       } catch (error) {
-    //         console.error("Error fetching profile:", error);
-    //       }
-    //     } else {
-    //       setUserProfile(JSON.parse(storedData));
-    //     }
-    //   }
-    // };
-
-    // fetchData();
-  }, []);
-
   const updateMenu = () => {
     if (!isMenuClicked) {
       setBurgerClass("burger-bar clicked");
@@ -110,7 +57,7 @@ const Header = () => {
       {profileMenu && (
         <div className={`${profileMenu ? "block" : "hidden"}`}>
           <ProfileMenu
-            profile={userProfile}
+            // profile={userProfile}
             closeMenu={() => {
               setProfileMenu((prev) => !prev);
             }}
