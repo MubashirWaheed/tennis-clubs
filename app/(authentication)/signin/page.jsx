@@ -1,8 +1,12 @@
-
 import Image from "next/image";
 import LogIn from "./components/LogIn";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { redirect } from "next/navigation";
 
-const LogInPage = () => {
+const LogInPage = async () => {
+  const session = await getServerSession(authOptions);
+  if (session || session?.user) return redirect("/");
   return (
     <main className="relative bg-[#3B2273] lg:px-[180px] md:px-[100px] py-[40px] lg:py-0 lg:h-[900px] flex flex-col lg:flex-row items-center gap-[54px]">
       <section className="relative flex flex-col items-start gap-[31px] px-[20px] lg:p-0">

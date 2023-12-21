@@ -26,6 +26,7 @@ const LogInForm = () => {
 
     if (!response.error) {
       router.push("/");
+      router.refresh();
     } else {
       const errorType = response.error.includes("password")
         ? "password"

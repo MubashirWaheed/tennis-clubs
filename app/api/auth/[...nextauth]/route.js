@@ -3,7 +3,6 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import bcrypt from "bcrypt";
-
 import prisma from "@/lib/prismadb";
 
 export const authOptions = {
@@ -40,7 +39,7 @@ export const authOptions = {
         if (!isCorrectPassword) {
           throw new Error("Invalid cred");
         }
-
+        console.log("USER IN THE authorize", user);
         return user;
       },
     }),
@@ -53,27 +52,28 @@ export const authOptions = {
     signIn: "/signin",
   },
 
-  // callbacks: {
-  //   // async signIn({ user, account }) {
-  //   // if (account.provider == "google") {
-  //   // } else if (account.provider == "credentials") {
-  //   //   return user;
-  //   // }
-  //   // },
-  //   async redirect({ url, baseUrl }) {
-  //     return baseUrl;
-  //   },
-  //   async session({ session, token }) {
-  //     session.user = token.user;
-  //     return session;
-  //   },
-  //   async jwt({ token, user }) {
-  //     if (user) {
-  //       token.user = user;
-  //     }
-  //     return token;
-  //   },
-  // },
+  // remove uncessary items in session
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+        token.email = user.email;
+        token.role = user.role;
+        token.onboarded = user.onboarded;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      session.user = token;
+      return session;
+    },
+    // async signIn({ user, account }) {
+    //   if (account.provider == "google") {
+    //   } else if (account.provider == "credentials") {
+    //     return user;
+    //   }
+    // },
+  },
 };
 
 const handler = NextAuth(authOptions);

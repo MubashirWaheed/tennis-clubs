@@ -6,8 +6,8 @@ import { fetcher } from "@/lib/utils/fetcher";
 import { useRouter } from "next/navigation";
 import { useProfileStore } from "@/hooks/useProfileStore";
 
-const ProfileMenu = ({ closeMenu }) => {
-  const { profile } = useProfileStore();
+const ProfileMenu = ({ closeMenu, profile }) => {
+  // const { profile } = useProfileStore();
   const router = useRouter();
 
   if (!profile) {

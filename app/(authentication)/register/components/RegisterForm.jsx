@@ -32,7 +32,7 @@ const RegisterForm = () => {
         redirect: false,
       });
       console.log("RESULT registration: ", result);
-      setUser(response.data);
+      // setUser(response.data);
 
       router.push("/register/profile");
       router.refresh();

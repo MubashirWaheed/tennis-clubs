@@ -2,9 +2,31 @@
 import Link from "next/link";
 import RegisterForm from "./components/RegisterForm";
 import Image from "next/image";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const RegisterAsAPlayer = () => {
+  const router = useRouter();
+  const { data, status } = useSession();
+  if (status == "authenticated") {
+    router.push("/register/profile");
+  }
+  console.log("user from the session: ", data);
+  // if (!test) return null;
+
+  // if (test?.data) {
+  //   console.log(test.data.user);
+  //   return router.push("/register/profile");
+  // }
+
+  useEffect(() => {
+    if (data) {
+      console.log(data.user);
+      router.push("/register/profile");
+    }
+  }, [data]);
+
   return (
     <section className={styles.formContainer}>
       <div className="p-[10px] md:p-[20px] lg:px-[37px] lg:py-[32px] w-full flex flex-col gap-[30px]">

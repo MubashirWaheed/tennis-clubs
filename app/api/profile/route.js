@@ -2,10 +2,10 @@ import prisma from "@/lib/prismadb";
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/services/getCurrentUser";
 
+// /api/getProfile?userId=<userId>
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const userId = searchParams.get("userId");
-  // console.log("userId: ", userId);
 
   const data = await prisma.profile.findUnique({
     where: {

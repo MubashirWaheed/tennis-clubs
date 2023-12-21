@@ -12,18 +12,18 @@ export async function middleware(req) {
 
   const isPublicPath = path === "/signin" || path === "/register";
 
-  if (isPublicPath && test) {
-    return NextResponse.redirect(new URL("/", req.nextUrl));
-  }
+  // if (isPublicPath && test) {
+  //   return NextResponse.redirect(new URL("/", req.nextUrl));
+  // }
 
-  if (!isPublicPath && !test) {
-    // console.log("redirectinh to the signin page............");
-    // console.log("isPublicPath: ", isPublicPath);
-    // console.log("TOken: ", token);
-    return NextResponse.redirect(new URL("/signin", req.nextUrl));
-  }
+  // if (!isPublicPath && !test) {
+  //   // console.log("redirectinh to the signin page............");
+  //   // console.log("isPublicPath: ", isPublicPath);
+  //   // console.log("TOken: ", token);
+  //   return NextResponse.redirect(new URL("/signin", req.nextUrl));
+  // }
 }
 
-export const config = {
-  matcher: ["/register", "/signin", "/", "/events", "/register/:path*"],
-};
+// export const config = {
+//   matcher: ["/register", "/signin", "/", "/events", "/register/:path*"],
+// };

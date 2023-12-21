@@ -6,18 +6,16 @@ import LoggedInHome from "./components/home/LoggedInHome";
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/services/getCurrentUser";
 import { getProfile } from "@/lib/services/getProfile";
+import { getServerSession } from "next-auth";
+import { authOptions } from "./api/auth/[...nextauth]/route";
 
 const Home = async () => {
   const user = await getCurrentUser();
   let profile = null;
-  if (user) {
-    profile = await getProfile(user.id);
-  }
-  // const profile = await getProfile(user.id);
 
-  console.log("profile in the home: ", profile);
+  const session = await getServerSession(authOptions);
 
-  if (!profile) redirect("/register/profile");
+  if (!session || !session.user) return redirect("/signin");
 
   return (
     <div>
