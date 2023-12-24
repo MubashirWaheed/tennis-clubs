@@ -17,7 +17,7 @@ const DropDown = ({ id, label, options, size, showDefaultOption }) => {
 
   return (
     <div className="py-[10px] px-[3px] w-full ">
-      <div className=" bg-[#fafbff] rounded-xl border-[1px]">
+      <div className="bg-[#fafbff] rounded-xl border-[1px]">
         <label
           {...register(id)}
           htmlFor={`dropdown-${label}`}
@@ -42,6 +42,10 @@ const DropDown = ({ id, label, options, size, showDefaultOption }) => {
             } lh18 cursor-pointer focus:ring-0 focus:outline-none  bg-none bg-[#fafbff] pt-[10px]  outline-none  text-[#05192C] text-sm rounded-xl border-0 block w-full`}
           >
             {showDefaultOption && <option key="default" value=""></option>}
+            {console.log(
+              "in the auto fill these options are passed to the each dropdown",
+              options
+            )}
             {Array.isArray(options)
               ? options.map((item, index) => (
                   <option

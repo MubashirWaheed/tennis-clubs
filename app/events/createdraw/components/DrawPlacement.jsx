@@ -6,7 +6,6 @@ import AutoFillPanel from "./subcomponents/AutoFillPanel";
 import SortingPanel from "./subcomponents/SortingPanel";
 
 const DrawPlacement = ({ selectedDraw, width, handleClick, showMenu }) => {
-  console.log("inside teh placement", width);
   const [playerDraw, setPlayerDraw] = useState();
 
   return (

@@ -13,6 +13,7 @@ const Home = async () => {
   const user = await getCurrentUser();
 
   const session = await getServerSession(authOptions);
+  console.log("session in the home route:".session);
 
   if (!session || !session.user) return redirect("/signin");
 

@@ -43,6 +43,7 @@ const ProfileForm = () => {
     storeProfile(response.data);
     setDisable(false);
     router.push("/claimprofile");
+    router.refresh();
   };
 
   return (

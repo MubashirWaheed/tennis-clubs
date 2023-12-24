@@ -18,8 +18,7 @@ const ResponsiveMenu = ({
 }) => {
   const { profile } = useProfileStore();
   const isProfileValid = profile && Object.keys(profile).length !== 0;
-  console.log("PROFILE IN MENU", profile);
-  console.log("isProfileValid: ", isProfileValid);
+
   return (
     <nav className={`${menu_class}  flex flex-col gap-4 p-5 z-40`}>
       <div className="flex items-center justify-end gap-3">

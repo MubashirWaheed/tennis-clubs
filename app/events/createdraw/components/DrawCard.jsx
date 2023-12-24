@@ -1,13 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import PlayerInput from "@/components/ui/inputFields/AutoComplete";
-import ScoreInput from "@/components/ui/inputFields/TextField";
 import DropDown from "@/components/ui/inputFields/DropDown";
 import { FormProvider, useForm } from "react-hook-form";
 
 const DrawCard = ({ id, playerOptions, showDefaultOption }) => {
-  // const [matchPlayers, setMatchPlayers] = useState();
-
   return (
     <div className="shadow-lg bg-white   mx-[10px] my-[20px] ">
       <div className="px-[15px] py-[10px]">
