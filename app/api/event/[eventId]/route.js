@@ -11,6 +11,7 @@ export async function GET(request, { params }) {
     },
     include: {
       club: true,
+      divisions: true,
     },
   });
   console.log("DATA from the event id: ", data);

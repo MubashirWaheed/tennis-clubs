@@ -5,12 +5,12 @@ import InputField from "@/components/ui/inputFields/TextField";
 import AutoComplete from "@/components/ui/inputFields/AutoComplete";
 import { FormProvider, useForm } from "react-hook-form";
 
-const EditPlayersModal = ({ setActiveModal }) => {
+const EditPlayersModal = ({ setActiveModal, closeModal }) => {
   const methods = useForm();
   return (
     <div className="block">
       <FormProvider {...methods}>
-        <Modal heading="Edit Draws" closeModal={() => setActiveModal(null)}>
+        <Modal heading="Edit Draws" closeModal={() => closeModal(null)}>
           <div className="my-[20px] flex flex-col gap-2">
             <InputField label="Draw Name" />
             <AutoComplete label="Draw Size" />

@@ -9,13 +9,14 @@ import DivisionInfo from "../components/paymentWorkFlow/DivisionInfo";
 import DivisionInfo2 from "../components/paymentWorkFlow/DvisionInfo2";
 import { useRouter, usePathname } from "next/navigation";
 import useSWR from "swr";
-import { fetcherWithId } from "@/lib/utils/fetcher";
+import { fetcher } from "@/lib/utils/fetcher";
 import axios from "axios";
 
 const EventInfo = () => {
   const patheName = usePathname();
   const eventId = patheName.split("/")[4];
-
+  console.log("eventId: ", eventId);
+  const { data } = useSWR(`/api/event/${eventId}`, fetcher);
   const [eventData, setEventData] = useState(null);
   const [togglePaymentbar, setTogglePaymentbar] = useState(false);
   const [panelStack, setPanelStack] = useState(["updgradeToPower"]);
@@ -79,25 +80,6 @@ const EventInfo = () => {
     }
   };
 
-  // GET DATA FOR THE EVENT
-  useEffect(() => {
-    const getEventData = async () => {
-      try {
-        const response = await axios.get(`/api/event/${eventId}`);
-        console.log("response: ", response);
-
-        // Assuming the data you want is in response.data
-        setEventData(response.data);
-
-        console.log("data:", response.data);
-      } catch (error) {
-        console.error("Error fetching event data:", error);
-      }
-    };
-
-    getEventData();
-  }, []);
-
   useEffect(() => {
     if (togglePaymentbar) {
       document.body.classList.add("fixed", "overflow-hidden");
@@ -105,6 +87,11 @@ const EventInfo = () => {
       document.body.classList.remove("fixed", "overflow-hidden");
     }
   }, [togglePaymentbar]);
+
+  console.log("DATA FOR THE EVENT: ", data);
+  if (!data) return <div>Loading...</div>;
+
+  const { eventName, club, divisions } = data;
 
   return (
     <div>
@@ -114,11 +101,11 @@ const EventInfo = () => {
             <div className="flex gap-4 items-center">
               <div className="flex flex-col">
                 <p className="text-green fw700">
-                  {eventData?.club.clubName}
+                  {club.clubName}
                   {/* HRT ACADEMIA DE TENIS */}
                 </p>
                 <h2 className="text-start text-[24px] md:text-4xl f-Abril text-[#13013C]  md:mt-[10px] ">
-                  {eventData?.eventName}
+                  {eventName}
                   {/* HRT Spring Legend Series 2/7 - Junior Circuit Boys/girls */}
                 </h2>
               </div>
@@ -158,21 +145,32 @@ const EventInfo = () => {
           </div>
 
           <div className="basis-1.5/3 grow flex flex-col gap-2">
-            <h5 className="fw700 text-darkPurple f24">2 Divisions</h5>
-            {/* card */}
-            <div className="flex justify-between px-[20px] gap-[10px] items-center w-full bg-white mt-[0px] md:mt-[18px] h-[83px] shadow-md rounded-[10px]">
-              <div className="flex flex-col">
-                <p className="fw700 text-lg text-darkPurple">
-                  Coed Singles UTR 3-4.99
-                </p>
-                <p className="text-grey fw700 mt-[3px]">10/12 registered</p>
-              </div>
-              <p className="text-darkPurple fw700">
-                <span className="line-through text-grey">$72</span> / $60
-              </p>
-            </div>
+            <h5 className="fw700 text-darkPurple f24">
+              {divisions.length === 1
+                ? `${divisions.length} Division`
+                : `${divisions.length} Divisions`}
+            </h5>
 
-            <div className="md:mb-[100px] flex justify-between px-[20px] gap-[10px] items-center w-full bg-white mt-[0px] md:mt-[18px] h-[83px] shadow-md rounded-[10px]">
+            {divisions.map((division) => {
+              return (
+                <div className="flex justify-between px-[20px] gap-[10px] items-center w-full bg-white mt-[0px] md:mt-[18px] h-[83px] shadow-md rounded-[10px]">
+                  <div className="flex flex-col">
+                    <p className="fw700 text-lg text-darkPurple">
+                      {division.divisionName}
+                    </p>
+                    <p className="text-grey fw700 mt-[3px]">10/12 registered</p>
+                  </div>
+                  <p className="text-darkPurple fw700">
+                    <span className="line-through text-grey">$72</span> / $
+                    {division.entryFee}
+                  </p>
+                </div>
+              );
+            })}
+
+            {/* card */}
+
+            {/* <div className="md:mb-[100px] flex justify-between px-[20px] gap-[10px] items-center w-full bg-white mt-[0px] md:mt-[18px] h-[83px] shadow-md rounded-[10px]">
               <div className="flex flex-col">
                 <p className="fw700 text-lg text-darkPurple">
                   Coed Singles UTR 3-4.99
@@ -182,7 +180,7 @@ const EventInfo = () => {
               <p className="text-darkPurple fw700">
                 <span className="line-through text-grey">$72</span> / $60
               </p>
-            </div>
+            </div> */}
 
             <RegisterButton
               onClick={() => setTogglePaymentbar(true)}
@@ -200,7 +198,7 @@ const EventInfo = () => {
       </section>
 
       {togglePaymentbar && <div>{renderPanel()}</div>}
-      <Tab eventData={eventData} />
+      <Tab eventData={data} />
     </div>
   );
 };

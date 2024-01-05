@@ -6,7 +6,19 @@ import { useState } from "react";
 import { Slider } from "@mui/material";
 import Image from "next/image";
 
+import { useFormContext } from "react-hook-form";
+import DivisionDetails from "../../createevent/components/DivisionDetails";
+import DivisionOptions from "../../createevent/components/DivisionOptions";
+import { useFieldArray } from "react-hook-form";
+
 const Divisions = ({ onNext }) => {
+  const { getValues, control } = useFormContext();
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "divisions",
+  });
+
+  // const [divisions, setDivisions] = useState(1);
   const [value, setValue] = useState([20, 37]);
 
   const [rangeValues, setRangeValues] = useState({
@@ -27,98 +39,55 @@ const Divisions = ({ onNext }) => {
 
   return (
     <section className="mt-[50px]">
-      <div className=" rounded-xl border-[1px] border-[#e6e6e6 ] ">
-        <div className="bg-[#E8EFF7] rounded-xl pl-[25px] py-[20px]">
-          <p className="text-[#13013C] fw700">Division</p>
-        </div>
-        <div className="mx-[30px] flex flex-col gap-4 mt-[20px] pb-[30px] ">
-          <InputField
-            id="divisionName"
-            label="Divisions Name"
-            value="Tom Clancy's The Divison"
-            type="text"
-          />
-          <div className="flex flex-col md:flex-row gap-4">
-            <InputField
-              id="format"
-              label="Format"
-              value="Singles"
-              type="text"
+      {fields.map((field, index) => {
+        return (
+          <div key={field.id}>
+            <DivisionDetails
+              id={`divisions.${index}.divisionName`}
+              format={`divisions.${index}.format`}
+              gender={`divisions.${index}.gender`}
+              entryFee={`divisions.${index}.entryFee`}
             />
-            <InputField id="gender" label="Gender" value="Males" type="text" />
-            <InputField
-              id="entryFee"
-              label="Entry Fee"
-              value="$1211"
-              type="text"
+            <DivisionOptions
+              maxPlayers={`divisions.${index}.maxPlayers`}
+              officals={`divisions.${index}.officals`}
+              coaching={`divisions.${index}.coaching`}
+              drawType={`divisions.${index}.drawType`}
+              formatType={`divisions.${index}.formatType`}
+              value={value}
             />
           </div>
-        </div>
-      </div>
-      {/* second one */}
-      <div className="rounded-xl mt-[30px] border-[1px] border-[#e6e6e6 ] mb-[20px] ">
-        <div className="bg-[#E8EFF7] rounded-xl pl-[25px] py-[20px]">
-          <p className="text-[#13013C] fw700">Division Options (Optional)</p>
-        </div>
-        <div className="mx-[30px] flex flex-col  gap-4 mt-[20px] pb-[30px] ">
-          <div className="flex gap-4">
-            <DropDownInput label="Draw Type" value="Tom Clancy's The Divison" />
-            <DropDownInput label="Format" value="Singles" />
-          </div>
-          {/* sliders here */}
-          <div className="flex gap-4">
-            <div className="flex flex-col w-full">
-              <p>UTR</p>
-              <Slider
-                sx={silderStyles}
-                defaultValue={30}
-                aria-label="Default"
-                valueLabelDisplay="auto"
-              />
-            </div>
-            <div className="flex flex-col w-full">
-              <p>Age</p>
-              <Slider
-                sx={silderStyles}
-                getAriaLabel={() => "Temperature range"}
-                value={value}
-                onChange={handleChange}
-                valueLabelDisplay="auto"
-              />
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row gap-4 ">
-            <InputField
-              id="maxPlayers"
-              label="Max Players"
-              // value="Singles"
-              type="text"
-            />
-            <InputField id="coaching" label="Coaching" type="text" />
-            <InputField
-              id="officals"
-              label="Officals"
-              value="$1211"
-              type="text"
-            />
-          </div>
-        </div>
-      </div>
-      <div className="flex gap-3 items-center">
-        {/* create resuable add button */}
+        );
+      })}
+
+      <div className="  flex gap-3 items-center justify-start">
         <button
-          className="border-green border-[1px] p-[5px] rounded-md ml-[5px]"
-          src="/add-icon.svg"
+          type="button"
+          onClick={() =>
+            append({
+              divisionName: "",
+              format: "",
+              gender: "",
+              entryFee: "",
+            })
+          }
+          className="cursor-pointer flex items-center gap-[5px] py-[5px] pr-[5px]"
         >
-          <Image
-            src="/add-icon-green.svg"
-            alt="add icon"
-            width={20}
-            height={20}
-          />
+          <div
+            className=" flex items-center gap-[10px] border-green border-[1px]  p-[5px] rounded-md ml-[5px]"
+            src="/add-icon.svg"
+          >
+            <Image
+              src="/add-icon-green.svg"
+              alt="add icon"
+              width={20}
+              height={20}
+            />
+          </div>
+          <p className="text-darkPurple fw700">Add More Divisions</p>
         </button>
-        <p className="text-darkPurple fw700">Add More Divisions</p>
       </div>
+
       <div className="flex place-content-end">
         <NextButton size="small" onClick={onNext}>
           Next
@@ -128,12 +97,3 @@ const Divisions = ({ onNext }) => {
   );
 };
 export default Divisions;
-
-const silderStyles = {
-  "& .MuiSlider-thumb": {
-    color: "#027333",
-  },
-  "& .MuiSlider-track": {
-    color: "#027333",
-  },
-};

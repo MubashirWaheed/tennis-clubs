@@ -37,6 +37,7 @@ export const MODAL_TYPES = {
   EDIT: "edit",
   MESSAGE: "message",
   CREATE_DRAW: "createDraw",
+  ADD_TO_DRAW: "addToDraw",
 };
 
 export const secondRoundPlayers = [
@@ -61,37 +62,12 @@ export const secondRoundPlayers = [
 ];
 
 export const registeredPlayers = [
-  {
-    name: "Foo",
-    location: "New York",
-  },
-  {
-    name: "Bar",
-    location: "New York",
-  },
-
-  {
-    name: "doe",
-    loaction: "New York ",
-  },
-  {
-    name: "ben",
-    location: "dc",
-  },
-  {
-    name: "sara",
-    location: "dc",
-  },
-  {
-    name: "joe",
-    location: "dc",
-  },
-  {
-    name: "Buz",
-    location: "New York",
-  },
-  {
-    name: "John",
-    location: "New York",
-  },
+  { id: "1", name: "Foo", location: "New York" },
+  { id: "2", name: "Bar", location: "New York" },
+  { id: "3", name: "doe", location: "New York" },
+  { id: "4", name: "ben", location: "dc" },
+  { id: "5", name: "sara", location: "dc" },
+  { id: "6", name: "joe", location: "dc" },
+  { id: "7", name: "Buz", location: "New York" },
+  { id: "8", name: "John", location: "New York" },
 ];

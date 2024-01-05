@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import useSWR from "swr";
 import { fetcher } from "@/lib/utils/fetcher";
+import useMenuStore from "./useSideMenuStore";
 
 const useDrawData = (eventId) => {
-  const [selectedDraw, setSelectedDraw] = useState([]);
+  const menuStore = useMenuStore();
 
   const { data, error } = useSWR(
     `/api/event/createDraw?eventId=${eventId}`,
@@ -12,7 +13,7 @@ const useDrawData = (eventId) => {
 
   useEffect(() => {
     if (data && data.length > 0) {
-      setSelectedDraw(data[0]);
+      menuStore.setSelectedDraw(data[0]);
     }
   }, [data]);
 
@@ -20,8 +21,6 @@ const useDrawData = (eventId) => {
     data,
     isLoading: !error && !data,
     error,
-    selectedDraw,
-    setSelectedDraw,
   };
 };
 

@@ -11,7 +11,6 @@ const DropDown = ({ id, label, options, size, showDefaultOption }) => {
 
   const handleSelectChange = (event) => {
     const selectedValue = event.target.value;
-    console.log("selectedValue: ", selectedValue);
     setValue(id, selectedValue);
   };
 
@@ -42,14 +41,12 @@ const DropDown = ({ id, label, options, size, showDefaultOption }) => {
             } lh18 cursor-pointer focus:ring-0 focus:outline-none  bg-none bg-[#fafbff] pt-[10px]  outline-none  text-[#05192C] text-sm rounded-xl border-0 block w-full`}
           >
             {showDefaultOption && <option key="default" value=""></option>}
-            {console.log(
-              "in the auto fill these options are passed to the each dropdown",
-              options
-            )}
+
             {Array.isArray(options)
               ? options.map((item, index) => (
                   <option
                     key={index}
+                    // value={defaultValue}
                     value={typeof item === "object" ? item.name : item}
                   >
                     {typeof item === "object" ? item.name : item}

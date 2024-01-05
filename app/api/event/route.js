@@ -2,21 +2,19 @@ import prisma from "@/lib/prismadb";
 import { getCurrentUser } from "@/lib/services/getCurrentUser";
 import { NextResponse } from "next/server";
 
-// GET
+// GET the event data
 export async function GET(request) {
   return NextResponse.json("data form get handler");
 }
 
 // POST
+// How do I figure out how many divisions the admin created on the frontend
 export async function POST(request) {
   const { data, clubId } = await request.json();
 
   const {
-    divisionName,
-    entryFee,
-    gender,
-    maxPlayers,
-    format,
+    divisions,
+    // maxPlayers,
     eventName,
     eventLocation,
     email,
@@ -29,8 +27,8 @@ export async function POST(request) {
     eventBeginTime,
     eventEndDate,
     eventEndTime,
-    coaching,
-    officals,
+    // coaching,
+    // officals,
     publishedDate,
     publishedTime,
   } = data;
@@ -51,40 +49,43 @@ export async function POST(request) {
         eventBeginTime,
         eventEndDate,
         eventEndTime,
-        coaching,
-        officals,
-        maxPlayers,
+        // coaching,
+        // officals,
+        // maxPlayers,
         publishedDate,
         publishedTime,
       },
     }),
-    prisma.division.create({
-      data: {
-        divisionName,
-        entryFee: entryFee,
-        gender: gender,
-        format: format,
-      },
-    }),
+    ...divisions.map((division) =>
+      prisma.division.create({
+        data: {
+          divisionName: division.divisionName,
+          entryFee: division.entryFee,
+          gender: division.gender,
+          format: division.format,
+          formatType: division.formatType,
+          coaching: division.coaching,
+          maxPlayers: division.maxPlayers,
+          officals: division.officals,
+        },
+      })
+    ),
   ]);
 
   const event = result[0];
-  const division = result[1];
+  const createdDivision = result.slice(1);
 
   // Link the division to the event
   await prisma.event.update({
     where: { id: event.id },
     data: {
       divisions: {
-        connect: {
-          id: division.id,
-        },
+        connect: createdDivision.map((division) => ({ id: division.id })),
       },
     },
   });
 
   console.log("DATA IN THE BACKEND:", data);
-  console.log("EVENT CREATED: ", { ...event, ...division });
 
-  return NextResponse.json({ ...event, ...division });
+  return NextResponse.json({ ...event, division: createdDivision });
 }

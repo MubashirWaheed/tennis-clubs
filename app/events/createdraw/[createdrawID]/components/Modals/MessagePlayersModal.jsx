@@ -4,14 +4,18 @@ import TextArea from "@/components/ui/inputFields/TextArea";
 import Modal from "@/components/ui/Modal/Modal";
 import { FormProvider, useForm } from "react-hook-form";
 
-const MessagePlayersModal = ({ messageModal, handleMessageModal }) => {
+const MessagePlayersModal = ({
+  messageModal,
+  handleMessageModal,
+  closeModal,
+}) => {
   const methods = useForm();
   return (
     <div className="block">
       <FormProvider {...methods}>
         <Modal
           heading="Message Players In Doubles Draw"
-          closeModal={handleMessageModal}
+          closeModal={() => closeModal(null)}
         >
           <div className="flex flex-col gap-2">
             <p className="f14 fw700 text-darkPurple">

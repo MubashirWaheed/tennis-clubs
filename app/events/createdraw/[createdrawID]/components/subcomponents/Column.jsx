@@ -7,12 +7,12 @@ import { useEffect } from "react";
 const Column = ({ secondRoundPlayers }) => {
   const methods = useForm();
   const watchedValuesColumn2 = methods.watch();
-  useEffect(() => {
-    const testFunc = () => {
-      console.log("VALUES IN THE FORM: ", methods.getValues());
-    };
-    testFunc();
-  }, [watchedValuesColumn2]);
+  // useEffect(() => {
+  //   const testFunc = () => {
+  //     // console.log("VALUES IN THE FORM: ", methods.getValues());
+  //   };
+  //   // testFunc();
+  // }, [watchedValuesColumn2]);
 
   return (
     <div>

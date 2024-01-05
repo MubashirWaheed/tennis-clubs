@@ -7,7 +7,7 @@ import AutoComplete from "@/components/ui/inputFields/AutoComplete";
 import DropDown from "@/components/ui/inputFields/DropDown";
 import { FormProvider, useForm } from "react-hook-form";
 import axios from "axios";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useSWRConfig } from "swr";
 
 import {
@@ -19,9 +19,9 @@ import {
   // drawsizeOptions,
   roundRobinDrawSizeOptions,
   compassDrawSizeOptions,
-} from "../constants/constants.js";
+} from "../../constants/constants.js";
 
-const CreateDrawModal = ({ setActiveModal }) => {
+const CreateDrawModal = ({ setActiveModal, closeModal }) => {
   const { mutate } = useSWRConfig();
   const [drawSizeOptions, setDrawSizeOptions] = useState(
     compassDrawSizeOptions
@@ -29,12 +29,10 @@ const CreateDrawModal = ({ setActiveModal }) => {
   // lets store this
   const methods = useForm();
   const searchParams = useSearchParams();
+  const pathName = usePathname();
+  const eventId = pathName.split("/")[3];
   const [disable, setDisable] = useState(false);
 
-  let eventId = null;
-  eventId = searchParams.get("eventId");
-
-  // handle form submisison
   const onSubmit = async () => {
     console.log("form submitted");
     const formData = methods.getValues();
@@ -49,7 +47,7 @@ const CreateDrawModal = ({ setActiveModal }) => {
       console.log("RESULT STATUS: ", result.status);
       // Check if the POST request was successful
       if (result.status === 200) {
-        setActiveModal(null);
+        closeModal(null);
         // handleCreateDrawModal();
         mutate(`/api/event/createDraw?eventId=${eventId}`);
       } else {
@@ -90,7 +88,7 @@ const CreateDrawModal = ({ setActiveModal }) => {
       <Modal
         className="py-[20px]"
         heading="Create Draws"
-        closeModal={() => setActiveModal(null)}
+        closeModal={() => closeModal(null)}
       >
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)}>

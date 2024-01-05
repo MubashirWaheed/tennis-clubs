@@ -1,16 +1,22 @@
-const Card = () => {
+const Card = ({ division }) => {
+  console.log("inside the card:", division);
+  const { divisionName, entryFee, format, gender } = division;
   return (
-    <div className="flex flex-col bg-white shadow-lg  my-[20px] rounded-2xl">
-      <div className=" p-[25px] ">
+    <div className=" max-w-[370px] w-full flex flex-col bg-white shadow-lg my-[20px] rounded-2xl">
+      <div className="p-[25px]">
         <div className="flex justify-between items-center">
-          <h4 className="fw700 f20 text-darkPurple">Coed Singles UTR 3-4.99</h4>
+          <h4 className="fw700 f20 text-darkPurple">
+            {divisionName}
+            {/* Coed Singles UTR 3-4.99 */}
+          </h4>
           <p className="text-darkPurple fw700">
-            <span className="text-grey line-through">$72 </span>/ $60
+            <span className="text-grey line-through">$72 </span>/ ${entryFee}
           </p>
         </div>
         <div className="mt-[10px]">
           <p className="text-grey f400 f16">
-            First Match Backdraw, Two Sets W/ Match Tiebreaker
+            {format}
+            {/* First Match Backdraw, Two Sets W/ Match Tiebreaker */}
             <br />
             Officials
             <br />
@@ -33,7 +39,10 @@ const Card = () => {
         </div>
         <div>
           <p className="text-grey f14 f700">Gender</p>
-          <p className="text-darkPurple f14 fw700">Co-ed</p>
+          <p className="text-darkPurple f14 fw700">
+            {gender}
+            {/* Co-ed */}
+          </p>
         </div>
       </div>
     </div>

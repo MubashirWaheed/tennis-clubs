@@ -8,7 +8,7 @@ const Modal = ({ heading, children, closeModal }) => {
         <div className="flex place-content-end">
           <div
             onClick={closeModal}
-            className="px-[6px] py-[6px] mb-[5px]  rounded-full bg-[#e7e6eb]"
+            className="cursor-pointer px-[6px] py-[6px] mb-[5px]  rounded-full bg-[#e7e6eb]"
           >
             <Image
               src="/close.svg"

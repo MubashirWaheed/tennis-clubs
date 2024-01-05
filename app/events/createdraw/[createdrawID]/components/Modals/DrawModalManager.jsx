@@ -3,29 +3,30 @@ import PublishModal from "./PublishModal";
 import EditPlayersModal from "./EditPlayersModal";
 import MessagePlayersModal from "./MessagePlayersModal";
 import CreateDrawModal from "./CreateDrawModal";
+import AddToDrawModal from "./AddToDrawModal";
 
-const DrawModalManager = ({
-  activeModal,
-  MODAL_TYPES,
-  setActiveModal,
-  closeModal,
-}) => {
+const DrawModalManager = ({ activeModal, MODAL_TYPES, closeModal }) => {
+  // get the list of players that are stored int the hook
   return (
     <section>
       {activeModal === MODAL_TYPES.PUBLISH && (
-        <PublishModal setActiveModal={setActiveModal} />
+        <PublishModal closeModal={closeModal} />
       )}
 
       {activeModal === MODAL_TYPES.EDIT && (
-        <EditPlayersModal setActiveModal={setActiveModal} />
+        <EditPlayersModal closeModal={closeModal} />
       )}
 
       {activeModal === MODAL_TYPES.MESSAGE && (
-        <MessagePlayersModal handleMessageModal={closeModal} />
+        <MessagePlayersModal closeModal={closeModal} />
       )}
 
       {activeModal === MODAL_TYPES.CREATE_DRAW && (
-        <CreateDrawModal setActiveModal={setActiveModal} />
+        <CreateDrawModal closeModal={closeModal} />
+      )}
+
+      {activeModal === MODAL_TYPES.ADD_TO_DRAW && (
+        <AddToDrawModal closeModal={closeModal} />
       )}
     </section>
   );

@@ -10,7 +10,11 @@ export async function GET(request, { params }) {
       id: clubId,
     },
     include: {
-      events: true,
+      events: {
+        include: {
+          divisions: true,
+        },
+      },
     },
   });
   // console.log("DATA FOR TEH CLUB ", data);

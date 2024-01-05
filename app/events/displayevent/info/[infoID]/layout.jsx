@@ -13,10 +13,7 @@ const EventInfoLayout = ({ children }) => {
   const patheName = usePathname();
   console.log("patheName: ", patheName.split("/")[4]);
   const eventId = patheName.split("/")[4];
-  // fetch data using the swr
-  // here get the id of the draw
-  // get the event details and display here dynamically from the database
-  const testid = 356;
+
   const router = useRouter();
   return (
     <div>
@@ -42,9 +39,7 @@ const EventInfoLayout = ({ children }) => {
               className="flex-nowrap"
               size="small"
               // here the id of event will go
-              onClick={() =>
-                router.push(`/events/createdraw?eventId=${eventId}`)
-              }
+              onClick={() => router.push(`/events/createdraw/${eventId}`)}
             >
               Create Draw
             </CreateDrawBtn>

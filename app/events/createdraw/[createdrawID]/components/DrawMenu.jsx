@@ -1,28 +1,33 @@
 import Image from "next/image";
-
+import Link from "next/link";
+import useMenuStore from "../hooks/useSideMenuStore";
+import { MODAL_TYPES } from "../constants/constants";
+import { usePathname } from "next/navigation";
 const DrawMenu = ({
-  setSelectedDraw,
-  drawsList,
+  handleDrawSelect,
   showDrawMenu,
+  drawsList,
   setShowDrawMenu,
   openModal,
-  MODAL_TYPES,
+  divisions,
+  setSelectedDivision,
 }) => {
-  const handleDrawSelect = (selectedDraw) => {
-    setSelectedDraw(selectedDraw);
-  };
+  const pathname = usePathname();
+  const eventId = pathname.split("/")[3];
+
+  const something = useMenuStore();
 
   return (
     <>
       <div
-        className={` ${
+        className={`${
           showDrawMenu
             ? "bg-purple md:flex bg-opacity-70 z-40 fixed top-0 left-0 bottom-0 right-0"
             : "hidden"
         }  hidden`}
       >
         <div
-          className={` px-[30px] bg-white md:w-[350px] h-full opacity-[100%]  absolute top-0 z-50 `}
+          className={`overflow-y-auto px-[30px] bg-white md:w-[350px] h-full opacity-[100%]  absolute top-0 z-50 `}
         >
           <div className="flex justify-between  items-center bg-white my-[20px] py-[20px]">
             <p className="text-darkPurple f20 fw700">Draws</p>
@@ -54,7 +59,6 @@ const DrawMenu = ({
           <div className="mt-[50px] text-grey flex flex-col fw400">
             <p
               onClick={() => openModal(MODAL_TYPES.CREATE_DRAW)}
-              // onClick={handleCreateDrawModal}
               className="hover:text-purple cursor-pointer py-[10px] border-b-[1px] border-[#e7e6eb]"
             >
               Draws
@@ -65,12 +69,20 @@ const DrawMenu = ({
                 {draw.drawType !== "Compass" ? (
                   <div
                     className="cursor-pointer hover:text-purple"
-                    onClick={() => handleDrawSelect(draw)}
+                    onClick={() => {
+                      handleDrawSelect(draw);
+                      setShowDrawMenu(!showDrawMenu);
+                    }}
                   >
                     {draw?.drawName}
                   </div>
                 ) : (
-                  <>
+                  <Link
+                    href={`/events/createdraw/${eventId}`}
+                    onClick={() => {
+                      setShowDrawMenu(!showDrawMenu);
+                    }}
+                  >
                     <p
                       className="hover:text-purple cursor-pointer text-[14px]"
                       onClick={() => handleDrawSelect(draw)}
@@ -89,21 +101,39 @@ const DrawMenu = ({
                     <p className="hover:text-purple cursor-pointer text-[14px]">
                       SOUTH
                     </p>
-                  </>
+                  </Link>
                 )}
               </div>
             ))}
 
-            <p className="py-[10px] border-b-[1px]  border-[#e7e6eb] fw700 text-purple">
+            <p className="py-[10px] border-b-[1px] border-[#e7e6eb] fw700 text-purple">
               Level Bases Plays Singles
             </p>
-            <p className="py-[10px] border-b-[1px]  border-[#e7e6eb]">
-              Players
-            </p>
-            <p className="py-[10px] border-b-[1px]  border-[#e7e6eb]">
+            <p className="py-[10px] border-b-[1px] border-[#e7e6eb]">Players</p>
+            <Link
+              href={`/events/createdraw/${eventId}/players`}
+              className="py-[10px] border-b-[1px] border-[#e7e6eb]"
+            >
               All Players
-            </p>
-            <p className="py-[10px] border-b-[1px]  border-[#e7e6eb]">
+            </Link>
+            {divisions &&
+              divisions.map((item, index) => {
+                return (
+                  <Link
+                    className="py-[2px]"
+                    key={index}
+                    href={`/events/createdraw/${eventId}/division/${item.id}`}
+                    onClick={() => {
+                      setSelectedDivision(item);
+                      setShowDrawMenu(!showDrawMenu);
+                    }}
+                  >
+                    {item.divisionName}
+                  </Link>
+                );
+              })}
+
+            <p className="py-[10px] border-b-[1px] border-[#e7e6eb]">
               Not in a Draws
             </p>
           </div>

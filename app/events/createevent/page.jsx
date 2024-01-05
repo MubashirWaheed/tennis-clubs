@@ -33,6 +33,14 @@ const EventForm = () => {
       registrationEndTime: dayjs(),
       publishedDate: dayjs(),
       publishedTime: dayjs(),
+      divisions: [
+        {
+          divisionName: "",
+          format: "",
+          gender: "",
+          entryFee: "",
+        },
+      ],
     },
     shouldUnregister: false,
   });
@@ -49,6 +57,7 @@ const EventForm = () => {
 
     const result = await axios.post("/api/event", { data, clubId: test });
     const { id } = result.data;
+    console.log("after event creation:", result.data);
     setEventId(id);
     router.push(`/events/displayevent/info/${id}`);
     setDisableBtn(false);

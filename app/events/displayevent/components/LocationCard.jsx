@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const LocationCard = () => {
+const LocationCard = ({ eventLocation }) => {
   return (
     // h-[280px]
     <div className="h-full  w-full lg:w-[290px] shadow-md bg-[#fff] rounded-[10px] mt-[20px] ">
@@ -18,7 +18,8 @@ const LocationCard = () => {
               className="h-[24px] w-[24px]"
             />
             <p className=" text-[#828282] f14 fw700 lh22">
-              3092 Church StreetBrooklyn, NY 11221
+              {eventLocation}
+              {/* 3092 Church StreetBrooklyn, NY 11221 */}
             </p>
           </div>
         </div>

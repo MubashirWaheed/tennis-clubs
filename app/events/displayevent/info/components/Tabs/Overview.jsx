@@ -3,13 +3,15 @@ import Aside from "../../../components/aside";
 import Card from "../Card";
 
 const Overview = ({ eventData }) => {
+  const { divisions, eventLocation } = eventData;
+  console.log("divisions in the overview: ", divisions);
   return (
     <div className="flex flex-wrap w-full items-center md:items-start justify-center  ">
       <main className="basis-2/3 grow flex flex-col">
         <h5 className="fw700 text-darkPurple f24">Description</h5>
         <p className="text-grey f16">
-          {/* {eventData?.eventDescription} */}
-          Join Us for our HRT Legend Series (And become the Ultimate HRT Legend)
+          {eventData.eventDescription}
+          {/* Join Us for our HRT Legend Series (And become the Ultimate HRT Legend)
           <br />
           Junior Circuit Qualifier Boys/Girls UTR 9.5 and Below
           <br />
@@ -42,21 +44,22 @@ const Overview = ({ eventData }) => {
           <br />- All players will be placed in a 3-hour window, at least 2
           matches guaranteed. Windows of play will be from 8:00-11:00,
           11:00-2:00, and 2:00-5:00. We will let you know your match time before
-          the event.
+          the event. */}
         </p>
 
         {/* Cards */}
-        <div className="mt-[20px]">
-          <h5 className="fw700 text-darkPurple f24">Divisions</h5>
-          <div className="flex w-full items-center justify-center md:gap-4 flex-wrap md:flex-nowrap ">
-            <Card />
-            <Card />
+        <div className=" mt-[20px]">
+          <h5 className=" fw700 text-darkPurple f24">Divisions</h5>
+          <div className=" flex w-full items-start justify-start md:gap-4 flex-wrap md:flex-nowrap ">
+            {divisions.map((division) => {
+              return <Card division={division} />;
+            })}
           </div>
         </div>
       </main>
       <div className="md:basis-1/3 flex flex-col justify-start items-center w-full ">
         <Aside />
-        <LocationCard />
+        <LocationCard eventLocation={eventLocation} />
       </div>
     </div>
   );

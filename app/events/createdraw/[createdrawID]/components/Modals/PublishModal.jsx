@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Button from "@/components/ui/buttons/PrimaryButton";
 import { FormProvider, useForm } from "react-hook-form";
 
-const PublishModal = ({ setActiveModal }) => {
+const PublishModal = ({ closeModal }) => {
   const methods = useForm();
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const PublishModal = ({ setActiveModal }) => {
   return (
     <div className="block">
       <FormProvider {...methods}>
-        <Modal heading="Publish Draws" closeModal={() => setActiveModal(null)}>
+        <Modal heading="Publish Draws" closeModal={() => closeModal(null)}>
           <div className="flex flex-col">
             <p className="text-grey my-[15px]">
               Select draws to publish and display publicly on the event profile

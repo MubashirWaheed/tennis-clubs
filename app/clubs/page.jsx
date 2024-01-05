@@ -16,6 +16,7 @@ const Clubs = () => {
   if (!profile) redirect("/register/profile");
 
   const { data, error } = useSWR("/api/clubmembership", fetcher);
+  console.log("data after fetch:", data);
 
   if (error) {
     // Handle error, for example, display an error message

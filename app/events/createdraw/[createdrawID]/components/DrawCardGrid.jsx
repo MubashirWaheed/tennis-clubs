@@ -13,7 +13,12 @@ import { secondRoundPlayers } from "../constants/constants";
 import AutoFillDraw from "./subcomponents/AutoFillDraw";
 import ManualDraw from "./subcomponents/ManualDraw";
 
-const DrawCardGrid = ({ selectedDraw, playerDraw, registeredPlayers }) => {
+const DrawCardGrid = ({
+  filteredPlayers,
+  selectedDraw,
+  playerDraw,
+  registeredPlayers,
+}) => {
   const methods = useForm();
   const watchedValues = methods.watch();
 
@@ -37,7 +42,10 @@ const DrawCardGrid = ({ selectedDraw, playerDraw, registeredPlayers }) => {
       drawContent = playerPairs ? (
         <AutoFillDraw playerPairs={playerPairs} />
       ) : (
-        <ManualDraw registeredPlayers={registeredPlayers} />
+        <ManualDraw
+          filteredPlayers={filteredPlayers}
+          registeredPlayers={registeredPlayers}
+        />
       );
       break;
 

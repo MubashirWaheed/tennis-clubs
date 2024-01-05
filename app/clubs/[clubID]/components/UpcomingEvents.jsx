@@ -15,19 +15,21 @@ const UpcomingEvents = () => {
   const { data } = useSWR(`/api/club/${clubId}`, fetcher);
   //   console.log("CLUB data: ", data);
   const { events } = data;
-
+  console.log("events in the upcoming:", events);
   // Use the slice method to get the first two events
-  const firstTwoEvents = events.slice(0, 2);
-  console.log(firstTwoEvents);
+  const sortedEvents = events.sort(
+    (a, b) => new Date(b.publishedDate) - new Date(a.publishedDate)
+  );
 
-  const handleEventClick = () => {
-    console.log("handleEventClick");
-  };
+  // Get the latest two events
+  const latestTwoEvents = sortedEvents.slice(0, 2);
+
+  // console.log(firstTwoEvents);
 
   return (
     // pointer-events-none
     <div className=" flex flex-col lg:flex-row gap-3 pt-[60px] w-full">
-      {firstTwoEvents.map((item, index) => {
+      {latestTwoEvents.map((item, index) => {
         return (
           <div
             key={index}

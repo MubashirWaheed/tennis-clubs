@@ -27,7 +27,7 @@ const ClubView = () => {
   // console.log("CLUB ID:", clubId);
 
   const { data } = useSWR(`/api/club/${clubId}`, fetcher);
-  // console.log("data: ", data);
+  console.log("data: ", data);
 
   const handleScorePost = () => {
     router.push(`[clubID]/admin/score`);
