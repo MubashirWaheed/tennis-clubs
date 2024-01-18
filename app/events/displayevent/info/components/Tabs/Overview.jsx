@@ -51,8 +51,8 @@ const Overview = ({ eventData }) => {
         <div className=" mt-[20px]">
           <h5 className=" fw700 text-darkPurple f24">Divisions</h5>
           <div className=" flex w-full items-start justify-start md:gap-4 flex-wrap md:flex-nowrap ">
-            {divisions.map((division) => {
-              return <Card division={division} />;
+            {divisions.map((division, index) => {
+              return <Card key={index} division={division} />;
             })}
           </div>
         </div>

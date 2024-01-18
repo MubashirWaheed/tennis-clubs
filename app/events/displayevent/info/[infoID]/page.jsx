@@ -151,9 +151,12 @@ const EventInfo = () => {
                 : `${divisions.length} Divisions`}
             </h5>
 
-            {divisions.map((division) => {
+            {divisions.map((division, index) => {
               return (
-                <div className="flex justify-between px-[20px] gap-[10px] items-center w-full bg-white mt-[0px] md:mt-[18px] h-[83px] shadow-md rounded-[10px]">
+                <div
+                  key={index}
+                  className="flex justify-between px-[20px] gap-[10px] items-center w-full bg-white mt-[0px] md:mt-[18px] h-[83px] shadow-md rounded-[10px]"
+                >
                   <div className="flex flex-col">
                     <p className="fw700 text-lg text-darkPurple">
                       {division.divisionName}
