@@ -65,6 +65,8 @@ const LogInForm = () => {
           {passwordError && (
             <p className="text-red-500 text-[12px] ml-55px">{passwordError}</p>
           )}
+          <p className="text-xs leading-tight">Email: admin@gmail.com</p>
+          <p className="text-xs leading-tight">Password: Admin12345</p>
         </div>
         <div className="w-full flex flex-col gap-[11px]">
           <SignInButton disabled={loading} type="submit">
